@@ -9,7 +9,6 @@ alias df='df -h'
 alias cls='tput reset'
 alias grep='grep --color=auto'
 
-# Require xsel to be installed beforehand
+#alias pbcopy='xclip -sel clip'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
-
