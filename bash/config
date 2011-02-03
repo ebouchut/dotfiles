@@ -1,0 +1,45 @@
+umask 0022
+
+#
+# DISPLAY
+#
+if [ -z "${SSH_CLIENT}" ]
+then
+        echo $HOST > ~/.last_host
+        if [ -z "${DISPLAY}" ]
+        then
+                export DISPLAY=:0.0
+        fi
+        [[ "${DISPLAY}" =~ ":.*" ]]
+        if [ $? -eq 0 ]
+        then
+                echo "${HOST}${DISPLAY}" > ~/.last_display
+        else
+                echo "${DISPLAY}" > ~/.last_display
+        fi
+        xhost +
+else
+        export X_HOST="$(< ~/.last_host)"
+        export DISPLAY="$(< ~/.last_host)$(< ~/.last_display)"
+fi
+echo "DISPLAY set to ${DISPLAY}"
+
+
+#
+# Ensure ssh-agent is started
+#
+KNAME=$HOME/.keychain/$HOST-sh
+/usr/bin/keychain $HOME/.ssh/id_dsa
+. $KNAME
+
+
+#
+# /opt
+#
+function useOpt()
+{
+        export PATH="${PATH}:/opt/bin"
+        export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/lib"
+}
+
+

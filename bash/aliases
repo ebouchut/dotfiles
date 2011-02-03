@@ -1,0 +1,15 @@
+alias ls='ls --color'
+alias l='ls --color'
+alias ll='ls --color -l'
+alias lf='ls --color -CF'
+alias la='ls --color -a'
+alias lla='ls --color -la'
+alias ddu='du --max-depth=1 -h'
+alias df='df -h'
+alias cls='tput reset'
+alias grep='grep --color=auto'
+
+# Require xsel to be installed beforehand
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
