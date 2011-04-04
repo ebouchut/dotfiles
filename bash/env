@@ -7,5 +7,4 @@ export PATH=$M2:$JAVA_HOME/bin:$HOME/bin:$PATH
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-export PS1="\[\e[0;31m\]\h:\[\e[m\]\[\e[0;34m\]\W\[\e[m\] \[\e[0;30m\]\u\[\e[m\]\[\e[0;33m\]\$\[\e[m\] "
-
+export PS1="\[\e]0;\u@\h: \W\a\]\[\e[0;32m\]\u\[\e[m\]@\[\e[0;31m\]\h:\[\e[m\]\[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$\[\e[m\] "
