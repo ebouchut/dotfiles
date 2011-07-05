@@ -1,0 +1,8 @@
+[user]
+	name = Eric Bouchut
+	email = ebouchut@gmail.com
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
