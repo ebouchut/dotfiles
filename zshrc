@@ -1,12 +1,11 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/dev/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 export ZSH_THEME="ebouchut"
-#export ZSH_THEME="risto"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -26,3 +25,4 @@ plugins=(gem git github rails rails3 ruby rvm ssh-agent svn)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
