@@ -1,5 +1,6 @@
 export HOST=`hostname`
-export EDITOR=vi
+export EDITOR=vim
+export GIT_EDITOR=vim
 export M2_HOME=/users/bin/apache-maven-2.2.1
 export M2=$M2_HOME/bin
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
