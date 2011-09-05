@@ -1,0 +1,12 @@
+Host github.com
+	User git
+	Hostname github.com
+	PreferredAuthentications publickey
+	IdentityFile  /home/eric/.ssh/id_rsa
+
+Host github-apresgilles
+	User git
+	Hostname github.com
+	PreferredAuthentications publickey
+	IdentityFile /home/eric/.ssh/id_rsa_apresgilles
+	IdentitiesOnly yes
