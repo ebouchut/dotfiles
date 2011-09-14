@@ -6,3 +6,7 @@
 [alias]
 	co = checkout
 	ci = commit
+[apply]
+	whitespace = nowarn
+[merge]
+	tool = meld
