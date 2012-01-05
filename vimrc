@@ -35,3 +35,11 @@ set expandtab
       \ endif
 
 colorscheme vividchalk  " Uncomment this to set a default theme
+
+" pretty-print JSON files
+autocmd BufRead,BufNewFile *.json set filetype=json
+" json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
+autocmd Syntax json sou ~/.vim/syntax/json.vim
+" json_reformat is part of yajl: http://lloyd.github.com/yajl/
+autocmd FileType json set equalprg=json_reformat
+
