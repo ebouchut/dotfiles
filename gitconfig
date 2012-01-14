@@ -4,10 +4,10 @@
 [color]
 	ui = true
 [alias]
-	co = checkout
-	ci = commit
 	hist = log --pretty=format:'%h  %ad | %s%d [%an]' --graph --date=short
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ribbon = tag --force _ribbon origin/master
+	catchup = log --patch --reverse --topo-order _ribbon..origin/master
 [apply]
 	whitespace = nowarn
 [merge]
