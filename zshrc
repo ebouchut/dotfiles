@@ -23,6 +23,8 @@ export DISABLE_AUTO_TITLE="false"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(gem git github rails rails3 ruby rvm ssh-agent svn)
 
+set -k # Enable comments in command line
+
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
