@@ -34,6 +34,10 @@
 ;;   imenu support, and the semantic navigator
 (semantic-load-enable-code-helpers)
 
+;; * This enables even more coding tools such as intellisense mode
+;;   decoration mode, and stickyfunc mode (plus regular code helpers)
+;; (semantic-load-enable-gaudy-code-helpers)
+
 ;;~~~~~~~~~~~~~~~~~~~~~~~~
 ;; ECB
 (add-to-list 'load-path "~/.emacs.d/elisp/ecb-2.40")
@@ -51,7 +55,6 @@
   ;; Use the left mouse button to open file
   '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
 
-  ;; No Tip of the day
   '(ecb-tip-of-the-day nil)
   '(ecb-tree-buffer-style (quote ascii-guides))
   '(ecb-options-version "2.40")
@@ -64,12 +67,10 @@
  )
 
 
-
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
 ; loads Ruby mode when a .rb file is opened.
 ;(autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 ;(setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
-;(setq auto-mode-alist  (cons '(".rhtml$" . html-mode) auto-mode-alist))
 (add-hook 'ruby-mode-hook
       (lambda()
         (add-hook 'local-write-file-hooks
@@ -91,6 +92,9 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/rhtml")
 (require 'rhtml-mode)
 
+(setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
+
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
 ; Install mode-compile to give friendlier compiling support!
 (autoload 'mode-compile "mode-compile"
@@ -107,3 +111,13 @@
 (setq load-path (cons (expand-file-name "~/.emacs.d/elisp/rails-reloaded") load-path))
 (require 'rails-autoload)
 
+
+;; ~~~~~~~~~~~~~~
+;;    Org Mode
+;; ~~~~~~~~~~~~~~
+;; The following lines are always needed.  Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+;(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
