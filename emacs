@@ -8,8 +8,8 @@
 
 (setq inhibit-splash-screen t)
 
-;; ~~~~~~~~~~~~
-;; Color Theme
+;; ~~~~~~~~~~~~~~~
+;; Color Theme: requires the package emacs-goodies-el
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(progn
