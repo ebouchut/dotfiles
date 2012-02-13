@@ -2,6 +2,8 @@
 
 ; allows syntax highlighting to work
 (global-font-lock-mode 1)
+; Use as much colour as possible
+(setq font-lock-maximum-size nil)
 
 ; stops me killing emacs by accident!
 (setq confirm-kill-emacs 'yes-or-no-p)
@@ -17,6 +19,26 @@
      (color-theme-hober)
      )
 )
+
+;; Mettre un titre aux fenêtres
+(setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
+
+;; Display the column number
+(column-number-mode 1)
+(line-number-mode 1)
+
+;; M-g key binding for goto-line
+(global-set-key [(meta g)] 'goto-line)
+
+;; Store backup files in a centralized location
+(setq backup-directory-alist
+      '(("." . "~/.emacs-backup-files/")))
+
+; Recherche automatique des fermetures et ouvertures des parenthèses
+;; Voir cette adresse pour quelquechose de plus fin :
+;; http://www.linux-france.org/article/appli/emacs/faq/emacs-faq-7.html
+(load-library "paren")
+(show-paren-mode 1)
 
 ;;~~~~~~~~~~~~
 ;; Load CEDET.
@@ -65,7 +87,6 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
-
 
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
 ; loads Ruby mode when a .rb file is opened.
@@ -121,3 +142,32 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
+
+;; ----------------------------------------------------------------------
+;; PHP - HTML - CSS
+
+;; Manuel PHP en français
+(setq php-manual-url "http://www.nexen.net/docs/php/annotee/manual.php")
+
+;; Utiliser le html-helper-mode, http://www.gest.unipd.it/~saint/hth.html
+(autoload 'php-html-helper-mode "html-helper-mode" "html-helper-mode" t)
+
+;; Ajoute un mode pour éditer du php
+;; http://www.ontosys.com/reports/PHP.html
+(autoload 'php-mode "php-mode" "PHP editing mode" t)
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.php3\\'" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.php4\\'" . php-mode))
+
+;; Utiliser le menu expert
+(setq html-helper-use-expert-menu t)
+
+;; Auto-indent when pressing <Enter>
+(defun my-html-helper-load-hook ()
+       (define-key html-mode-map (kbd "RET") 'newline-and-indent))
+(add-hook 'html-helper-load-hook 'my-html-helper-load-hook)
+
+;; Use PSGML for SGML, HTML, XML files
+(autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
+(autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
