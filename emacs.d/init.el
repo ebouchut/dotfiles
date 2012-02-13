@@ -40,6 +40,27 @@
 (load-library "paren")
 (show-paren-mode 1)
 
+;; Recent Files mapped to C-X C-r
+;;
+(require 'recentf)
+(recentf-mode 1)
+
+(defun recentf-open-files-compl ()
+      (interactive)
+      (let* ((all-files recentf-list)
+        (tocpl (mapcar (function 
+           (lambda (x) (cons (file-name-nondirectory x) x))) all-files))
+        (prompt (append '("File name: ") tocpl))
+        (fname (completing-read (car prompt) (cdr prompt) nil nil)))
+        (find-file (cdr (assoc-ignore-representation fname tocpl))))) 
+
+(global-set-key "\C-x\C-r" 'recentf-open-files-compl)
+
+;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
+;; 
+(require 'ido)
+(ido-mode t)
+
 ;;~~~~~~~~~~~~
 ;; Load CEDET.
 ;; This is required by ECB which will be loaded later.
@@ -171,3 +192,28 @@
 ;; Use PSGML for SGML, HTML, XML files
 (autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
 (autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
+
+;; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;; Localization: Use French for dates, dictionnary
+;;
+
+;; dictionnaire francais pour la correction orthographique ispell
+(setq ispell-dictionary "francais")
+
+;; format jour/mois/an pour le calendrier (M-x calendar)
+(setq european-calendar-style t)
+
+;; la semaine commence le lundi
+(setq calendar-week-start-day 1)
+
+;; jours et mois en francais dans le calendrier 
+(defvar calendar-day-abbrev-array
+  ["dim" "lun" "mar" "mer" "jeu" "ven" "sam"])
+(defvar calendar-day-name-array
+  ["dimanche" "lundi" "mardi" "mercredi" "jeudi" "vendredi" "samedi"])
+(defvar calendar-month-abbrev-array
+  ["jan" "fév" "mar" "avr" "mai" "jun"
+   "jul" "aou" "sep" "oct" "nov" "déc"])
+(defvar calendar-month-name-array
+  ["janvier" "février" "mars" "avril" "mai" "juin"
+   "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
