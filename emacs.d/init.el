@@ -131,7 +131,7 @@
 
 ;;~~~~~~~~~~~~~
 ;;; rhtml mode
-(add-to-list 'load-path "~/.emacs.d/elisp/rhtml")
+(add-to-list 'load-path "~/.emacs.d/elisp/external/rhtml")
 (require 'rhtml-mode)
 
 (setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
@@ -217,3 +217,8 @@
 (defvar calendar-month-name-array
   ["janvier" "février" "mars" "avril" "mai" "juin"
    "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
+
+;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;; RVM
+(require 'rvm)
+(rvm-use-default) ;; use rvm's default ruby for the current Emacs session 

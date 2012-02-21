@@ -1,0 +1,6 @@
+[submodule "emacs.d/elisp/external/rvm.el"]
+	path = emacs.d/elisp/external/rvm.el
+	url = git://github.com/senny/rvm.el.git
+[submodule "emacs.d/elisp/external/rhtml"]
+	path = emacs.d/elisp/external/rhtml
+	url = https://github.com/eschulte/rhtml.git
