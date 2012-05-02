@@ -1,3 +1,4 @@
+
 filetype on " Automatically detect file types
 filetype indent on
 
@@ -43,3 +44,5 @@ autocmd Syntax json sou ~/.vim/syntax/json.vim
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
+" Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
+cmap w!! %!sudo tee > /dev/null %

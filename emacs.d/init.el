@@ -91,17 +91,14 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
-  '(ecb-layout-name "left14")
-  '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
-  '(ecb-source-path (quote ("~dev")))
-
-  ;; Use the left mouse button to open file
-  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
-
-  '(ecb-tip-of-the-day nil)
-  '(ecb-tree-buffer-style (quote ascii-guides))
-  '(ecb-options-version "2.40")
-)
+ '(ecb-layout-name "left14")
+ '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
+ '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+ '(ecb-source-path (quote ("~dev")))
+ '(ecb-tip-of-the-day nil)
+ '(ecb-tree-buffer-style (quote ascii-guides))
+ '(org-agenda-files (quote ("~/.orgmode/index.org"))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -157,12 +154,19 @@
 ;; ~~~~~~~~~~~~~~
 ;;    Org Mode
 ;; ~~~~~~~~~~~~~~
-;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 ;(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(setq org-log-done 'time)
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
+
+
+
+
 
 
 ;; ----------------------------------------------------------------------
@@ -219,6 +223,6 @@
    "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-;; RVM
+;; RVM 
 (require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session 
