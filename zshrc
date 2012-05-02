@@ -25,6 +25,10 @@ plugins=(gem git github rails rails3 ruby rvm ssh-agent svn)
 
 set -k # Enable comments in command line
 
+export SHELL=/usr/bin/zsh
+
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
