@@ -93,7 +93,7 @@
   ;; If there is more than one, they won't work right.
   '(ecb-layout-name "left14")
   '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
-  '(ecb-source-path (quote ("~dev")))
+  '(ecb-source-path (quote ("~/dev")))
 
   ;; Use the left mouse button to open file
   '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
