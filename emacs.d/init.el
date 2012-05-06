@@ -101,6 +101,7 @@
   '(ecb-tip-of-the-day nil)
   '(ecb-tree-buffer-style (quote ascii-guides))
   '(ecb-options-version "2.40")
+  ;; '(org-agenda-files (quote ("~/.orgmode/index.org")))
 )
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -157,12 +158,19 @@
 ;; ~~~~~~~~~~~~~~
 ;;    Org Mode
 ;; ~~~~~~~~~~~~~~
-;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 ;(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(setq org-log-done 'time)
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
+
+
+
+
 
 
 ;; ----------------------------------------------------------------------
@@ -219,6 +227,7 @@
    "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-;; RVM
+;; RVM 
+(add-to-list 'load-path "~/.emacs.d/elisp/external/rvm.el")
 (require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session 
