@@ -91,14 +91,18 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ecb-layout-name "left14")
- '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
- '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-source-path (quote ("~dev")))
- '(ecb-tip-of-the-day nil)
- '(ecb-tree-buffer-style (quote ascii-guides))
- '(org-agenda-files (quote ("~/.orgmode/index.org"))))
+  '(ecb-layout-name "left14")
+  '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
+  '(ecb-source-path (quote ("~/dev")))
+
+  ;; Use the left mouse button to open file
+  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+
+  '(ecb-tip-of-the-day nil)
+  '(ecb-tree-buffer-style (quote ascii-guides))
+  '(ecb-options-version "2.40")
+  ;; '(org-agenda-files (quote ("~/.orgmode/index.org")))
+)
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -224,5 +228,6 @@
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;; RVM 
+(add-to-list 'load-path "~/.emacs.d/elisp/external/rvm.el")
 (require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session 
