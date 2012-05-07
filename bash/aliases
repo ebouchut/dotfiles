@@ -5,8 +5,6 @@ alias lf='ls --color -CF'
 alias la='ls --color -a'
 alias lla='ls --color -la'
 alias ddu='du --max-depth=1 -h'
-alias df='df -h'
-alias cls='tput reset'
 alias grep='grep --color=auto'
 
 #alias pbcopy='xclip -sel clip'
