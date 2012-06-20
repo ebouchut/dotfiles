@@ -126,8 +126,8 @@
         (set (make-local-variable 'tab-width) 2)
         (imenu-add-to-menubar "IMENU")
         (define-key ruby-mode-map "\C-m" 'newline-and-indent) ;Not sure if this line is 100% right!
-        (require 'ruby-electric)
-        (ruby-electric-mode t)
+;        (require 'ruby-electric)
+;        (ruby-electric-mode t)
         ))
 
 ;;~~~~~~~~~~~~~
