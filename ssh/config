@@ -1,3 +1,6 @@
+Host *
+  SendEnv LANG LC_ALL
+
 Host github.com
 	User git
 	Hostname github.com
