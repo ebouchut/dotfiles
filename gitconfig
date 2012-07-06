@@ -15,3 +15,4 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+	exludesfile = /users/eb/.gitignore_global
