@@ -4,3 +4,6 @@
 [submodule "emacs.d/elisp/external/rhtml"]
 	path = emacs.d/elisp/external/rhtml
 	url = https://github.com/eschulte/rhtml.git
+[submodule "emacs.d/elisp/external/rspec-mode"]
+	path = emacs.d/elisp/external/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git

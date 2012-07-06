@@ -138,6 +138,17 @@
 (setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
+;;~~~~~~~~~~~~~
+;;; rspec mode
+(add-to-list 'load-path "~/.emacs.d/elisp/external/rspec-mode")
+(require 'rspec-mode)
+
+(defadvice rspec-compile (around rspec-compile-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+(ad-activate 'rspec-compile)
+
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
 ; Install mode-compile to give friendlier compiling support!
 (autoload 'mode-compile "mode-compile"
