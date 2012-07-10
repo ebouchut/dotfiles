@@ -179,7 +179,21 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
 
+;;~~~~~~~~~~~~~
+;;; haml mode
+(add-to-list 'load-path "~/.emacs.d/elisp/external/haml-mode")
+(require 'haml-mode)
+(add-hook 'haml-mode-hook
+               (lambda ()
+                 (setq indent-tabs-mode nil)
+                 (define-key haml-mode-map "\C-m" 'newline-and-indent)))
 
+;;~~~~~~~~~~~~~
+;;; sass mode
+(add-to-list 'load-path "~/.emacs.d/elisp/external/sass-mode")
+(require 'sass-mode)
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
 
 
 

@@ -10,3 +10,6 @@
 [submodule "emacs.d/elisp/external/sass-mode"]
 	path = emacs.d/elisp/external/sass-mode
 	url = git://github.com/nex3/sass-mode.git
+[submodule "emacs.d/elisp/external/haml-mode"]
+	path = emacs.d/elisp/external/haml-mode
+	url = git://github.com/nex3/haml-mode.git
