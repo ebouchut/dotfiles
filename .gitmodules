@@ -7,3 +7,6 @@
 [submodule "emacs.d/elisp/external/rspec-mode"]
 	path = emacs.d/elisp/external/rspec-mode
 	url = git://github.com/pezra/rspec-mode.git
+[submodule "emacs.d/elisp/external/sass-mode"]
+	path = emacs.d/elisp/external/sass-mode
+	url = git://github.com/nex3/sass-mode.git
