@@ -1,3 +1,5 @@
+. ~/bin/dotfiles/zsh/aliases
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/dev/oh-my-zsh
 
@@ -32,3 +34,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

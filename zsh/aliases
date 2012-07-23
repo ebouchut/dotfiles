@@ -1,0 +1,9 @@
+# ~~~~~~~~~~~~
+# Zsh aliases
+# ~~~~~~~~~~~~
+
+
+alias git=hub   # Requires hub: http://defunkt.io/hub/
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'

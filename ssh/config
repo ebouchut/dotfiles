@@ -1,15 +1,36 @@
+# If set, multiple SSH sessions to the same host share a single connection. 
+# Once the first connection is established, credentials are not required 
+# for subsequent connections, eliminating the drudgery of typing a password
+# each and every time you connect to the same machine. 
+# 
+
 Host *
-  SendEnv LANG LC_ALL
+#     ControlMaster auto
+#     ControlPath ~/.ssh/master-%r@%h:%p 
+# http://www.anchor.com.au/blog/2010/02/ssh-controlmaster-the-good-the-bad-the-ugly/
+     SendEnv LANG LC_ALL
+     IdentityFile ~/.ssh/ids/%h/%r/id_rsa
+     IdentityFile ~/.ssh/ids/%h/%r/id_dsa
+     IdentityFile ~/.ssh/ids/%h/id_rsa
+     IdentityFile ~/.ssh/ids/%h/id_dsa
+     IdentityFile ~/.ssh/id_rsa
+     IdentityFile ~/.ssh/id_dsa
 
 Host github.com
 	User git
 	Hostname github.com
+  # use only the publickey authentication method
+  # Default is  publickey,password,keyboard-interactive,hostbased
 	PreferredAuthentications publickey
-	IdentityFile  /home/eric/.ssh/id_rsa
+	IdentityFile  ~/.ssh/id_rsa
+  # Use only the key specified in IdentityFile, 
+  # ignoring the keys already loaded in ssh-agent
+	IdentitiesOnly yes  
 
 Host github-apresgilles
 	User git
 	Hostname github.com
-	PreferredAuthentications publickey
-	IdentityFile /home/eric/.ssh/id_rsa_apresgilles
-	IdentitiesOnly yes
+	PreferredAuthentications publickey 
+	IdentityFile ~/.ssh/id_rsa_apresgilles
+	IdentitiesOnly yes  
+

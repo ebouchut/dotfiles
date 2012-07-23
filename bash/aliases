@@ -3,10 +3,10 @@ alias l='ls --color'
 alias ll='ls --color -l'
 alias lf='ls --color -CF'
 alias la='ls --color -a'
-alias lla='ls --color -la'
 alias ddu='du --max-depth=1 -h'
 alias grep='grep --color=auto'
 
-#alias pbcopy='xclip -sel clip'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
+alias git=hub  # Requires hub: http://defunkt.io/hub/
