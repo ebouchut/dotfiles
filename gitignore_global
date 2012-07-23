@@ -1,9 +1,3 @@
-diff --git a/git/gitignore.global b/git/gitignore.global
-deleted file mode 100644
-index a9abbf3..0000000
--- a/git/gitignore.global
-+++ /dev/null
-@@ -1,85 +0,0 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Global gitignore
 #   git config --global core.excludesfile ~/bin/dotfiles/git/gitignore.global
