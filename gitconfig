@@ -2,7 +2,7 @@
 	name = Eric Bouchut
 	email = ebouchut@gmail.com
 [color]
-	ui = true
+	ui = auto
 [alias]
 	hist = log --pretty=format:'%h  %ad | %s%d [%an]' --graph --date=short
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -16,3 +16,5 @@
 	autocrlf = input
 	safecrlf = true
 	exludesfile = /users/eb/.gitignore_global
+[credential]
+	helper = osxkeychain
