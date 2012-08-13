@@ -1,3 +1,5 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 filetype on " Automatically detect file types
 filetype indent on
@@ -34,9 +36,11 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
-
+set background=dark " dark | light
+"
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 " set laststatus=2 " Always show status line
+
 
 "Restore cursor position
   autocmd BufReadPost *
@@ -44,7 +48,7 @@ set expandtab
       \ exe "normal! g`\"" |
       \ endif
 
-colorscheme vividchalk  " Uncomment this to set a default theme
+colorscheme solarized  " Uncomment this to set a default theme
 
 " pretty-print JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -55,3 +59,4 @@ autocmd FileType json set equalprg=json_reformat
 
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cmap w!! %!sudo tee > /dev/null %
+
