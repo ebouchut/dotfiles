@@ -36,7 +36,6 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
-set background=dark " dark | light
 "
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 " set laststatus=2 " Always show status line
@@ -48,7 +47,10 @@ set background=dark " dark | light
       \ exe "normal! g`\"" |
       \ endif
 
-colorscheme solarized  " Uncomment this to set a default theme
+set background=light " dark | light
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
 
 " pretty-print JSON files
 autocmd BufRead,BufNewFile *.json set filetype=json
