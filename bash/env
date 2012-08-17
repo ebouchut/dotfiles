@@ -10,5 +10,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 export PS1="\[\e]0;\u@\h: \W\a\]\[\e[0;32m\]\u\[\e[m\]@\[\e[0;31m\]\h:\[\e[m\]\[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$\[\e[m\] "
 
+# MacPorts
+if [[ $OSTYPE == darwin* ]] ; then
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+fi
+
 # Don't check mail when opening terminal.
 unset MAILCHECK
+
