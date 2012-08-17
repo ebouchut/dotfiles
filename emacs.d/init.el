@@ -12,6 +12,7 @@
 
 ;; ~~~~~~~~~~~~~~~
 ;; Color Theme: requires the package emacs-goodies-el
+(add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(progn
