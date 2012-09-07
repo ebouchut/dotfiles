@@ -69,7 +69,7 @@ tmp/**/*
 *~.nib
 local.properties
 .classpath
-.settings/*
+.settings
 .loadpath
 
 # External tool builders
