@@ -25,7 +25,7 @@ export DISABLE_AUTO_TITLE="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gem git github rails rails3 ruby rvm ssh-agent svn)
+plugins=(completion gem git github rails rails3 ruby rvm ssh-agent)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # MacPorts 
@@ -38,6 +38,12 @@ fi
 # RVM
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Hub
+# requires hub: http://defunkt.io/hub/
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git() {hub "$@"} 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Regular 

@@ -2,8 +2,9 @@
 # Zsh aliases
 # ~~~~~~~~~~~~
 
-
-alias git=hub   # Requires hub: http://defunkt.io/hub/
+# Disabled alias because it prevents git completion from working
+# https://github.com/robbyrussell/oh-my-zsh/issues/766
+#alias git=hub   
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
