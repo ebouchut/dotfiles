@@ -10,6 +10,12 @@
 
 (setq inhibit-splash-screen t)
 
+(setq mac-command-modifier 'meta
+      mac-option-modifier nil
+      mac-allow-anti-aliasing t
+      mac-command-key-is-meta t)
+
+
 ;; ~~~~~~~~~~~~~~~
 ;; Color Theme: requires the package emacs-goodies-el
 (add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
