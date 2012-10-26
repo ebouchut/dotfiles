@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "emacs.d/elisp/external/iedit"]
+	path = emacs.d/elisp/external/iedit
+	url = git://github.com/eproxus/emacs-iedit.git
