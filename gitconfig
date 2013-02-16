@@ -27,3 +27,5 @@
 	trustExitCode = true
 [push]
 	default = current
+[rerere]
+	enabled = 1
