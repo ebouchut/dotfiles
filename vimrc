@@ -2,7 +2,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 filetype on " Automatically detect file types
-filetype indent on
+filetype plugin indent on
 
 set hlsearch
 
