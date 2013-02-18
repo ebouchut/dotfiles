@@ -29,3 +29,5 @@
 	default = current
 [rerere]
 	enabled = 1
+[dude]
+	interval = 60
