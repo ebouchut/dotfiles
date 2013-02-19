@@ -63,13 +63,21 @@
 
 (global-set-key "\C-x\C-r" 'recentf-open-files-compl)
 
+; Make buffer names even more unique (using a friendlier name)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
+
+
+
+;;~~~~~~~~~~~~
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
 ;; 
 ;;(require 'ido)
 ;;(ido-mode t)
 
+
 ;;~~~~~~~~~~~~
-;; Load CEDET.
+;; CEDET.
 ;; This is required by ECB which will be loaded later.
 ;; See cedet/common/cedet.info for configuration details.
 (load-file "~/.emacs.d/elisp/cedet-1.0/common/cedet.el")
@@ -87,6 +95,7 @@
 ;; * This enables even more coding tools such as intellisense mode
 ;;   decoration mode, and stickyfunc mode (plus regular code helpers)
 ;; (semantic-load-enable-gaudy-code-helpers)
+
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~
 ;; ECB
@@ -117,8 +126,9 @@
   ;; If there is more than one, they won't work right.
  )
 
+
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
-; loads Ruby mode when a .rb file is opened.
+; Loads Ruby mode when a .rb file is opened.
 ;(autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 ;(setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
 (add-hook 'ruby-mode-hook
@@ -137,6 +147,7 @@
 ;        (ruby-electric-mode t)
         ))
 
+
 ;;~~~~~~~~~~~~~
 ;;; rhtml mode
 (add-to-list 'load-path "~/.emacs.d/elisp/external/rhtml")
@@ -145,8 +156,9 @@
 (setq auto-mode-alist  (cons '("\\.erb$" . rhtml-mode) auto-mode-alist))
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 
+
 ;;~~~~~~~~~~~~~
-;;; rspec mode
+;;; RSpec mode
 (add-to-list 'load-path "~/.emacs.d/elisp/external/rspec-mode")
 (require 'rspec-mode)
 
@@ -155,6 +167,7 @@
   (let ((shell-file-name "/bin/bash"))
     ad-do-it))
 (ad-activate 'rspec-compile)
+
 
 ; ~~~~~~~~~~~~~~~~~~~~~~~~
 ; Install mode-compile to give friendlier compiling support!
@@ -174,7 +187,7 @@
 
 
 ;; ~~~~~~~~~~~~~~
-;;    Org Mode
+;; Org Mode
 ;; ~~~~~~~~~~~~~~
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 ;(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
@@ -186,8 +199,9 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
 
+
 ;;~~~~~~~~~~~~~
-;;; haml mode
+;;; Haml mode
 (add-to-list 'load-path "~/.emacs.d/elisp/external/haml-mode")
 (require 'haml-mode)
 (add-hook 'haml-mode-hook
@@ -195,17 +209,16 @@
                  (setq indent-tabs-mode nil)
                  (define-key haml-mode-map "\C-m" 'newline-and-indent)))
 
+
 ;;~~~~~~~~~~~~~
-;;; sass mode
+;;; Sass mode
 (add-to-list 'load-path "~/.emacs.d/elisp/external/sass-mode")
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
 
 
-
-
-;; ----------------------------------------------------------------------
+;; ~~~~~~~~~~~~~~~~~
 ;; PHP - HTML - CSS
 
 ;; Manuel PHP en français
@@ -233,7 +246,15 @@
 (autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
 (autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
 
-;; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+;; ~~~~~~~~
+;; RVM
+(add-to-list 'load-path "~/.emacs.d/elisp/external/rvm.el")
+(require 'rvm)
+(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+
+
+;; ~~~~~~~~~~~~~~
 ;; Localization: Use French for dates, dictionnary
 ;;
 
@@ -258,8 +279,3 @@
   ["janvier" "février" "mars" "avril" "mai" "juin"
    "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
 
-;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-;; RVM 
-(add-to-list 'load-path "~/.emacs.d/elisp/external/rvm.el")
-(require 'rvm)
-(rvm-use-default) ;; use rvm's default ruby for the current Emacs session 
