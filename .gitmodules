@@ -25,3 +25,9 @@
 [submodule "emacs.d/elisp/external/iedit"]
 	path = emacs.d/elisp/external/iedit
 	url = git://github.com/eproxus/emacs-iedit.git
+[submodule "emacs.d/elisp/external/dired-details-plus"]
+	path = emacs.d/elisp/external/dired-details-plus
+	url = git@github.com:emacsmirror/dired-details-plus.git
+[submodule "emacs.d/elisp/external/dired-details"]
+	path = emacs.d/elisp/external/dired-details
+	url = git@github.com:emacsmirror/dired-details.git

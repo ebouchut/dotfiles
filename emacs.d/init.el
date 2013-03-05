@@ -68,6 +68,15 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 
+;;~~~~~~~~~~~~
+;; Make dired less verbose.
+;;   Use ')' to show hidden ls details and '(' to hide them again.
+;;   http://whattheemacsd.com/setup-dired.el-01.html
+(add-to-list 'load-path "~/.emacs.d/elisp/external/dired-details")
+(add-to-list 'load-path "~/.emacs.d/elisp/external/dired-details-plus")
+(require 'dired-details+)
+(setq-default dired-details-hidden-string "--- ")
+
 
 ;;~~~~~~~~~~~~
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
