@@ -68,6 +68,14 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 
+;; On Mac only:
+;;   map META to the Command key
+;;   map SUPER to the Option key
+;;   map HYPER to the Function key
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+(setq ns-function-modifier 'hyper)
+
 ;;~~~~~~~~~~~~
 ;; Make dired less verbose.
 ;;   Use ')' to show hidden ls details and '(' to hide them again.
