@@ -72,8 +72,8 @@
 ;;~~~~~~~~~~~~
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
 ;; 
-;;(require 'ido)
-;;(ido-mode t)
+(require 'ido)
+(ido-mode t)
 
 
 ;;~~~~~~~~~~~~
