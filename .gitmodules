@@ -31,3 +31,6 @@
 [submodule "emacs.d/elisp/external/dired-details"]
 	path = emacs.d/elisp/external/dired-details
 	url = git@github.com:emacsmirror/dired-details.git
+[submodule "emacs.d/elisp/external/ido-ubiquitous"]
+	path = emacs.d/elisp/external/ido-ubiquitous
+	url = git@github.com:emacsmirror/ido-ubiquitous.git
