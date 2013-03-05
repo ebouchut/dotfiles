@@ -68,6 +68,13 @@
 (setq uniquify-buffer-name-style 'post-forward)
 
 
+;; Save point position between sessions
+;;
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+
 ;; On Mac only:
 ;;   map META to the Command key
 ;;   map SUPER to the Option key
