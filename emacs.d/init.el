@@ -1,5 +1,9 @@
 (setq load-path (cons (expand-file-name "~/.emacs.d/elisp") load-path))
 
+; Where to store custom settings
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file)
+
 ; allows syntax highlighting to work
 (global-font-lock-mode 1)
 ; Use as much colour as possible
@@ -8,13 +12,17 @@
 ; stops me killing emacs by accident!
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+;; No splash screen
 (setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
 
 (setq mac-command-modifier 'meta
       mac-option-modifier nil
       mac-allow-anti-aliasing t
       mac-command-key-is-meta t)
 
+;; Enable auto-indent globally
+(define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; ~~~~~~~~~~~~~~~
 ;; Color Theme: requires the package emacs-goodies-el
@@ -36,6 +44,10 @@
 
 ;; M-g key binding for goto-line
 (global-set-key [(meta g)] 'goto-line)
+
+;; Disable spalsh screen and startup message 
+(setq inhibit-startup-message t
+  inhibit-startup-echo-area-message t)
 
 ;; Store backup files in a centralized location
 (setq backup-directory-alist
@@ -94,10 +106,18 @@
 
 
 ;;~~~~~~~~~~~~
+;; M-j  join 2 lines
+;;
+(global-set-key (kbd "M-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
 ;; 
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
 
 ;; Use IDO everywhere
 (add-to-list 'load-path "~/.emacs.d/elisp/external/ido-ubiquitous")
