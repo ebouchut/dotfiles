@@ -47,6 +47,8 @@ set expandtab
       \ exe "normal! g`\"" |
       \ endif
 
+" Set Color scheme
+set t_Co=256
 set background=light " dark | light
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
