@@ -61,6 +61,11 @@ autocmd Syntax json sou ~/.vim/syntax/json.vim
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
+" ~~~~~~~~~~~~~~~~~~
+" Keyboard Mapping
+"
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cmap w!! %!sudo tee > /dev/null %
 
+" F12: Toggle background dark/light
+map <F12> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
