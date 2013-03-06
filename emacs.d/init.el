@@ -16,14 +16,6 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
-(setq mac-command-modifier 'meta
-      mac-option-modifier nil
-      mac-allow-anti-aliasing t
-      mac-command-key-is-meta t)
-
-;; Enable auto-indent globally
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; ~~~~~~~~~~~~~~~
 ;; Color Theme: requires the package emacs-goodies-el
 (add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
@@ -42,10 +34,7 @@
 (column-number-mode 1)
 (line-number-mode 1)
 
-;; M-g key binding for goto-line
-(global-set-key [(meta g)] 'goto-line)
-
-;; Disable spalsh screen and startup message 
+;; Disable splash screen and startup message 
 (setq inhibit-startup-message t
   inhibit-startup-echo-area-message t)
 
@@ -59,7 +48,21 @@
 (load-library "paren")
 (show-paren-mode 1)
 
-;; Recent Files mapped to C-X C-r
+;;~~~~~~~~~~~~~~~~~~~
+;; Keyboard Mapping
+;;~~~~~~~~~~~~~~~~~~~~~
+
+;; Map M-g  ==> goto-line
+(global-set-key [(meta g)] 'goto-line)
+
+;; M-j  ==> join 2 lines
+;;
+(global-set-key (kbd "M-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+
+;; C-X C-r => Recent Files
 ;;
 (require 'recentf)
 (recentf-mode 1)
@@ -75,6 +78,21 @@
 
 (global-set-key "\C-x\C-r" 'recentf-open-files-compl)
 
+;; On Mac only:
+;;   map META to the Command key
+;;   map SUPER to the Option key
+;;   map HYPER to the Function key
+(when (eq system-type 'darwin) 
+  (setq mac-command-modifier 'meta
+      mac-option-modifier 'super
+      ns-function-modifier 'hyper
+      mac-allow-anti-aliasing t      
+      mac-command-key-is-meta t))
+
+
+;; Enable auto-indent globally
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
 ; Make buffer names even more unique (using a friendlier name)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
@@ -87,14 +105,6 @@
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 
-;; On Mac only:
-;;   map META to the Command key
-;;   map SUPER to the Option key
-;;   map HYPER to the Function key
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-(setq ns-function-modifier 'hyper)
-
 ;;~~~~~~~~~~~~
 ;; Make dired less verbose.
 ;;   Use ')' to show hidden ls details and '(' to hide them again.
@@ -104,14 +114,6 @@
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- ")
 
-
-;;~~~~~~~~~~~~
-;; M-j  join 2 lines
-;;
-(global-set-key (kbd "M-j")
-            (lambda ()
-                  (interactive)
-                  (join-line -1)))
 
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
 ;; 
