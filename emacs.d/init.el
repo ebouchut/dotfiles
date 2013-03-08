@@ -1,8 +1,8 @@
 (setq load-path (cons (expand-file-name "~/.emacs.d/elisp") load-path))
 
 ; Where to store custom settings
-(setq custom-file "~/.emacs-custom.el")
-(load custom-file)
+; (setq custom-file "~/.emacs-custom.el")
+; (load custom-file)
 
 ; allows syntax highlighting to work
 (global-font-lock-mode 1)
@@ -113,6 +113,19 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/external/dired-details-plus")
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- ")
+
+
+;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;; Package Manager (ELPA)
+;;   http://sachachua.com/blog/2011/01/emacs-24-package-manager/
+;;
+(require 'package)
+;; Add the original Emacs Lisp Package Archive
+(add-to-list 'package-archives
+             '("elpa" . "http://tromey.com/elpa/"))
+;; Add the user-contributed repository
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
