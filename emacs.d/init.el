@@ -17,13 +17,19 @@
 (setq inhibit-startup-message t)
 
 ;; ~~~~~~~~~~~~~~~
-;; Color Theme: requires the package emacs-goodies-el
-(add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
-(require 'color-theme)
+;; Color Theme (Pre emacs24): requires the package emacs-goodies-el
+;(add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
+;(require 'color-theme)
+;(eval-after-load "color-theme"
+;  '(progn
+;     (color-theme-initialize)
+;     (color-theme-hober)
+;     )
+;)
 
+;; Load color Theme Solarized
 (add-to-list 'custom-theme-load-path  "~/.emacs.d/themes/emacs-color-theme-solarized")
 (load-theme 'solarized-dark t)
-
 
 ;; Mettre un titre aux fenêtres
 (setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
@@ -76,7 +82,7 @@
 
 (global-set-key "\C-x\C-r" 'recentf-open-files-compl)
 
-;; C-Return Opne a line below
+;; C-Return Open a line below
 ;; C-Shift-Return Opne a line above
 ;;   http://whattheemacsd.com/editing-defuns.el-01.html
 ;;
@@ -156,18 +162,17 @@
 (setq auto-revert-verbose nil)
 
 
-;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-;; Package Manager (ELPA)
+;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;; Add Repositiories to the Package Manager
 ;;   http://sachachua.com/blog/2011/01/emacs-24-package-manager/
 ;;
 (require 'package)
-;; Add the original Emacs Lisp Package Archive
+;; Add the original Emacs Lisp Package Archive (ELPA)
 (add-to-list 'package-archives
              '("elpa" . "http://tromey.com/elpa/"))
 ;; Add the user-contributed repository
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
