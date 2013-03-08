@@ -80,12 +80,9 @@
 
 ;; On Mac only:
 ;;   map META to the Command key
-;;   map SUPER to the Option key
-;;   map HYPER to the Function key
 (when (eq system-type 'darwin) 
   (setq mac-command-modifier 'meta
-      mac-option-modifier 'super
-      ns-function-modifier 'hyper
+      mac-option-modifier nil
       mac-allow-anti-aliasing t      
       mac-command-key-is-meta t))
 
