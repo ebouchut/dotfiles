@@ -101,6 +101,8 @@
 
 
 ;;~~~~~~~~~~~~
+;; Dired
+
 ;; Make dired less verbose.
 ;;   Use ')' to show hidden ls details and '(' to hide them again.
 ;;   http://whattheemacsd.com/setup-dired.el-01.html
@@ -108,6 +110,16 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/external/dired-details-plus")
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- ")
+
+;; Silently auto-refresh dired buffers
+;;   http://whattheemacsd.com/sane-defaults.el-01.html
+
+;; Auto refresh buffers:
+(global-auto-revert-mode 1)
+
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
 
 
 ;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
