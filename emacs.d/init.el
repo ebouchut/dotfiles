@@ -96,6 +96,19 @@
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 
+;; C-x g => WebJump
+(global-set-key (kbd "C-x g") 'webjump)
+
+;; Add Webreference EN/FR and Urban Dictionary to webjump
+(eval-after-load "webjump"
+  '(add-to-list 'webjump-sites
+		'("WordReference EN" .
+		  [simple-query
+		   "www.wordreference.com"
+		   "http://www.wordreference.com/enfr/"
+		   ""])
+		)
+  )
 
 ;; On Mac only:
 ;;   map META to the Command key
