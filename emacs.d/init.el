@@ -76,6 +76,27 @@
 
 (global-set-key "\C-x\C-r" 'recentf-open-files-compl)
 
+;; C-Return Opne a line below
+;; C-Shift-Return Opne a line above
+;;   http://whattheemacsd.com/editing-defuns.el-01.html
+;;
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+
+
 ;; On Mac only:
 ;;   map META to the Command key
 (when (eq system-type 'darwin) 
