@@ -20,12 +20,10 @@
 ;; Color Theme: requires the package emacs-goodies-el
 (add-to-list 'load-path "~/.emacs.d/elisp/color-theme")
 (require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-hober)
-     )
-)
+
+(add-to-list 'custom-theme-load-path  "~/.emacs.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized-dark t)
+
 
 ;; Mettre un titre aux fenêtres
 (setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
@@ -62,7 +60,7 @@
                   (interactive)
                   (join-line -1)))
 
-;; C-X C-r => Recent Files
+;; C-X C-r => Open Recent Files
 ;;
 (require 'recentf)
 (recentf-mode 1)
@@ -125,6 +123,7 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 
+;;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;; IDO Mode - Interactive Do Things (Switch Buffer, Open File)
 ;; 
 (require 'ido)

@@ -34,3 +34,6 @@
 [submodule "emacs.d/elisp/external/ido-ubiquitous"]
 	path = emacs.d/elisp/external/ido-ubiquitous
 	url = git@github.com:emacsmirror/ido-ubiquitous.git
+[submodule "emacs.d/themes/emacs-color-theme-solarized"]
+	path = emacs.d/themes/emacs-color-theme-solarized
+	url = git@github.com:sellout/emacs-color-theme-solarized.git
