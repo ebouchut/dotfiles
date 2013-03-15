@@ -18,3 +18,5 @@ fi
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
+# Set terminal colours
+eval `dircolors ~/.dircolors`
