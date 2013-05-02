@@ -61,6 +61,10 @@ autocmd Syntax json sou ~/.vim/syntax/json.vim
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
+" Spell check and wrap commit message at 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+
 " ~~~~~~~~~~~~~~~~~~
 " Keyboard Mapping
 "
