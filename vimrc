@@ -49,7 +49,7 @@ set expandtab
 
 " Set Color scheme
 set t_Co=256
-set background=light " dark | light
+set background=dark " dark | light
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
