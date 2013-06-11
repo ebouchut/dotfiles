@@ -51,4 +51,5 @@ git() {hub "$@"}
 export SHELL=`which zsh`
 export EDITOR=emacs
 export PATH=$PATH:$HOME/bin
+export GIT_EDITOR=vim
  
