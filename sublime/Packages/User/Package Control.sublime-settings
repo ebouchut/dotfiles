@@ -2,11 +2,15 @@
 	"installed_packages":
 	[
 		"Bootstrap 3 Snippets",
+		"Browser Support",
 		"CoffeeScript",
 		"jQuery Snippets pack",
 		"JSONLint",
+		"LiveReload",
 		"Package Control",
-		"Pretty JSON"
+		"Pretty JSON",
+		"Search in Browser",
+		"View In Browser"
 	],
 	"repositories":
 	[

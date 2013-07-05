@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "/users/eb/download/bootstrap"
+		},
+		{
+			"path": "/users/eb/dev/bootstrap-test"
+		}
+	],
+	"settings": {
+		"sublime-view-in-browser": {
+            "baseUrl": "http://localhost/bootstrap-test",
+            "basePath": "/users/eb/dev/bootstrap-test"
+        }
+	}
+}
