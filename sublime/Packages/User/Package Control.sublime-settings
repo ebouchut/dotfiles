@@ -1,0 +1,15 @@
+{
+	"installed_packages":
+	[
+		"Bootstrap 3 Snippets",
+		"CoffeeScript",
+		"jQuery Snippets pack",
+		"JSONLint",
+		"Package Control",
+		"Pretty JSON"
+	],
+	"repositories":
+	[
+		"https://sublime.wbond.net/testing/packages.json"
+	]
+}

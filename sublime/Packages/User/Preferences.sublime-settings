@@ -1,0 +1,15 @@
+// http://wesbos.com/sublime-text-5-visual-tweaks/
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"font_size":  11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"bold_folder_labels":  true,
+	"highlight_line":      true,
+	"caret_style":         "phase",
+	"line_padding_bottom": 1,
+ 	"line_padding_top":    1,
+ 	"fade_fold_buttons":   true
+}
