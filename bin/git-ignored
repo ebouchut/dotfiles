@@ -1,5 +1,5 @@
 #!/bin/sh
 #
-# Displayed currently ignored paths in a git repository (git 1.7.2+)
+# Display paths currently ignored in the git repository (git 1.7.2+)
 
 git status -s  --ignored | sed -n 's/^!! \(.*\)$/\1/p'
