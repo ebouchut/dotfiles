@@ -1,0 +1,12 @@
+{
+	"files":
+	{
+		"jquery": "http://code.jquery.com/jquery.min.js",
+		"normalize": "https://github.com/necolas/normalize.css/blob/master/normalize.css"
+	},
+	"packages":
+	{
+		"bootstrap": "http://twitter.github.io/bootstrap/assets/bootstrap.zip",
+		"html5_boilerplate": "https://github.com/h5bp/html5-boilerplate/zipball/master"
+	}
+}
