@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Order filesystems by percent usage and keep header in place.
+df -P | column -t | tee >( head -n1 > /dev/stderr ) | grep % | sort -nrk5
