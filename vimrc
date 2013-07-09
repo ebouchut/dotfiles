@@ -26,16 +26,16 @@ set history=256    " History size
 set noerrorbells
 
 " Formatting
-set ts=2 " Tabs are 2 spaces
+set expandtab " Use spaces instead of tab
+set tabstop=2 " Tabs are 2 spaces
+set shiftwidth=2 " 2 spaces for indentation
 set bs=2 " Backspace over everything in insert mode
-set shiftwidth=2
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
 set autoindent
 set smarttab
-set expandtab
 "
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 " set laststatus=2 " Always show status line
