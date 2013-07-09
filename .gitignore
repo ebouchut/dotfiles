@@ -8,3 +8,5 @@ auto-save-list/
 .\#*
 sublime/Packages/User/Gist.sublime-settings
 sublime/Packages/User/Package\ Control.last-run
+
+!bin/
