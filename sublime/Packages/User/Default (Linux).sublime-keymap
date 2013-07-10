@@ -1,5 +1,6 @@
 [
-	{ "keys": ["shift+f12"], "command": "reindent"},
+   	{ "keys": ["ctrl+alt+è"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+   	{ "keys": ["shift+f12"], "command": "reindent"},
 	{
 		"keys": ["ctrl+alt+left"],
 		"command": "set_layout",
