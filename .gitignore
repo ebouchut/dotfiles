@@ -1,12 +1,18 @@
+# Vim 
 vim/.netrwhist
 auto-save-list/
 
-/emacs.d/.places
 # Emacs
+/emacs.d/.places
 *~
 \#*\#
 .\#*
+
+# Sublime
 sublime/Packages/User/Gist.sublime-settings
 sublime/Packages/User/Package\ Control.last-run
+sublime/Packages/User/project/
+sublime/Packages/User/RubyTest.last-run
+sublime/Packages/User/Package\ Control.cache/
 
 !bin/
