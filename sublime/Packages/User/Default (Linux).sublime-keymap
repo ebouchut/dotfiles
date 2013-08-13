@@ -1,4 +1,5 @@
 [
+    { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser"} },
     { "keys": ["ctrl+alt+s"], "command": "toggle_side_bar" },
     { "keys": ["ctrl+alt+è"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
     {"keys": ["ctrl+shift+r"], "command": "reindent" , "args": {"single_line": false}},
