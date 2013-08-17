@@ -87,7 +87,7 @@
         }
     },
     {
-        "keys": ["alt+shift+("],
+        "keys": ["alt+shift+§"],
         "command": "set_layout",
         "args":
         {
