@@ -21,3 +21,8 @@ unset MAILCHECK
 
 # Set terminal colours
 eval `dircolors ~/.dircolors`
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Rbenv
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export PATH="$HOME/.rbenv/bin:$PATH"
