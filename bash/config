@@ -28,9 +28,11 @@ echo "DISPLAY set to ${DISPLAY}"
 #
 # Ensure ssh-agent is started
 #
-KNAME=$HOME/.keychain/$HOST-sh
-/usr/bin/keychain $HOME/.ssh/id_dsa
-. $KNAME
+if [ -f /usr/bin/keychain ]; then
+  KNAME=$HOME/.keychain/$HOST-sh
+  /usr/bin/keychain $HOME/.ssh/id_dsa
+  . $KNAME
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

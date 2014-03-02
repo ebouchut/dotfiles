@@ -27,12 +27,15 @@ fi
 ## ~~~~~~~~~
 ## Rbenv
 ## ~~~~~~~~~
-if which rbenv > /dev/null; then
+if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
-
-
-
+if [[ $OSTYPE == "darwin"* ]]; then
+  # Enable color directory listings in MacOSX Terminal
+  # http://www.nomadjourney.com/2011/08/enabling-color-directory-listings-in-mac-os-x-terminal/
+  export CLICOLOR=1
+  export LSCOLORS=ExFxCxDxBxegedabagacad
+fi
 

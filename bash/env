@@ -1,26 +1,29 @@
 export HOST=`hostname`
 export EDITOR=emacs
 export GIT_EDITOR=vim
-export M2_HOME=/users/bin/apache-maven-2.2.1
-export M2=$M2_HOME/bin
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export PATH=$M2:$JAVA_HOME/bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PAGER='less -r'
 
 export PS1="\[\e]0;\u@\h: \W\a\]\[\e[0;32m\]\u\[\e[m\]@\[\e[0;31m\]\h:\[\e[m\]\[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$\[\e[m\] "
 
-# MacPorts
-if [[ $OSTYPE == darwin* ]] ; then
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-fi
+case $OSTYPE in
+  linux-gnu)
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Set terminal colours
+    eval `dircolors ~/.dircolors`
+  ;;
+  darwin*)
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  ;;
+esac
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Don't check mail when opening terminal.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 unset MAILCHECK
 
-# Set terminal colours
-eval `dircolors ~/.dircolors`
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Rbenv
