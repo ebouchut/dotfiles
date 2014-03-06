@@ -10,8 +10,7 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Rbenv
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if which $HOME/.rbenv/bin/rbenv > /dev/null; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 

@@ -6,6 +6,9 @@ source ~/bin/dotfiles/zsh/aliases
 #~~~~~~~~~~~~~~~~~~
 source $ZSH/oh-my-zsh.sh
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# rvm, rbenv
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 source ~/bin/dotfiles/zshenv
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
