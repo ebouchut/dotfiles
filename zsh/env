@@ -48,3 +48,8 @@ export EDITOR=emacs
 export GIT_EDITOR=vim
 export PAGER='less -r'
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Colours
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
