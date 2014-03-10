@@ -30,6 +30,7 @@ fi
 if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
+  source ~/.rbenv/completions/rbenv.bash
 fi
 
 if [[ $OSTYPE == "darwin"* ]]; then
