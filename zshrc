@@ -17,7 +17,7 @@ fi
 if which rbenv > /dev/null; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-  source ~/.rbenv/completions/rbenv.zsh 
+  source $(rbenv root)/completions/rbenv.zsh 
 fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
