@@ -83,3 +83,8 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+#~~~~~~~~~~~~~~~~~~~~
+# JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+#~~~~~~~~~~~~~~~~~~~~
+.idea/
