@@ -17,7 +17,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
-	excludesfile = /users/eb/.gitignore_global
+	excludesfile = /Users/eric/.gitignore_global
 [credential]
 	helper = osxkeychain
 [difftool "sourcetree"]
