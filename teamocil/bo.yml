@@ -1,0 +1,29 @@
+session:
+  name: bo
+  windows:
+    - name: bo-dev
+      root: ~/bo
+      layout: even-vertical
+      panes:
+        - cmd:  "./rails-server.sh start"
+        - cmd:  "tail -f log/development.log"
+    - name: bo-test
+      root: ~/bo
+      layout: even-vertical
+      panes:
+        - cmd:  "bundle exec guard"
+        - cmd:  "tail -f log/test.log"
+    - name: bo-db
+      root: ~/bo
+      layout: main-vertical
+      panes:
+        - cmd:  "tail -f log/development.log"
+        - cmd:  ""
+        - cmd:  "bundle exec rails c"
+        - cmd:  "cassandra-cli -k $(whoami)_netadge"
+    - name: rtb-project
+      root: ~/rtb-project/rtb-topologies
+      layout: main-vertical
+      panes:
+        - cmd:  "cd src/main/resources"
+
