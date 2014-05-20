@@ -1,8 +1,17 @@
 umask 0022
 
+#~~~~~~~~~~~~~~~~
+#  History
+#~~~~~~~~~~~~~~~~
 #
+# Share bash history across sessions
+shopt -s histappend
+export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+
+
+#~~~~~~~~~~~~~~~~
 # DISPLAY
-#
+#~~~~~~~~~~~~~~~~
 if [ -z "${SSH_CLIENT}" ]
 then
         echo $HOST > ~/.last_host
@@ -24,32 +33,72 @@ else
 fi
 echo "DISPLAY set to ${DISPLAY}"
 
+#~~~~~~~~~~~~~~~~
+# ssh-agent 
+#~~~~~~~~~~~~~~~~
 
-#
-# Ensure ssh-agent is started
-#
+# Ensure ssh-agent is strated
 if [ -f /usr/bin/keychain ]; then
   KNAME=$HOME/.keychain/$HOST-sh
   /usr/bin/keychain $HOME/.ssh/id_dsa
   . $KNAME
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+#~~~~~~~~~~~~~~~~
+#   Completion
+#~~~~~~~~~~~~~~~~
+# You don't need to enable this, if it's already enabled
+# in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc.
 # Requires the bash-builtins package.
 if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion
 fi
- 
 
-#
-# /opt
-#
-function useOpt()
-{
-        export PATH="${PATH}:/opt/bin"
-        export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/lib"
-}
+#~~~~~~~~~~~~~~~~~~~
+# Terminal Colours
+#~~~~~~~~~~~~~~~~~~~
+case $OSTYPE in
+  linux-gnu)
+    eval `dircolors ~/.dircolors`
+  ;;
+  darwin*)
+    # Enable color directory listings in MacOSX Terminal
+    # http://www.nomadjourney.com/2011/08/enabling-color-directory-listings-in-mac-os-x-terminal/
+    export CLICOLOR=1
+    export LSCOLORS=ExFxCxDxBxegedabagacad
+  ;;
+esac
 
-PATH=$PATH:$HOME/bin
+
+#~~~~~~~~~
+# RVM
+#~~~~~~~~
+# The goal here is that when RVM is available, we use that, 
+# and when it isn't we tell Bundler to install into a shared area 
+# inside my home directory. 
+# That way I never have to do gem installations with root privileges.
+if which rvm > /dev/null; then
+  # load RVM into a shell session.
+  [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  else
+     # make Bundler do passwordless installs to a sandbox rather than to the system
+    export BUNDLE_PATH=~/.bundle
+  fi
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
+
+
+#~~~~~~~~~
+# Rbenv
+#~~~~~~~~~
+if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  source ~/.rbenv/completions/rbenv.bash
+fi
+
+
+
