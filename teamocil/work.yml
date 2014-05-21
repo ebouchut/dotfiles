@@ -1,0 +1,24 @@
+session:
+  name: work
+  windows:
+    - name: home
+      root: ~
+      layout: main-horizontal
+      panes:
+        - cmd: 
+        - cmd: 
+        - cmd:  
+    - name: dev
+      root: ~/dev/rails_app/sandbox
+      layout: tiled
+      panes:
+        - cmd:  
+        - cmd:  "pry"
+        - cmd:  
+    - name: sandbox
+      root: ~/dev/rails_app/sandbox
+      layout: tiled
+      panes:
+        - cmd:  
+        - cmd:  "bundle exec rails c"
+        - cmd:  "tail -f log/development.log"
