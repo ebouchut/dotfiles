@@ -1,74 +1,4 @@
-umask 0022
-
-#~~~~~~~~~~~~~~~~
-#  History
-#~~~~~~~~~~~~~~~~
-#
-# Share bash history across sessions
-shopt -s histappend
-export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
-
-
-#~~~~~~~~~~~~~~~~
-# DISPLAY
-#~~~~~~~~~~~~~~~~
-if [ -z "${SSH_CLIENT}" ]
-then
-        echo $HOST > ~/.last_host
-        if [ -z "${DISPLAY}" ]
-        then
-                export DISPLAY=:0.0
-        fi
-        [[ "${DISPLAY}" =~ ":.*" ]]
-        if [ $? -eq 0 ]
-        then
-                echo "${HOST}${DISPLAY}" > ~/.last_display
-        else
-                echo "${DISPLAY}" > ~/.last_display
-        fi
-        xhost +
-else
-        export X_HOST="$(< ~/.last_host)"
-        export DISPLAY="$(< ~/.last_host)$(< ~/.last_display)"
-fi
-echo "DISPLAY set to ${DISPLAY}"
-
-#~~~~~~~~~~~~~~~~
-# ssh-agent 
-#~~~~~~~~~~~~~~~~
-
-# Ensure ssh-agent is strated
-if [ -f /usr/bin/keychain ]; then
-  KNAME=$HOME/.keychain/$HOST-sh
-  /usr/bin/keychain $HOME/.ssh/id_dsa
-  . $KNAME
-fi
-
-#~~~~~~~~~~~~~~~~
-#   Completion
-#~~~~~~~~~~~~~~~~
-# You don't need to enable this, if it's already enabled
-# in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc.
-# Requires the bash-builtins package.
-if [ -f /etc/bash_completion ]; then
- . /etc/bash_completion
-fi
-
-#~~~~~~~~~~~~~~~~~~~
-# Terminal Colours
-#~~~~~~~~~~~~~~~~~~~
-case $OSTYPE in
-  linux-gnu)
-    eval `dircolors ~/.dircolors`
-  ;;
-  darwin*)
-    # Enable color directory listings in MacOSX Terminal
-    # http://www.nomadjourney.com/2011/08/enabling-color-directory-listings-in-mac-os-x-terminal/
-    export CLICOLOR=1
-    export LSCOLORS=ExFxCxDxBxegedabagacad
-  ;;
-esac
-
+# 3rd Party Programs(ie. non shell)  Configuration
 
 #~~~~~~~~~
 # RVM
@@ -101,4 +31,9 @@ if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
 fi
 
 
-
+#~~~~~~~~~~~
+# Teamocil
+#~~~~~~~~~~~
+if which teamocil 2>&- ; then
+  complete -W "$(teamocil --list)" teamocil 
+fi
