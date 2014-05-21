@@ -42,7 +42,7 @@ if  which rvm > /dev/null; then
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 fi
 
-#
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # rbenv
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,4 +51,10 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
   source $(rbenv root)/completions/rbenv.zsh 
 fi
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Teamocil
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compctl -g '~/.teamocil/*(:t:r)' teamocil # Add autocompletion for teamocil
 
