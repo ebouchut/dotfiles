@@ -13,12 +13,12 @@ session:
       layout: tiled
       panes:
         - cmd:  
-        - cmd:  "pry"
-        - cmd:  
+        - cmd:  "bundle exec rails c"
+        - cmd:  "tail -f log/development.log"
     - name: sandbox
       root: ~/dev/rails_app/sandbox
       layout: tiled
       panes:
         - cmd:  
-        - cmd:  "bundle exec rails c"
-        - cmd:  "tail -f log/development.log"
+        - cmd:  "pry"
+        - cmd:  
