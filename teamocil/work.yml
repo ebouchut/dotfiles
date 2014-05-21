@@ -9,16 +9,16 @@ session:
         - cmd: 
         - cmd:  
     - name: dev
-      root: ~/dev/rails_app/sandbox
+      root: ~/dev
       layout: tiled
       panes:
-        - cmd:  
-        - cmd:  "bundle exec rails c"
-        - cmd:  "tail -f log/development.log"
+        - cmd: 
+        - cmd:  "pry"
+        - cmd: "ruby --version ; rails --version ; gem --version"  
     - name: sandbox
       root: ~/dev/rails_app/sandbox
       layout: tiled
       panes:
-        - cmd:  
-        - cmd:  "pry"
-        - cmd:  
+        - cmd:  "ruby --version ; rails --version ; gem --version" 
+        - cmd:  "bundle exec rails c"
+        - cmd:  "tail -f log/development.log"
