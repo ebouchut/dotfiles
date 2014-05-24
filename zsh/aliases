@@ -13,22 +13,3 @@ case $OSTYPE in
   ;;
 esac
 
-# Emacs: Source: https://github.com/JEG2/dotfiles/blob/master/bash/aliases
-function e() {
-  if [ "$1" == "-" ]; then
-    TMP="$(mktemp /tmp/emacsstdin-XXXXXX)"
-      cat >$TMP
-      emacsclient -a "" $TMP
-      rm $TMP
-      elif [ -z "$1" ]; then
-      emacsclient -a "" -t $@
-  else
-    emacsclient -a "" $@
-      fi
-}
-
-# inside Emacs terminals
-if [ -n "$EMACS" ]; then
-  alias ri="PAGER='less -R' ri -f ansi"
-  alias ssh="TERM=xterm ssh"
-fi

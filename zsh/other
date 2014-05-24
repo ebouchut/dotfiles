@@ -43,7 +43,7 @@ fi
 # rbenv
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if which rbenv > /dev/null; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="~/.rbenv/bin:~/.rbenv/shims:$PATH"
   eval "$(rbenv init -)"
   source $(rbenv root)/completions/rbenv.zsh 
 fi
@@ -55,3 +55,25 @@ if which teamocil > /dev/null 2>&-; then
   compctl -g '~/.teamocil/*(:t:r)' teamocil # Add autocompletion for teamocil
 fi
 
+# ~~~~~~~~~~~~
+# Emacs
+# ~~~~~~~~~~~~
+# Emacs: Source: https://github.com/JEG2/dotfiles/blob/master/bash/aliases
+function e() {
+  if [ "$1" == "-" ]; then
+    TMP="$(mktemp /tmp/emacsstdin-XXXXXX)"
+      cat >$TMP
+      emacsclient -a "" $TMP
+      rm $TMP
+      elif [ -z "$1" ]; then
+      emacsclient -a "" -t $@
+  else
+    emacsclient -a "" $@
+      fi
+}
+
+# inside Emacs terminals
+if [ -n "$EMACS" ]; then
+  alias ri="PAGER='less -R' ri -f ansi"
+  alias ssh="TERM=xterm ssh"
+fi
