@@ -1,0 +1,31 @@
+session:
+  name: home
+  windows:
+    - name: home
+      root: ~
+      layout: main-horizontal
+      panes:
+        - cmd: 
+        - cmd: 
+        - cmd:  
+    - name: dev
+      root: ~/dev
+      layout: tiled
+      panes:
+        - cmd: 
+        - cmd:  
+        - cmd:  
+    - name: blog
+      root: ~/dev/blog
+      layout: tiled
+      panes:
+        - cmd: 
+        - cmd:  "bundle exec middleman build"
+        - cmd: "bundle exec middleman"  
+    - name: learning-ruby
+      root: ~/dev/learning-ruby
+      layout: tiled
+      panes:
+        - cmd:  
+        - cmd: "pry"  
+        - cmd: bundle exec guard 
