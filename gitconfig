@@ -27,7 +27,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
-	default = tracking
+	default = matching
 [rerere]
 	enabled = 1
 [dude]
