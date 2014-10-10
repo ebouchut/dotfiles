@@ -12,6 +12,7 @@ case $OSTYPE in
 esac
 
 alias ddu='du --max-depth=1 -h'
+alias dul='du -sch .!(.) * | sort -h'
 alias git=hub  # Requires hub: http://defunkt.io/hub/
 
 
