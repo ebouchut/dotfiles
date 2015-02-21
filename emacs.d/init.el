@@ -317,9 +317,14 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-log-done 'time)
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/.orgmode")
+;; Set to <your Dropbox root directory>/MobileOrg.
+;; (setq org-mobile-directory "~/Dropbox/Applications/MobileOrg/")
+;;(setq org-mobile-agenda-files (quote ("~/Dropbox/orgmode/agenda.org")))
+;;(setq org-mobile-inbox-for-pull "~/Dropbox/orgmode/inbox.org")
+;;(setq org-todo-keywords
+;;      '((sequence "TODO(t)" "WAIT(w@/!)"  "|" "DONE(d!)" "CANCELED(c@)")))
 
 
 ;;~~~~~~~~~~~~~
@@ -401,3 +406,4 @@
   ["janvier" "février" "mars" "avril" "mai" "juin"
    "juillet" "aout" "septembre" "octobre" "novembre" "décembre"])
 
+(put 'downcase-region 'disabled nil)
