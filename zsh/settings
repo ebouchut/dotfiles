@@ -3,3 +3,6 @@
 # Zsh settings
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set -k # Enable comments in command line
+
+# Disable suggestion of correction for non existent commands
+unsetopt correct_all
