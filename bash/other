@@ -37,3 +37,11 @@ fi
 if which teamocil 2>&- ; then
   complete -W "$(teamocil --list)" teamocil 
 fi
+
+
+#~~~~~~~~~~~~~
+# xsh (xiki)
+#~~~~~~~~~~~~~
+if [ -f ~/.xsh ]; then
+  source ~/.xsh
+fi

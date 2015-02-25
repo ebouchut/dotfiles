@@ -77,3 +77,11 @@ if [ -n "$EMACS" ]; then
   alias ri="PAGER='less -R' ri -f ansi"
   alias ssh="TERM=xterm ssh"
 fi
+
+
+#~~~~~~~~~~~~~
+# xsh (xiki)
+#~~~~~~~~~~~~~
+if [ -f ~/.xsh ]; then
+  source ~/.xsh
+fi
