@@ -30,6 +30,7 @@ case $OSTYPE in
   darwin*)
     # Enable color directory listings in MacOSX Terminal
     # http://www.nomadjourney.com/2011/08/enabling-color-directory-listings-in-mac-os-x-terminal/
+    # LSCOLORS generator:   http://geoff.greer.fm/lscolors/
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
   ;;

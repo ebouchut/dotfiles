@@ -21,10 +21,14 @@ export PAGER='less -r'
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Colours
+#  generator:  http://geoff.greer.fm/lscolors/
+#  Keep LSCOLORS and LS_COLORS in sync using the abolve generator
+#    http://superuser.com/a/314459
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
+export LS_COLORS="di=1;34;40:ln=1;35;40:so=1;32;40:pi=1;33;40:ex=1;31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+#
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # History
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

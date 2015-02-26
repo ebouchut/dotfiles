@@ -2,7 +2,7 @@
 # Zsh aliases
 # ~~~~~~~~~~~~
 
-# Disabled alias because it prevents git completion from working
+# Disabled hub alias because it prevents git completion from working
 # https://github.com/robbyrussell/oh-my-zsh/issues/766
 #alias git=hub   
 
@@ -10,6 +10,10 @@ case $OSTYPE in
   linux-gnu)
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
+    alias lf='ls -CF --color'
+  ;;
+  darwin*)
+    alias lf='ls -CFG'
   ;;
 esac
 
