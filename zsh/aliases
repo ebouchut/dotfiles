@@ -13,9 +13,15 @@ case $OSTYPE in
     alias lf='ls -CF --color'
   ;;
   darwin*)
+    # Colored up cat!
+    # You must install Pygments first - "sudo easy_install Pygments"
+    # Source: https://github.com/barryclark/bashstrap 
+    alias c='pygmentize -O style=monokai -f console256 -g'
     alias ls='ls -G'
     alias ll='ls -lG'
     alias lf='ls -CFG'
+
+    # Show/hide hidden files in MacOS Finder
     alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
     alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
   ;;
