@@ -27,5 +27,6 @@ case $OSTYPE in
   ;;
 esac
 
+alias t='todo.sh'
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
