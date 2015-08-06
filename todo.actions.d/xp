@@ -1,0 +1,69 @@
+#!/bin/bash
+# 2013 Chris Jones  christopher.donald.jones@gmail.com 
+#github: https://github.com/gr0undzer0/xp
+# License: GPL, http://www.gnu.org/copyleft/gpl.html
+
+re='^[0-9]+$'
+OPTION=$2
+
+usage() {
+  cat <<-END_USAGE
+
+	    xp [-o] N_DAYS
+	      Print a readable guide of what you've accomplished in the last N_DAYS."
+	     The -o option ommit days on which no tasks were commited."
+	END_USAGE
+}
+
+if  [ "$1" = "usage"  -o  x"$1" = x"--help" ]; then 
+  usage
+  exit
+fi
+
+if [[ "$OPTION" =~ $re ]] 
+then
+  DAYS=$2
+elif [ "$OPTION" = "-o" ]
+then
+  DAYS=$3
+elif [ "$OPTION" = "-h" ]
+then
+  usage
+  exit
+else
+  usage
+  exit
+fi;
+
+gnudate() {
+    if hash gdate 2>/dev/null; then
+        gdate "$@"
+    else
+        date "$@"
+    fi
+}
+
+TODAY=$(gnudate +%s)
+WEEK=604800
+DAY=$((604800 / 7))
+for i in $(eval echo "{$DAYS..0}")
+do
+DAYX=$(($TODAY - $DAY * $i))
+DAYTITLE=$(gnudate -d "@"$DAYX +%Y-%m-%d\ )
+DAYWORD=$(gnudate -d $DAYTITLE +%A)
+DAYCONTENT=$(grep $DAYTITLE $DONE_FILE)
+
+if [[ -z "$DAYCONTENT" && "$OPTION" != -o  ]]
+then
+echo "=========================="
+echo "$DAYWORD" ":" "$DAYTITLE"
+echo "=========================="
+echo  "$DAYCONTENT"
+elif [[ ! -z "$DAYCONTENT" ]]
+then
+echo "=========================="
+echo "$DAYWORD" ":" "$DAYTITLE"
+echo "=========================="
+echo  "$DAYCONTENT"
+fi;
+done
