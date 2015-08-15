@@ -5,3 +5,7 @@
 set -k # Enable comments in command line
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# For batch file renaming: zmv -Q '(**/)(*).markdown' '$1$2.md'
+# Source: http://www.drbunsen.org/batch-file-renaming/
+autoload zmv
