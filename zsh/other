@@ -1,5 +1,13 @@
 # 3rd Party Programs (non zsh) Settings 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# SSH
+# Ensure ssh-agent is started then load the main key
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if [ -x /usr/bin/keychain ]; then
+  /usr/bin/keychain --quiet --clear $HOME/.ssh/id_rsa
+  source $HOME/.keychain/$HOST-sh
+fi
 
 #~~~~~~~~~~~~~~~~~~
 # oh-my-zsh
@@ -27,7 +35,8 @@ export DISABLE_AUTO_TITLE="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(completion gem git github rails ruby ssh-agent)
+#plugins=(completion gem git github rails ruby ssh-agent)
+plugins=(completion gem git github rails ruby)
 
 source $ZSH/oh-my-zsh.sh
 

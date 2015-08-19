@@ -60,15 +60,4 @@ else
 fi
 echo "DISPLAY set to ${DISPLAY}"
 
-#~~~~~~~~~~~~~~~~
-# ssh-agent 
-#~~~~~~~~~~~~~~~~
-
-# Ensure ssh-agent is started
-if [ -f /usr/bin/keychain ]; then
-  KNAME=$HOME/.keychain/$HOST-sh
-  /usr/bin/keychain $HOME/.ssh/id_dsa
-  . $KNAME
-fi
-
 
