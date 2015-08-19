@@ -4,8 +4,8 @@
 # SSH
 # Ensure ssh-agent is started then load the main key
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if [ -f /usr/bin/keychain ]; then
-  /usr/bin/keychain $HOME/.ssh/id_dsa
+if [ -f /usr/local/bin/keychain ]; then
+  /usr/local/bin/keychain $HOME/.ssh/id_dsa
   source $HOME/.keychain/$HOST-sh
 fi
 
