@@ -1,5 +1,5 @@
 session:
-  name: bo
+  name: eight
   windows:
     - name: bo-dev
       root: ~/bo
@@ -13,17 +13,17 @@ session:
       panes:
         - cmd:  "bundle exec guard"
         - cmd:  "tail -f log/test.log"
-    - name: bo-db
-      root: ~/bo
-      layout: main-vertical
-      panes:
-        - cmd:  "tail -f log/development.log"
-        - cmd:  ""
-        - cmd:  "bundle exec rails c"
-        - cmd:  "cassandra-cli -k $(whoami)_netadge"
+#    - name: bo-db
+#      root: ~/bo
+#      layout: main-vertical
+#      panes:
+#        - cmd:  "tail -f log/development.log"
+#        - cmd:  ""
+#        - cmd:  "bundle exec rails c"
+#        - cmd:  "cassandra-cli -k $(whoami)_netadge"
     - name: rtb-project
-      root: ~/rtb-project/rtb-topologies
+      root: ~/rtb-project
       layout: main-vertical
       panes:
-        - cmd:  "cd src/main/resources"
+        - cmd:  ""
 
