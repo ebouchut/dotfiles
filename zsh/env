@@ -15,8 +15,8 @@ git() {hub "$@"}
 # Regular 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export SHELL=`which zsh`
-export EDITOR=emacs
-export GIT_EDITOR=vim
+export EDITOR=vim
+#export GIT_EDITOR=vim
 export PAGER='less -r'
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
