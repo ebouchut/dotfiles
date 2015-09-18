@@ -18,6 +18,7 @@
 	autocrlf = input
 	safecrlf = true
 	excludesfile = ~/.gitignore_global
+	pager = less -F -X
 [credential]
 	helper = osxkeychain
 [difftool "sourcetree"]
