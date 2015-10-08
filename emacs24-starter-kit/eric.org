@@ -273,6 +273,14 @@ Use ')' to show hidden ls details and '(' to hide them again.
 *** TODO French calendar
 
 ** Org-Mode
+*** Todo dependencies
+Block entries from changing state to DONE while
+they have children that are not DONE.
+
+#+BEGIN_SRC emacs-lisp
+    (setq org-enforce-todo-dependencies t)
+#+END_SRC
+
 *** Agenda files 
 Tells org-mode where to search for TODO and scheduled items.
 
