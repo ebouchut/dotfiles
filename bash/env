@@ -8,6 +8,7 @@ fi
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PAGER='less -r'
+export GREP_OPTIONS="--color=auto"
 
 export PS1="\[\e]0;\u@\h: \W\a\]\[\e[0;32m\]\u\[\e[m\]@\[\e[0;31m\]\h:\[\e[m\]\[\e[0;34m\]\w\[\e[m\]\[\e[0;33m\]\$\[\e[m\] "
 
