@@ -1,6 +1,7 @@
 # Vim 
 vim/.netrwhist
 auto-save-list/
+vim/plugged/
 
 # Emacs
 /emacs.d/.places
