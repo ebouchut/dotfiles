@@ -6,10 +6,18 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'kana/vim-textobj-user'
-  Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-projectionist'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rake'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug 'kana/vim-textobj-user'
+"  Plug 'tpope/unimpaired'
 call plug#end()
 
 
