@@ -1,31 +1,28 @@
-session:
-  name: home
-  windows:
-    - name: home
-      root: ~
-      layout: main-horizontal
-      panes:
-        - cmd: 
-        - cmd: 
-        - cmd:  
-    - name: dev
-      root: ~/dev
-      layout: tiled
-      panes:
-        - cmd: 
-        - cmd:  
-        - cmd:  
-    - name: blog
-      root: ~/dev/blog
-      layout: tiled
-      panes:
-        - cmd: 
-        - cmd:  "bundle exec middleman build"
-        - cmd: "bundle exec middleman"  
-    - name: learning-ruby
-      root: ~/dev/learning-ruby
-      layout: tiled
-      panes:
-        - cmd:  
-        - cmd: "pry"  
-        - cmd: bundle exec guard 
+windows:
+  - name: home
+    root: ~
+    layout: even-horizontal
+    panes:
+      - ls
+      - date
+  - name: upcase
+    root: ~/dev/upcase
+    layout: main-vertical
+    panes:
+      - vim . 
+      - git status
+      - ls
+  - name: dev
+    root: ~/dev
+    layout: main-vertical
+    panes:
+      - vim .
+      - pwd
+      - ls
+  - name: dotfiles
+    root: ~/dev/dotfiles
+    layout: main-vertical
+    panes:
+      - vim .
+      - git status
+      - git plog
