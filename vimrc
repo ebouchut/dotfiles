@@ -1,12 +1,17 @@
 "~~~~~~~~~~~~~~~~~~~~~
-" Package Manager
+" Plugins
 "~~~~~~~~~~~~~~~~~~~~~
-
 " Make % ruby aware
 runtime macros/matchit.vim
 
+" To install new plugins:
+"   :PlugInstall
+" To update plugins:
+"   :PlugUpdate
 call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'rizzatti/dash.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-fugitive'
@@ -108,3 +113,8 @@ cmap w!! %!sudo tee > /dev/null %
 
 " F12: Toggle background dark/light
 map <F12> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Dash.vim
+"~~~~~~~~~~~~~~~~~~~~~
+:nmap <silent> <leader>d <Plug>DashSearch
