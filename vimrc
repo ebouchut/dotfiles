@@ -25,6 +25,14 @@ call plug#begin('~/.vim/plugged')
 "  Plug 'tpope/unimpaired'
 call plug#end()
 
+let mapleader = ","
+
+" Dash integration
+nmap <silent> <leader>d <Plug>DashSearch
+" Paste Clipboard at cursor position
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+" Ident current file, keeping current position
+map <Leader>i mmgg=G'm
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " General Configuration
@@ -114,7 +122,3 @@ cmap w!! %!sudo tee > /dev/null %
 " F12: Toggle background dark/light
 map <F12> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-"~~~~~~~~~~~~~~~~~~~~~
-" Dash.vim
-"~~~~~~~~~~~~~~~~~~~~~
-:nmap <silent> <leader>d <Plug>DashSearch
