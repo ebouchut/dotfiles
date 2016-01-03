@@ -94,3 +94,11 @@ fi
 if [ -f ~/.xsh ]; then
   source ~/.xsh
 fi
+
+#~~~~~~~~~~~~~
+# Open argument in Dash
+#   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/
+#~~~~~~~~~~~~~
+ function dash() {
+   open "dash://$*"
+}
