@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rake'
   Plug 'tpope/vim-surround'
+  Plug 'thoughtbot/vim-rspec'
   Plug 'vim-ruby/vim-ruby'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'kana/vim-textobj-user'
