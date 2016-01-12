@@ -4,10 +4,8 @@
 " Make % ruby aware
 runtime macros/matchit.vim
 
-" To install new plugins:
-"   :PlugInstall
-" To update plugins:
-"   :PlugUpdate
+" install plugins:  :PlugInstall
+" update plugins:   :PlugUpdate
 call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
   Plug 'ctrlpvim/ctrlp.vim'
@@ -24,15 +22,51 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'kana/vim-textobj-user'
+  Plug 'christoomey/vim-tmux-runner'
 "  Plug 'tpope/unimpaired'
 call plug#end()
 
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Vim/Tmux integration
+"~~~~~~~~~~~~~~~~~~~~~~~
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen
+" and start ruby irb
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+
+" <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
+" and start pry
+nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
+
+"~~~~~~~~~~~~~~~~~
+" Run RSpec Tests
+"   vim-rspec required
+"~~~~~~~~~~~~~~~~~
+let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Leader
+"~~~~~~~~~~~~~~~~~~~~~~~
 let mapleader = ","
 
-" Dash integration
+" Dash integration (dash.vim required)
 nmap <silent> <leader>d <Plug>DashSearch
+
 " Paste Clipboard at cursor position
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 " Ident current file, keeping current position
 map <Leader>i mmgg=G'm
 
@@ -88,7 +122,7 @@ set smarttab
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
 "~~~~~~~~~~~~~~~~~~~~~
-  autocmd BufReadPost *
+autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \ exe "normal! g`\"" |
       \ endif
