@@ -59,16 +59,32 @@ map <Leader>a :call RunAllSpecs()<CR>
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Leader
 "~~~~~~~~~~~~~~~~~~~~~~~
+" Map <Leader> to ,
 let mapleader = ","
 
 " Dash integration (dash.vim required)
 nmap <silent> <leader>d <Plug>DashSearch
+
+" Copy the entire buffer to the system register
+nmap <leadrr>co ggVG*y
 
 " Paste Clipboard at cursor position
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " Ident current file, keeping current position
 map <Leader>i mmgg=G'm
+
+" Reload ~/.vimrc
+nmap <leader>so :source $MYVIMRC<cr>
+
+" Open ~/.vimrc in a split window
+nmap <leader>vr :sp $MYVIMRC<cr>
+
+" Edit ~/.vimrc in a new tab
+nmap <leader>vt :tabedit $MYVIMRC<cr>
+
+" Pre-populate  a split command with the current directory
+nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<cr>
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " General Configuration
@@ -85,6 +101,9 @@ set hlsearch " Highlight search
 set timeoutlen=250 " Time to wait after ESC (default causes an annoying delay)
 set history=256    " History size
 set noerrorbells
+
+set showcmd " Show the curent command while it is active
+set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
