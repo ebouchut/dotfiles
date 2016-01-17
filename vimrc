@@ -30,66 +30,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 "~~~~~~~~~~~~~~~~~~~~~~~
-" Vim/Tmux integration
-"~~~~~~~~~~~~~~~~~~~~~~~
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
-nnoremap <leader>= :wincmd =<CR>
-
-" <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen
-" and start ruby irb
-nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
-
-" <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
-" and start pry
-nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
-
-"~~~~~~~~~~~~~~~~~
-" Run RSpec Tests
-"   vim-rspec required
-"~~~~~~~~~~~~~~~~~
-let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
-
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-"~~~~~~~~~~~~~~~~~~~~~~~
-" Leader
-"~~~~~~~~~~~~~~~~~~~~~~~
-" Map <Leader> to ,
-let mapleader = ","
-
-" Dash integration (dash.vim required)
-nmap <silent> <leader>d <Plug>DashSearch
-
-" Copy the entire buffer to the system register
-nmap <leader>co ggVG*y
-
-" Paste Clipboard at cursor position
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<CR>
-
-" Ident current file, keeping current position
-map <Leader>i mmgg=G'm
-
-" Reload ~/.vimrc
-nmap <leader>so :source $MYVIMRC<CR>
-
-" Open ~/.vimrc in a split window
-nmap <leader>vr :sp $MYVIMRC<CR>
-
-" Edit ~/.vimrc in a new tab
-nmap <leader>vt :tabedit $MYVIMRC<CR>
-
-" Pre-populate  a split command with the current directory
-nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<CR>
-
-"~~~~~~~~~~~~~~~~~~~~~~~
 " General Configuration
 "~~~~~~~~~~~~~~~~~~~~~~~
 set nocompatible      " We're running Vim, not Vi!
@@ -103,6 +43,9 @@ set history=256    " History size
 set noerrorbells
 set showcmd " Show the curent command while it is active
 
+" Map <Leader> to ,
+let mapleader = ","
+
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search
 "~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,9 +58,6 @@ set wrapscan    " Search wrap around
 " Display search hitory using either of these 2 options
 "  q/  
 " /<Control>F
-
-" <Leader>h  Toggle highlighting of search pattern matches
-noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 "~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
@@ -172,6 +112,77 @@ colorscheme solarized
 
 " <F12>: Toggle background dark/light
 map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Window / Split size
+"~~~~~~~~~~~~~~~~~~~~~~~
+
+" Maximize focused split 
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Vim/Tmux integration
+"~~~~~~~~~~~~~~~~~~~~~~~
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Leader Mappings
+"~~~~~~~~~~~~~~~~~~~~~~~
+
+" Copy the entire buffer to the system register
+nmap <leader>co ggVG*y
+
+" Dash integration (dash.vim required)
+nmap <silent> <leader>d <Plug>DashSearch
+
+" <Leader>h  Toggle highlighting of search pattern matches
+noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
+
+" Ident current file, keeping current position
+nmap <Leader>i mmgg=G'm
+
+" Paste Clipboard at cursor position
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<CR>
+
+" Reload ~/.vimrc
+nmap <leader>so :source $MYVIMRC<CR>
+
+" Open ~/.vimrc in a split window
+nmap <leader>vr :sp $MYVIMRC<CR>
+
+" Edit ~/.vimrc in a new tab
+nmap <leader>vt :tabedit $MYVIMRC<CR>
+
+" Pre-populate  a split command with the current directory
+nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<CR>
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
+nnoremap <leader>= :wincmd =<CR>
+
+" <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen
+" and start ruby irb
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
+
+" <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
+" and start pry
+nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
+
+"~~~~~~~~~~~~~~~~~
+" Run RSpec Tests
+"   vim-rspec required
+"~~~~~~~~~~~~~~~~~
+let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Pretty-print JSON files
