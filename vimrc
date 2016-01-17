@@ -117,7 +117,7 @@ set wrapscan    " Search wrap around
 " /<Control>F
 
 " <Leader>h  Toggle highlighting of search pattern matches
-noremap <silent> <leader>h  :set hlsearch! hlsearch?<CR>
+noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 "~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
