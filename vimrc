@@ -17,6 +17,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-projectionist'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rake'
+  Plug 'tomtom/tlib_vim'               "required by vim-snipmate
+  Plug 'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
+  Plug 'garbas/vim-snipmate'           " Show available snippets: <C-R><Tab> in insert mode
   Plug 'tpope/vim-surround'
   Plug 'thoughtbot/vim-rspec'
   Plug 'vim-ruby/vim-ruby'
@@ -34,16 +37,16 @@ autocmd VimResized * :wincmd =
 
 
 " zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
+nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
+nnoremap <leader>= :wincmd =<CR>
 
 " <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen
 " and start ruby irb
-nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
 
 " <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
 " and start pry
-nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<cr>
+nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 "~~~~~~~~~~~~~~~~~
 " Run RSpec Tests
@@ -66,25 +69,25 @@ let mapleader = ","
 nmap <silent> <leader>d <Plug>DashSearch
 
 " Copy the entire buffer to the system register
-nmap <leadrr>co ggVG*y
+nmap <leader>co ggVG*y
 
 " Paste Clipboard at cursor position
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<CR>
 
 " Ident current file, keeping current position
 map <Leader>i mmgg=G'm
 
 " Reload ~/.vimrc
-nmap <leader>so :source $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<CR>
 
 " Open ~/.vimrc in a split window
-nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>vr :sp $MYVIMRC<CR>
 
 " Edit ~/.vimrc in a new tab
-nmap <leader>vt :tabedit $MYVIMRC<cr>
+nmap <leader>vt :tabedit $MYVIMRC<CR>
 
 " Pre-populate  a split command with the current directory
-nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<cr>
+nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " General Configuration
@@ -94,18 +97,29 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins: Automatically detect file types
-filetype plugin indent on
-
-set hlsearch " Highlight search
 
 set timeoutlen=250 " Time to wait after ESC (default causes an annoying delay)
 set history=256    " History size
 set noerrorbells
-
 set showcmd " Show the curent command while it is active
-set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
 
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Search
+"~~~~~~~~~~~~~~~~~~~~~~~
+set hlsearch    " Highlight all matches after entering a search pattern
+set incsearch   " incremetal search
+set ignorecase  " Case insensitive search
+set smartcase   " Override ignorecase if pattenr contains uppercase
+set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
+set wrapscan    " Search wrap around
+" Display search hitory using either of these 2 options
+"  q/  
+" /<Control>F
+
+" <Leader>h  Toggle highlighting of search pattern matches
+noremap <silent> <leader>h  :set hlsearch! hlsearch?<CR>
+
+"~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
 "~~~~~~~~~~~~~~~~~~~~~
 if has("autocmd")
@@ -156,6 +170,9 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
+" <F12>: Toggle background dark/light
+map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
+
 "~~~~~~~~~~~~~~~~~~~~~
 "  Pretty-print JSON files
 "~~~~~~~~~~~~~~~~~~~~~
@@ -174,6 +191,4 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cmap w!! %!sudo tee > /dev/null %
 
-" F12: Toggle background dark/light
-map <F12> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
