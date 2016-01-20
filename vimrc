@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'rizzatti/dash.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-fugitive'
@@ -130,7 +131,7 @@ set winheight=999
 autocmd VimResized * :wincmd =
 
 "~~~~~~~~~~~~~~~~~~~~~~~
-" Leader Mappings
+" Key Bindings / Mapping
 "~~~~~~~~~~~~~~~~~~~~~~~
 
 " Copy the entire buffer to the system register
@@ -146,7 +147,7 @@ noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 nmap <Leader>i mmgg=G'm
 
 " Paste Clipboard at cursor position
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<CR>
+map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 
 " Reload ~/.vimrc
 nmap <leader>so :source $MYVIMRC<CR>
@@ -162,6 +163,7 @@ nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
+" Rebalance panes
 nnoremap <leader>= :wincmd =<CR>
 
 " <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen

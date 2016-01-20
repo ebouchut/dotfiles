@@ -78,3 +78,11 @@ fi
  function dash() {
    open "dash://$*"
  }
+
+p
+
+#~~~~~~~~~~~~~~~~~~~~
+# fzf (Fuzzy Finder)
+#   https://github.com/junegunn/fzf
+#~~~~~~~~~~~~~~~~~~~~
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
