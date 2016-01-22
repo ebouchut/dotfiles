@@ -10,6 +10,7 @@
 	pullify = config add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
 	plog = log --graph --format='%Cgreen%h %Cred%aN%Cblue%d %Creset%s %C(yellow)(%cr)%Creset'
 	logf = log --follow
+	unstage = reset HEAD --
 [apply]
 	whitespace = nowarn
 [merge]
