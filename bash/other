@@ -86,3 +86,18 @@ p
 #   https://github.com/junegunn/fzf
 #~~~~~~~~~~~~~~~~~~~~
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#~~~~~~~~~~~~~
+# Tmux
+#~~~~~~~~~~~~~
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+
+# Automatically connect to a tmux session on startup, 
+# even creating the session as needed.
+ensure_tmux_is_running
