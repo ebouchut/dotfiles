@@ -42,7 +42,12 @@ filetype plugin on    " Enable filetype-specific plugins: Automatically detect f
 set timeoutlen=250 " Time to wait after ESC (default causes an annoying delay)
 set history=256    " History size
 set noerrorbells
-set showcmd " Show the curent command while it is active
+set showcmd        " Show the curent command while it is active
+set ruler          " show the cursor position all the time
+
+"set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
+set laststatus=2 " Always show status line
+" set autowrite    " Automatically :write before running commands
 
 " Map <Leader> to ,
 let mapleader = ","
@@ -73,25 +78,27 @@ endif
 " Show list of files
 "~~~~~~~~~~~~~~~~~~~~~
 set wildmode=longest,list,full
-set wildmenu
+set wildmenu   " Autocomplete command-line
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Formatting
 "~~~~~~~~~~~~~~~~~~~~~
-set expandtab " Use spaces instead of tab
-set tabstop=2 " Tabs are 2 spaces
+set expandtab    " Use spaces instead of tab
+set tabstop=2    " Tabs are 2 spaces
 set shiftwidth=2 " 2 spaces for indentation
-set bs=2 " Backspace over everything in insert mode
+set shiftround
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
+set bs=2         " Backspace over everything in insert mode
+set autoindent
+set smarttab
+
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
-set autoindent
-set smarttab
 
-"
-"set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
-" set laststatus=2 " Always show status line
+set textwidth=80   " Break line longer than 80 characters
+set colorcolumn=+1 " Draw a vertical line at column 81
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
@@ -118,7 +125,7 @@ map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 " Window / Split size
 "~~~~~~~~~~~~~~~~~~~~~~~
 
-" Maximize focused split 
+" Maximize focused split
 set winwidth=84
 set winheight=5
 set winminheight=5
@@ -204,4 +211,23 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cmap w!! %!sudo tee > /dev/null %
 
+"~~~~~~~~~~~~~~~~~~~~~
+" Use ag (The Silver Searcher) over grep
+"   https://github.com/ggreer/the_silver_searcher
+"~~~~~~~~~~~~~~~~~~~~~
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
 
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Local config
+"~~~~~~~~~~~~~~~~~~~~~
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
