@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-fugitive'
+  Plug 'jceb/vim-orgmode'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-projectionist'
   Plug 'tpope/vim-rails'
