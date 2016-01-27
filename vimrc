@@ -186,7 +186,8 @@ nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 " Run RSpec Tests
 "   vim-rspec required
 "~~~~~~~~~~~~~~~~~
-let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+" let g:rspec_command = "!rspec --drb {spec}"
+let g:rspec_command = "VtrSendCommand! rspec {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
