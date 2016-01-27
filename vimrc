@@ -206,6 +206,9 @@ autocmd FileType json set equalprg=json_reformat
 " Spell check and wrap commit message at 72 characters
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" Bind `q` to close the buffer for help files
+autocmd Filetype help nnoremap <buffer> q :q<CR>
+
 "~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Mapping
 "~~~~~~~~~~~~~~~~~~~~~
