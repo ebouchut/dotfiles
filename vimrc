@@ -1,32 +1,34 @@
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugins
+"
+" Install plugins:  :PlugInstall
+" Update plugins:   :PlugUpdate
 "~~~~~~~~~~~~~~~~~~~~~
 " Make % ruby aware
 runtime macros/matchit.vim
 
-" install plugins:  :PlugInstall
-" update plugins:   :PlugUpdate
 call plug#begin('~/.vim/plugged')
-  Plug 'altercation/vim-colors-solarized'
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tpope/vim-commentary'
   Plug 'rizzatti/dash.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-fugitive'
+  Plug 'altercation/vim-colors-solarized'
   Plug 'jceb/vim-orgmode'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-projectionist'
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-rake'
+
   Plug 'tomtom/tlib_vim'               "required by vim-snipmate
   Plug 'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
   Plug 'garbas/vim-snipmate'           " Show available snippets: <C-R><Tab> in insert mode
-  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rake'
   Plug 'thoughtbot/vim-rspec'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug 'tpope/vim-surround'
   Plug 'kana/vim-textobj-user'
+  Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'christoomey/vim-tmux-runner'
 "  Plug 'tpope/unimpaired'
 call plug#end()
@@ -180,6 +182,8 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 
 " <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
 " and start pry
+" install plugins:  :PlugInstall
+" update plugins:   :PlugUpdate
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 "~~~~~~~~~~~~~~~~~
