@@ -8,27 +8,26 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'tpope/vim-commentary'
-  Plug 'rizzatti/dash.vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-fugitive'
+  Plug    'ctrlpvim/ctrlp.vim'
+  Plug    'rizzatti/dash.vim'
+  Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug      'tomtom/tlib_vim'            "required by vim-snipmate
+  Plug   'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
+  Plug       'tpope/vim-bundler'
+  Plug       'tpope/vim-commentary' " Comment the current line (go comment): gcc
+  Plug       'tpope/vim-fugitive'
   Plug 'altercation/vim-colors-solarized'
-  Plug 'jceb/vim-orgmode'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-projectionist'
-
-  Plug 'tomtom/tlib_vim'               "required by vim-snipmate
-  Plug 'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
-  Plug 'garbas/vim-snipmate'           " Show available snippets: <C-R><Tab> in insert mode
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-rake'
-  Plug 'thoughtbot/vim-rspec'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'tpope/vim-surround'
-  Plug 'kana/vim-textobj-user'
-  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug        'jceb/vim-orgmode'
+  Plug       'tpope/vim-repeat'
+  Plug       'tpope/vim-projectionist'
+  Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
+  Plug       'tpope/vim-rails'
+  Plug       'tpope/vim-rake'
+  Plug  'thoughtbot/vim-rspec'
+  Plug    'vim-ruby/vim-ruby'
+  Plug       'tpope/vim-surround'
+  Plug        'kana/vim-textobj-user'
+  Plug    'nelstrom/vim-textobj-rubyblock'
   Plug 'christoomey/vim-tmux-runner'
 "  Plug 'tpope/unimpaired'
 call plug#end()
