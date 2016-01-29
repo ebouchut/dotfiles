@@ -124,18 +124,5 @@ ensure_tmux_is_running() {
 # even creating the session as needed.
 ensure_tmux_is_running
 
-#~~~~~~~~~~~~~
-# git
-#~~~~~~~~~~~~~
-# No arguments: `git status`
-# With arguments: acts like `git`
-g() {
-  if [[ $# > 0 ]]; then
-    git $@
-  else
-    git status
-  fi
-}
-
 # Complete g like git
 compdef g=git
