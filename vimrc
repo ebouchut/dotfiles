@@ -133,6 +133,17 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Where to put a new window
+"~~~~~~~~~~~~~~~~~~~~~~~~~~
+" When using split, put the new window below the current one.
+set splitbelow
+" When using vsplit, put the new window right of the current one.
+set splitright
+
+" Close all other windows. Make the current window the only one on the screen.
+" :on
+
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Vim/Tmux integration
 "~~~~~~~~~~~~~~~~~~~~~~~
