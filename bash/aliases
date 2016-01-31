@@ -27,7 +27,7 @@ case $OSTYPE in
   ;;
 esac
 
-alias t='todo.sh'
+alias t='task'
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
 alias git=hub  # Requires hub: http://defunkt.io/hub/
