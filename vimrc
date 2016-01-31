@@ -1,3 +1,7 @@
+" Requirements:
+"  * taskwarrior: 
+"      brew install task
+"
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugins
 "
@@ -8,9 +12,12 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
+  Plug    'powerman/vim-plugin-AnsiEsc'
   Plug    'ctrlpvim/ctrlp.vim'
   Plug    'rizzatti/dash.vim'
   Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug  'majutsushi/tagbar'
+  Plug      'tbabej/taskwiki'
   Plug      'tomtom/tlib_vim'            "required by vim-snipmate
   Plug   'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
   Plug       'tpope/vim-bundler'
@@ -21,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug       'tpope/vim-repeat'
   Plug       'tpope/vim-projectionist'
   Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
+  Plug     'blindFS/vim-taskwarrior'
   Plug       'tpope/vim-rails'
   Plug       'tpope/vim-rake'
   Plug  'thoughtbot/vim-rspec'
@@ -29,6 +37,7 @@ call plug#begin('~/.vim/plugged')
   Plug        'kana/vim-textobj-user'
   Plug    'nelstrom/vim-textobj-rubyblock'
   Plug 'christoomey/vim-tmux-runner'
+  Plug     'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
 "  Plug 'tpope/unimpaired'
 call plug#end()
 
@@ -192,8 +201,6 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 
 " <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
 " and start pry
-" install plugins:  :PlugInstall
-" update plugins:   :PlugUpdate
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 "~~~~~~~~~~~~~~~~~
