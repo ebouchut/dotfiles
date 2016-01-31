@@ -1,0 +1,19 @@
+# Clog is a colorized log tail utility. 
+# It can spot patterns in an input stream and colorize or suppress the lines.
+# It can also decorate the lines with time- or date-stamps.
+# my_command | clog | tail -fR
+
+# http://tasktools.org/projects/clog.html
+
+# Standard syslog entries.
+default rule /warn|debug/   --> yellow line
+default rule /error|severe/ --> red line
+default rule /critical/     --> bold red line
+default rule /critical/     --> blank
+default rule /ignore/       --> suppress
+
+# Apache access.log status codes
+apache rule / 2[0-9][0-9] / --> green match
+apache rule / 3[0-9][0-9] / --> yellow match
+apache rule / 4[0-9][0-9] / --> red match
+apache rule / 5[0-9][0-9] / --> bold red match
