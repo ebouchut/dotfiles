@@ -11,6 +11,7 @@
 	plog = log --graph --format='%Cgreen%h %Cred%aN%Cblue%d %Creset%s %C(yellow)(%cr)%Creset'
 	logf = log --follow
 	unstage = reset HEAD --
+	s = status
 [apply]
 	whitespace = nowarn
 [merge]
