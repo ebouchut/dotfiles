@@ -188,7 +188,7 @@ nmap <leader>vr :sp $MYVIMRC<CR>
 nmap <leader>vt :tabedit $MYVIMRC<CR>
 
 " Pre-populate  a split command with the current directory
-nmap <leader>v :vnew <C-r>=esca,e(expand("%:p:h"), '').'/'<CR>
+nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
