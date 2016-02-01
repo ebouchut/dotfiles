@@ -142,10 +142,10 @@ nmap <F8> :TagbarToggle<CR>
 "~~~~~~~~~~~~~~~~~~~~~~~
 
 " Maximize focused split
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winwidth=84
+" set winheight=5
+" set winminheight=5
+" set winheight=999
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Where to put a new window
