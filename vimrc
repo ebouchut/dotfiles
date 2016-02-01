@@ -133,6 +133,11 @@ colorscheme solarized
 map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~
+" TagBar
+"~~~~~~~~~~~~~~~~~~~~~~~
+nmap <F8> :TagbarToggle<CR>
+
+"~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
 "~~~~~~~~~~~~~~~~~~~~~~~
 
