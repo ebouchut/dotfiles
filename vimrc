@@ -1,7 +1,8 @@
 " Requirements:
-"  * taskwarrior: 
-"      brew install task
+"  * taskwarrior, fzf, ag: 
+"      brew install task tasksh vit ansiesc fzf ag
 "
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugins
 "
@@ -157,6 +158,8 @@ set splitright
 
 " Close all other windows. Make the current window the only one on the screen.
 " :on
+
+" :help opening-window
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Vim/Tmux integration

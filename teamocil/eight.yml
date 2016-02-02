@@ -1,31 +1,29 @@
-session:
-  name: eight
-  windows:
-    - name: bo-dev
-      root: ~/bo
-      layout: even-vertical
-      panes:
-        - cmd:  ""
-        - cmd:  "tail -f log/development.log"
-    - name: bo-test
-      root: ~/bo
-      layout: even-vertical
-      panes:
-        - cmd:  "bundle exec guard"
-        - cmd:  "tail -f log/test.log"
-    - name: bo-console
-      root: ~/bo
-      layout: even-vertical
-      panes:
-        - cmd:  "bundle exec rails c"
-    - name: rtb-project
-      root: ~/rtb-project
-      layout: main-vertical
-      panes:
-        - cmd:  ""
-    - name: druid
-      root: /data/druid/utils/d8a-conjure
-      layout: main-vertical
-      panes:
-        - cmd:  ""
-        - cmd:  ""
+windows:
+  - name: bo-dev
+    root: ~/bo
+    layout: even-vertical
+    panes:
+      - ls
+      - tail -f log/development.log
+  - name: bo-test
+    root: ~/bo
+    layout: even-vertical
+    panes:
+      - bundle exec guard
+      - tail -f log/test.log"
+  - name: bo-console
+    root: ~/bo
+    layout: even-vertical
+    panes:
+      - bundle exec rails c
+  - name: rtb-project
+    root: ~/rtb-project
+    layout: main-vertical
+    panes:
+      - git status
+  - name: druid
+    root: /data/druid/utils/d8a-conjure
+    layout: main-vertical
+    panes:
+      - ls
+      - date
