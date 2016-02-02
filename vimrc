@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug       'tpope/vim-rails'
   Plug       'tpope/vim-rake'
   Plug  'thoughtbot/vim-rspec'
+  Plug 'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
   Plug    'vim-ruby/vim-ruby'
   Plug       'tpope/vim-surround'
   Plug        'kana/vim-textobj-user'
