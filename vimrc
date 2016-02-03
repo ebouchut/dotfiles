@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug    'ctrlpvim/ctrlp.vim'
   Plug    'rizzatti/dash.vim'
   Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'vim-scripts/loremipsum'
   Plug  'majutsushi/tagbar'
   Plug      'tbabej/taskwiki'
   Plug      'tomtom/tlib_vim'            "required by vim-snipmate
