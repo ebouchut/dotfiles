@@ -32,7 +32,7 @@ call plug#begin('~/.vim/plugged')
   Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
   Plug     'blindFS/vim-taskwarrior'
   Plug       'tpope/vim-rails'
-  Plug       'tpope/vim-rake'
+  Plug       'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
   Plug  'thoughtbot/vim-rspec'
   Plug 'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
   Plug    'vim-ruby/vim-ruby'
@@ -89,20 +89,27 @@ if has("autocmd")
 endif
 
 "~~~~~~~~~~~~~~~~~~~~~
-" Show list of files
+" Autocomplete (Show list of files)
 "~~~~~~~~~~~~~~~~~~~~~
 set wildmode=longest,list,full
 set wildmenu   " Autocomplete command-line
 
-"~~~~~~~~~~~~~~~~~~~~~
-" Formatting
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~
+" Tabulation
+"~~~~~~~~~~~~~
 set expandtab    " Use spaces instead of tab
 set tabstop=2    " Tabs are 2 spaces
 set shiftwidth=2 " 2 spaces for indentation
-set shiftround
+set shiftround   " Round indent to a multiple of shiftwidth
+"~~~~~~~~~~~~~~~~~~~~~~~~~
+" Show special characters
+"~~~~~~~~~~~~~~~~~~~~~~~~~
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
-set bs=2         " Backspace over everything in insert mode
+set bs=indent,eol,start " Backspace over everything in insert mode
+
+"~~~~~~~~~~~~~
+" Indentation
+"~~~~~~~~~~~~~
 set autoindent
 set smarttab
 
@@ -111,8 +118,19 @@ set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
 
+"~~~~~~~~~~~~~
+" Line length
+"~~~~~~~~~~~~~
 set textwidth=80   " Break line longer than 80 characters
 set colorcolumn=+1 " Draw a vertical line at column 81
+
+"~~~~~~~~~~~~~~~~~~~~~
+"  Line Numbers
+"~~~~~~~~~~~~~~~~~~~~~
+set number  " Display absolute line numbers by default
+
+autocmd InsertEnter * :set norelativenumber " Absolute number in insert mode
+autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
@@ -123,9 +141,8 @@ autocmd BufReadPost *
       \ endif
 
 "~~~~~~~~~~~~~~~~~~~~~
-"  Set Color scheme
+"  Colours, terminal
 "~~~~~~~~~~~~~~~~~~~~~
-syntax enable
 set t_Co=256
 set background=dark " dark | light
 let g:solarized_termcolors=256
@@ -185,6 +202,10 @@ noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 " Ident current file, keeping current position
 nmap <Leader>i mmgg=G'm
 
+" <Leader>n  Toggle Line numbers
+" (http://vim.wikia.com/wiki/Display_line_numbers)
+nmap <Leader>n :set number! relativenumber!<CR>
+
 " Paste Clipboard at cursor position
 map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 
@@ -202,6 +223,7 @@ nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
+
 " Rebalance panes
 nnoremap <leader>= :wincmd =<CR>
 
