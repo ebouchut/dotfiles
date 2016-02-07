@@ -132,6 +132,9 @@ set number  " Display absolute line numbers by default
 autocmd InsertEnter * :set norelativenumber " Absolute number in insert mode
 autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
 
+autocmd FocusLost *   :set norelativenumber
+autocmd FocusGained * :set relativenumber
+
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
 "~~~~~~~~~~~~~~~~~~~~~
@@ -189,6 +192,7 @@ autocmd VimResized * :wincmd =
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Key Bindings / Mapping
 "~~~~~~~~~~~~~~~~~~~~~~~
+" :h map-which-key  " Find keys available
 
 " Copy the entire buffer to the system register
 nmap <leader>co ggVG*y
@@ -202,9 +206,12 @@ noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 " Ident current file, keeping current position
 nmap <Leader>i mmgg=G'm
 
-" <Leader>n  Toggle Line numbers
+" <Leader>n  Toggle line numbers 
 " (http://vim.wikia.com/wiki/Display_line_numbers)
-nmap <Leader>n :set number! relativenumber!<CR>
+nmap <Leader>n :set number!<CR>
+
+" <Leader>r  Toggle relative line numbers
+nmap <Leader>r :set relativenumber!<CR>
 
 " Paste Clipboard at cursor position
 map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
