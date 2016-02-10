@@ -63,9 +63,6 @@ set ruler          " show the cursor position all the time
 set laststatus=2 " Always show status line
 " set autowrite    " Automatically :write before running commands
 
-" Map <Leader> to space
-let mapleader = " "
-
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search
 "~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,6 +98,7 @@ set expandtab    " Use spaces instead of tab
 set tabstop=2    " Tabs are 2 spaces
 set shiftwidth=2 " 2 spaces for indentation
 set shiftround   " Round indent to a multiple of shiftwidth
+
 "~~~~~~~~~~~~~~~~~~~~~~~~~
 " Show special characters
 "~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,6 +132,11 @@ autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
 
 autocmd FocusLost *   :set norelativenumber
 autocmd FocusGained * :set relativenumber
+
+"~~~~~~~~~~~~~~~~~~~~~
+"  Code Folding
+"~~~~~~~~~~~~~~~~~~~~~
+set nofold " No Code folding
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
@@ -194,6 +197,9 @@ autocmd VimResized * :wincmd =
 "~~~~~~~~~~~~~~~~~~~~~~~
 " :h map-which-key  " Find keys available
 
+" Map <Leader> to space
+let mapleader = " "
+
 " Copy the entire buffer to the system register
 nmap <leader>co ggVG*y
 
@@ -220,7 +226,7 @@ map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 nmap <leader>so :source $MYVIMRC<CR>
 
 " Open ~/.vimrc in a split window
-nmap <leader>vr :sp $MYVIMRC<CR>
+nmap <leader>vr :split $MYVIMRC<CR>
 
 " Edit ~/.vimrc in a new tab
 nmap <leader>vt :tabedit $MYVIMRC<CR>
