@@ -136,7 +136,7 @@ autocmd FocusGained * :set relativenumber
 "~~~~~~~~~~~~~~~~~~~~~
 "  Code Folding
 "~~~~~~~~~~~~~~~~~~~~~
-set nofold " No Code folding
+set nofoldenable " No Code folding
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Restore cursor position
