@@ -300,6 +300,12 @@ if executable('ag')
 endif
 
 "~~~~~~~~~~~~~~~~~~~~~
+" VimWiki
+"~~~~~~~~~~~~~~~~~~~~~
+" Generate the HTML when saving a wiki page
+let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1} ]
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Local config
 "~~~~~~~~~~~~~~~~~~~~~
 if filereadable($HOME . "/.vimrc.local")
