@@ -200,6 +200,9 @@ autocmd VimResized * :wincmd =
 " Map <Leader> to space
 let mapleader = " "
 
+" Switch between the last two files <=> :e #<CR>
+nnoremap <leader><leader> <c-^>
+
 " Copy the entire buffer to the system register
 nmap <leader>co ggVG*y
 
