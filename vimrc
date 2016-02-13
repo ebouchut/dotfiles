@@ -1,5 +1,5 @@
 " Requirements:
-"  * taskwarrior, fzf, ag: 
+"  * taskwiki, taskwarrior, task, fzf, ag: 
 "      brew install task tasksh vit ansiesc fzf ag
 "
 
@@ -13,7 +13,6 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
-  Plug    'powerman/vim-plugin-AnsiEsc'
   Plug    'ctrlpvim/ctrlp.vim'
   Plug    'rizzatti/dash.vim'
   Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -26,7 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug       'tpope/vim-commentary' " Comment the current line (go comment): gcc
   Plug       'tpope/vim-fugitive'
   Plug 'altercation/vim-colors-solarized'
-  Plug        'jceb/vim-orgmode'
+  Plug    'powerman/vim-plugin-AnsiEsc' " used by taskwiki
   Plug       'tpope/vim-repeat'
   Plug       'tpope/vim-projectionist'
   Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
@@ -138,9 +137,9 @@ autocmd FocusGained * :set relativenumber
 "~~~~~~~~~~~~~~~~~~~~~
 set nofoldenable " No Code folding
 
-"~~~~~~~~~~~~~~~~~~~~~
-"  Restore cursor position
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"  Restore previous cursor position
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \ exe "normal! g`\"" |
