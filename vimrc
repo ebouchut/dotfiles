@@ -302,8 +302,8 @@ endif
 "~~~~~~~~~~~~~~~~~~~~~
 " VimWiki
 "~~~~~~~~~~~~~~~~~~~~~
-" Generate the HTML when saving a wiki page
-let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1} ]
+" Generate the HTML and the TOC when saving a wiki page
+let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Local config
