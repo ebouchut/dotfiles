@@ -202,8 +202,8 @@ let mapleader = " "
 " Switch between the last two files <=> :e #<CR>
 nnoremap <leader><leader> <c-^>
 
-" Copy the entire buffer to the system register
-nmap <leader>co ggVG*y
+" Copy the entire buffer to the clipboard (system register)
+nmap <leader>co mmggVG"*y`m
 
 " Dash integration (dash.vim required)
 nmap <silent> <leader>d <Plug>DashSearch
@@ -212,7 +212,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 " Ident current file, keeping current position
-nmap <Leader>i mmgg=G'm
+nmap <Leader>i mmgg=G`m
 
 " <Leader>n  Toggle line numbers 
 " (http://vim.wikia.com/wiki/Display_line_numbers)
@@ -227,7 +227,7 @@ map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 " Reload ~/.vimrc
 nmap <leader>so :source $MYVIMRC<CR>
 
-" Open ~/.vimrc in a split window
+" Edit ~/.vimrc in a split window
 nmap <leader>vr :split $MYVIMRC<CR>
 
 " Edit ~/.vimrc in a new tab
