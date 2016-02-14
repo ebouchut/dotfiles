@@ -85,11 +85,25 @@ if has("autocmd")
     filetype plugin on
 endif
 
-"~~~~~~~~~~~~~~~~~~~~~
-" Autocomplete (Show list of files)
-"~~~~~~~~~~~~~~~~~~~~~
-set wildmode=longest,list,full
+"~~~~~~~~~~~~~~
+" Autocomplete
+"~~~~~~~~~~~~~~
+set wildmode=list:longest,list:full
 set wildmenu   " Autocomplete command-line
+
+" <Shift><Tab> pops up autocompletion
+inoremap <S-Tab> <c-n>
+
+" <Tab> inserts a tab when at beginning of a line, or else use completion.
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 
 "~~~~~~~~~~~~~
 " Tabulation
