@@ -269,6 +269,9 @@ nmap <leader>vt :tabedit $MYVIMRC<CR>
 " Pre-populate  a split command with the current directory
 nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
 
+" Execute the current line as a Vim script
+map <Leader>x :exec getline(".")<cr>
+
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
 
@@ -335,7 +338,7 @@ if executable('ag')
 endif
 
 "~~~~~~~~~~~~~~~~~~~~~
-" VimWiki
+" Plugin VimWiki
 "~~~~~~~~~~~~~~~~~~~~~
 " Generate the HTML and the TOC when saving a wiki page
 let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
