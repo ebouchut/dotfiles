@@ -130,6 +130,8 @@ set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
 
+" Indent inside <li> and <p> tags
+let g:html_indent_tags = 'li\|p'
 
 "~~~~~~~~~~~~~
 " Spell Check
