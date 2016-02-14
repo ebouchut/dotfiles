@@ -1,10 +1,11 @@
+" Thank you @thoughbot @r00k, @christoomey, 
 " Requirements:
 "  * taskwiki, taskwarrior, task, fzf, ag: 
 "      brew install task tasksh vit ansiesc fzf ag
 "
 
 "~~~~~~~~~~~~~~~~~~~~~
-" Plugins
+" Vim Plugins
 "
 " Install plugins:  :PlugInstall
 " Update plugins:   :PlugUpdate
@@ -18,18 +19,18 @@ call plug#begin('~/.vim/plugged')
   Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'vim-scripts/loremipsum'
   Plug  'majutsushi/tagbar'
-  Plug      'tbabej/taskwiki'
+  Plug      'tbabej/taskwiki' " Tasks in vimwiki (requires vim-taskwarrior)
   Plug      'tomtom/tlib_vim'            "required by vim-snipmate
   Plug   'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
   Plug       'tpope/vim-bundler'
-  Plug       'tpope/vim-commentary' " Comment the current line (go comment): gcc
-  Plug       'tpope/vim-fugitive'
-  Plug 'altercation/vim-colors-solarized'
-  Plug    'powerman/vim-plugin-AnsiEsc' " used by taskwiki
+  Plug       'tpope/vim-commentary' " Comment the current line: gcc
+  Plug       'tpope/vim-fugitive'   " Git
+  Plug 'altercation/vim-colors-solarized'  " Solarized colour theme
+  Plug    'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
   Plug       'tpope/vim-repeat'
   Plug       'tpope/vim-projectionist'
   Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
-  Plug     'blindFS/vim-taskwarrior'
+  Plug     'blindFS/vim-taskwarrior' " interface to task-warrior (required)
   Plug       'tpope/vim-rails'
   Plug       'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
   Plug  'thoughtbot/vim-rspec'
