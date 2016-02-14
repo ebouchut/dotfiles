@@ -130,6 +130,16 @@ set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
 
+
+"~~~~~~~~~~~~~
+" Spell Check
+"~~~~~~~~~~~~~
+" spellfile location 
+set spellfile=$HOME/.vim-spell-en.utf-8.add
+
+" Autocomplete also suggests dictionary words when spell check is enabled
+set complete+=kspell
+
 "~~~~~~~~~~~~~
 " Line length
 "~~~~~~~~~~~~~
