@@ -164,6 +164,12 @@ autocmd FocusGained * :set relativenumber
 "~~~~~~~~~~~~~~~~~~~~~
 set nofoldenable " No Code folding
 
+"~~~~~~~~~~~~~~~~~~~~~
+" Diff
+"~~~~~~~~~~~~~~~~~~~~~
+" Always use vertical diffs
+set diffopt+=vertical
+
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Restore previous cursor position
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
