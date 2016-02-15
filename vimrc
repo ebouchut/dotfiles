@@ -254,7 +254,7 @@ nmap <Leader>n :set number!<CR>
 " <Leader>r  Toggle relative line numbers
 nmap <Leader>r :set relativenumber!<CR>
 
-" Paste Clipboard at cursor position
+" Paste system clipboard at cursor position
 map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 
 " Reload ~/.vimrc
@@ -304,7 +304,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 "~~~~~~~~~~~~~~~~~~~~~
 autocmd BufRead,BufNewFile *.json set filetype=json
 " json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
-autocmd Syntax json sou ~/.vim/syntax/json.vim
+autocmd Syntax json source ~/.vim/syntax/json.vim
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
