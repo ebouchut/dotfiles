@@ -61,7 +61,7 @@ set ruler          " show the cursor position all the time
 
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 set laststatus=2 " Always show status line
-" set autowrite    " Automatically :write before running commands
+" set autowrite    " Automatically write before running commands
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search
@@ -251,6 +251,7 @@ nmap <Leader>i mmgg=G`m
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nmap <Leader>n :set number!<CR>
 
+
 " <Leader>r  Toggle relative line numbers
 nmap <Leader>r :set relativenumber!<CR>
 
@@ -316,6 +317,12 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
+
+" <Space> goto "next" help page
+autocmd Filetype help nnoremap <Space>   <C-F>
+
+" <BS> goto "previous" help page
+autocmd Filetype help nnoremap <BS>      <C-B>
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Mapping
