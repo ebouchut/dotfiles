@@ -60,4 +60,5 @@ else
 fi
 echo "DISPLAY set to ${DISPLAY}"
 
-
+# Disable flow control
+stty -ixon & >/dev/null
