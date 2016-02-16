@@ -31,7 +31,7 @@ alias t='task'
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
 alias git=hub  # Requires hub: http://defunkt.io/hub/
-
+alias g=git
 
 # Emacs: Source: https://github.com/JEG2/dotfiles/blob/master/bash/aliases
 function e() {
