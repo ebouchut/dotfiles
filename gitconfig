@@ -12,6 +12,7 @@
 	logf = log --follow
 	unstage = reset HEAD --
 	s = status
+	ctags = !.git/hooks/ctags
 [apply]
 	whitespace = nowarn
 [merge]
@@ -44,3 +45,5 @@
 	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
 [commit]
+[init]
+	templatedir = ~/.git_template
