@@ -330,6 +330,13 @@ autocmd Filetype help nnoremap <BS>      <C-B>
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cmap w!! %!sudo tee > /dev/null %
 
+" save the current file in insert and normal mode
+map  <C-s> :wq<CR>
+imap <C-s> <ESC>:wq<CR>a
+
+" open up a new tab
+map <C-t> <ESC>:tabnew<CR>
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Use ag (The Silver Searcher) over grep
 "   https://github.com/ggreer/the_silver_searcher
