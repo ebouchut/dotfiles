@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+#
+# Author: Tim Pope
+# See: http://tbaggery.com/2007/05/03/easy-ruby-examples.html
+
+print ARGV.join(" ") + " #=> "
+begin 
+  p(eval(ARGV.join(" "), binding, "(demo)"))
+rescue Exception => e
+  puts "#<#{e.class}: #{e.message[/.*/]}>"
+end
