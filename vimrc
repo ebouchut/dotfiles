@@ -146,7 +146,13 @@ set complete+=kspell
 " Line length
 "~~~~~~~~~~~~~
 set textwidth=80   " Break line longer than 80 characters
-set colorcolumn=+1 " Draw a vertical line at column 81
+" set colorcolumn=+1 " Draw a vertical line at column 81
+
+" Make the lines longer than 80 character stand out
+"   using magenta background for the character in column 81
+" Source:  https://youtu.be/aHm36-na4-4?t=144
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Line Numbers
