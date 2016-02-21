@@ -160,11 +160,11 @@ call matchadd('ColorColumn', '\%81v', 100)
 "~~~~~~~~~~~~~~~~~~~~~
 set number  " Display absolute line numbers by default
 
-autocmd InsertEnter * :set norelativenumber " Absolute number in insert mode
-autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
+"autocmd InsertEnter * :set norelativenumber " Absolute number in insert mode
+"autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
 
-autocmd FocusLost *   :set norelativenumber
-autocmd FocusGained * :set relativenumber
+"autocmd FocusLost *   :set norelativenumber
+"autocmd FocusGained * :set relativenumber
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Help
