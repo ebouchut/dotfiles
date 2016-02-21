@@ -353,6 +353,13 @@ imap <C-s> <ESC>:wq<CR>a
 " open up a new tab
 map <C-t> <ESC>:tabnew<CR>
 
+" Substitue globally (I did not use <S> but <c><c> to replace the current line)
+nmap  S  :%s//g<LEFT><LEFT>
+
+" Substitute globally the previouly searched pattern
+nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
+
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Use ag (The Silver Searcher) over grep
 "   https://github.com/ggreer/the_silver_searcher
