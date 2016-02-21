@@ -3,7 +3,8 @@
 "  * taskwiki, taskwarrior, task, fzf, ag: 
 "      brew install task tasksh vit ansiesc fzf ag
 "
-
+" Disable vimrc:  vim -U NONE
+"
 "~~~~~~~~~~~~~~~~~~~~~
 " Vim Plugins
 "
@@ -69,7 +70,7 @@ set laststatus=2 " Always show status line
 set hlsearch    " Highlight all matches after entering a search pattern
 set incsearch   " incremetal search
 set ignorecase  " Case insensitive search
-set smartcase   " Override ignorecase if pattenr contains uppercase
+set smartcase   " Override ignorecase if pattern contains uppercase
 set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
 set wrapscan    " Search wrap around
 " Display search hitory using either of these 2 options
@@ -148,8 +149,8 @@ set complete+=kspell
 set textwidth=80   " Break line longer than 80 characters
 " set colorcolumn=+1 " Draw a vertical line at column 81
 
-" Make the lines longer than 80 character stand out
-"   using magenta background for the character in column 81
+" Make lines longer than 80 character stand out
+"   using magenta background only for the character in column 81
 " Source:  https://youtu.be/aHm36-na4-4?t=144
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
@@ -164,6 +165,15 @@ autocmd InsertLeave * :set relativenumber   " Relative number in normal mode
 
 autocmd FocusLost *   :set norelativenumber
 autocmd FocusGained * :set relativenumber
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Help
+"~~~~~~~~~~~~~~~~~~~~~
+"   :help func<TAB>
+"   :helpgrep
+"   :help function-list
+set infercase " "Preserves the case of the partial word you're completing, 
+"                  even if the selected completion word was differently cased."
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Code Folding
@@ -327,8 +337,8 @@ autocmd Filetype help nnoremap <buffer> q :q<CR>
 " <Space> goto "next" help page
 autocmd Filetype help nnoremap <Space>   <C-F>
 
-" <BS> goto "previous" help page
-autocmd Filetype help nnoremap <BS>      <C-B>
+" <Backspace> goto "previous" help page
+autocmd Filetype help nnoremap <Backspace>  <C-B>
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Mapping
