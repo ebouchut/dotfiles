@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug       'tpope/vim-fugitive'   " Git
   Plug 'altercation/vim-colors-solarized'  " Solarized colour theme
   Plug    'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
+  Plug 'christoomey/vim-quicklink'  " Look up a topic in google and insert the markdwn link
   Plug       'tpope/vim-repeat'
   Plug       'tpope/vim-projectionist'
   Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
@@ -42,7 +43,7 @@ call plug#begin('~/.vim/plugged')
   Plug    'nelstrom/vim-textobj-rubyblock'
   Plug 'christoomey/vim-tmux-runner'
   Plug     'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
-"  Plug 'tpope/unimpaired'
+  Plug       'mattn/webapi-vim'  " required by vim-quicklinks
 call plug#end()
 
 "~~~~~~~~~~~~~~~~~~~~~~~
