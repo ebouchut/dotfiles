@@ -1,0 +1,8 @@
+"~~~~~~~~~~~~~~~~~~~~~~~~~
+"  MacOS Specific vimrc
+"~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Markdown preview using MacDown
+map <leader>pre :w<CR>:silent! !open -a MacDown % > /dev/null &<CR>:redraw!<CR>
+
+

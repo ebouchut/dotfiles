@@ -384,6 +384,17 @@ let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 let g:vimwiki_html_header_numbering=1
 
 "~~~~~~~~~~~~~~~~~~~~~
+" OS Specific config
+"~~~~~~~~~~~~~~~~~~~~~
+if has('unix')
+  if has('mac')
+    source ~/.vimrc-macos
+  else
+    source ~/.vimrc-linux
+  endif
+end
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Local config
 "~~~~~~~~~~~~~~~~~~~~~
 if filereadable($HOME . "/.vimrc.local")
