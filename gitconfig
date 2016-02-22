@@ -47,3 +47,5 @@
 [commit]
 [init]
 	templatedir = ~/.git_template
+[gitsh]
+	noGreeting = true
