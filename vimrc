@@ -21,8 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/loremipsum'
   Plug  'majutsushi/tagbar'
   Plug      'tbabej/taskwiki' " Tasks in vimwiki (requires vim-taskwarrior)
-  Plug      'tomtom/tlib_vim'            "required by vim-snipmate
-  Plug   'MarcWeber/vim-addon-mw-utils'  "required by vim-snipmate
+  Plug      'SirVer/utilsnips'  " Snippets engine
   Plug       'tpope/vim-bundler'
   Plug       'tpope/vim-commentary' " Comment the current line: gcc
   Plug       'tpope/vim-fugitive'   " Git
@@ -31,13 +30,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-quicklink'  " Look up a topic in google and insert the markdwn link
   Plug       'tpope/vim-repeat'
   Plug       'tpope/vim-projectionist'
-  Plug      'garbas/vim-snipmate'        " Show available snippets: <C-R><Tab> in insert mode
   Plug     'blindFS/vim-taskwarrior' " interface to task-warrior (required)
   Plug       'tpope/vim-rails'
   Plug       'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
   Plug  'thoughtbot/vim-rspec'
   Plug 'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
   Plug    'vim-ruby/vim-ruby'
+  Plug    'honza/vim-snippets'  " Snippets
   Plug       'tpope/vim-surround'
   Plug        'kana/vim-textobj-user'
   Plug    'nelstrom/vim-textobj-rubyblock'
@@ -383,6 +382,15 @@ let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 
 " Number HTML headings starting from level 1
 let g:vimwiki_html_header_numbering=1
+
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin utilsnips
+"~~~~~~~~~~~~~~~~~~~~~
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
