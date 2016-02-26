@@ -383,15 +383,6 @@ let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 " Number HTML headings starting from level 1
 let g:vimwiki_html_header_numbering=1
 
-
-"~~~~~~~~~~~~~~~~~~~~~
-" Plugin utilsnips
-"~~~~~~~~~~~~~~~~~~~~~
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
 "~~~~~~~~~~~~~~~~~~~~~
