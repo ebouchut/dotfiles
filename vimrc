@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/loremipsum'
   Plug  'majutsushi/tagbar'
   Plug      'tbabej/taskwiki' " Tasks in vimwiki (requires vim-taskwarrior)
-  Plug      'SirVer/utilsnips'  " Snippets engine
+  Plug      'SirVer/ultisnips'  " Snippets engine
   Plug       'tpope/vim-bundler'
   Plug       'tpope/vim-commentary' " Comment the current line: gcc
   Plug       'tpope/vim-fugitive'   " Git
