@@ -15,34 +15,35 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
-  Plug    'ctrlpvim/ctrlp.vim'
-  Plug    'rizzatti/dash.vim'
-  Plug    'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'vim-scripts/loremipsum'
-  Plug  'majutsushi/tagbar'
-  Plug      'tbabej/taskwiki' " Tasks in vimwiki (requires vim-taskwarrior)
-  Plug      'SirVer/ultisnips'  " Snippets engine
-  Plug       'tpope/vim-bundler'
-  Plug       'tpope/vim-commentary' " Comment the current line: gcc
-  Plug       'tpope/vim-fugitive'   " Git
-  Plug 'altercation/vim-colors-solarized'  " Solarized colour theme
-  Plug    'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
-  Plug 'christoomey/vim-quicklink'  " Look up a topic in google and insert the markdwn link
-  Plug       'tpope/vim-repeat'
-  Plug       'tpope/vim-projectionist'
-  Plug     'blindFS/vim-taskwarrior' " interface to task-warrior (required)
-  Plug       'tpope/vim-rails'
-  Plug       'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
-  Plug  'thoughtbot/vim-rspec'
-  Plug 'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
-  Plug    'vim-ruby/vim-ruby'
-  Plug    'honza/vim-snippets'  " Snippets
-  Plug       'tpope/vim-surround'
-  Plug        'kana/vim-textobj-user'
-  Plug    'nelstrom/vim-textobj-rubyblock'
-  Plug 'christoomey/vim-tmux-runner'
-  Plug     'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
-  Plug       'mattn/webapi-vim'  " required by vim-quicklinks
+Plug      'ctrlpvim/ctrlp.vim'
+Plug      'rizzatti/dash.vim'
+Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug   'vim-scripts/loremipsum'
+Plug    'majutsushi/tagbar'         " Show tags in 
+Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
+Plug        'SirVer/ultisnips'      " Snippets engine
+Plug         'tpope/vim-bundler'
+Plug         'tpope/vim-commentary' " Comment the current line: gcc
+Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
+Plug         'tpope/vim-fugitive'   " Git
+Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
+Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
+Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
+Plug        'tpope/vim-repeat'
+Plug         'tpope/vim-projectionist'
+Plug       'blindFS/vim-taskwarrior' " interface to task-warrior (required)
+Plug         'tpope/vim-rails'
+Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
+Plug    'thoughtbot/vim-rspec'
+Plug   'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
+Plug      'vim-ruby/vim-ruby'
+Plug         'honza/vim-snippets'  " Snippets
+Plug         'tpope/vim-surround'
+Plug          'kana/vim-textobj-user'
+Plug      'nelstrom/vim-textobj-rubyblock'
+Plug   'christoomey/vim-tmux-runner'
+Plug       'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
+Plug         'mattn/webapi-vim'  " required by vim-quicklinks
 call plug#end()
 
 "~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,9 +82,9 @@ set wrapscan    " Search wrap around
 " Filtetype detection
 "~~~~~~~~~~~~~~~~~~~~~
 if has("autocmd")
-    filetype on
-    filetype indent on
-    filetype plugin on
+  filetype on
+  filetype indent on
+  filetype plugin on
 endif
 
 "~~~~~~~~~~~~~~
@@ -263,7 +264,10 @@ noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 " Ident current file, keeping current position
 nmap <Leader>i mmgg=G`m
 
-" <Leader>n  Toggle line numbers 
+"  Rename curent file  (vim-eunuch required)
+nnoremap <Leader>m :Move <C-r>%
+
+" <Leader>n  Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nmap <Leader>n :set number!<CR>
 
