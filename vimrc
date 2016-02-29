@@ -19,6 +19,7 @@ Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug   'vim-scripts/loremipsum'
+Plug   'AndrewRadev/splitjoin.vim'
 Plug    'majutsushi/tagbar'         " Show tags in 
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
