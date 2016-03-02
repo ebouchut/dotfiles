@@ -42,6 +42,7 @@ Plug    'thoughtbot/vim-rspec'
 Plug   'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
 Plug      'vim-ruby/vim-ruby'
 Plug         'honza/vim-snippets'  " Snippets
+Plug         'tpope/vim-speeddating' " Increment/Decrement dates, times (C-A/C-X)
 Plug         'tpope/vim-surround'
 Plug          'kana/vim-textobj-user'
 Plug      'nelstrom/vim-textobj-rubyblock'
