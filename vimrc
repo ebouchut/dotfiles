@@ -21,6 +21,7 @@ Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
 Plug   'AndrewRadev/splitjoin.vim'
+Plug    'scrooloose/syntastic'      " Check syntax
 Plug    'majutsushi/tagbar'         " Show tags in 
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
@@ -391,6 +392,18 @@ let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 
 " Number HTML headings starting from level 1
 let g:vimwiki_html_header_numbering=1
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin syntastic
+"~~~~~~~~~~~~~~~~~~~~~
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
