@@ -25,9 +25,9 @@ Plug    'scrooloose/syntastic'      " Check syntax
 Plug    'majutsushi/tagbar'         " Show tags in 
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
-Plug         'tpope/vim-bundler'
 Plug   'vim-airline/vim-airline'
 Plug   'vim-airline/vim-airline-themes'
+Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
