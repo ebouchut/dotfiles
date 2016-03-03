@@ -1,4 +1,4 @@
-" Thank you @thoughbot @r00k, @christoomey, 
+" Thank you @thoughbot @r00k, @christoomey, Damian Conway
 " Requirements:
 "  * taskwiki, taskwarrior, task, fzf, ag: 
 "      brew install task tasksh vit ansiesc fzf ag
