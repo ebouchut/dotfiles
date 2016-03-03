@@ -28,6 +28,7 @@ Plug         'tpope/vim-bundler'
 Plug   'vim-airline/vim-airline'
 Plug   'vim-airline/vim-airline-themes'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
+Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
 Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
@@ -275,7 +276,6 @@ nnoremap <Leader>m :Move <C-r>%
 " <Leader>n  Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nmap <Leader>n :set number!<CR>
-
 
 " <Leader>r  Toggle relative line numbers
 nmap <Leader>r :set relativenumber!<CR>
