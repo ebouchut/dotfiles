@@ -406,6 +406,19 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin NERDTree
+"~~~~~~~~~~~~~~~~~~~~~
+
+" Toogle NERDTree
+nmap <leader>nerd :NERDTreeToggle<CR>
+
+" Locate (jump to) the current file in the tree
+nmap <leader>j :NERDTreeFind<CR>
+
+" Do not display these files
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+
+"~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
 "~~~~~~~~~~~~~~~~~~~~~
 if has('unix')
