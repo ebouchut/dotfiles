@@ -358,8 +358,8 @@ autocmd Filetype help nnoremap <Backspace>  <C-B>
 cmap w!! %!sudo tee > /dev/null %
 
 " save the current file in insert and normal mode
-map  <C-s> :wq<CR>
-imap <C-s> <ESC>:wq<CR>a
+map  <C-s> :w<CR>
+imap <C-s> <ESC>:w<CR>a
 
 " open up a new tab
 map <C-t> <ESC>:tabnew<CR>
