@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
 Plug   'AndrewRadev/splitjoin.vim'
@@ -25,8 +26,8 @@ Plug    'scrooloose/syntastic'      " Check syntax
 Plug    'majutsushi/tagbar'         " Show tags in 
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
-Plug   'vim-airline/vim-airline'
-Plug   'vim-airline/vim-airline-themes'
+" Plug   'vim-airline/vim-airline'
+" Plug   'vim-airline/vim-airline-themes'
 Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug         'tpope/vim-endwise'        " Add end in ruby
