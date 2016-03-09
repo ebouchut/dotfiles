@@ -1,6 +1,7 @@
 # Vim 
-vim/.netrwhist
 auto-save-list/
+vim/.netrwhist
+vim/swapfiles/
 vim/plugged/
 
 # Emacs
