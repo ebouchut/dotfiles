@@ -193,14 +193,6 @@ set nofoldenable " No Code folding
 " Always use vertical diffs
 set diffopt+=vertical
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"  Restore previous cursor position
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") |
-      \ exe "normal! g`\"" |
-      \ endif
-
 "~~~~~~~~~~~~~~~~~~~~~
 "  Colours, terminal
 "~~~~~~~~~~~~~~~~~~~~~
@@ -338,6 +330,10 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Filetypes
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 "~~~~~~~~~~~~~~~~~~~~~
 " JSON file
 "~~~~~~~~~~~~~~~~~~~~~
@@ -347,8 +343,13 @@ autocmd Syntax json source ~/.vim/syntax/json.vim
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
+"~~~~~~~~~~~~~~~~~~~~~
+" Git commit
+"~~~~~~~~~~~~~~~~~~~~~
 " Spell check and wrap commit message at 72 characters
 autocmd Filetype gitcommit setlocal spell textwidth=72
+" Go to the top of the file
+autocmd Filetype gitcommit exe "normal gg"
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Markdown file
@@ -373,6 +374,17 @@ autocmd Filetype help nnoremap <Backspace>  <C-B>
 "~~~~~~~~~~~~~~~~~~~~~~~
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"  Restore previous cursor position
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+augroup vimrcEx
+  autocmd!
+  autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
+augroup END
 
 
 "~~~~~~~~~~~~~~~~~~~~~
