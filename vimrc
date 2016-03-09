@@ -242,13 +242,7 @@ set splitright
 " :help opening-window
 
 "~~~~~~~~~~~~~~~~~~~~~~~
-" Vim/Tmux integration
-"~~~~~~~~~~~~~~~~~~~~~~~
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-"~~~~~~~~~~~~~~~~~~~~~~~
-" Key Bindings / Mapping
+"  Leader Key Bindings / Mapping
 "~~~~~~~~~~~~~~~~~~~~~~~
 " :h map-which-key  " Find keys available
 
@@ -312,47 +306,6 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 " and start pry
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
-"~~~~~~~~~~~~~~~~~
-" Plugin vim-rspec
-" Run RSpec Tests
-"~~~~~~~~~~~~~~~~~
-" let g:rspec_command = "!rspec --drb {spec}"
-let g:rspec_command = "VtrSendCommand! rspec {spec}"
-
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-
-"~~~~~~~~~~~~~~~~~~~~~
-""
-"~~~~~~~~~~~~~~~~~~~~~
-
-" ~~~ JSON file.~~~~~~
-autocmd BufRead,BufNewFile *.json set filetype=json
-" json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
-autocmd Syntax json source ~/.vim/syntax/json.vim
-" json_reformat is part of yajl: http://lloyd.github.com/yajl/
-autocmd FileType json set equalprg=json_reformat
-
-" Spell check and wrap commit message at 72 characters
-autocmd Filetype gitcommit setlocal spell textwidth=72
-
-" ~~~ Markdown file ~~~~~
-" Set Syntax highlighting for Markdown files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-" ~~~ Help file ~~~~~
-" Bind `q` to close the buffer for help files
-autocmd Filetype help nnoremap <buffer> q :q<CR>
-
-" <Space> goto "next" help page
-autocmd Filetype help nnoremap <Space>   <C-F>
-
-" <Backspace> goto "previous" help page
-autocmd Filetype help nnoremap <Backspace>  <C-B>
-
 "~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Mapping
 "~~~~~~~~~~~~~~~~~~~~~
@@ -371,6 +324,55 @@ nmap  S  :%s//g<LEFT><LEFT>
 
 " Substitute globally the previouly searched pattern
 nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
+
+"~~~~~~~~~~~~~~~~~
+" Plugin vim-rspec
+" Run RSpec Tests
+"~~~~~~~~~~~~~~~~~
+" let g:rspec_command = "!rspec --drb {spec}"
+let g:rspec_command = "VtrSendCommand! rspec {spec}"
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+
+"~~~~~~~~~~~~~~~~~~~~~
+" JSON file
+"~~~~~~~~~~~~~~~~~~~~~
+autocmd BufRead,BufNewFile *.json set filetype=json
+" json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
+autocmd Syntax json source ~/.vim/syntax/json.vim
+" json_reformat is part of yajl: http://lloyd.github.com/yajl/
+autocmd FileType json set equalprg=json_reformat
+
+" Spell check and wrap commit message at 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Markdown file
+"~~~~~~~~~~~~~~~~~~~~~
+" Set Syntax highlighting for Markdown files (not modula 2!)
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Help file
+"~~~~~~~~~~~~~~~~~~~~~
+" Bind `q` to close the buffer for help files
+autocmd Filetype help nnoremap <buffer> q :q<CR>
+
+" <Space> goto "next" help page
+autocmd Filetype help nnoremap <Space>   <C-F>
+
+" <Backspace> goto "previous" help page
+autocmd Filetype help nnoremap <Backspace>  <C-B>
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Vim/Tmux integration
+"~~~~~~~~~~~~~~~~~~~~~~~
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 
 "~~~~~~~~~~~~~~~~~~~~~
@@ -411,7 +413,6 @@ let g:syntastic_check_on_wq = 0
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
-
 " Toogle NERDTree
 nmap <leader>nerd :NERDTreeToggle<CR>
 
