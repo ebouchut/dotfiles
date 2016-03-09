@@ -313,8 +313,8 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 "~~~~~~~~~~~~~~~~~
+" Plugin vim-rspec
 " Run RSpec Tests
-"   vim-rspec required
 "~~~~~~~~~~~~~~~~~
 " let g:rspec_command = "!rspec --drb {spec}"
 let g:rspec_command = "VtrSendCommand! rspec {spec}"
@@ -326,8 +326,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 
 "~~~~~~~~~~~~~~~~~~~~~
-"  Pretty-print JSON files
+""
 "~~~~~~~~~~~~~~~~~~~~~
+
+" ~~~ JSON file.~~~~~~
 autocmd BufRead,BufNewFile *.json set filetype=json
 " json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
 autocmd Syntax json source ~/.vim/syntax/json.vim
@@ -337,9 +339,11 @@ autocmd FileType json set equalprg=json_reformat
 " Spell check and wrap commit message at 72 characters
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" ~~~ Markdown file ~~~~~
 " Set Syntax highlighting for Markdown files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+" ~~~ Help file ~~~~~
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer> q :q<CR>
 
@@ -370,10 +374,10 @@ nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 
 "~~~~~~~~~~~~~~~~~~~~~
-" Use ag (The Silver Searcher) over grep
-"   https://github.com/ggreer/the_silver_searcher
+" Plugin CtrlP
 "~~~~~~~~~~~~~~~~~~~~~
 if executable('ag')
+  " Use ag (The Silver Searcher) over grep when available
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
