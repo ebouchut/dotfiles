@@ -62,7 +62,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins: Automatically detect file types
 
 set timeoutlen=400 " Time to wait after ESC (default causes an annoying delay)
-set history=256    " History size
+set history=1000   " History size
 set noerrorbells
 set showcmd        " Show the curent command while it is active
 set ruler          " show the cursor position all the time
