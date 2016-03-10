@@ -216,6 +216,8 @@ map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 "~~~~~~~~~~~~~~~~~~~~~~~
 nmap <F8> :TagbarToggle<CR>
 
+nmap <F9> :NERDTreeToggle<CR>
+
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
 "~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,14 +352,6 @@ autocmd Syntax json source ~/.vim/syntax/json.vim
 autocmd FileType json set equalprg=json_reformat
 
 "~~~~~~~~~~~~~~~~~~~~~
-" Git commit
-"~~~~~~~~~~~~~~~~~~~~~
-" Spell check and wrap commit message at 72 characters
-autocmd Filetype gitcommit setlocal spell textwidth=72
-" Go to the top of the file
-autocmd Filetype gitcommit exe "normal gg"
-
-"~~~~~~~~~~~~~~~~~~~~~
 " Markdown file
 "~~~~~~~~~~~~~~~~~~~~~
 " Set Syntax highlighting for Markdown files (not modula 2!)
@@ -391,6 +385,14 @@ augroup vimrcEx
           \   exe "normal g`\"" |
           \ endif
 augroup END
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Git commit
+"~~~~~~~~~~~~~~~~~~~~~
+" Spell check and wrap commit message at 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+" Go to the top of the file
+autocmd Filetype gitcommit exe "normal gg"
 
 
 "~~~~~~~~~~~~~~~~~~~~~
