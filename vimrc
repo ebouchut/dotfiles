@@ -336,6 +336,10 @@ nmap  S  :%s//g<LEFT><LEFT>
 " Substitute globally the previouly searched pattern
 nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
+" Scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 "~~~~~~~~~~~~~~~~~
 " Plugin vim-rspec
 " Run RSpec Tests
