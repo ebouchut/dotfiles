@@ -204,9 +204,20 @@ set diffopt+=vertical
 "~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
 set background=dark " dark | light
+"
+"~~~~~~~~~~~~~~~~~~~~~
+" colorscheme solarized
+"~~~~~~~~~~~~~~~~~~~~~
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
+
+"~~~~~~~~~~~~~~~~~~~~~
+" colorscheme molokai
+"~~~~~~~~~~~~~~~~~~~~~
+"" let g:molokai_original = 1
+" let g:rehash256 = 1
+" colorscheme molokai
 
 " <F12>: Toggle background dark/light
 map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
