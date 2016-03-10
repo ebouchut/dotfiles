@@ -13,6 +13,7 @@
 	unstage = reset HEAD --
 	s = status
 	ctags = !.git/hooks/ctags
+	pf = push --force-with-lease
 [apply]
 	whitespace = nowarn
 [merge]
