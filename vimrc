@@ -223,13 +223,6 @@ colorscheme solarized
 map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~
-" TagBar
-"~~~~~~~~~~~~~~~~~~~~~~~
-nmap <F8> :TagbarToggle<CR>
-
-nmap <F9> :NERDTreeToggle<CR>
-
-"~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
 "~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -316,6 +309,7 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 " <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
 " and start pry
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
+
 
 "~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Mapping
@@ -448,14 +442,20 @@ let g:syntastic_check_on_wq = 0
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
-" Toogle NERDTree
+nmap <F9>         :NERDTreeToggle<CR>
 nmap <leader>nerd :NERDTreeToggle<CR>
 
-" Locate (jump to) the current file in the tree
+" Locate (jump to) the current file in NERDTree
 nmap <leader>j :NERDTreeFind<CR>
 
 " Do not display these files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin TagBar
+"~~~~~~~~~~~~~~~~~~~~~~~
+nmap <F8>         :TagbarToggle<CR>
+nmap <Leader>tag  :TagbarToggle<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
