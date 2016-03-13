@@ -27,6 +27,7 @@ Plug    'majutsushi/tagbar'         " Show tags in
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
+
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
@@ -442,11 +443,15 @@ let g:syntastic_check_on_wq = 0
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
-nmap <F9>         :NERDTreeToggle<CR>
+" Toogle NERDTree
+nmap <F9>          :NERDTreeToggle<CR>
 nmap <leader>nerd :NERDTreeToggle<CR>
 
 " Locate (jump to) the current file in NERDTree
 nmap <leader>j :NERDTreeFind<CR>
+
+" Use the right arrow to open tree node
+let NERDTreeMapActivateNode='<RIGHT>'
 
 " Do not display these files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
