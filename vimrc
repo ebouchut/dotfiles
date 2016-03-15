@@ -68,6 +68,7 @@ set history=1000   " History size
 set noerrorbells
 set showcmd        " Show the curent command while it is active
 set ruler          " show the cursor position all the time
+set undofile       " Make undo persistent across vim sessions (ie. restart)
 
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 set laststatus=2 " Always show status line
