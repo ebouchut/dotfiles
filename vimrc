@@ -56,11 +56,11 @@ call plug#end()
 "~~~~~~~~~~~~~~~~~~~~~~~
 " General Configuration
 "~~~~~~~~~~~~~~~~~~~~~~~
-set nocompatible      " We're running Vim, not Vi!
+set nocompatible      " We are running Vim, not Vi!
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins: Automatically detect file types
+filetype plugin on    " Automatically detect file types
 
 set hidden         " Do not ask to save buffer modifications 
 set timeoutlen=400 " Time to wait after ESC (default causes an annoying delay)
