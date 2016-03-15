@@ -260,44 +260,44 @@ let mapleader = " "
 nnoremap <leader><leader> <c-^>
 
 " Copy the entire buffer to the clipboard (system register)
-nmap <leader>co mmggVG"*y`m
+nnoremap <leader>co mmggVG"*y`m
 
 " Dash integration (dash.vim required)
-nmap <silent> <leader>d <Plug>DashSearch
+nnoremap <silent> <leader>d <Plug>DashSearch
 
 " <Leader>h  Toggle highlighting of search pattern matches
 noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 " Ident current file, keeping current position
-nmap <Leader>i mmgg=G`m
+nnoremap <Leader>i mmgg=G`m
 
 "  Rename curent file  (vim-eunuch required)
 nnoremap <Leader>m :Move <C-r>%
 
 " <Leader>n  Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
-nmap <Leader>n :set number!<CR>
+nnoremap <Leader>n :set number!<CR>
 
 " <Leader>r  Toggle relative line numbers
-nmap <Leader>r :set relativenumber!<CR>
+nnoremap <Leader>r :set relativenumber!<CR>
 
 " Paste system clipboard at cursor position
-map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
+noremap <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 
 " Reload ~/.vimrc
-nmap <leader>so :source $MYVIMRC<CR>
+nnoremap <leader>so :source $MYVIMRC<CR>
 
 " Edit ~/.vimrc in a split window
-nmap <leader>vr :split $MYVIMRC<CR>
+nnoremap <leader>vr :split $MYVIMRC<CR>
 
 " Edit ~/.vimrc in a new tab
-nmap <leader>vt :tabedit $MYVIMRC<CR>
+nnoremap <leader>vt :tabedit $MYVIMRC<CR>
 
 " Pre-populate  a split command with the current directory
-nmap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
+nnoremap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
 
 " Execute the current line as a Vim script
-map <Leader>x :exec getline(".")<cr>
+noremap <Leader>x :exec getline(".")<cr>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
@@ -318,20 +318,20 @@ nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 "  Keyboard Mapping
 "~~~~~~~~~~~~~~~~~~~~~
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 " save the current file in insert and normal mode
-map  <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>a
+noremap  <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>a
 
 " open up a new tab
-map <C-t> <ESC>:tabnew<CR>
+noremap <C-t> <ESC>:tabnew<CR>
 
 " Substitue globally (I did not use <S> but <c><c> to replace the current line)
-nmap  S  :%s//g<LEFT><LEFT>
+nnoremap  S  :%s//g<LEFT><LEFT>
 
 " Substitute globally the previouly searched pattern
-nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
+nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -344,10 +344,10 @@ nnoremap <C-y> 3<C-y>
 " let g:rspec_command = "!rspec --drb {spec}"
 let g:rspec_command = "VtrSendCommand! rspec {spec}"
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+noremap <Leader>t :call RunCurrentSpecFile()<CR>
+noremap <Leader>s :call RunNearestSpec()<CR>
+noremap <Leader>l :call RunLastSpec()<CR>
+noremap <Leader>a :call RunAllSpecs()<CR>
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -446,11 +446,11 @@ let g:syntastic_check_on_wq = 0
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
 " Toogle NERDTree
-nmap <F9>          :NERDTreeToggle<CR>
-nmap <leader>nerd :NERDTreeToggle<CR>
+nnoremap <F9>          :NERDTreeToggle<CR>
+nnoremap <leader>nerd :NERDTreeToggle<CR>
 
 " Locate (jump to) the current file in NERDTree
-nmap <leader>j :NERDTreeFind<CR>
+nnoremap <leader>j :NERDTreeFind<CR>
 
 " Use the right arrow to open tree node
 let NERDTreeMapActivateNode='<RIGHT>'
@@ -461,8 +461,8 @@ let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin TagBar
 "~~~~~~~~~~~~~~~~~~~~~~~
-nmap <F8>         :TagbarToggle<CR>
-nmap <Leader>tag  :TagbarToggle<CR>
+nnoremap <F8>         :TagbarToggle<CR>
+nnoremap <Leader>tag  :TagbarToggle<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
