@@ -52,3 +52,7 @@
 	templatedir = ~/.git_template
 [gitsh]
 	noGreeting = true
+[pager]
+	log = diff-highlight | less -FRSX
+	show = diff-highlight | less -FRSX
+	diff = diff-highlight | less -FRSX
