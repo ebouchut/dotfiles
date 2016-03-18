@@ -5,6 +5,7 @@
 "
 " Disable vimrc:  vim -U NONE
 "
+echo ">^.^<"
 "~~~~~~~~~~~~~~~~~~~~~
 " Vim Plugins
 "
@@ -87,8 +88,9 @@ set hlsearch    " Highlight all matches after entering a search pattern
 set incsearch   " incremetal search
 set ignorecase  " Case insensitive search
 set smartcase   " Override ignorecase if pattern contains uppercase
-set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
 set wrapscan    " Search wrap around
+set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
+set sidescroll=10 " Scroll horizontally 10 characteres at a time
 " Display search hitory using either of these 2 options
 "  q/  
 " /<Control>F
