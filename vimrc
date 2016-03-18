@@ -21,13 +21,13 @@ Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
-Plug   'AndrewRadev/splitjoin.vim'
+Plug           'sjl/splice.vim'     " Resolve conflicts during git 3-way merge
+Plug   'AndrewRadev/splitjoin.vim'  " Join and split ruby blocks
 Plug    'scrooloose/syntastic'      " Check syntax
 Plug    'majutsushi/tagbar'         " Show tags in 
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
-
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)

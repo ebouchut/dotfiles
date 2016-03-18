@@ -19,7 +19,7 @@
 [apply]
 	whitespace = nowarn
 [merge]
-	tool = sourcetree
+	tool = splice
 [core]
 	autocrlf = input
 	safecrlf = true
@@ -39,14 +39,6 @@
 	enabled = 1
 [dude]
 	interval = 60
-[diff]
-	tool = vimdiff
-	submodule = log
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
 [commit]
 [init]
 	templatedir = ~/.git_template
@@ -56,3 +48,14 @@
 	log = diff-highlight | less -FRSX
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
+[diff]
+	tool = vimdiff
+	submodule = log
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[mergetool "splice"]
+	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
+	trustExitCode = true
