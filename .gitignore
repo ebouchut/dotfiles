@@ -3,6 +3,7 @@ auto-save-list/
 vim/.netrwhist
 vim/swapfiles/
 vim/plugged/
+vim/view/
 
 # Emacs
 /emacs.d/.places
