@@ -267,7 +267,10 @@ nnoremap <leader>co mmggVG"*y`m
 " Dash integration (dash.vim required)
 nnoremap <silent> <leader>d <Plug>DashSearch
 
-" <Leader>h  Toggle highlighting of search pattern matches
+" grep the word under the cursor
+nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
+
+" Toggle highlighting of search pattern matches
 noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 " Ident current file, keeping current position
