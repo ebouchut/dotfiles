@@ -339,6 +339,17 @@ nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Disable arrow keys
+nnoremap <LEFT>  <NOP>
+nnoremap <RIGHT> <NOP>
+nnoremap <UP>    <NOP>
+nnoremap <DOWN>  <NOP>
+
+inoremap <LEFT>  <NOP>
+inoremap <RIGHT> <NOP>
+inoremap <UP>    <NOP>
+inoremap <DOWN>  <NOP>
+
 "~~~~~~~~~~~~~~~~~
 " Plugin vim-rspec
 " Run RSpec Tests
