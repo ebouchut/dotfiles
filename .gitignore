@@ -2,6 +2,7 @@
 auto-save-list/
 vim/.netrwhist
 vim/swapfiles/
+vim/undofiles/
 vim/plugged/
 vim/view/
 
