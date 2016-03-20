@@ -5,7 +5,6 @@
 "
 " Disable vimrc:  vim -U NONE
 "
-echo ">^.^<"
 "~~~~~~~~~~~~~~~~~~~~~
 " Vim Plugins
 "
@@ -276,14 +275,14 @@ noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 " Ident current file, keeping current position
 nnoremap <Leader>i mmgg=G`m
 
-"  Rename curent file  (vim-eunuch required)
+" Rename curent file  (vim-eunuch required)
 nnoremap <Leader>m :Move <C-r>%
 
-" <Leader>n  Toggle line numbers
+" Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nnoremap <Leader>n :set number!<CR>
 
-" <Leader>r  Toggle relative line numbers
+" Toggle relative line numbers
 nnoremap <Leader>r :set relativenumber!<CR>
 
 " Paste system clipboard at cursor position
@@ -310,11 +309,11 @@ nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
 " Rebalance panes
 nnoremap <leader>= :wincmd =<CR>
 
-" <Leader>irb   Open a tmux pane on the right, occupying 50% of the screen
+" Open a tmux pane on the right, occupying 50% of the screen
 " and start ruby irb
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
 
-" <Leader>pry   Open a tmux pane on the right, occupying 50% of the screen
+" Open a tmux pane on the right, occupying 50% of the screen
 " and start pry
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
@@ -326,16 +325,18 @@ nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 cnoremap w!! %!sudo tee > /dev/null %
 
 " save the current file in insert and normal mode
-noremap  <C-s> :w<CR>
-inoremap <C-s> <ESC>:w<CR>a
+noremap  <C-s>      :w<CR>
+" <C-o> run a normal mode command wihout leaving insert mode
+"   h: ins-special-special
+inoremap <C-s> <C-o>:w<CR>
 
 " open up a new tab
 noremap <C-t> <ESC>:tabnew<CR>
 
 " Substitue globally (I did not use <S> but <c><c> to replace the current line)
 nnoremap  S  :%s//g<LEFT><LEFT>
-
-" Substitute globally the previouly searched pattern
+a
+" Substitute globally the previously searched pattern 
 nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Scroll the viewport faster
@@ -423,9 +424,9 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd Filetype gitcommit exe "normal gg"
 
 
-"~~~~~~~~~~~~~~~~~~~~~
-" Plugin CtrlP
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Use ag (The Silver seacrher) over grep
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if executable('ag')
   " Use ag (The Silver Searcher) over grep when available
   set grepprg=ag\ --nogroup\ --nocolor
