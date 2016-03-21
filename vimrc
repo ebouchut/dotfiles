@@ -227,12 +227,10 @@ colorscheme solarized
 " let g:rehash256 = 1
 " colorscheme molokai
 
-" <F12>: Toggle background dark/light
-map <F12> :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 
-"~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
-"~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " Maximize focused split
 " set winwidth=84
@@ -249,13 +247,13 @@ set splitbelow
 set splitright
 
 " Close all other windows. Make the current window the only one on the screen.
-" :on
-
+"   :only
+"   <C-W>o
 " :help opening-window
 
-"~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Leader Key Bindings / Mapping
-"~~~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " :h map-which-key  " Find keys available
 
 " Map <Leader> to space
