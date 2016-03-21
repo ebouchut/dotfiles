@@ -336,7 +336,7 @@ noremap <C-t> <ESC>:tabnew<CR>
 
 " Substitue globally (I did not use <S> but <c><c> to replace the current line)
 nnoremap  S  :%s//g<LEFT><LEFT>
-a
+
 " Substitute globally the previously searched pattern 
 nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
