@@ -204,12 +204,15 @@ set nofoldenable " No Code folding
 " Always use vertical diffs
 set diffopt+=vertical
 
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Colours, terminal
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
-set background=dark " dark | light
-"
+set background=dark " Use a dark background (the other option is light)
+
+" <F5>: Toggle background dark/light
+call togglebg#map("<F5>")
+
 "~~~~~~~~~~~~~~~~~~~~~
 " colorscheme solarized
 "~~~~~~~~~~~~~~~~~~~~~
