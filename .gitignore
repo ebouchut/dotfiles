@@ -1,9 +1,11 @@
 # Vim 
 auto-save-list/
 vim/.netrwhist
-vim/swapfiles/
-vim/undofiles/
+vim/backup/
 vim/plugged/
+vim/swap/
+vim/undo/
+vim/viminfo
 vim/view/
 
 # Emacs

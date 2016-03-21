@@ -68,18 +68,35 @@ set history=1000   " History size
 set noerrorbells
 set showcmd        " Show the curent command while it is active
 set ruler          " show the cursor position all the time
-set undofile       " Make undo persistent across vim sessions (ie. restart)
-set undodir=~/.vim/undofiles//,~/tmp//,/tmp//
+set undofile       " Make undo persistent across vim sessions (ie. vim restart)
+set undodir^=~/.vim/undo//
+
+" Store swap files in a central location
+"   The // at the end of the directory name tells Vim to use the absolute path 
+" to the file to create the swap file to prevent collisions between files 
+" of the same name from different directories.
+set directory^=~/.vim/swap//
+
+" Where to store backup files
+set backupdir^=~/.vim/backup//
+
+" Where to store the state of the previous editing session
+" See http://stackoverflow.com/a/23036077/386517
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
+"           | |    |   |   |    | |  + viminfo file path
+"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |    |   |   |    + disable 'hlsearch' while loading viminfo
+"           | |    |   |   + command-line history saved
+"           | |    |   + search history saved
+"           | |    + files marks saved
+"           | + lines saved for each register 
+"           + save/restore buffer list
+
 
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 set laststatus=2 " Always show status line
 " set autowrite    " Automatically write before running commands
 
-" Store swap files (temporary) in a central location
-"   The // at the end of the directory name tells Vim to use the absolute path 
-" to the file to create the swap file so there aren't collisions between files 
-" of the same name from different directories.
-set directory=~/.vim/swapfiles//,~/tmp//,/tmp//
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search

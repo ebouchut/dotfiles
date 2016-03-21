@@ -30,3 +30,4 @@ esac
 alias t=task
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
+alias lvim='vim -c "normal '\''0"'
