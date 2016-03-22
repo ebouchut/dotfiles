@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug           'sjl/gundo.vim'      " Undo browser
 Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
@@ -372,6 +373,8 @@ inoremap <LEFT>  <NOP>
 inoremap <RIGHT> <NOP>
 inoremap <UP>    <NOP>
 inoremap <DOWN>  <NOP>
+
+nnoremap <F6> :GundoToggle<CR>
 
 "~~~~~~~~~~~~~~~~~
 " Plugin vim-rspec
