@@ -29,6 +29,7 @@ Plug    'majutsushi/tagbar'         " Show tags in
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
+Plug         'duff/vim-scratch'     " Create scratch buffer with :Sscratch
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
