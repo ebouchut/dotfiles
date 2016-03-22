@@ -99,7 +99,6 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
 set laststatus=2 " Always show status line
 " set autowrite    " Automatically write before running commands
 
-
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search
 "~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,11 +164,15 @@ set smarttab
 
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
-set formatoptions=tcqr
 set cindent
 
 " Indent inside <li> and <p> tags
 let g:html_indent_tags = 'li\|p'
+
+"~~~~~~~~~~~~~~~~~~~~~~~
+" Comments
+"~~~~~~~~~~~~~~~~~~~~~~~
+set formatoptions+=1  " don't break comment line after a one letter word
 
 "~~~~~~~~~~~~~
 " Spell Check
@@ -339,9 +342,9 @@ nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
 
-"~~~~~~~~~~~~~~~~~~~~~
-"  Keyboard Mapping
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"  Keyboard Binding / Mapping
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cnoremap w!! %!sudo tee > /dev/null %
 
@@ -363,6 +366,10 @@ nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" Use TAB and SHIFT TAB to cycle though the windows
+nnoremap <TAB>   <C-w>w
+nnoremap <S-TAB> <C-w>W
 
 " Disable arrow keys
 nnoremap <LEFT>  <NOP>
