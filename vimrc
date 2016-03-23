@@ -6,6 +6,7 @@
 " Disable vimrc:  vim -U NONE
 "
 "~~~~~~~~~~~~~~~~~~~~~
+
 " Vim Plugins
 "
 " Install plugins:  :PlugInstall
@@ -312,6 +313,12 @@ nnoremap <Leader>r :set relativenumber!<CR>
 " Paste system clipboard at cursor position
 noremap <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 
+" Substitue globally
+nnoremap  <Leader>sg  :%s//g<LEFT><LEFT>
+
+" Substitute globally the previously searched pattern
+nnoremap <expr> <Leader>sG  ':%s/' . @/ . '//g<LEFT><LEFT>'
+
 " Reload ~/.vimrc
 nnoremap <leader>so :source $MYVIMRC<CR>
 
@@ -356,12 +363,6 @@ inoremap <C-s> <C-o>:w<CR>
 
 " open up a new tab
 noremap <C-t> <ESC>:tabnew<CR>
-
-" Substitue globally (I did not use <S> but <c><c> to replace the current line)
-nnoremap  S  :%s//g<LEFT><LEFT>
-
-" Substitute globally the previously searched pattern 
-nnoremap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
