@@ -16,6 +16,7 @@
 runtime macros/matchit.vim
 
 call plug#begin('~/.vim/plugged')
+Plug         'rking/ag.vim'
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
