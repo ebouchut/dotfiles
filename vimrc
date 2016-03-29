@@ -32,10 +32,11 @@ Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
+Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
-Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
+Plug          'elzr/vim-json'
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
 Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
 Plug        'tpope/vim-repeat'
@@ -294,6 +295,9 @@ nnoremap <silent> <leader>d <Plug>DashSearch
 " grep the word under the cursor
 nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
+" Format the current buffer as JSON
+nnoremap <Leader>j :%!python -m json.tool
+
 " Toggle highlighting of search pattern matches
 noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
 
@@ -405,9 +409,11 @@ noremap <Leader>a :call RunAllSpecs()<CR>
 "~~~~~~~~~~~~~~~~~~~~~
 " JSON file
 "~~~~~~~~~~~~~~~~~~~~~
-autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd! BufRead,BufNewFile *.json set filetype=json
+
 " json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
 autocmd Syntax json source ~/.vim/syntax/json.vim
+
 " json_reformat is part of yajl: http://lloyd.github.com/yajl/
 autocmd FileType json set equalprg=json_reformat
 
