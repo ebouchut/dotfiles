@@ -290,6 +290,9 @@ nnoremap <leader><leader> <c-^>
 " Copy the entire buffer to the clipboard (system register)
 nnoremap <leader>co mmggVG"*y`m
 
+" Change the working directory to the one of the current file
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
+
 " Dash integration (dash.vim required)
 nnoremap <silent> <leader>d <Plug>DashSearch
 
