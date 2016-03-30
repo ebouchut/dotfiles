@@ -363,8 +363,12 @@ nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 " Force Saving Files that Require Root Permission: http://vimbits.com/bits/45
 cnoremap w!! %!sudo tee > /dev/null %
 
+" Replace %% with the directory of the current file (in command mode)
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
+
 " save the current file in insert and normal mode
 noremap  <C-s>      :w<CR>
+
 " <C-o> run a normal mode command wihout leaving insert mode
 "   h: ins-special-special
 inoremap <C-s> <C-o>:w<CR>
@@ -376,7 +380,7 @@ noremap <C-t> <ESC>:tabnew<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Use TAB and SHIFT TAB to cycle though the windows
+" Use TAB and SHIFT TAB to cycle through the windows
 nnoremap <TAB>   <C-w>w
 nnoremap <S-TAB> <C-w>W
 
