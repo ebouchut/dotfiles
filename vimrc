@@ -98,6 +98,8 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
 "           + save/restore buffer list
 
 
+set tags^=./tags,.git/tags,tags;
+
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 set laststatus=2 " Always show status line
 " set autowrite    " Automatically write before running commands
