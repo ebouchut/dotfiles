@@ -373,9 +373,6 @@ noremap  <C-s>      :w<CR>
 "   h: ins-special-special
 inoremap <C-s> <C-o>:w<CR>
 
-" open up a new tab
-noremap <C-t> <ESC>:tabnew<CR>
-
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
