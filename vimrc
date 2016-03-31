@@ -102,7 +102,12 @@ set tags^=./tags,.git/tags,tags;
 
 "set statusline=%#warningmsg#%{SyntasticStatuslineFlag()}%*\ %t\ %l,%v
 set laststatus=2 " Always show status line
-" set autowrite    " Automatically write before running commands
+
+" Automatically write before running commands
+" set autowrite
+
+" auto-reload a file when changed outside of vim
+" set autoread
 
 "~~~~~~~~~~~~~~~~~~~~~~~
 " Search
@@ -117,6 +122,10 @@ set sidescroll=10 " Scroll horizontally 10 characteres at a time
 " Display search hitory using either of these 2 options
 "  q/  
 " /<Control>F
+
+" ~~~~~~~~~~~~~~~~~~~
+" QuickFix List
+" ~~~~~~~~~~~~~~~~~~~
 
 "~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
@@ -296,19 +305,28 @@ nnoremap <leader>co mmggVG"*y`m
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Dash integration (dash.vim required)
-nnoremap <silent> <leader>d <Plug>DashSearch
+nmap <Leader>d <Plug>DashSearch
+
+" Format the current buffer as JSON
+nnoremap <Leader>fj :%!python -m json.tool
+
+" Edit the Gemfile:w
+nnoremap <Leader>G :e Gemfile<CR>
 
 " grep the word under the cursor
 nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
-" Format the current buffer as JSON
-nnoremap <Leader>j :%!python -m json.tool
-
 " Toggle highlighting of search pattern matches
-noremap <silent> <leader>h  :silent :set hlsearch! hlsearch?<CR>
+noremap <silent> <Leader>h  :silent :set hlsearch! hlsearch?<CR>
 
 " Ident current file, keeping current position
 nnoremap <Leader>i mmgg=G`m
+
+" Open a tmux pane on the right, occupying 50% of the screen
+" and start ruby irb
+nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
+
+nnoremap <Leader>L :ll<CR>
 
 " Rename curent file  (vim-eunuch required)
 nnoremap <Leader>m :Move <C-r>%
@@ -317,11 +335,15 @@ nnoremap <Leader>m :Move <C-r>%
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nnoremap <Leader>n :set number!<CR>
 
-" Toggle relative line numbers
-nnoremap <Leader>r :set relativenumber!<CR>
-
 " Paste system clipboard at cursor position
 noremap <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
+
+" Open a tmux pane on the right, occupying 50% of the screen
+" and start pry
+nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
+
+" Toggle relative line numbers
+nnoremap <Leader>r :set relativenumber!<CR>
 
 " Substitue globally
 nnoremap  <Leader>sg  :%s//g<LEFT><LEFT>
@@ -330,34 +352,29 @@ nnoremap  <Leader>sg  :%s//g<LEFT><LEFT>
 nnoremap <expr> <Leader>sG  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Reload ~/.vimrc
-nnoremap <leader>so :source $MYVIMRC<CR>
-
-" Edit ~/.vimrc in a split window
-nnoremap <leader>vr :split $MYVIMRC<CR>
-
-" Edit ~/.vimrc in a new tab
-nnoremap <leader>vt :tabedit $MYVIMRC<CR>
+nnoremap <Leader>so :source $MYVIMRC<CR>
 
 " Pre-populate  a split command with the current directory
-nnoremap <leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
+nnoremap <Leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
+
+" Edit ~/.vimrc in a split window
+nnoremap <Leader>vr :split $MYVIMRC<CR>
+
+" Edit ~/.vimrc in a new tab
+nnoremap <Leader>vt :tabedit $MYVIMRC<CR>
 
 " Execute the current line as a Vim script
 noremap <Leader>x :exec getline(".")<cr>
 
 " zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<CR>:wincmd \|<CR>
+nnoremap <Leader>- :wincmd _<CR>:wincmd \|<CR>
 
-" Rebalance panes
 nnoremap <leader>= :wincmd =<CR>
 
-" Open a tmux pane on the right, occupying 50% of the screen
-" and start ruby irb
-nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
 
-" Open a tmux pane on the right, occupying 50% of the screen
-" and start pry
-nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
-
+nnoremap <Leader>Q :cc<CR>
+nnoremap <Leader>j :cnext<CR>
+nnoremap <Leader>k :cprevious<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Keyboard Binding / Mapping
@@ -369,7 +386,7 @@ cnoremap w!! %!sudo tee > /dev/null %
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 
 " save the current file in insert and normal mode
-noremap  <C-s>      :w<CR>
+noremap  <C-s>  :w<CR>
 
 " <C-o> run a normal mode command wihout leaving insert mode
 "   h: ins-special-special
@@ -511,7 +528,7 @@ nnoremap <F9>          :NERDTreeToggle<CR>
 nnoremap <leader>nerd :NERDTreeToggle<CR>
 
 " Locate (jump to) the current file in NERDTree
-nnoremap <leader>j :NERDTreeFind<CR>
+nnoremap <leader>nj :NERDTreeFind<CR>
 
 " Use the right arrow to open tree node
 let NERDTreeMapActivateNode='<RIGHT>'
