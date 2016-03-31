@@ -99,3 +99,6 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+
+# Ag (The Silver Searcher)
+.agignore
