@@ -332,6 +332,11 @@ nnoremap <Leader>L :ll<CR>
 " Rename curent file  (vim-eunuch required)
 nnoremap <Leader>m :Move <C-r>%
 
+nnoremap <leader>nn :NERDTreeTabsToggle<CR>
+
+" Jump to the current file in NERDTree
+nnoremap <leader>nj :NERDTreeFind<CR>
+
 " Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nnoremap <Leader>n :set number!<CR>
@@ -354,6 +359,8 @@ nnoremap <expr> <Leader>sG  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Reload ~/.vimrc
 nnoremap <Leader>so :source $MYVIMRC<CR>
+
+nnoremap <Leader>tt  :TagbarToggle<CR>
 
 " Pre-populate  a split command with the current directory
 nnoremap <Leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
@@ -413,6 +420,8 @@ inoremap <UP>    <NOP>
 inoremap <DOWN>  <NOP>
 
 nnoremap <F6> :GundoToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F9> :NERDTreeTabsToggle<CR>
 
 "~~~~~~~~~~~~~~~~~
 " Plugin vim-rspec
@@ -524,24 +533,11 @@ let g:syntastic_check_on_wq = 0
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
-" Toogle NERDTree
-nnoremap <F9>         :NERDTreeTabsToggle<CR>
-nnoremap <leader>nerd :NERDTreeTabsToggle<CR>
-
-" Locate (jump to) the current file in NERDTree
-nnoremap <leader>nj :NERDTreeFind<CR>
-
 " Use the right arrow to open tree node
 let NERDTreeMapActivateNode='<RIGHT>'
 
 " Do not display these files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
-
-"~~~~~~~~~~~~~~~~~~~~~~~
-" Plugin TagBar
-"~~~~~~~~~~~~~~~~~~~~~~~
-nnoremap <F8>         :TagbarToggle<CR>
-nnoremap <Leader>tag  :TagbarToggle<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
