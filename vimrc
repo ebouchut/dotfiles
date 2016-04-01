@@ -38,6 +38,7 @@ Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
 Plug          'elzr/vim-json'
+Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
 Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
 Plug        'tpope/vim-repeat'
@@ -524,8 +525,8 @@ let g:syntastic_check_on_wq = 0
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
 " Toogle NERDTree
-nnoremap <F9>          :NERDTreeToggle<CR>
-nnoremap <leader>nerd :NERDTreeToggle<CR>
+nnoremap <F9>         :NERDTreeTabsToggle<CR>
+nnoremap <leader>nerd :NERDTreeTabsToggle<CR>
 
 " Locate (jump to) the current file in NERDTree
 nnoremap <leader>nj :NERDTreeFind<CR>
