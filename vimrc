@@ -46,6 +46,7 @@ Plug         'tpope/vim-projectionist'
 Plug       'blindFS/vim-taskwarrior' " interface to task-warrior (required)
 Plug         'tpope/vim-rails'
 Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
+Plug         'tpope/vim-rbenv'
 Plug    'thoughtbot/vim-rspec'
 Plug   'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
 Plug      'vim-ruby/vim-ruby'
