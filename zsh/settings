@@ -12,3 +12,11 @@ autoload zmv
 
 # Disable flow control
 stty -ixon &>/dev/null
+
+setopt APPEND_HISTORY # Don't erase history
+setopt EXTENDED_HISTORY # Add additional data to history like timestamp
+setopt INC_APPEND_HISTORY # Add immediatly
+setopt HIST_FIND_NO_DUPS # Don't show duplicates in search
+setopt HIST_IGNORE_SPACE # Do not log command lines starting with a blank
+setopt NO_HIST_BEEP # Don't beep
+setopt SHARE_HISTORY # Share history between session/terminals
