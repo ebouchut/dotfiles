@@ -28,7 +28,8 @@ Plug          'mtth/scratch.vim'    " Create scratch buffer with :Scratch or gs
 Plug           'sjl/splice.vim'     " Resolve conflicts during git 3-way merge
 Plug   'AndrewRadev/splitjoin.vim'  " Join and split ruby blocks
 Plug    'scrooloose/syntastic'      " Check syntax
-Plug    'majutsushi/tagbar'         " Show tags in 
+Plug    'majutsushi/tagbar'         " Show tags in a sidebar
+Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
