@@ -301,7 +301,9 @@ let mapleader = " "
 " Switch between the last two files <=> :e #<CR>
 nnoremap <leader><leader> <c-^>
 
-" Copy the entire buffer to the clipboard (system register)
+nnoremap <Leader>C :e CHANGELOG.md<CR>
+
+" Copy the entire buffer to the system clipboard
 nnoremap <leader>co mmggVG"*y`m
 
 " Change the working directory to the one of the current file
@@ -313,7 +315,7 @@ nmap <Leader>d <Plug>DashSearch
 " Format the current buffer as JSON
 nnoremap <Leader>fj :%!python -m json.tool
 
-" Edit the Gemfile:w
+" Edit the Gemfile
 nnoremap <Leader>G :e Gemfile<CR>
 
 " grep the word under the cursor
