@@ -363,6 +363,7 @@ nnoremap <expr> <Leader>sG  ':%s/' . @/ . '//g<LEFT><LEFT>'
 nnoremap <Leader>so :source $MYVIMRC<CR>
 
 nnoremap <Leader>tt  :TagbarToggle<CR>
+nnoremap <Leader>tl  :TlistToggle<CR>
 
 " Pre-populate  a split command with the current directory
 nnoremap <Leader>v :vnew <C-r>=escape(expand("%:p:h"), '').'/'<CR>
@@ -540,6 +541,24 @@ let NERDTreeMapActivateNode='<RIGHT>'
 
 " Do not display these files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin Taglist
+"~~~~~~~~~~~~~~~~~~~~~
+" Give the focus to the taglist window when it is opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+
+" Show only the tags for the current file
+let Tlist_Show_One_File = 1
+
+" Open taglist in a window on the right side
+let Tlist_Use_Right_Window = 1
+
+" Automatically update taglist to include newly edited files
+let Tlist_Auto_Update = 1
+
+" Close tag folds for inactive buffers
+let Tlist_File_Fold_Auto_Close = 1
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
