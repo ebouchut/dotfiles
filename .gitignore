@@ -3,6 +3,7 @@ auto-save-list/
 vim/.netrwhist
 vim/backup/
 vim/plugged/
+vim/sessions/
 vim/swap/
 vim/undo/
 vim/viminfo

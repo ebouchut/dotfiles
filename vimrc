@@ -565,6 +565,15 @@ let Tlist_Auto_Update = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin vim-session
+"~~~~~~~~~~~~~~~~~~~~~
+ " SessionSave / SessionResrore  instead of  SaveSession / RestoreSession
+let g:session_command_aliases = 1
+let g:session_autosave = 'no'
+let g:session_autoload = 'yes'
+" vim --servername my_session_name
+
+"~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
 "~~~~~~~~~~~~~~~~~~~~~
 if has('unix')
