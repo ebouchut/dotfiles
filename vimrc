@@ -39,6 +39,7 @@ Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
 Plug          'elzr/vim-json'
+Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
 Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
@@ -51,6 +52,7 @@ Plug         'tpope/vim-rbenv'
 Plug    'thoughtbot/vim-rspec'
 Plug   'christoomey/vim-rfactory'  " Navigate to FactoryGirl factory definition
 Plug      'vim-ruby/vim-ruby'
+Plug         'xolox/vim-session'
 Plug         'honza/vim-snippets'  " Snippets
 Plug         'tpope/vim-speeddating' " Increment/Decrement dates, times (C-A/C-X)
 Plug         'tpope/vim-surround'
