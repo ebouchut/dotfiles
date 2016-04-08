@@ -465,6 +465,31 @@ autocmd FileType json set equalprg=json_reformat
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Open a FactoryGirl factory:
+"   :Rfactory [name]
+"~~~~~~~~~~~~~~~~~~~~~
+let g:rails_projections = {
+      \ "test/factories/*.rb": {
+      \   "command":   "factory",
+      \   "affinity":  "collection",
+      \   "alternate": "app/models/%i.rb",
+      \   "related":   "db/schema.rb#%s",
+      \   "test":      "test/models/%i_test.rb",
+      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "keywords":  "factory sequence"
+      \ },
+      \ "spec/factories/*.rb": {
+      \   "command":   "factory",
+      \   "affinity":  "collection",
+      \   "alternate": "app/models/%i.rb",
+      \   "related":   "db/schema.rb#%s",
+      \   "test":      "spec/models/%i_test.rb",
+      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "keywords":  "factory sequence"
+      \ }
+      \}
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Help file
 "~~~~~~~~~~~~~~~~~~~~~
 " Bind `q` to close the buffer for help files
