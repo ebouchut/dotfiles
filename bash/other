@@ -118,3 +118,9 @@ ensure_tmux_is_running
 
 # Complete g like git
 compdef g=git
+
+#~~~~~~~~~~~~~
+# travis
+#~~~~~~~~~~~~~
+[ -f /Users/eric/.travis/travis.sh ] && source /Users/eric/.travis/travis.sh
+
