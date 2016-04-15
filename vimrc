@@ -18,6 +18,7 @@ runtime macros/matchit.vim
 call plug#begin('~/.vim/plugged')
 Plug         'rking/ag.vim'
 Plug   'jlanzarotta/bufexplorer'
+Plug         'mattn/calendar-vim'
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -131,6 +132,7 @@ set sidescroll=10 " Scroll horizontally 10 characteres at a time
 " ~~~~~~~~~~~~~~~~~~~
 " QuickFix List
 " ~~~~~~~~~~~~~~~~~~~
+
 
 "~~~~~~~~~~~~~~~~~~~~
 " Filtetype detection
@@ -304,6 +306,8 @@ let mapleader = " "
 nnoremap <leader><leader> <c-^>
 
 nnoremap <Leader>C :e CHANGELOG.md<CR>
+
+nnoremap <Leader>ct :call ToggleCalendar()<CR> " require calendar-vim
 
 " Copy the entire buffer to the system clipboard
 nnoremap <leader>co mmggVG"*y`m
@@ -549,6 +553,27 @@ let g:vimwiki_list = [ {'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1} ]
 
 " Number HTML headings starting from level 1
 let g:vimwiki_html_header_numbering=1
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin calendar-vim
+"~~~~~~~~~~~~~~~~~~~~~
+" Monday is the first day of the week
+let g:calendar_monday = 1
+
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin syntastic
