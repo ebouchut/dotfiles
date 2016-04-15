@@ -327,6 +327,8 @@ nnoremap <Leader>G :e Gemfile<CR>
 " grep the word under the cursor
 nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
+nnoremap <Leader>gg :GundoToggle<CR>
+
 " Toggle highlighting of search pattern matches
 noremap <silent> <Leader>h  :silent :set hlsearch! hlsearch?<CR>
 
@@ -344,7 +346,7 @@ nnoremap <Leader>m :Move <C-r>%
 
 nnoremap <leader>nn :NERDTreeTabsToggle<CR>
 
-" Jump to the current file in NERDTree
+" Show the current file in NERDTree
 nnoremap <leader>nj :NERDTreeFind<CR>
 
 " Toggle line numbers
@@ -411,7 +413,7 @@ noremap  <C-s>  :w<CR>
 "   h: ins-special-special
 inoremap <C-s> <C-o>:w<CR>
 
-" Scroll the viewport faster
+" Scroll faster (3 lines at a time)
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
