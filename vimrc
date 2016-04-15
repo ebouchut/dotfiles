@@ -316,7 +316,7 @@ nnoremap <leader>co mmggVG"*y`m
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Dash integration (dash.vim required)
-nmap <Leader>d <Plug>DashSearch
+nnoremap <Leader>d <Plug>DashSearch
 
 " Format the current buffer as JSON
 nnoremap <Leader>fj :%!python -m json.tool
