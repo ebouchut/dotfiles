@@ -30,6 +30,7 @@ Plug          'mtth/scratch.vim'    " Create scratch buffer with :Scratch or gs
 Plug           'sjl/splice.vim'     " Resolve conflicts during git 3-way merge
 Plug   'AndrewRadev/splitjoin.vim'  " Join and split ruby blocks
 Plug    'scrooloose/syntastic'      " Check syntax
+Plug     'godlygeek/tabular'
 Plug    'majutsushi/tagbar'         " Show tags in a sidebar
 Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
 Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
@@ -41,6 +42,7 @@ Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
 Plug          'elzr/vim-json'
+Plug    'plasticboy/vim-markdown'      " requires "tabular"
 Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
