@@ -39,6 +39,7 @@ Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
+Plug    'easymotion/vim-easymotion'
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
