@@ -14,6 +14,7 @@
 "~~~~~~~~~~~~~~~~~~~~~
 " Make % ruby aware
 runtime macros/matchit.vim
+filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug         'rking/ag.vim'
