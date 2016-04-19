@@ -552,6 +552,16 @@ if executable('ag')
 endif
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin ctrlp
+"~~~~~~~~~~~~~~~~~~~~~
+" Ignore VCS repositories and binary files
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Plugin VimWiki
 "~~~~~~~~~~~~~~~~~~~~~
 " Generate the HTML and the TOC when saving a wiki page
