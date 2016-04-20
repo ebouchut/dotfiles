@@ -319,6 +319,9 @@ nnoremap <leader>co mmggVG"*y`m
 " Change the working directory to the one of the current file
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
+" Regenerate the file .git/tags (assumes the current dir is a git repository)
+nnoremap <Leader>ct :!./.git/hooks/ctags<CR><CR>
+
 " Dash integration (dash.vim required)
 nnoremap <Leader>d <Plug>DashSearch
 
