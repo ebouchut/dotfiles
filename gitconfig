@@ -16,6 +16,7 @@
 	pf = push --force-with-lease
 	wow = log --all --graph --oneline --decorate --simplify-by-decoration
 	score = shortlog -sn
+	today = log --since=midnight
 [apply]
 	whitespace = nowarn
 [merge]
