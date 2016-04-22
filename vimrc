@@ -379,6 +379,9 @@ nnoremap <expr> <Leader>sG  ':%s/' . @/ . '//g<LEFT><LEFT>'
 " Reload ~/.vimrc
 nnoremap <Leader>so :source $MYVIMRC<CR>
 
+" Open rails structure.sql
+nnoremap <Leader>st :view db/structure.sql<CR>
+
 nnoremap <Leader>tt  :TagbarToggle<CR>
 nnoremap <Leader>tl  :TlistToggle<CR>
 
