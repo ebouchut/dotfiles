@@ -372,6 +372,8 @@ nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd'
 " Toggle relative line numbers
 nnoremap <Leader>r :set relativenumber!<CR>
 
+nnoremap <Leader>R :e config/routes.rb<CR>
+
 " Substitue globally
 nnoremap  <Leader>sg  :%s//g<LEFT><LEFT>
 
