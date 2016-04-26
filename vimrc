@@ -568,10 +568,10 @@ endif
 " Plugin ctrlp
 "~~~~~~~~~~~~~~~~~~~~~
 " Ignore VCS repositories and binary files
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" When using ag (Silver Searcher) back end use .agignore instead
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll)$'
   \ }
 
 "~~~~~~~~~~~~~~~~~~~~~
