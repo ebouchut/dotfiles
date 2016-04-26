@@ -330,6 +330,9 @@ nnoremap <Leader>d <Plug>DashSearch
 " Format the current buffer as JSON
 nnoremap <Leader>fj :%!python -m json.tool
 
+" Toggle the display of cyclomatic complexity next to each Ruby method
+nnoremap <Leader>f :call ToggleFlog()<CR>
+
 " Edit the Gemfile
 nnoremap <Leader>G :e Gemfile<CR>
 
