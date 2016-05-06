@@ -603,6 +603,11 @@ function! ToggleCalendar()
   end
 endfunction
 
+"~~~~~~~~~~~~~~~~~~~~~~
+" Plugin vim-easymotion
+"~~~~~~~~~~~~~~~~~~~~~~
+" Easymotion prefix key
+map <Leader>e <Plug>(easymotion-prefix)
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin syntastic
