@@ -627,9 +627,6 @@ let g:syntastic_auto_loc_list = 0
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
-" Use the right arrow to open tree node
-let NERDTreeMapActivateNode='<RIGHT>'
-
 " Do not display these files
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 
