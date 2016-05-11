@@ -36,7 +36,6 @@
 	trustExitCode = true
 [push]
 	default = simple
-	followTags = true
 [rerere]
 	enabled = 1
 [dude]
