@@ -137,6 +137,8 @@ compdef g=git
 # requires hub: http://defunkt.io/hub/
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 git() {hub "$@"} 
+unfunction hub  # Workaround for two many levels...
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # zsh-syntax-highlighting
