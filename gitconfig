@@ -16,7 +16,8 @@
 	pf = push --force-with-lease
 	wow = log --all --graph --oneline --decorate --simplify-by-decoration
 	score = shortlog -sn
-	today = log --since=midnight
+	today = !git plog --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
+	week = !git log --oneline --graph --decorate  --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
 [apply]
 	whitespace = nowarn
 [merge]
