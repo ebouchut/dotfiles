@@ -50,7 +50,7 @@ Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
 Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
-Plug 'sentientmonkey/vim-flog' " Compute Ruby cyclomatic complexity with flog
+" Plug 'sentientmonkey/vim-flog' " Compute Ruby cyclomatic complexity with flog
 Plug        'tpope/vim-repeat'
 Plug         'tpope/vim-projectionist'
 Plug       'blindFS/vim-taskwarrior' " interface to task-warrior (required)
