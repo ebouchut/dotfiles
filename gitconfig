@@ -38,7 +38,6 @@
 [push]
 	default = simple
 [rerere]
-	enabled = 1
 [dude]
 	interval = 60
 [commit]
