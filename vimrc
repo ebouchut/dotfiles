@@ -330,6 +330,9 @@ nnoremap <Leader>d <Plug>DashSearch
 " Format the current buffer as JSON
 nnoremap <Leader>fj :%!python -m json.tool
 
+" :e <current_dir>/
+nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
 " Toggle the display of cyclomatic complexity next to each Ruby method
 nnoremap <Leader>f :call ToggleFlog()<CR>
 
