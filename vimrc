@@ -40,7 +40,7 @@ Plug        'SirVer/ultisnips'      " Snippets engine
 Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
-Plug    'easymotion/vim-easymotion'
+Plug    'easymotion/vim-easymotion' " 
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
@@ -330,8 +330,8 @@ nnoremap <Leader>d <Plug>DashSearch
 " Format the current buffer as JSON
 nnoremap <Leader>fj :%!python -m json.tool
 
-" :e <current_dir>/
-nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Easymotion prefix key
+map <Leader>e <Plug>(easymotion-prefix)
 
 " Toggle the display of cyclomatic complexity next to each Ruby method
 nnoremap <Leader>f :call ToggleFlog()<CR>
@@ -354,6 +354,7 @@ nnoremap <Leader>i mmgg=G`m
 " and start ruby irb
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<CR>
 
+" List errors
 nnoremap <Leader>L :ll<CR>
 
 " Rename curent file  (vim-eunuch required)
@@ -367,6 +368,9 @@ nnoremap <leader>nj :NERDTreeFind<CR>
 " Toggle line numbers
 " (http://vim.wikia.com/wiki/Display_line_numbers)
 nnoremap <Leader>n :set number!<CR>
+
+" Open a file/folder in the current directory
+nnoremap <Leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Paste system clipboard at cursor position
 noremap <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
@@ -605,12 +609,6 @@ function! ToggleCalendar()
     let g:calendar_open = 1
   end
 endfunction
-
-"~~~~~~~~~~~~~~~~~~~~~~
-" Plugin vim-easymotion
-"~~~~~~~~~~~~~~~~~~~~~~
-" Easymotion prefix key
-map <Leader>e <Plug>(easymotion-prefix)
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin syntastic
