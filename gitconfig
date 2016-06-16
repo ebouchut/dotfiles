@@ -8,7 +8,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	catchup = log --patch --reverse --topo-order _ribbon..origin/master
 	pullify = config add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
-	plog = log --graph --format='%Cgreen%h %Cred%aN%Cblue%d %Creset%s %C(yellow)(%cr)%Creset'
+	plog = log --graph --date=relative --format=\"%Cgreen%h %C(auto)%d %Creset%s  %C(yellow)(%cd) %C(magenta)<%aN>%Creset\"
 	logf = log --follow
 	unstage = reset HEAD --
 	s = status
@@ -16,9 +16,9 @@
 	pf = push --force-with-lease
 	wow = log --all --graph --oneline --decorate --simplify-by-decoration
 	score = shortlog -sn
-	mine = !git plog --author=\"$(git config user.name) <$(git config user.email)>\"
-	today = !git plog --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
-	week = !git log --oneline --graph --decorate  --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
+	mine  = !git plog --graph --author=\"$(git config user.name) <$(git config user.email)>\"
+	today = !git plog --graph --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
+	week  = !git plog --graph --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
 [apply]
 	whitespace = nowarn
 [merge]
