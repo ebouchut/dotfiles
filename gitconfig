@@ -63,3 +63,5 @@
 	trustExitCode = true
 [mergetool]
 	bc3 = trustExitCode
+[interactive]
+	diffFilter = diff-highlight
