@@ -20,6 +20,7 @@
 	mine  = !git plog --graph --author=\"$(git config user.name) <$(git config user.email)>\"
 	today = !git plog --graph --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
 	week  = !git plog --graph --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
+	p = plog --all
 [apply]
 	whitespace = nowarn
 [merge]
