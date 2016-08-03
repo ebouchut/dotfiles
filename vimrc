@@ -29,6 +29,7 @@ Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
 Plug          'mtth/scratch.vim'    " Create scratch buffer with :Scratch or gs
+Plug   'AndrewRadev/simple_bookmarks.vim'
 Plug           'sjl/splice.vim'     " Resolve conflicts during git 3-way merge
 Plug   'AndrewRadev/splitjoin.vim'  " Join and split ruby blocks
 Plug    'scrooloose/syntastic'      " Check syntax
