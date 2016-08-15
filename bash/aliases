@@ -34,3 +34,4 @@ alias git=hub  # Requires hub: http://defunkt.io/hub/
 alias g=git
 alias gs='git status -sb'
 alias lvim='vim -c "normal '\''0"'
+alias vi=vim
