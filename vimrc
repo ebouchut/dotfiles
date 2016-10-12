@@ -54,6 +54,7 @@ Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the 
 " Plug 'sentientmonkey/vim-flog' " Compute Ruby cyclomatic complexity with flog
 Plug        'tpope/vim-repeat'
 Plug         'tpope/vim-projectionist'
+Plug        'ecomba/vim-ruby-refactoring'
 Plug       'blindFS/vim-taskwarrior' " interface to task-warrior (required)
 Plug         'tpope/vim-rails'
 Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
