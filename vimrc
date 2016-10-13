@@ -367,9 +367,9 @@ nnoremap <leader>nn :NERDTreeTabsToggle<CR>
 " Show the current file in NERDTree
 nnoremap <leader>nj :NERDTreeFind<CR>
 
-" Toggle line numbers
+" Toggle line numbers (relative | absolute | relative+absolute none)
 " (http://vim.wikia.com/wiki/Display_line_numbers)
-nnoremap <Leader>n :set number!<CR>
+nnoremap <silent> <Leader>n :exec &number==&relativenumber? "set number!" : ":set relativenumber!"<CR>
 
 " Open a file/folder in the current directory
 nnoremap <Leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -381,8 +381,6 @@ noremap <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
 " and start pry
 nnoremap <leader>pry :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'pry'}<CR>
 
-" Toggle relative line numbers
-nnoremap <Leader>r :set relativenumber!<CR>
 
 nnoremap <Leader>R :e config/routes.rb<CR>
 
