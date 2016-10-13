@@ -654,7 +654,7 @@ let Tlist_File_Fold_Auto_Close = 1
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin vim-session
 "~~~~~~~~~~~~~~~~~~~~~
- " SessionSave / SessionResrore  instead of  SaveSession / RestoreSession
+ " SessionSave / SessionRestore  instead of  SaveSession / RestoreSession
 let g:session_command_aliases = 1
 let g:session_autosave = 'no'
 let g:session_autoload = 'yes'
