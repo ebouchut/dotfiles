@@ -20,3 +20,4 @@ setopt HIST_FIND_NO_DUPS # Don't show duplicates in search
 setopt HIST_IGNORE_SPACE # Do not log command lines starting with a blank
 setopt NO_HIST_BEEP # Don't beep
 setopt SHARE_HISTORY # Share history between session/terminals
+unsetopt correctall # Disable suggestion of corrections for commands
