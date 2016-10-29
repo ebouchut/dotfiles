@@ -465,7 +465,7 @@ nnoremap <F9> :NERDTreeTabsToggle<CR>
 " Run RSpec Tests
 "~~~~~~~~~~~~~~~~~
 " let g:rspec_command = "!rspec --drb {spec}"
-let g:rspec_command = "VtrSendCommand! rspec {spec}"
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
 noremap <Leader>t :call RunCurrentSpecFile()<CR>
 noremap <Leader>s :call RunNearestSpec()<CR>
