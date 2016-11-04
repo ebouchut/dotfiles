@@ -442,7 +442,7 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Use TAB and SHIFT TAB to cycle through the windows
-nnoremap <TAB>   <C-w>w
+" nnoremap <TAB>   <C-w>w
 nnoremap <S-TAB> <C-w>W
 
 " Disable arrow keys
