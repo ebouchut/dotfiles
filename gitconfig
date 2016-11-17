@@ -21,6 +21,11 @@
 	today = !git plog --graph --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
 	week  = !git plog --graph --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
 	p = plog --all
+	added = diff --name-status --diff-filter=A
+	removed = diff --name-status --diff-filter=D
+	deleted = diff --name-status --diff-filter=D
+	modified = diff --name-status --diff-filter=M
+	renamed = diff --name-status --diff-filter=R
 [apply]
 	whitespace = nowarn
 [merge]
