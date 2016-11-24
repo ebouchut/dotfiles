@@ -45,6 +45,7 @@ Plug    'easymotion/vim-easymotion' "
 Plug         'tpope/vim-endwise'        " Add end in ruby
 Plug         'tpope/vim-eunuch' " helpers for UNIX (file/directory operations)
 Plug         'tpope/vim-fugitive'   " Git
+Plug      'junegunn/gv.vim'         " Git commit browser
 Plug          'elzr/vim-json'
 Plug    'plasticboy/vim-markdown'      " requires "tabular"
 Plug         'xolox/vim-misc'          " required by vim-session
