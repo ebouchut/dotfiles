@@ -36,6 +36,7 @@ Plug    'majutsushi/tagbar'         " Show tags in a sidebar
 Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
 " Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
+Plug 'MattesGroeger/vim-bookmarks'
 Plug         'tpope/vim-bundler'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
