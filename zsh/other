@@ -126,12 +126,6 @@ ensure_tmux_is_running() {
 # even creating the session as needed.
 ensure_tmux_is_running
 
-#~~~~~~~~~~~~~
-# Git
-#~~~~~~~~~~~~~
-# Complete g like git
-compdef g=git
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Hub
 # requires hub: http://defunkt.io/hub/
