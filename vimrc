@@ -307,7 +307,7 @@ set splitright
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " :h map-which-key  " Find keys available
 
-" Map <Leader> to space
+" Map <Leader> key to space
 let mapleader = " "
 
 " Switch between the last two files <=> :e #<CR>
@@ -341,7 +341,7 @@ nnoremap <Leader>f :call ToggleFlog()<CR>
 " Edit the Gemfile
 nnoremap <Leader>G :e Gemfile<CR>
 
-" grep the word under the cursor
+" find/search/grep the word under the cursor
 nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 nnoremap <Leader>gg :GundoToggle<CR>
