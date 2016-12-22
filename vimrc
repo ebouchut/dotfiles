@@ -256,6 +256,13 @@ set nofoldenable " No Code folding
 set diffopt+=vertical
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"  Mouse
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set mouse=a
+" Workaround for this issue: http://stackoverflow.com/questions/7000960/vim-mouse-problem
+set ttymouse=sgr
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Colours, terminal
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
