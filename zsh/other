@@ -43,6 +43,13 @@ plugins=(brew brew-cask colorize colored-manpage completion gem git git-flow git
 source $ZSH/oh-my-zsh.sh
 
 #~~~~~~~~~~~~~~~~~~
+# z: Tracks your most used directories, based on 'frecency'.
+# https://github.com/rupa/z
+#~~~~~~~~~~~~~~~~~~
+export _Z_NO_RESOLVE_SYMLINKS=true
+source /usr/local/etc/profile.d/z.sh
+
+#~~~~~~~~~~~~~~~~~~
 # rvm
 #~~~~~~~~~~~~~~~~~~
 if  which rvm > /dev/null; then
