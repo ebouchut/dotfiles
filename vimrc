@@ -87,9 +87,11 @@ set history=1000   " History size
 set noerrorbells
 set showcmd        " Show the curent command while it is active
 set ruler          " show the cursor position all the time
-set undofile       " Make undo persistent across vim sessions (ie. vim restart)
-set undodir^=~/.vim/undo//
-
+if has('persistent_undo')
+  set undofile       " Make undo persistent across vim sessions (ie. vim restart)
+  set undodir^=~/.vim/undo//
+  set undolevels=5000
+endif
 " Store swap files in a central location
 "   The // at the end of the directory name tells Vim to use the absolute path 
 " to the file to create the swap file to prevent collisions between files 
