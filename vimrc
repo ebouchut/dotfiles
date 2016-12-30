@@ -87,11 +87,18 @@ set history=1000   " History size
 set noerrorbells
 set showcmd        " Show the curent command while it is active
 set ruler          " show the cursor position all the time
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Undo file changes / modifications / backup
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" :earlier 10m
+" Go back in time and restore the buffer as it was 10 minutes before 
 if has('persistent_undo')
   set undofile       " Make undo persistent across vim sessions (ie. vim restart)
   set undodir^=~/.vim/undo//
   set undolevels=5000
 endif
+
 " Store swap files in a central location
 "   The // at the end of the directory name tells Vim to use the absolute path 
 " to the file to create the swap file to prevent collisions between files 
@@ -156,6 +163,9 @@ endif
 "~~~~~~~~~~~~~~
 " Autocomplete
 "~~~~~~~~~~~~~~
+" List the possibilities (list), fill in the longest prefix (longest), show the
+" full possibilty (full)
+" :help wildmode
 set wildmode=list:longest,list:full
 set wildmenu   " Autocomplete command-line
 
