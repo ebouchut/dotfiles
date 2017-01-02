@@ -699,6 +699,11 @@ let Tlist_Auto_Update = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin bufexplorer
+"~~~~~~~~~~~~~~~~~~~~~
+let g:bufExplorerShowRelativePath=1
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Plugin vim-session
 "~~~~~~~~~~~~~~~~~~~~~
  " SessionSave / SessionRestore  instead of  SaveSession / RestoreSession
