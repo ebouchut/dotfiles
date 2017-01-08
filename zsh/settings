@@ -4,18 +4,21 @@
 
 set -k # Enable comments in command line
 
+# where to search for command line completions
+fpath=('~/dev/dotfiles/zsh/completion' $fpath)
+
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # For batch file renaming: zmv -Q '(**/)(*).markdown' '$1$2.md'
 # Source: http://www.drbunsen.org/batch-file-renaming/
 autoload zmv
 
-# Disable flow control
+# Disable flow control (to be able to use <Ctrl-S> in tmux)
 stty -ixon &>/dev/null
 
 setopt APPEND_HISTORY # Don't erase history
 setopt EXTENDED_HISTORY # Add additional data to history like timestamp
-setopt INC_APPEND_HISTORY # Add immediatly
+setopt INC_APPEND_HISTORY # Add immediately
 setopt HIST_FIND_NO_DUPS # Don't show duplicates in search
 setopt HIST_IGNORE_SPACE # Do not log command lines starting with a blank
 setopt NO_HIST_BEEP # Don't beep
