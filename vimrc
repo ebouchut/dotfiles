@@ -38,6 +38,7 @@ Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug 'MattesGroeger/vim-bookmarks'
 Plug         'tpope/vim-bundler'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug         'tpope/vim-commentary' " Comment the current line: gcc
 Plug   'altercation/vim-colors-solarized'  " Solarized colour theme
 Plug    'easymotion/vim-easymotion' " 
