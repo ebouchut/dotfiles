@@ -26,6 +26,7 @@
 	deleted = diff --name-status --diff-filter=D
 	modified = diff --name-status --diff-filter=M
 	renamed = diff --name-status --diff-filter=R
+	pull = pull --ff-only
 [apply]
 	whitespace = nowarn
 [merge]
