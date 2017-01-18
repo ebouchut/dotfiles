@@ -705,6 +705,12 @@ let Tlist_File_Fold_Auto_Close = 1
 let g:bufExplorerShowRelativePath=1
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin bufferGator
+"~~~~~~~~~~~~~~~~~~~~~
+let g:buffergator_vsplit_size=80
+let g:buffergator_show_full_directory_path=0
+
+"~~~~~~~~~~~~~~~~~~~~~
 " Plugin vim-session
 "~~~~~~~~~~~~~~~~~~~~~
  " SessionSave / SessionRestore  instead of  SaveSession / RestoreSession
