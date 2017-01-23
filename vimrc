@@ -100,6 +100,9 @@ if has('persistent_undo')
   set undolevels=5000
 endif
 
+" Recursively search for files into subfolders + provide tab completion
+set path+=**
+
 " Store swap files in a central location
 "   The // at the end of the directory name tells Vim to use the absolute path 
 " to the file to create the swap file to prevent collisions between files 
