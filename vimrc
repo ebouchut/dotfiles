@@ -331,7 +331,7 @@ set splitright
 " :h map-which-key  " Find keys available
 
 " Map <Leader> key to space
-let mapleader = " "
+let mapleader = "\<Space>"
 
 " Switch between the last two files <=> :e #<CR>
 nnoremap <leader><leader> <c-^>
