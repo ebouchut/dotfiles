@@ -723,6 +723,11 @@ let g:session_autoload = 'yes'
 " vim --servername my_session_name
 
 "~~~~~~~~~~~~~~~~~~~~~
+" Plugin mtth/scratch
+"~~~~~~~~~~~~~~~~~~~~~
+let g:scratch_persistence_file = '~/tmp/vim.scratch.txt'
+
+"~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
 "~~~~~~~~~~~~~~~~~~~~~
 if has('unix')
