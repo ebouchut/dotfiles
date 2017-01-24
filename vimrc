@@ -479,6 +479,9 @@ inoremap <RIGHT> <NOP>
 inoremap <UP>    <NOP>
 inoremap <DOWN>  <NOP>
 
+" Search using Perl regular expression instead of the vim variant
+nnoremap /    /\v
+
 nnoremap <F6> :GundoToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :NERDTreeTabsToggle<CR>
