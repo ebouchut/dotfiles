@@ -28,6 +28,7 @@
 	renamed = diff --name-status --diff-filter=R
 	pull = pull --ff-only
 	ignored = status --ignored
+	lasttag = describe --tags --abbrev=0
 [apply]
 	whitespace = nowarn
 [merge]
