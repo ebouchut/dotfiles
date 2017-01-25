@@ -17,11 +17,11 @@ export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 # in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc.
 # Requires the bash-builtins package.
 if [ -f /etc/bash_completion ]; then
- . /etc/bash_completion
+ source /etc/bash_completion
 fi
 
 #~~~~~~~~~~~~~~~~~~~
-# Terminal Colours
+# Terminal Colors
 #~~~~~~~~~~~~~~~~~~~
 case $OSTYPE in
   linux-gnu)
@@ -60,5 +60,7 @@ else
 fi
 echo "DISPLAY set to ${DISPLAY}"
 
-# Disable flow control
+# Disable flow control so that we can use Ctrl-S in tmux
 stty -ixon & >/dev/null
+
+

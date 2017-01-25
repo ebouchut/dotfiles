@@ -45,7 +45,6 @@ if which rvm > /dev/null; then
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
-
 #~~~~~~~~~
 # Rbenv
 #~~~~~~~~~
@@ -55,7 +54,6 @@ if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
   source ~/.rbenv/completions/rbenv.bash
 fi
 
-
 #~~~~~~~~~~~
 # Teamocil
 #~~~~~~~~~~~
@@ -63,14 +61,13 @@ if which teamocil 2>&- ; then
   complete -W "$(teamocil --list)" teamocil 
 fi
 
-
 #~~~~~~~~~~~~~
 # xsh (xiki)
 #~~~~~~~~~~~~~
 if [ -f ~/.xsh ]; then
   source ~/.xsh
 fi
-#
+
 #~~~~~~~~~~~~~
 # Open argument in Dash: 
 #   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/
@@ -78,8 +75,6 @@ fi
  function dash() {
    open "dash://$*"
  }
-
-p
 
 #~~~~~~~~~~~~~~~~~~~~
 # fzf (Fuzzy Finder)
@@ -124,3 +119,8 @@ compdef g=git
 #~~~~~~~~~~~~~
 [ -f /Users/eric/.travis/travis.sh ] && source /Users/eric/.travis/travis.sh
 
+#~~~~~~~~~~~~~~~~
+#  git-hub Completion
+#~~~~~~~~~~~~~~~~
+source completion/git-completion.bash
+source completion/git-hub.completion.bash
