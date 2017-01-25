@@ -10,6 +10,7 @@ fi
 export SHELL=`which zsh`
 export EDITOR=vim
 export PAGER='less -r'
+export MANPATH=$MANPATH:$HOME/man
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Colours
