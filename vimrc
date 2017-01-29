@@ -479,6 +479,9 @@ inoremap <RIGHT> <NOP>
 inoremap <UP>    <NOP>
 inoremap <DOWN>  <NOP>
 
+" <J><K>  to send <Esc> (in insert mode)
+inoremap jk <Esc>
+
 " Search using Perl regular expression instead of the vim variant
 nnoremap /    /\v
 
