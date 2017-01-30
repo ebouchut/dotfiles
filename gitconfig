@@ -75,3 +75,5 @@
 	bc3 = trustExitCode
 [interactive]
 	diffFilter = diff-highlight
+[hub]
+	protocol = https
