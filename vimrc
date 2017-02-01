@@ -144,7 +144,7 @@ set incsearch   " incremetal search
 set ignorecase  " Case insensitive search
 set smartcase   " Override ignorecase if pattern contains uppercase
 set wrapscan    " Search wrap around
-set scrolloff=4 " Keep at least 4 lines below the cursor when scrolling
+set scrolloff=4 " Show at least 4 lines around the cursor (when scrolling)
 set sidescroll=10 " Scroll horizontally 10 characteres at a time
 " Display search hitory using either of these 2 options
 "  q/  
@@ -268,7 +268,7 @@ set mouse=a
 set ttymouse=sgr
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"  Colours, terminal
+"  Colors, terminal
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
 set background=dark " Use a dark background (the other option is light)
@@ -454,7 +454,7 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Use TAB and SHIFT TAB to cycle through the windows
-" nnoremap <TAB>   <C-w>w
+" nnoremap <TAB>   <C-w>w  " disabled as it conflicts with the jumplist
 nnoremap <S-TAB> <C-w>W
 
 " Disable arrow keys
