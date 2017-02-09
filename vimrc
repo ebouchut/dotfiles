@@ -34,7 +34,6 @@ Plug    'scrooloose/syntastic'      " Check syntax
 Plug     'godlygeek/tabular'
 Plug    'majutsushi/tagbar'         " Show tags in a sidebar
 Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
-" Plug        'tbabej/taskwiki'       " Tasks in vimwiki (requires vim-taskwarrior)
 Plug        'SirVer/ultisnips'      " Snippets engine
 Plug 'MattesGroeger/vim-bookmarks'
 Plug         'tpope/vim-bundler'
@@ -56,7 +55,6 @@ Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the 
 Plug        'tpope/vim-repeat'
 Plug         'tpope/vim-projectionist'
 Plug        'ecomba/vim-ruby-refactoring'
-" Plug       'blindFS/vim-taskwarrior' " interface to task-warrior (required)
 Plug         'tpope/vim-rails'
 Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
 Plug         'tpope/vim-rbenv'
