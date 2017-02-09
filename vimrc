@@ -66,6 +66,8 @@ Plug         'tpope/vim-speeddating' " Increment/Decrement dates, times (C-A/C-X
 Plug         'tpope/vim-surround'
 Plug          'kana/vim-textobj-user'
 Plug      'nelstrom/vim-textobj-rubyblock'
+Plug         'roxma/vim-tmux-clipboard'
+Plug  'tmux-plugins/vim-tmux-focus-events' " restore FocusGained and FocusLost
 Plug   'christoomey/vim-tmux-runner'
 Plug       'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
 Plug         'mattn/webapi-vim'  " required by vim-quicklinks
