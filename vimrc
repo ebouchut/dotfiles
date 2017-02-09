@@ -240,6 +240,12 @@ set number  " Display absolute line numbers by default
 "autocmd FocusLost *   :set norelativenumber
 "autocmd FocusGained * :set relativenumber
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Highlight the current line of the active buffer
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+autocmd VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * setlocal cursorline
+autocmd WinLeave,FocusLost,CmdwinLeave                        * setlocal nocursorline
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Help
 "~~~~~~~~~~~~~~~~~~~~~
