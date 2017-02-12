@@ -34,7 +34,7 @@ Plug    'scrooloose/syntastic'      " Check syntax
 Plug     'godlygeek/tabular'
 Plug    'majutsushi/tagbar'         " Show tags in a sidebar
 Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
-Plug        'SirVer/ultisnips'      " Snippets engine
+Plug        'SirVer/ultisnips'      " Snippets engine (needs honza/vim-snippets)
 Plug 'MattesGroeger/vim-bookmarks'
 Plug         'tpope/vim-bundler'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -60,8 +60,9 @@ Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rak
 Plug         'tpope/vim-rbenv'
 Plug    'thoughtbot/vim-rspec'
 Plug      'vim-ruby/vim-ruby'
+Plug          'ngmy/vim-rubocop'
 Plug         'xolox/vim-session'
-Plug         'honza/vim-snippets'  " Snippets
+Plug         'honza/vim-snippets'  " Snippets to feed ultisnips
 Plug         'tpope/vim-speeddating' " Increment/Decrement dates, times (C-A/C-X)
 Plug         'tpope/vim-surround'
 Plug          'kana/vim-textobj-user'
