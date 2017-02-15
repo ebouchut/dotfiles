@@ -77,5 +77,3 @@
 	diffFilter = diff-highlight
 [hub]
 	protocol = https
-[commit]
-	template = /Users/eric/.git_commit_msg.txt
