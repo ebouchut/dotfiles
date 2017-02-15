@@ -65,6 +65,7 @@ Plug         'xolox/vim-session'
 Plug         'honza/vim-snippets'  " Snippets to feed ultisnips
 Plug         'tpope/vim-speeddating' " Increment/Decrement dates, times (C-A/C-X)
 Plug         'tpope/vim-surround'
+Plug      'janko-m/vim-test'
 Plug          'kana/vim-textobj-user'
 Plug      'nelstrom/vim-textobj-rubyblock'
 Plug  'tmux-plugins/vim-tmux'            " Syntax highlighing for tmux
@@ -729,6 +730,13 @@ let g:session_autoload = 'yes'
 " Plugin mtth/scratch
 "~~~~~~~~~~~~~~~~~~~~~
 let g:scratch_persistence_file = '~/tmp/vim.scratch.txt'
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin vim-test
+"~~~~~~~~~~~~~~~~~~~~~
+
+" Use tmux-runner to run tests
+let test#strategy = "vtr"
 
 "~~~~~~~~~~~~~~~~~~~~~
 " OS Specific config
