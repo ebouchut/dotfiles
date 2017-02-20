@@ -502,7 +502,7 @@ noremap <Leader>a :call RunAllSpecs()<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Filetypes
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "~~~~~~~~~~~~~~~~~~~~~
 " JSON file
@@ -520,6 +520,10 @@ autocmd FileType json set equalprg=json_reformat
 "~~~~~~~~~~~~~~~~~~~~~
 " Set Syntax highlighting for Markdown files (not modula 2!)
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" <Leader>u Add a link below the current paragraph using the words under the
+"           cursor and inside square brackets.
+autocmd filetype markdown nnoremap <Leader>u "uya]}2o<Esc>k"upa: <http://><Esc>vi>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Open a FactoryGirl factory:
