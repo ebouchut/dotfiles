@@ -1,0 +1,4 @@
+DOTFILES_DIRS="$HOME/dev/dotfiles"
+EXCLUDES="README.md LICENSE Brewfile"
+TAGS="git tmux sublime"
+
