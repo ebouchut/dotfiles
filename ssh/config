@@ -27,10 +27,3 @@ Host github.com
   # ignoring the keys already loaded in ssh-agent
 	IdentitiesOnly yes  
 
-Host github-apresgilles
-	User git
-	Hostname github.com
-	PreferredAuthentications publickey 
-	IdentityFile ~/.ssh/id_rsa_apresgilles
-	IdentitiesOnly yes  
-
