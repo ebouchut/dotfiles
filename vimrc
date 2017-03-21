@@ -723,6 +723,14 @@ let g:bufExplorerShowRelativePath=1
 let g:buffergator_vsplit_size=80
 let g:buffergator_show_full_directory_path=0
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin vim-instant-markdown
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:instant_markdown_autostart = 0
+" Disable instant preview by default.
+" Use ":InstantMarkdownPreview" to activate markdown preview.
+let g:instant_markdown_slow = 1
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin vim-session
 "~~~~~~~~~~~~~~~~~~~~~
