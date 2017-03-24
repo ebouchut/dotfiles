@@ -29,6 +29,8 @@
 	pull = pull --ff-only
 	ignored = status --ignored
 	lasttag = describe --tags --abbrev=0
+	incoming = !git remote update && git plog ..@{u}
+	outgoing = !git remote update && git plog @{u}..
 [apply]
 	whitespace = nowarn
 [merge]
