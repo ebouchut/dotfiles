@@ -78,4 +78,4 @@
 [interactive]
 	diffFilter = diff-highlight
 [hub]
-	protocol = https
+	protocol = ssh
