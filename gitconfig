@@ -17,7 +17,7 @@
 #	pf = push --force-with-lease
 	wow = log --all --graph --oneline --decorate --simplify-by-decoration
 	score = shortlog -sn
-	mine  = !git plog --graph --author=\"$(git config user.name) <$(git config user.email)>\"
+	mine  = !git plog --graph --author=\"$(git config user.name)\"
 	today = !git plog --graph --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
 	week  = !git plog --graph --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
 	p = plog --all
