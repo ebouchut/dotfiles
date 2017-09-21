@@ -56,7 +56,7 @@ fi
 if which rbenv > /dev/null; then
   export PATH="~/.rbenv/bin:~/.rbenv/shims:$PATH"
   eval "$(rbenv init -)"
-  source $(rbenv root)/completions/rbenv.zsh 
+  # source $(rbenv root)/completions/rbenv.zsh 
 fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
