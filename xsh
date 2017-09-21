@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Make the 'xsh' command available in all shells
-export PATH=$PATH:/Users/ebouchut/dev/xiki/bin
+export PATH=$HOME/dev/xiki/bin
 
 # Define some key shortcuts for quickly switching from your shell to xsh
 xiki_open_key="\C-x"        # Ctrl+X to expand in xsh
