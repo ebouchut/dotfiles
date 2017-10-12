@@ -16,7 +16,7 @@ function start_agent {
 }
 
 if [ -f /usr/local/bin/keychain ]; then
-  /usr/local/bin/keychain $HOME/.ssh/id_dsa
+  /usr/local/bin/keychain $HOME/.ssh/id_rsa
   source $HOME/.keychain/$HOST-sh
 elif [ -f "${SSH_ENV}" ]; then  # Source: http://mah.everybody.org/docs/ssh
   source "${SSH_ENV}" > /dev/null

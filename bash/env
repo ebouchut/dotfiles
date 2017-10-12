@@ -18,6 +18,6 @@ unset MAILCHECK
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # MacOS Specific 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if [[ $OSTYPE == "darwin"* ]]; then 
-  export PATH=/usr/local/sbin:$PATH:/usr/local/bin
-fi
+#if [[ $OSTYPE == "darwin"* ]]; then 
+#  export PATH=/usr/local/sbin:$PATH:/usr/local/bin
+#fi

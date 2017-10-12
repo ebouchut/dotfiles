@@ -1,8 +1,8 @@
 export PATH=$PATH:$HOME/bin
 
-if [[ $OSTYPE == darwin* ]] ; then
-  export PATH=/usr/local/sbin:$PATH
-fi
+#if [[ $OSTYPE == darwin* ]] ; then
+#  export PATH=/usr/local/sbin:$PATH
+#fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Regular 
