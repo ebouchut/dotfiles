@@ -20,6 +20,9 @@ case $OSTYPE in
     alias ls='ls -G'
     alias ll='ls -lG'
     alias lf='ls -CFG'
+    #
+    # QuickLook in the CLI: https://vimeo.com/ondemand/60tipsv2/235210484
+    alias ql='qlmanage -p'
 
     # Show/hide hidden files in MacOS Finder
     alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
