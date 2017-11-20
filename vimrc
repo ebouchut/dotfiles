@@ -75,7 +75,7 @@ Plug         'roxma/vim-tmux-clipboard'
 Plug  'tmux-plugins/vim-tmux-focus-events' " restore FocusGained and FocusLost
 Plug   'christoomey/vim-tmux-runner'
 Plug       'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
-Plug       'insanum/votl'     " https://github.com/insanum/votl
+" Plug       'insanum/votl'     " https://github.com/insanum/votl
 " Plug       'vimoutliner/vimoutliner'  "https://github.com/vimoutliner/vimoutliner
 Plug         'mattn/webapi-vim'  " required by vim-quicklinks
 call plug#end()
