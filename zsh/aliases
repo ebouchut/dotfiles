@@ -11,7 +11,7 @@ case $OSTYPE in
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
     alias lf='ls -CF --color'
-    alias log_elastic='tail -f /var/log/elasticsearch/es-netadge.log /var/log/elasticsearch/es-netadge_index_*'
+    alias es_log='tail -f /var/log/elasticsearch/es-netadge.log /var/log/elasticsearch/es-netadge_index_*'
   ;;
   darwin*)
     # Colored up cat!
