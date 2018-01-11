@@ -55,13 +55,13 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = vimdiff
+	tool = bc3
 	submodule = log
 [merge]
 	tool = bc3
 [mergetool]
 	bc3 = trustExitCode
-	prompt = false
+  prompt = false
 [mergetool "bc3"]
 	trustExitCode = true
 [mergetool "splice"]
