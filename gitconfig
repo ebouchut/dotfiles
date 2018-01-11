@@ -55,18 +55,27 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = bc3
+	tool = deltawalker
+# 	tool = bc3
 	submodule = log
+[difftool]
+	prompt = false
+[difftool  "deltawalker"]
+	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-diff' "$LOCAL" "$REMOTE"
 [merge]
-	tool = bc3
+	tool = deltawalker
+# 	tool = bc3
 [mergetool]
+	keepBackup = false
 	bc3 = trustExitCode
-  prompt = false
+	prompt = false
 [mergetool "bc3"]
 	trustExitCode = true
 [mergetool "splice"]
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
+[mergetool  "deltawalker"]
+	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [interactive]
 	diffFilter = diff-highlight
 [hub]
