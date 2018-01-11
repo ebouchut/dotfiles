@@ -33,8 +33,6 @@
 	outgoing = !git remote update && git plog @{u}..
 [apply]
 	whitespace = nowarn
-[merge]
-	tool = splice
 [core]
 	autocrlf = input
 	safecrlf = true
@@ -42,12 +40,6 @@
 	pager = less -FRSX
 [credential]
 	helper = osxkeychain
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [push]
 	default = simple
 [rerere]
@@ -65,16 +57,16 @@
 [diff]
 	tool = vimdiff
 	submodule = log
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+	prompt = false
+[mergetool "bc3"]
 	trustExitCode = true
 [mergetool "splice"]
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
-[mergetool]
-	bc3 = trustExitCode
 [interactive]
 	diffFilter = diff-highlight
 [hub]
