@@ -66,18 +66,19 @@
 	tool = deltawalker
 # 	tool = bc3
 [mergetool]
-	keepBackup = false
 	bc3 = trustExitCode
 	prompt = false
 [mergetool "bc3"]
 	trustExitCode = true
+	keepBackup = false
+[mergetool  "deltawalker"]
+	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+	keepBackup = false
 [mergetool "p4merge"]
 	keepBackup = false
 [mergetool "splice"]
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
-[mergetool  "deltawalker"]
-	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [interactive]
 	diffFilter = diff-highlight
 [hub]
