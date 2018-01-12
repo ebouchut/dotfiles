@@ -71,6 +71,8 @@
 	prompt = false
 [mergetool "bc3"]
 	trustExitCode = true
+[mergetool "p4merge"]
+	keepBackup = false
 [mergetool "splice"]
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
