@@ -55,16 +55,14 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = deltawalker
-# 	tool = bc3
+	tool = bc3
 	submodule = log
 [difftool]
 	prompt = false
 [difftool  "deltawalker"]
 	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-diff' "$LOCAL" "$REMOTE"
 [merge]
-	tool = deltawalker
-# 	tool = bc3
+	tool = bc3
 [mergetool]
 	bc3 = trustExitCode
 	prompt = false
