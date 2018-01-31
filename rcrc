@@ -1,4 +1,16 @@
-DOTFILES_DIRS="$HOME/dev/dotfiles"
-EXCLUDES="README.md LICENSE Brewfile"
-TAGS="git tmux sublime"
+# Rcm is a (Rc/dotfiles) configuration manager.
+#
+# Sources:
+# * https://thoughtbot.com/upcase/videos/manage-and-share-your-dotfiles-with-rcm
+# * https://robots.thoughtbot.com/rcm-for-rc-files-in-dotfiles-repos
+#
+# Install rcm on MacOS with brew:
+#    brew install thougbout/formulae rcm
+#
+# Install the dotfiles from within this directory
+#    RCRC=rcrc rcup
 
+DOTFILES_DIRS="$HOME/dev/dotfiles"
+EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
+SYMLINK_DIRS="vim"
+TAGS="git tmux vim"
