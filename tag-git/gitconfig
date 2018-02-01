@@ -1,0 +1,83 @@
+[user]
+	name = Eric Bouchut
+	email = ebouchut@gmail.com
+[color]
+	ui = auto
+[alias]
+	hist = log --pretty=format:'%h  %ad | %s%d [%an]' --graph --date=short
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	catchup = log --patch --reverse --topo-order _ribbon..origin/master
+	pullify = config add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*'
+	plog = log --graph --date=relative --format=\"%Cgreen%h %C(auto)%d %Creset%s  %C(yellow)(%cd) %C(magenta)<%aN>%Creset\"
+	plog-files = plog --name-status
+	logf = log --follow
+	unstage = reset HEAD --
+	s = status
+	ctags = !.git/hooks/ctags
+#	pf = push --force-with-lease
+	wow = log --all --graph --oneline --decorate --simplify-by-decoration
+	score = shortlog -sn
+	mine  = !git plog --graph --author=\"$(git config user.name)\" --author="ldm-eric.bouchut"
+	today = !git plog --graph --since=midnight --author=\"$(git config user.name) <$(git config user.email)>\"
+	week  = !git plog --graph --since \"one week ago\" --author=\"$(git config user.name) <$(git config user.email)>\"
+	p = plog --all
+	added = diff --name-status --diff-filter=A
+	removed = diff --name-status --diff-filter=D
+	deleted = diff --name-status --diff-filter=D
+	modified = diff --name-status --diff-filter=M
+	renamed = diff --name-status --diff-filter=R
+	pull = pull --ff-only
+	ignored = status --ignored
+	lasttag = describe --tags --abbrev=0
+	incoming = !git remote update && git plog ..@{u}
+	outgoing = !git remote update && git plog @{u}..
+[apply]
+	whitespace = nowarn
+[core]
+	autocrlf = input
+	safecrlf = true
+	excludesfile = ~/.gitignore_global
+	pager = less -FRSX
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[rerere]
+[dude]
+	interval = 60
+[commit]
+[init]
+	templatedir = ~/.git_template
+[gitsh]
+	noGreeting = true
+[pager]
+	log = diff-highlight | less -FRSX
+	show = diff-highlight | less -FRSX
+	diff = diff-highlight | less -FRSX
+[diff]
+	tool = bc3
+	submodule = log
+[difftool]
+	prompt = false
+[difftool  "deltawalker"]
+	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-diff' "$LOCAL" "$REMOTE"
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+	prompt = false
+[mergetool "bc3"]
+	trustExitCode = true
+	keepBackup = false
+[mergetool  "deltawalker"]
+	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+	keepBackup = false
+[mergetool "p4merge"]
+	keepBackup = false
+[mergetool "splice"]
+	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
+	trustExitCode = true
+[interactive]
+	diffFilter = diff-highlight
+[hub]
+	protocol = ssh
