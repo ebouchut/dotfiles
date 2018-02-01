@@ -13,4 +13,4 @@
 DOTFILES_DIRS="$HOME/dev/dotfiles"
 EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
 SYMLINK_DIRS="vim"
-TAGS="tmux"
+TAGS="tmux vim bash zsh ruby" # ssh sublime todo xsh
