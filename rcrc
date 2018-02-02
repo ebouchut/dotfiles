@@ -35,13 +35,13 @@ EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not copy these directories, but create a symbolic link instead
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SYMLINK_DIRS="vim"
+SYMLINK_DIRS="bash vim zsh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Space separated list of files/directories not to prefix with a dot.
 # For instance use "bin" instead of ".bin".
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-UNDOTTED="bin rbenv"
+UNDOTTED="bash bin zsh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # What dotfiles to install by default
