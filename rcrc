@@ -36,6 +36,12 @@ EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 SYMLINK_DIRS="vim"
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Space separated list of files/directories not to prefix with a dot.
+# For instance use "bin" instead of ".bin".
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNDOTTED="bin rbenv"
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # What dotfiles to install by default
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
