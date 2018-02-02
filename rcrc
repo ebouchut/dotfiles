@@ -22,10 +22,11 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Where to find the dotfiles
+# The directory where to find the dotfiles
+# You can override this using the -d option.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DOTFILES_DIRS="$HOME/dev/dotfiles"
-#
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not install those files
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
