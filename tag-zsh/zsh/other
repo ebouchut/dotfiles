@@ -13,6 +13,8 @@ fi
 
 #~~~~~~~~~~~~~~~~~~
 # oh-my-zsh
+# Install my fork of oh-my-zsh and jump on the branch "ebouchut"
+#     git clone git@gihub.com:ebouchut/oh-my-zsh.git  &&  git checkout ebouchut
 #~~~~~~~~~~~~~~~~~~
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/dev/oh-my-zsh
