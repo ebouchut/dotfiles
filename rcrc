@@ -22,26 +22,27 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# The directory where to find the dotfiles
+# The directory where to find the dotfiles.
 # You can override this using the -d option.
+# Export this variable so that hooks/pre-up can use it.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DOTFILES_DIRS="$HOME/dev/dotfiles"
+export DOTFILES_DIRS="$HOME/dev/dotfiles"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not install those files
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
+EXCLUDES="Brewfile install.sh LICENSE README.md bash ssh zsh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not copy these directories, but create a symbolic link instead
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SYMLINK_DIRS="bash vim zsh"
+SYMLINK_DIRS="bash dotfiles vim zsh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Space separated list of files/directories not to prefix with a dot.
 # For instance use "bin" instead of ".bin".
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-UNDOTTED="bash bin zsh"
+UNDOTTED="bin"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # What dotfiles to install by default
