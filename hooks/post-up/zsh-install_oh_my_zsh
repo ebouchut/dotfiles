@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This hook is run everytime after rcup is run
+# https://thoughtbot.github.io/rcm/rcup.1.html#DIRECTORY_LAYOUT
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install oh-my-zsh if not present
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+if [ ! -d $HOME/dev/oh-my-zsh ]; then
+    if [ ! -d $HOME/dev ]; then
+        mkdir -p $HOME/dev
+    fi
+
+    echo "INFO: Installing oh-my-zsh..."
+    git clone git://github.com/ebouchut/oh-my-zsh.git $HOME/dev/oh-my-zsh \
+	    && ( cd $HOME/dev/oh-my-zsh && git checkout ebouchut )
+fi
