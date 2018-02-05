@@ -5,17 +5,20 @@
 # in the current iTerm window 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[[ $OSTYPE == darwin* ]] || { echo "This command only works on a Mac, aborting" >&2 ; exit 1 }
+[[ $OSTYPE == darwin* ]] || { 
+  echo "This command only works on a Mac, aborting" >&2
+  exit 1
+}
 
 osascript - "$@" <<EOF
 on run argv
-tell application "iTerm"
+  tell application "iTerm"
     activate
     tell current session of current window
-        repeat with arg in argv
-           write text arg
-        end repeat
+      repeat with arg in argv
+        write text arg
+      end repeat
     end tell
-end tell
+  end tell
 end run
 EOF
