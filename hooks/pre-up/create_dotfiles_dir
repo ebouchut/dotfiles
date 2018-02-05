@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This hook is run everytime rcup is run
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Create ~/.dotfiles
+if [ -e ~/.dotfiles ] ; then
+	echo "WARNING: ~/.dotfiles already exists" >&2
+	ls -l ~/.dotfiles
+	exit 1
+fi
+
+if ! ln -s "$DOTFILES_DIRS" ~/.dotfiles ; then
+	echo "WARNING: Cannot create ~/.dotfiles" >&2 
+	exit 2
+fi
+
+echo "Created ~/.dotfiles => ($DOTFILES_DIRS)"
+exit 0

@@ -1,0 +1,5 @@
+source ~/.dotfiles/tag-bash/bash/env      # Environment variables
+source ~/.dotfiles/tag-bash/bash/aliases 
+source ~/.dotfiles/tag-bash/bash/settings # Bash specific settings
+source ~/.dotfiles/tag-bash/bash/config   # 3rd Party programs (non bash) specific settings
+

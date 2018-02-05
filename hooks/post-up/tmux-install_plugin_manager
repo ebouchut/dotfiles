@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This hook is run everytime after rcup is run
+# https://thoughtbot.github.io/rcm/rcup.1.html#DIRECTORY_LAYOUT
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install tmux plugin manager (tpm) if needed
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+if [ ! -d $HOME/.tmux/plugins/tpm ]; then
+    if [ ! -d $HOME/.tmux/plugins ]; then
+        mkdir -p $HOME/.tmux/plugins
+    fi
+
+    echo "INFO: Installing tmux plugin manager (tpm)..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi

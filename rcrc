@@ -1,16 +1,66 @@
-# Rcm is a (Rc/dotfiles) configuration manager.
+# Rcm is a (Rc/dotfiles) configuration manager (install/uninstall).
 #
 # Sources:
+# * https://github.com/thoughtbot/rcm
 # * https://thoughtbot.com/upcase/videos/manage-and-share-your-dotfiles-with-rcm
 # * https://robots.thoughtbot.com/rcm-for-rc-files-in-dotfiles-repos
 #
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install rcm
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Install rcm on MacOS with brew:
 #    brew install thougbout/formulae rcm
-#
+# Install rcm on Linux
+#   https://github.com/thoughtbot/rcm
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install the dotfiles
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Install the dotfiles from within this directory
 #    RCRC=rcrc rcup
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DOTFILES_DIRS="$HOME/dev/dotfiles"
-EXCLUDES="Brewfile install.sh LICENSE README.md ssh"
-SYMLINK_DIRS="vim"
-TAGS="git tmux vim"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# The directory where to find the dotfiles.
+# You can override this using the -d option.
+# Export this variable so that hooks/pre-up can use it.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export DOTFILES_DIRS="$HOME/dev/dotfiles"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Do not install those files
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+EXCLUDES="Brewfile install.sh LICENSE README.md bash ssh zsh"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Do not copy these directories, but create a symbolic link instead
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SYMLINK_DIRS="bash dotfiles vim zsh"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Space separated list of files/directories not to prefix with a dot.
+# For instance use "bin" instead of ".bin".
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNDOTTED="bin"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# What dotfiles to install by default
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# A tag is basically a directory containing dotfiles.
+# The name of a tag is tag-XXX where 
+# XXX denotes the category of dotfiles it contains.
+# TAGS contains the name of tags to install by default without their prefix "tag-".
+# When installing a tag rcup does not create the tag-XXX directory.
+# It only installs the dotfiles it finds in this directory.
+#
+TAGS="git tmux bash ruby vim zsh"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install non default tags
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Once you have installed the default tags,
+# you can install the dotfiles contained in other tags,
+# using the -d option followed by the name of the tag without its prefix "tag-".
+# For instance to install the dotfiles for ssh (available in tag-ssh):
+#     RCRC=rcrc rcup -d ssh
