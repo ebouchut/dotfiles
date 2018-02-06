@@ -31,6 +31,10 @@
 	lasttag = describe --tags --abbrev=0
 	incoming = !git remote update && git plog ..@{u}
 	outgoing = !git remote update && git plog @{u}..
+	stsh = stash --keep-index  # unstaged
+#	stash: unstaged + staged
+	staash = stash --include-untracked  # unstaged + staged + untracked
+	staaash = stash --all  # unstaged + staged + untracked + ignored
 [apply]
 	whitespace = nowarn
 [core]
