@@ -8,6 +8,7 @@ vim/swap/
 vim/undo/
 vim/viminfo
 vim/view/
+vim/autoload/
 
 tag-vim/vim/.netrwhist
 tag-vim/vim/backup/
@@ -17,6 +18,7 @@ tag-vim/vim/swap/
 tag-vim/vim/undo/
 tag-vim/vim/viminfo
 tag-vim/vim/view/
+tag-vim/vim/autoload/
 
 # Emacs
 /emacs.d/.places
