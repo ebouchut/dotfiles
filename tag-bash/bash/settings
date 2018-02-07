@@ -58,9 +58,11 @@ else
         export X_HOST="$(< ~/.last_host)"
         export DISPLAY="$(< ~/.last_host)$(< ~/.last_display)"
 fi
-echo "DISPLAY set to ${DISPLAY}"
 
-# Disable flow control so that we can use Ctrl-S in tmux (if stdin is a tty)
-[[ $- == *i* ]] && stty -ixon & >/dev/null
+[[ $- == *i* ]] ; then
+  echo "DISPLAY set to ${DISPLAY}"
 
+  # Disable flow control so that we can use Ctrl-S in tmux (if stdin is a tty)
+  stty -ixon & >/dev/null
+fi
 
