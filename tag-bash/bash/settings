@@ -53,14 +53,14 @@ then
         else
                 echo "${DISPLAY}" > ~/.last_display
         fi
-        xhost +
+        type xhost 2>/dev/null 1>&2 && xhost +
 else
         export X_HOST="$(< ~/.last_host)"
         export DISPLAY="$(< ~/.last_host)$(< ~/.last_display)"
 fi
 echo "DISPLAY set to ${DISPLAY}"
 
-# Disable flow control so that we can use Ctrl-S in tmux
-stty -ixon & >/dev/null
+# Disable flow control so that we can use Ctrl-S in tmux (if stdin is a tty)
+[[ $- == *i* ]] && stty -ixon & >/dev/null
 
 
