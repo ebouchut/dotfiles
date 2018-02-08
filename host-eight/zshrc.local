@@ -4,5 +4,8 @@
 # Configuration specific to the host eight
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-export PATH=$PATH:/usr/local/rvm/bin
 export LC_ALL=fr_FR.UTF-8
+
+# Add rvm bin dirs to $PATH
+source /etc/profile.d/rvm.sh
+export PATH=$PATH:/usr/local/rvm/bin
