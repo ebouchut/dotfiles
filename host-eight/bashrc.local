@@ -5,5 +5,5 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-export PATH=$PATH:/usr/local/bin/rvm
+export PATH=$PATH:/usr/local/rvm/bin
 export LC_ALL=fr_FR.UTF-8
