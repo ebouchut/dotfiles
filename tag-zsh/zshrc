@@ -4,5 +4,5 @@ source ~/.dotfiles/tag-zsh/zsh/settings  # Zsh specific settings
 source ~/.dotfiles/tag-zsh/zsh/other     # 3rd party programs settings (non zsh) 
 
 # Source host local config file if any
-[ -f ~/.dotfiles/tag-zsh/local ] && source ~/.dotfiles/tag-zsh/local
+[ -f ~/.dotfiles/tag-zsh/zsh/local ] && source ~/.dotfiles/tag-zsh/zsh/local
 
