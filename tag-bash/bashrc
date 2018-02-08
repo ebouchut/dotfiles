@@ -4,5 +4,5 @@ source ~/.dotfiles/tag-bash/bash/settings # Bash specific settings
 source ~/.dotfiles/tag-bash/bash/other   # 3rd Party programs (non bash) specific settings
 
 # Source host local config file if any
-[ -f ~/.dotfiles/tag-bash/bash/local ] && source ~/.dotfiles/tag-bash/bash/local
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
