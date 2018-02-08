@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Configuration specific to the host eight
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+export PATH=$PATH:/usr/local/bin/rvm
+export LC_ALL=fr_FR.UTF-8
