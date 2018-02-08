@@ -1,0 +1,30 @@
+#!/bin/sh
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install Excuberant Ctags
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+type hub >/dev/null 2>&1 && exit 0
+
+
+# Ctags is not installed, installing it.
+
+case $OSTYPE in
+  darwin*)
+    brew install ctags
+  ;;
+  linux*)
+    install_ctags
+  ;;
+esac
+
+install_ctags() {
+  mkdir -p $HOME/bin \
+    && cd $HOME/tmp \
+    && curl -LO  http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz \
+    && tar -xvf ctags-5.8.tar.gz  \
+    &&  cd ctags-5.8 \
+    &&  ./configure --prefix=$HOME/local \
+    && make \
+    && make install
+}
