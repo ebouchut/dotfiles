@@ -69,13 +69,6 @@ if which teamocil > /dev/null 2>&-; then
 fi
 
 #~~~~~~~~~~~~~
-# xsh (xiki)
-#~~~~~~~~~~~~~
-if [ -f ~/.xsh ]; then
-  source ~/.xsh
-fi
-
-#~~~~~~~~~~~~~
 # Open argument in Dash
 #   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/
 #~~~~~~~~~~~~~
