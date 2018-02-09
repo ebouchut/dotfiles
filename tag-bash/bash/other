@@ -113,9 +113,6 @@ ensure_tmux_is_running
 #  fi
 #}
 
-# Complete g like git
-compdef g=git
-
 #~~~~~~~~~~~~~
 # travis
 #~~~~~~~~~~~~~
