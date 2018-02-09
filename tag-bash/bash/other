@@ -85,7 +85,9 @@ fi
 #~~~~~~~~~~~~~
 # Tmux
 #~~~~~~~~~~~~~
-_not_inside_tmux() { [[ -z "$TMUX" ]] }
+_not_inside_tmux() {
+  [[ -z "$TMUX" ]]
+}
 
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
@@ -122,5 +124,5 @@ compdef g=git
 #~~~~~~~~~~~~~~~~
 #  git-hub Completion
 #~~~~~~~~~~~~~~~~
-source completion/git-completion.bash
-source completion/git-hub.completion.bash
+source ~/.dotfiles/tag-bash/bash/completion/git-completion.bash
+source ~/.dotfiles/tag-bash/bash/completion/git-hub.completion.bash

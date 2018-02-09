@@ -92,7 +92,9 @@ fi
 #~~~~~~~~~~~~~
 # Tmux
 #~~~~~~~~~~~~~
-_not_inside_tmux() { [[ -z "$TMUX" ]] }
+_not_inside_tmux() { 
+  [[ -z "$TMUX" ]] 
+}
 
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
@@ -124,3 +126,8 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [ -f /Users/eric/.travis/travis.sh ] && source /Users/eric/.travis/travis.sh
 
+#~~~~~~~~~~~~~~~~
+# git-hub Completion
+#~~~~~~~~~~~~~~~~
+source ~/.dotfiles/tag-zsh/zsh/completion/git-completion.zsh
+source ~/.dotfiles/tag-zsh/zsh/completion/git-hub.completion.zsh
