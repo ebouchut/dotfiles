@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # This hook is run everytime after rcup is run
