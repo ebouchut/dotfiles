@@ -1,6 +1,6 @@
 export HOST=`hostname`
 export EDITOR=vim
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/local/bin:$PATH:$HOME/bin
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PAGER='less -r'
