@@ -61,13 +61,6 @@ if which rbenv > /dev/null; then
   # source $(rbenv root)/completions/rbenv.zsh 
 fi
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Teamocil
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if which teamocil > /dev/null 2>&-; then
-  compctl -g '~/.teamocil/*(:t:r)' teamocil # Add autocompletion for teamocil
-fi
-
 #~~~~~~~~~~~~~
 # Open argument in Dash
 #   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/
