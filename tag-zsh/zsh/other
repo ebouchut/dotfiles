@@ -88,6 +88,10 @@ ensure_tmux_is_running() {
   fi
 }
 
+# To prevent tmux sessions from hanging out when a cron tasks cleans up /tmp
+export TMUX_TMPDIR=$HOME/tmp/tmux
+[ ! -d $TMUX_TMPDIR ] && mkdir -p $TMUX_TMPDIR
+
 # Automatically connect to a tmux session on startup, 
 # even creating the session as needed.
 ensure_tmux_is_running
