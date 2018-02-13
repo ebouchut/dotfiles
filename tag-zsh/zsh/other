@@ -94,7 +94,7 @@ export TMUX_TMPDIR=$HOME/tmp/tmux
 
 # Automatically connect to a tmux session on startup, 
 # even creating the session as needed.
-ensure_tmux_is_running
+[[ "$-" == *i* ]] && ensure_tmux_is_running
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Hub
