@@ -59,7 +59,6 @@ Plug    'plasticboy/vim-markdown'      " requires "tabular"
 Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
-Plug   'christoomey/vim-quicklink'   " Look up a topic in google and insert the markdwn link
 " Plug 'sentientmonkey/vim-flog' " Compute Ruby cyclomatic complexity with flog
 Plug        'tpope/vim-repeat'
 Plug         'tpope/vim-projectionist'
@@ -84,7 +83,6 @@ Plug   'christoomey/vim-tmux-runner'
 Plug       'vimwiki/vimwiki'  " https://github.com/vimwiki/vimwiki#key-bindings
 " Plug       'insanum/votl'     " https://github.com/insanum/votl
 " Plug       'vimoutliner/vimoutliner'  "https://github.com/vimoutliner/vimoutliner
-Plug         'mattn/webapi-vim'  " required by vim-quicklinks
 call plug#end()
 
 "~~~~~~~~~~~~~~~~~~~~~~~
