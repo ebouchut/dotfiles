@@ -56,6 +56,7 @@ Plug       'jparise/vim-graphql'
 Plug      'junegunn/gv.vim'         " Git commit browser
 Plug          'elzr/vim-json'
 Plug    'plasticboy/vim-markdown'      " requires "tabular"
+Plug    'itspriddle/vim-marked'     " Preview Markdown in Marked 2
 Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
 Plug     'powerman/vim-plugin-AnsiEsc' " for colorful charts in taskwiki
