@@ -35,6 +35,7 @@
 #	stash: unstaged + staged
 	staash = stash --include-untracked  # unstaged + staged + untracked
 	staaash = stash --all  # unstaged + staged + untracked + ignored
+	tags = !git tag -l | sort -V
 [apply]
 	whitespace = nowarn
 [core]
