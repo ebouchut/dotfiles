@@ -41,6 +41,7 @@ Plug     'godlygeek/tabular'
 Plug    'majutsushi/tagbar'         " Show tags in a sidebar
 Plug   'vim-scripts/taglist.vim'    " Source Code Browser (tag bar)
 Plug        'SirVer/ultisnips'      " Snippets engine (needs honza/vim-snippets)
+Plug      'smerrill/vcl-vim-plugin' " Varnish Config Language (VCL) syntax highlighting
 Plug 'MattesGroeger/vim-bookmarks'
 Plug         'tpope/vim-bundler'
 Plug 'jeetsukumaran/vim-buffergator'
