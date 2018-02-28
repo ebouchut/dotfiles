@@ -1,0 +1,494 @@
+# Tmux configuration file
+#
+# Sources:
+# * CheatSheet: https://gist.github.com/andreyvit/2921703
+# * http://blog.hawkhost.com/2009/07/02/tmux--the-terminal-multiplexer-part-2/
+# * https://upcase.com/tmux
+# * Tmux Taster
+#  
+# Requirements:
+# * Tmux 1.9+ (<= plugin tmux resurrect)
+# * Tmux Plugin Manager:
+#     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# * fzf: https://github.com/junegunn/fzf
+# * tat: https://github.com/thoughtbot/dotfiles/blob/master/bin/tat
+# * ansifilter (on OsX, for tmux logging): brew install ansifilter
+# * urlview (on MacOS only, for tmux-urlview): brew install urlview
+# * fpp    brew install fpp
+#
+# -------------------
+# Tmux in a few words
+# -------------------
+# Tmux Server
+#   +-- Session
+#         +-- Window
+#               +---- Pane
+#
+# A tmux server hosts muliple sessions.
+# Multiple tmux servers can run at the same time.
+#    tmux ls  # list existing sessions in a tmux server
+#    tmux attach -t SESSION_NAME  # Open the session SESSION_NAME
+#
+# A tmux *session* is a logical grouping of windows.
+# Multiple sessions can run at the same time.
+# Selecting a* session gives you acces to the windows it s composed of.
+#
+# A *window* looks like a tab you can select.
+# Selecting a window, dissplays the panes it is composed of.
+#
+# A pane is rectangular area within a window within which you interact 
+# as you do in a regular terminal.
+#
+# To make an analogy here, a Tmux server is a city composed of houses.
+# Each house is a tmux session, composed of rooms.
+# Each room is a tmux "window and contains walls.
+# Each wall is a tmux pane.
+# A tmux client is kind of an intermediary with which you interact with the house
+# to get in or out of the house, create rooms, walls.
+
+#--------------
+# Tmux commands
+# -------------
+# bind-key          is aliased bind
+# unbind-key        is aliased unbind
+# set-window-option is aliased set-w
+# set-option        is aliased set
+#
+# list-commands   # List tmux sub commands
+# list-keys       # List tmux key mappings
+
+#====================
+#   Key Bindings
+#====================
+# Action Key binding: Use C-a instead of C-b as a prefix for any command
+# To send <Control>-a to an application running within tmux simply by press CTRL-a twice.
+set -g prefix C-a
+bind C-a send-prefix
+
+# Release the defaut prefix  <Control>b  so that it can be used for something else
+unbind C-b
+
+# use emacs key bindings
+set-w -g mode-keys emacs
+
+# <Prefix>r  reloads tmux config file
+unbind r
+bind r source-file ~/.tmux.conf \; display "~/.tmux.conf reloaded!"
+
+# <Control>s  forward-incremental-history-search
+bind C-s send-prefix -2
+
+#~~~~~~~~~~~~~~
+#  Terminal
+#~~~~~~~~~~~~~~
+# Uncomment in case arrows do not work in vim, when in 256 colors
+# set -g default-terminal "screen-256color"
+
+# Use true colors for the specified terminals
+# Source: https://github.com/tmux/tmux/issues/34#issuecomment-261017036
+set-option -ga terminal-overrides ",screen-256color:Tc,xterm-256color:Tc"
+
+set -g history-limit 50000
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Copy and Paste
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# <Prefix>[     Enter copy mode mode
+# When in copy mode:
+
+# <v>  Enter visual selection (aka vi-copy) mode as in Vim
+if-shell "[[ `tmux -V | cut -d' ' -f2`  -lt 2.4 ]]" '\
+  bind -t vi-copy 'v' begin-selection\
+  bind -t vi-copy 'y' copy-selection\
+'
+
+# Tmux 2.4 introcuced a breaking config change for copy-mode
+# https://forum.upcase.com/t/tmux-part-3-navigation/4075/53
+# https://github.com/tmux/tmux/blob/2.4/CHANGES#L6-L24 
+if-shell "[[ `tmux -V | cut -d' ' -f2`  -ge 2.4 ]]" '\
+  setw -g mouse on;\
+  bind -T copy-mode-vi 'v' send -X begin-selection\
+  bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"\
+  \
+  # Update default binding of `Enter` to also use copy-pipe\
+  unbind   -T copy-mode-vi Enter\
+  bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"\
+  '
+
+#~~~~~~~~~~~~~
+# Paste text
+#~~~~~~~~~~~~~
+# <Prefix>]   Paste the last copied text
+
+# <Prefix>=   Choose interacively which buffer to paste from a list
+#             or type q to exit.
+
+# List tmux vim copy/paste key bindings
+#   tmux list-keys -t vi-copy
+
+# When presing ESC tmux triggers the action immediately, without waiting
+set -sg escape-time 0
+
+#  Display each message during 2 seconds
+set -g display-time 2000
+
+#====================
+# Sessions
+#====================
+
+#~~~~~~~~~~~~~~~~~~~
+# Create a session
+#~~~~~~~~~~~~~~~~~~~
+# <Control>b  Create a new session named after the directory of the current pane
+# Requires: tat
+bind C-b send-keys 'tat && exit' 'C-m'
+
+# <Prefix>K   Kill the current session and switch to another one (without leaving tmux)
+bind K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
+
+#~~~~~~~~~~~~~~~~~~~
+# Session navigation
+#~~~~~~~~~~~~~~~~~~~
+
+# <Prefix>)    Go to the next     session
+# <Prefix>(    Go to the previous session
+# <Prefix>L    Go to the last     session
+# <Prefix>d    detach from the current session
+# Go to sessions named SESSION_NAME
+#  <Prefix>:switch-client -t SESSION_NAME
+
+# <Prefix><Control>j   lists existing sessions (use C-n to go down or C-p to go up)
+bind C-j choose-tree
+
+# <Prefix><Control>j  Fuzzy finder to switch to another session
+#   Requires fzf: https://github.com/junegunn/fzf
+bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+
+#~~~~~~~~~~~~~~~~~~~
+# Rename Session 
+#~~~~~~~~~~~~~~~~~~~
+# <Prefix>$   Rename the current sesson
+# <Prefix>: rename-session -t CURRENT_SESSION_NAME  NEW_SESSION_NAME
+
+#==================
+# Windows
+#==================
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Window Settings
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Keep the window name fixed
+setw -g automatic-rename off
+set  -g allow-rename off
+
+# Window numbering (window index) start at 1 (instead of 0 by default).
+set -g  base-index      1
+
+# Pane numvering start at 1
+setw -g pane-base-index 1
+
+ # Renumber windows as they are created and destroyed to keep the window numbers
+# consistent with the count.
+set -g renumber-windows on
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Create a window
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# <Prefix>c  Create a new window using the same current working directory 
+#            as the current pane
+bind c new-window -c "#{pane_current_path}"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Rename a window
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# <Prefix>,   Rename the current window
+
+#~~~~~~~~~~~~~~~~~~~~~~~
+# Window Navigation
+#~~~~~~~~~~~~~~~~~~~~~~~
+
+# <Prefix>n    Go to the next window (the one on the right)
+# <Prefix>p    Go to the previous window (the one on the left)
+# <Prefix>l    Go to the last window
+# <Prefix>N    Go to the window with the index N (where N is [0-9])
+# <Prefix>'NN  Go to the window where the index NN is >= 10
+
+#~~~~~~~~~~~~~~~
+# Move a window
+#~~~~~~~~~~~~~~~
+
+# <Prefix>.N   Move the current window to the index N
+
+# Move the window with index SOURCE_INDEX to the index TARGET_INDEX
+# <Prefix>:move-window -s SOURCE_INDEX -t TARGET_INDEX
+
+# <Control><Shift><Left>  Move to the current window to the left
+bind -n C-S-Left swap-window -t -1
+
+# <Control><Shift><right> Move the current window to the right
+bind -n C-S-Right swap-window -t +1
+
+#==================
+# Panes
+#==================
+# Create new panes in the same directory as the current pane
+
+# <Prefix>|   Split the current pane horizontally
+bind | split-window -h -c '#{pane_current_path}'
+
+# <Prefix>-    Split the current pane vertically
+bind - split-window -v -c '#{pane_current_path}'
+
+# <Prefix>h Run htop in a pane on the right
+bind h split-window -h "htop || top"
+
+# <Prefix>g Show Rails development logs
+bind g split-window -h -c '#{pane_current_path}' 'tail -f log/development.log log/sidekiq.log'
+
+#~~~~~~~~~~~~~~~~~~~
+# Move Panes
+#~~~~~~~~~~~~~~~~~~~
+# <Prefix>b Move the current pane into a new window
+bind b break-pane -d
+
+#~~~~~~~~~~~~~~~~~~~
+# Resize Panes
+#~~~~~~~~~~~~~~~~~~~
+# Fine adjustment (1 or 2 cursor cells per bump)
+bind -n S-Left  resize-pane -L 2
+bind -n S-Right resize-pane -R 2
+bind -n S-Down  resize-pane -D 1
+bind -n S-Up    resize-pane -U 1
+
+# <Prefix>z  zomm in/out the current pane
+
+#~~~~~~~~~~~~~~~~~~~~
+# Pane Navigation
+#~~~~~~~~~~~~~~~~~~~~
+is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
+
+# <Control>h  or <Alt><Left>  Goto left pane
+bind -n C-h    if-shell "$is_vim" "send-keys C-h" "select-pane -L"
+bind -n M-Left if-shell "$is_vim" "send-keys C-h" "select-pane -L"
+
+# <Control>h  or <Meta><Down>  Goto pane below
+bind -n C-j    if-shell "$is_vim" "send-keys C-j" "select-pane -D"
+bind -n M-Down if-shell "$is_vim" "send-keys C-j" "select-pane -D"
+
+# <Control>k  or  <Meta><Up> Goto pane above
+#bind -n C-k if-shell "$is_vim" "send-keys C-k" "select-pane -U"
+# <Meta><Up>  Goto pane above
+bind -n M-Up if-shell "$is_vim" "send-keys C-k" "select-pane -U"
+
+# <Control>l  or  <Meta><Right>  Goto right pane
+bind -n C-l     if-shell "$is_vim" "send-keys C-l" "select-pane -R"
+bind -n M-Right if-shell "$is_vim" "send-keys C-l" "select-pane -R"
+
+# <Control>\  Goto last pane
+bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+
+# Prompted join-pane
+bind j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
+
+# Swap a pane with the current pane
+bind s display-panes\; command-prompt -p "pane #: "  "swap-pane -t '%%'"
+
+
+#~~~~~~~~~~~~~~
+#  Status Bar
+#~~~~~~~~~~~~~~
+
+# status-left command tells tmux to display the following text to the left side
+# of the status line (at the bottom of the window).
+# The [fg=green]#H portion tells tmux to display the hostname of localhost and make it green.
+set -g status-left 'Host: #[fg=green]#H#[default] | Session: #[fg=green]#S#[default]'
+set -g status-left-length 50
+
+# Requires tmux-plugins/tmux-battery
+set -g status-right 'Load: #(uptime | cut -d , -f 3- | cut -d ":" -f 2-) | Online: #{online_status} | #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %H:%M #[default]'
+set -g status-right-length 90
+
+# Refresh the status bar every minute
+set -g status-interval 60
+
+# Center the window list
+set -g status-justify centre
+
+# No Notification in the status area when a window has activity
+setw -g monitor-activity off
+set  -g visual-activity on
+
+
+# ~~~~~~~~~~~~~
+#   Events
+# ~~~~~~~~~~~~~
+set -g focus-events
+
+# ~~~~~~~~~~~~~
+#   Mouse
+# ~~~~~~~~~~~~~
+# Enable mouse scroll when in scroll mode (Prefix + [ )
+# Click on a pane to give it the focus
+# Use Shift + mouse to select/paste text
+
+# Version-specific commands [grumble, grumble]
+# See: https://github.com/tmux/tmux/blob/master/CHANGES
+# Source: https://stackoverflow.com/a/40902312/386517
+run-shell "tmux setenv -g TMUX_VERSION $(tmux -V | cut -c 6-)"
+
+if-shell -b '[ "$(echo "$TMUX_VERSION < 2.1" | bc)" = 1 ]' \
+  'set -g mode-mouse on;       \
+  set -g mouse-select-pane on; \
+  set -g mouse-resize-pane on; \
+  set -g mouse-select-window on'
+
+# In version 2.1 onwards "mouse" replaced the previous 4 mouse options
+if-shell -b '[ "$(echo "$TMUX_VERSION >= 2.1" | bc)" = 1 ]' \
+  'set -g mouse on'
+
+# UTF8 is autodetected in version 2.2 onwards, but errors if explicitly set
+if-shell -b '[ "$(echo "$TMUX_VERSION < 2.2" | bc)" = 1 ]' \
+  'set -g utf8 on; \
+  set -g status-utf8 on;\
+  set -g mouse-utf8 on'
+
+# scroll with the mouse wheel
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Reload SSH socket
+# See: http://blog.mcpolemic.com/2016/10/01/reconciling-tmux-and-ssh-agent-forwarding.html
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Remove SSH_AUTH_SOCK to disable auto-resetting of Tmux variable
+set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
+													 SSH_CONNECTION WINDOWID XAUTHORITY"
+# Use a symlink to look up SSH authentication
+setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  OS Specific configuration
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-macos.conf'
+if-shell 'test "$(uname)" = "Linux"' 'source ~/.tmux-linux.conf'
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tmux Plugins
+#   <prefix><I>  Install and load the tmux plugins
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tmux Plugin Manager Installation:
+#   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+set -g @plugin 'tmux-plugins/tpm'
+
+# Make sessions, windows, panes layout persistent accross tmux restart
+#   https://github.com/tmux-plugins/tmux-resurrect
+#
+#      <Prefix><Control><S>  Save
+#      <Prefix><Control><R>  Restore
+set -g @plugin 'tmux-plugins/tmux-resurrect' 
+
+# Display Battery
+#  https://github.com/tmux-plugins/tmux-battery
+#
+set -g @plugin 'tmux-plugins/tmux-battery'
+
+
+# Tmux plugin for copying to system clipboard
+#   https://github.com/tmux-plugins/tmux-yank
+#
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Enhances tmux search with regexen
+#  https://github.com/tmux-plugins/tmux-copycat
+#
+#  prefix + /regex/
+#  prefix + ctrl-f - simple file search
+#  prefix + ctrl-g - jumping over git status files (best used after git status command)
+#  prefix + alt-h - jumping over SHA-1 hashes (best used after git log command)
+#  prefix + ctrl-u - url search (http, ftp and git urls)
+#  prefix + ctrl-d - number search (mnemonic d, as digit)
+#  prefix + alt-i - ip address search
+set -g @plugin 'tmux-plugins/tmux-copycat'
+
+# Display the network status connected/disconnected
+#   https://github.com/tmux-plugins/tmux-online-status
+#
+set -g @plugin 'tmux-plugins/tmux-online-status'
+set -g @route_to_ping "ericbouchut.com"
+set -g @online_icon  '✔'
+set -g @offline_icon 'X'
+
+# Enable logging of all output in the current pane
+#   https://github.com/tmux-plugins/tmux-logging
+#
+# <Prefix><Shift><p>        Toggle (start/stop) logging of the current pane
+# <Prefix><Esc><Shift><p>   Saves complete pane history to a file
+# <Prefix><Esc><c>          Clear pane history
+set -g @plugin 'tmux-plugins/tmux-logging'
+
+# Quickly open any url on your terminal window!
+#   https://github.com/tmux-plugins/tmux-urlview
+#
+#  <Prefix><u>    List all URLs in a bottom pane
+# On MacOS only, requires either of:
+#   * urlview:     brew install urlview
+#   * extract_url: brew install extract_url
+#
+set -g @plugin 'tmux-plugins/tmux-urlview'
+
+# Facebook Path Picker:
+#   https://github.com/tmux-plugins/tmux-fpp
+#
+# use f in any mode
+#   requires fpp:   brew install fpp
+set -g @plugin 'tmux-plugins/tmux-fpp'
+
+# Solarized colour theme for tmux
+# https://github.com/seebi/tmux-colors-solarized
+set -g @plugin 'seebi/tmux-colors-solarized'
+set -g @colors-solarized 'dark'
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# TMUX plugin manager
+#  https://github.com/tmux-plugins/tpm
+#
+# MUST BE at the bottomm of tmux.conf (after all the plugins)
+# <prefix>I  Loads the tmux plugins declared above
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+run '~/.tmux/plugins/tpm/tpm'
+
+#~~~~~~~
+# Colors
+#~~~~~~~
+
+<<<<<<< HEAD
+source-file ~/.tmuxcolors-eric.conf
+=======
+# Colors: Inactive Window
+setw -g window-status-fg cyan
+setw -g window-status-bg default
+setw -g window-status-attr dim
+
+# Colors: Active Window
+setw -g window-status-current-fg black
+setw -g window-status-current-bg cyan
+setw -g window-status-current-attr dim
+
+# Colors: Pane
+set -g pane-border-fg green
+set -g pane-border-bg black
+set -g pane-active-border-fg black
+set -g pane-active-border-bg reverse
+set -g pane-active-border-attr dim
+
+# Colors: Command Line
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
+>>>>>>> Tmux: Change border color of active pane
+
