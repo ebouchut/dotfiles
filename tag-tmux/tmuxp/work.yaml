@@ -1,0 +1,48 @@
+session_name: work
+windows:
+- layout: 027b,318x73,0,0{158x73,0,0,2,159x73,159,0[159x55,159,0,3,159x17,159,56,4]}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command:
+    - cd ~/bo
+    - vim
+  - shell_command:
+    - cd ~/bo
+    - zsh
+  - shell_command:
+    - cd ~
+    - bash
+  window_name: bo
+- layout: 47ce,318x73,0,0{160x73,0,0,5,157x73,161,0,7}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command:
+    - cd ~/rtb-project
+    - zsh
+  - shell_command:
+    - cd ~
+    - bash
+  window_name: rtb
+- layout: e265,318x73,0,0{159x73,0,0,8,158x73,160,0,20}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - zsh
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: ~/services
+  window_name: services
+- focus: 'true'
+  layout: ea42,318x73,0,0{159x73,0,0,10,158x73,160,0,15}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: Python
+  - vim
+  start_directory: ~/dev/dotfiles
+  window_name: dotfiles

@@ -1,0 +1,14 @@
+session_name: monitoring
+windows:
+- focus: 'true'
+  layout: c4af,318x73,0,0{159x73,0,0[159x36,0,0,31,159x18,0,37,33,159x17,0,56,34],158x73,160,0,32}
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: vm_stat
+  - nettop
+  - watch -n 5 iostat
+  - htop
+  start_directory: /Users/eric.bouchut
+  window_name: macOS
