@@ -36,4 +36,5 @@ alias dul='du -sch .!(.) * | sort -h'
 alias g='git status'
 alias gs='git status -sb'
 alias lss='function _lss(){ls -l $(find "$@" -maxdepth 1 -type l)}; _lss'
+alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
 alias vi=vim
