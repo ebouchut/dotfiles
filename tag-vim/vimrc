@@ -55,7 +55,8 @@ Plug          'suan/vim-instant-markdown' " Markdown live preview
 Plug       'jparise/vim-graphql'
 Plug      'junegunn/gv.vim'         " Git commit browser
 Plug          'elzr/vim-json'
-Plug    'plasticboy/vim-markdown'      " requires "tabular"
+Plug    'plasticboy/vim-markdown'      " requires tabular
+Plug       'mzlogin/vim-markdown-toc'  " Generate TOC with  :GenTocGFM
 Plug    'itspriddle/vim-marked'     " Preview Markdown in Marked 2
 Plug         'xolox/vim-misc'          " required by vim-session
 Plug         'jistr/vim-nerdtree-tabs' " NERDTree and tabs together in Vim
