@@ -28,6 +28,7 @@ Plug         'mattn/calendar-vim'
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug      'junegunn/fzf.vim'
 Plug           'sjl/gundo.vim'      " Undo browser
 Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
@@ -623,6 +624,39 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$'
   \ }
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin fzf.vim
+"   https://github.com/junegunn/fzf.vim
+"    https://github.com/junegunn/fzf.vi://jesseleite.com/posts/2/its-dangerous-to-vim-alone-take-fzf 
+"~~~~~~~~~~~~~~~~~~~~~
+
+" Search for files tracked by git
+nnoremap <Leader>f :GFiles<CR>
+
+" Search for all files
+nnoremap <Leader>F :Files<CR>
+
+" Search for open buffers
+nnoremap <Leader>b :Buffers<CR>
+
+" Search for buffer history
+nnoremap <Leader>bh :History<CR>
+
+" Search for tags in the current Buffer
+nnoremap <Leader>t :BTags<CR>
+
+" Search for tags accross projects
+nnoremap <Leader>T :Tags<CR>
+
+" Search for lines in the current buffer
+nmap <Leader>l :BLines<CR>
+
+" Search for lines in (all) loaded buffers
+nmap <Leader>L :Lines<CR>
+
+" Search for marked lines
+nmap <Leader>' :Marks<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin VimWiki
