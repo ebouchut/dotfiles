@@ -368,7 +368,7 @@ nnoremap <Leader>fj :%!python -m json.tool
 map <Leader>e <Plug>(easymotion-prefix)
 
 " Toggle the display of cyclomatic complexity next to each Ruby method
-nnoremap <Leader>f :call ToggleFlog()<CR>
+" nnoremap <Leader>f :call ToggleFlog()<CR>
 
 " Edit the Gemfile
 nnoremap <Leader>G :e Gemfile<CR>
