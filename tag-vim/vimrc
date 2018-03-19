@@ -650,13 +650,13 @@ nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
 
 " Search for lines in the current buffer
-nmap <Leader>l :BLines<CR>
+nnoremap <Leader>l :BLines<CR>
 
 " Search for lines in (all) loaded buffers
-nmap <Leader>L :Lines<CR>
+nnoremap <Leader>L :Lines<CR>
 
 " Search for marked lines
-nmap <Leader>' :Marks<CR>
+nnoremap <Leader>' :Marks<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin VimWiki
