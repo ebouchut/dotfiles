@@ -658,6 +658,8 @@ nnoremap <Leader>L :Lines<CR>
 " Search for marked lines
 nnoremap <Leader>' :Marks<CR>
 
+nnoremap <Leader>a :Ag 
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin VimWiki
 "~~~~~~~~~~~~~~~~~~~~~
