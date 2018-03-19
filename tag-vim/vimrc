@@ -68,7 +68,7 @@ Plug        'ecomba/vim-ruby-refactoring'
 Plug         'tpope/vim-rails'
 Plug         'tpope/vim-rake' " https://github.com/tpope/vim-rake/master/doc/rake.txt
 Plug         'tpope/vim-rbenv'
-Plug    'thoughtbot/vim-rspec'
+" Plug    'thoughtbot/vim-rspec'
 Plug      'vim-ruby/vim-ruby'
 Plug          'ngmy/vim-rubocop'
 Plug         'xolox/vim-session'
@@ -503,12 +503,12 @@ nnoremap <F9> :NERDTreeTabsToggle<CR>
 " Run RSpec Tests
 "~~~~~~~~~~~~~~~~~
 " let g:rspec_command = "!rspec --drb {spec}"
-let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+" let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
-noremap <Leader>t :call RunCurrentSpecFile()<CR>
-noremap <Leader>s :call RunNearestSpec()<CR>
-noremap <Leader>l :call RunLastSpec()<CR>
-noremap <Leader>a :call RunAllSpecs()<CR>
+" noremap <Leader>t :call RunCurrentSpecFile()<CR>
+" noremap <Leader>s :call RunNearestSpec()<CR>
+" noremap <Leader>l :call RunLastSpec()<CR>
+" noremap <Leader>a :call RunAllSpecs()<CR>
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
