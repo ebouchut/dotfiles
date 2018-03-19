@@ -729,9 +729,16 @@ let Tlist_File_Fold_Auto_Close = 1
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin bufferGator
+" https://github.com/jeetsukumaran/vim-buffergator
 "~~~~~~~~~~~~~~~~~~~~~
 let g:buffergator_vsplit_size=80
 let g:buffergator_show_full_directory_path=0
+
+" Disable BufferGator default keys mapping
+let g:buffergator_suppress_keymaps = 1
+
+nnoremap <silent> <Leader>bb :BuffergatorToggle<CR>
+nnoremap <silent> <Leader>bt :BuffergatorTabsToggle<CR>
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Plugin vim-instant-markdown
