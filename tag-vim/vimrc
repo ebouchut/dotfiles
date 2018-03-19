@@ -23,7 +23,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug         'rking/ag.vim'
-Plug   'jlanzarotta/bufexplorer'
+" Plug   'jlanzarotta/bufexplorer'
 Plug         'mattn/calendar-vim'
 Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
@@ -725,7 +725,7 @@ let Tlist_File_Fold_Auto_Close = 1
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin bufexplorer
 "~~~~~~~~~~~~~~~~~~~~~
-let g:bufExplorerShowRelativePath=1
+" let g:bufExplorerShowRelativePath=1
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin bufferGator
