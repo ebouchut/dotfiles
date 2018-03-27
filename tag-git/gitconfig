@@ -33,6 +33,7 @@
 	tags = !git tag -l | sort -V
 	stashpp = ![[ -z $(git status --porcelain -uno) ]] && git pull || git stash && git pull && git stash pop
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+	untrack = rm --cache --
 [apply]
 	whitespace = nowarn
 [core]
