@@ -35,6 +35,8 @@
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	untrack = rm --cache --
 	changes = diff --name-status --diff-filter=MADR
+	log-deleted = !git log --diff-filter=D --summary | sed -n -e '/^commit/h' -e '\\:/:{' -e G -e 's/\\ncommit \\(.*\\)/ \\1/gp' -e '}'
+	log-removed = log-deleted
 [apply]
 	whitespace = nowarn
 [core]
