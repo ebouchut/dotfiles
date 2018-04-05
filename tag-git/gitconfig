@@ -38,7 +38,7 @@
 	log-deleted = !git log --diff-filter=D --summary | sed -n -e '/^commit/h' -e '\\:/:{' -e G -e 's/\\ncommit \\(.*\\)/ \\1/gp' -e '}'
 	log-removed = log-deleted
 	restore = !git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\"
-	whereis = "branch --all --contains "
+	whereis = "!f() { echo Branches: >&2; git branch --all --contains "$1"; echo Tags: >&2; git tag --contains "$1"; }; f"
 [apply]
 	whitespace = nowarn
 [core]
