@@ -631,25 +631,25 @@ let g:ctrlp_custom_ignore = {
 "    https://github.com/junegunn/fzf.vi://jesseleite.com/posts/2/its-dangerous-to-vim-alone-take-fzf 
 "~~~~~~~~~~~~~~~~~~~~~
 
-" Search for files tracked by git
+" ~~~ Search for files tracked by git ~~~
 nnoremap <Leader>f :GFiles<CR>
 
 " Search for all files
 nnoremap <Leader>F :Files<CR>
 
-" Search for open buffers
+" ~~~ Search for open buffers ~~~
 nnoremap <Leader>b :Buffers<CR>
 
 " Search for buffer history
 nnoremap <Leader>bh :History<CR>
 
-" Search for tags in the current Buffer
+" ~~~ Search for tags in the current Buffer ~~~
 nnoremap <Leader>t :BTags<CR>
 
 " Search for tags accross projects
 nnoremap <Leader>T :Tags<CR>
 
-" Search for lines in the current buffer
+" ~~~ Search for lines in the current buffer ~~~
 nnoremap <Leader>l :BLines<CR>
 
 " Search for lines in (all) loaded buffers
