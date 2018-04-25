@@ -50,9 +50,6 @@
 	helper = osxkeychain
 [push]
 	default = simple
-[rerere]
-[dude]
-	interval = 60
 [commit]
 [init]
 	templatedir = ~/.git_template
