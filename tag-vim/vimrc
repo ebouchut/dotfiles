@@ -658,6 +658,12 @@ nnoremap <Leader>L :Lines<CR>
 " Search for marked lines
 nnoremap <Leader>' :Marks<CR>
 
+" Search for a help command you previously typed
+nmap <Leader>H :Helptags!<CR>
+
+" Search for a keyboard mapping
+nmap <Leader>M :Maps<CR>
+
 nnoremap <Leader>a :Ag 
 
 "~~~~~~~~~~~~~~~~~~~~~
