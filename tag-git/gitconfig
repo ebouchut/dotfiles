@@ -39,6 +39,10 @@
 	log-removed = log-deleted
 	restore = !git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\"
 	whereis = "!f() { echo Branches: >&2; git branch --all --contains "$1"; echo Tags: >&2; git tag --contains "$1"; }; f"
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	hidden = !git ls-files -v | grep \"^[a-z]\" | cut -c3-
+	unhide-all = update-index --really-refresh
 [apply]
 	whitespace = nowarn
 [core]
