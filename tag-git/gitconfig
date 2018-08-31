@@ -43,6 +43,7 @@
 	unhide = update-index --no-assume-unchanged
 	hidden = !git ls-files -v | grep \"^[a-z]\" | cut -c3-
 	unhide-all = update-index --really-refresh
+	ref = name-rev
 [apply]
 	whitespace = nowarn
 [core]
