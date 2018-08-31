@@ -56,7 +56,7 @@ Plug         'tpope/vim-fugitive'   " Git
 Plug          'suan/vim-instant-markdown' " Markdown live preview
 Plug       'jparise/vim-graphql'
 Plug      'junegunn/gv.vim'         " Git commit browser
-Plug          'elzr/vim-json'
+" Plug          'elzr/vim-json'
 Plug    'plasticboy/vim-markdown'      " requires tabular
 Plug       'mzlogin/vim-markdown-toc'  " Generate TOC with  :GenTocGFM
 Plug    'itspriddle/vim-marked'     " Preview Markdown in Marked 2
