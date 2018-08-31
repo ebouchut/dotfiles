@@ -711,6 +711,14 @@ let g:syntastic_check_on_wq = 0
 " Disable Quickfix list 
 let g:syntastic_auto_loc_list = 0
 
+
+"~~~~~~~~~~~~~~~~~~~~~
+" Plugin Gundo
+"~~~~~~~~~~~~~~~~~~~~~
+if has('python3')
+  let g:gundo_prefer_python3 = 1
+endif
+
 "~~~~~~~~~~~~~~~~~~~~~
 " Plugin NERDTree
 "~~~~~~~~~~~~~~~~~~~~~
