@@ -23,6 +23,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug         'rking/ag.vim'
+Plug     'slashmili/alchemist.vim'
 " Plug   'jlanzarotta/bufexplorer'
 Plug         'mattn/calendar-vim'
 Plug      'ctrlpvim/ctrlp.vim'
