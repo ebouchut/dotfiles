@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Configuration specific to the host eight
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+export LC_CTYPE=FR_fr.UTF-8
+export LANG=C
