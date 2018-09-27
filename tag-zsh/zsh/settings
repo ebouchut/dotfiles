@@ -19,7 +19,6 @@ autoload zmv
 setopt APPEND_HISTORY     # Don't erase history
 setopt EXTENDED_HISTORY   # Add additional data to history like timestamp
 setopt INC_APPEND_HISTORY # Add immediately
-setopt HIST_IGNORE_ALL_DUPS # Don't store duplicates in history
 setopt HIST_FIND_NO_DUPS  # Don't show duplicates in search
 setopt HIST_IGNORE_SPACE  # Do not log command lines starting with a blank
 setopt NO_HIST_BEEP       # Don't beep
