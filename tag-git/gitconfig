@@ -44,6 +44,8 @@
 	unhide-all = update-index --really-refresh
 	ref = name-rev
 	plog-watch = !watch -n3 --color   git log --oneline --decorate --graph  --color --all
+	releases = "!git fetch ; git branch -a --no-merged master   | grep \"release/\" # List git flow releases not finished yet"
+	hotfixes = "!git fetch ; git branch -a --no-merged master   | grep \"hotfix/\" # List git flow hotfixes not finished yet"
 [apply]
 	whitespace = nowarn
 [core]
