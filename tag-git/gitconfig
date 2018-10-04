@@ -43,6 +43,7 @@
 	hidden = !git ls-files -v | grep \"^[a-z]\" | cut -c3-
 	unhide-all = update-index --really-refresh
 	ref = name-rev
+	plog-watch = !watch -n3 --color   git log --oneline --decorate --graph  --color --all
 [apply]
 	whitespace = nowarn
 [core]
