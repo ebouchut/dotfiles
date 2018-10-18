@@ -46,6 +46,7 @@
 	plog-watch = !watch -n3 --color   git log --oneline --decorate --graph  --color --all
 	releases = "!git fetch ; git branch -a --no-merged origin/master   | grep \"release/\" # List git flow releases not finished yet"
 	hotfixes = "!git fetch ; git branch -a --no-merged origin/master   | grep \"hotfix/\" # List git flow hotfixes not finished yet"
+	sha1 = rev-parse
 [apply]
 	whitespace = nowarn
 [core]
