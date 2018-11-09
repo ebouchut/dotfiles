@@ -105,3 +105,5 @@
 	trustExitCode = true
 [color "branch"]
 	upstream = cyan
+[rebase]
+	missingCommitsCheck = warn
