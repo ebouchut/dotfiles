@@ -50,6 +50,7 @@
 	help-web = help -w
 	branch-gone = !git branch -vv | grep \": gone\" | cut -d \" \" -f 3
 	refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)(%(committerdate:relative))%(color:reset) %(color:magenta bold)<%(authorname)>%(color:reset) %(color:green)[%(objectname:short)]%(color:reset) %(contents:subject)'
+	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 [apply]
 	whitespace = nowarn
 [core]
