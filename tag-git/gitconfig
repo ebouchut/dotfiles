@@ -48,8 +48,8 @@
 	hotfixes = "!git fetch ; git branch -a --no-merged origin/master   | grep \"hotfix/\" # List git flow hotfixes not finished yet"
 	sha1 = rev-parse
 	help-web = help -w
-	branch-gone = !git for-each-ref  --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads | sed '/^$/d'
 	refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)(%(committerdate:relative))%(color:reset) %(color:magenta bold)<%(authorname)>%(color:reset) %(color:green)[%(objectname:short)]%(color:reset) %(contents:subject)'
+	branch-gone = "!git for-each-ref  --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads | sed '/^$/d' # List local branches whose upstream branch is gone"
 	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	uncommit = reset --soft HEAD^
 [apply]
