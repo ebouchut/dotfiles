@@ -1,0 +1,33 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Git colors for dark background
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#[color "branch"]
+#	current = green
+#	local = normal
+#	plain = normal
+#	remote = red
+#[color "decorate"]
+#	HEAD = cyan bold
+#	tag = yellow bold
+[color "diff"]
+#	commit = yellow
+#	frag = cyan
+	meta = blue
+#	new = green
+#	old = red
+#	plain = normal
+#	whitespace = normal red
+#[color "grep"]
+#	match = normal
+#[color "interactive"]
+#	error = normal
+#	header = normal
+#	help = normal
+#	prompt = normal
+#[color "status"]
+#	added = green
+#	changed = red
+#	header = normal
+#	nobranch = red
+#	untracked = red
+#	updated = magenta

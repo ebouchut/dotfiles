@@ -1,0 +1,41 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Git colors for light background
+# Source:
+# - https://stackoverflow.com/a/48695516/386517
+# -https://stackoverflow.com/a/48695573/386517 
+# 
+# Adapted from http://shallowsky.com/blog/programming/gitcolors.html
+# and http://www.ansdb.com/649-git-colors-for-light-background
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[color "branch"]
+	current = green
+	local = normal
+	plain = normal
+	remote = red
+[color "decorate"]
+	HEAD = cyan
+	branch = green
+	tag = blue bold
+[color "diff"]
+	commit = yellow
+	frag = cyan
+	meta = bold
+	new = green
+	old = red
+	plain = normal
+	whitespace = normal red
+#[color "grep"]
+#	match = normal
+#[color "interactive"]
+#	error = normal
+#	header = normal
+#	help = normal
+#	prompt = normal
+[color "status"]
+	added = blue
+	changed = red
+	header = normal
+	nobranch = red
+	untracked = red
+	updated = magenta
+
