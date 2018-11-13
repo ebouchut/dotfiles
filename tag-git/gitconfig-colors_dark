@@ -6,9 +6,11 @@
 #	local = normal
 #	plain = normal
 #	remote = red
+#	#
 #[color "decorate"]
 #	HEAD = cyan bold
 #	tag = yellow bold
+#
 [color "diff"]
 #	commit = yellow
 #	frag = cyan
@@ -17,13 +19,16 @@
 #	old = red
 #	plain = normal
 #	whitespace = normal red
+##
 #[color "grep"]
 #	match = normal
+##
 #[color "interactive"]
 #	error = normal
 #	header = normal
 #	help = normal
 #	prompt = normal
+#
 #[color "status"]
 #	added = green
 #	changed = red
@@ -31,3 +36,9 @@
 #	nobranch = red
 #	untracked = red
 #	updated = magenta
+#
+[log]
+# graphColors =  list of comma separated list of colors used to draw graph lines
+# the only difference with the default value here is to use blue *bold* 
+# instead of blue which we can hardly even see
+	graphColors = red, green, yellow, blue bold, magenta, cyan, bold red, bold green, bold yellow, bold blue, bold magenta, bold cyan
