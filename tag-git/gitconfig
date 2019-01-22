@@ -42,7 +42,7 @@
 	unhide = update-index --no-assume-unchanged
 	hidden = !git ls-files -v | grep \"^[a-z]\" | cut -c3-
 	unhide-all = update-index --really-refresh
-	ref = name-rev
+	ref = name-rev --name-only
 	plog-watch = !watch -n3 --color   git log --oneline --decorate --graph  --color --all
   releases = "!git fetch ; git branch -a --no-merged origin/master   | grep \"$(git config --local --get gitflow.prefix.release)\" # List git flow releases not finished yet"
 	hotfixes = "!git fetch ; git branch -a --no-merged origin/master   | grep \"$(git config --local --get gitflow.prefix.hotfix)\" # List git flow hotfixes not finished yet"
