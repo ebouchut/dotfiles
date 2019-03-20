@@ -74,7 +74,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = bc3
+	tool = kdiff3
 	submodule = log
 [difftool]
 	prompt = false
@@ -84,7 +84,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = bc3
+	tool = kdiff3
 [mergetool]
 	bc3 = trustExitCode
 	prompt = false
