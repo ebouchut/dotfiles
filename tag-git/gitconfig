@@ -53,6 +53,8 @@
 	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	uncommit = reset --soft HEAD^
 	branch-name = rev-parse --abbrev-ref HEAD
+#	tags-notpushed = "!git show-ref --tags | cut -d ' ' -f 2 | grep -v -F \"$(git ls-remote --tags origin | grep -v '\\^{}' | cut -f 2)\""
+	 tags-notpushed = "!bash -c 'comm -23 <(git show-ref --tags | cut -d \" \" -f 2) <(git ls-remote --tags origin | grep -v \"\\^{}\" | cut -f 2)'"
 [apply]
 	whitespace = nowarn
 [core]
