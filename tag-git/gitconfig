@@ -56,6 +56,7 @@
 #	tags-notpushed = "!git show-ref --tags | cut -d ' ' -f 2 | grep -v -F \"$(git ls-remote --tags origin | grep -v '\\^{}' | cut -f 2)\""
 	 tags-notpushed = "!bash -c 'comm -23 <(git show-ref --tags | cut -d \" \" -f 2) <(git ls-remote --tags origin | grep -v \"\\^{}\" | cut -f 2)'"
 	previous-tag = "!git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)"
+	tags-remote = !git ls-remote --tags origin | grep -v \"\\^{}\"
 [apply]
 	whitespace = nowarn
 [core]
