@@ -1,3 +1,4 @@
+--langdef=scala
 --recurse=yes
 --exclude=.git
 --exclude=log
