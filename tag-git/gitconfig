@@ -89,7 +89,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = kdiff3
+	tool = bc3
 [mergetool]
 	bc3 = trustExitCode
 	prompt = false
