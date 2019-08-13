@@ -121,10 +121,16 @@ set path+=**
 "   The // at the end of the directory name tells Vim to use the absolute path 
 " to the file to create the swap file to prevent collisions between files 
 " of the same name from different directories.
+" Create these folders if they do not exist
 set directory^=~/.vim/swap//
 
 " Where to store backup files
 set backupdir^=~/.vim/backup//
+"
+" Protect against crash during write
+set writebackup
+" but do not persist backup after successful write
+set nobackup
 
 " Where to store the state of the previous editing session
 " See http://stackoverflow.com/a/23036077/386517
