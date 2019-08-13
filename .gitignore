@@ -42,3 +42,6 @@ tag-sublime/sublime/Packages/User/project/
 tag-sublime/sublime/Packages/User/RubyTest.last-run
 
 !bin/
+
+/tag-zsh/zshrc.local
+/tag-bash/bashrc.local
