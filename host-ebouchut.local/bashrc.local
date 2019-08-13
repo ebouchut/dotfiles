@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Configuration specific to the host eight
+# Configuration specific to the host ebouchut.local
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export LC_CTYPE=FR_fr.UTF-8
