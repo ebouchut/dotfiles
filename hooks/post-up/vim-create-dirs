@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Create some of the vim folders
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+mkdir ~/.vim/ 
+
+mkdir     ~/.vim/backup ~/.vim/swap ~/.vim/undo
+chmod go= ~/.vim/backup ~/.vim/swap ~/.vim/undo
+
