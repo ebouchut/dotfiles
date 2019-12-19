@@ -30,7 +30,7 @@
 #	stash: unstaged + staged
 	staash = stash --include-untracked  # unstaged + staged + untracked
 	staaash = stash --all  # unstaged + staged + untracked + ignored
-	tags = !git tag -l | sort -V
+	tags = !git tag -ln99 | sort -V
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	untrack = rm --cache --
 	changes = diff --name-status --diff-filter=MADR
