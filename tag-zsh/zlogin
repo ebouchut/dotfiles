@@ -1,0 +1,5 @@
+# when zsh is run as a login shell
+#
+
+# Run ssh-agent and store SSH_* variables ready to be sourced 
+eval $(ssh-agent | tee $HOME/.keychain/$HOST-sh)

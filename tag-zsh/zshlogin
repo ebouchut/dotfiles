@@ -1,1 +1,0 @@
-eval $(ssh-agent | tee $HOME/.keychain/$HOST-sh)
