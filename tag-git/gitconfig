@@ -59,6 +59,7 @@
 	 tags-notpushed = "!bash -c 'comm -23 <(git show-ref --tags | cut -d \" \" -f 2) <(git ls-remote --tags origin | grep -v \"\\^{}\" | cut -f 2)'"
 	previous-tag = "!git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)"
 	tags-remote = !git ls-remote --tags origin | grep -v \"\\^{}\"
+	debug  = "!set -x; GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git"
 [apply]
 	whitespace = nowarn
 [core]
