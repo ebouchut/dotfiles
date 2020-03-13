@@ -46,6 +46,7 @@
 	plog-watch = !watch -n3 --color   git log --oneline --decorate --graph  --color --all
   releases = "!git fetch ; git branch -a --no-merged origin/master   | grep \"$(git config --local --get gitflow.prefix.release)\" # List git flow releases not finished yet"
 	hotfixes = "!git fetch ; git branch -a --no-merged origin/master   | grep \"$(git config --local --get gitflow.prefix.hotfix)\" # List git flow hotfixes not finished yet"
+	next-hotfix-version = "!git fetch -q; git lasttag origin/master | awk -F.  '{printf (\"%d.%d.%d\\n\", $2, $2, $3 + 1)}' #"
 	sha1 = rev-parse
 	help-web = help -w
 	refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)(%(committerdate:relative))%(color:reset) %(color:magenta bold)<%(authorname)>%(color:reset) %(color:green)[%(objectname:short)]%(color:reset) %(contents:subject)'
