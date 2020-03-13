@@ -60,6 +60,9 @@
 	previous-tag = "!git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)"
 	tags-remote = !git ls-remote --tags origin | grep -v \"\\^{}\"
 	debug  = "!set -x; GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git"
+# Quote / unquote a sh command, converting it to / from a git alias string
+	quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
+	unquote-string = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
 [apply]
 	whitespace = nowarn
 [core]
