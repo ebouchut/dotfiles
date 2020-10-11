@@ -94,7 +94,8 @@ export TMUX_TMPDIR=$HOME/tmp/tmux
 
 # Automatically connect to a tmux session on startup, 
 # even creating the session as needed.
-[[ "$-" == *i* ]] && ensure_tmux_is_running
+# Disabled as it causes an issue with ssh-agent loading multiple times
+#[[ "$-" == *i* ]] && ensure_tmux_is_running
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Hub
