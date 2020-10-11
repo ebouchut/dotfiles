@@ -2,4 +2,22 @@
 #
 
 # Run ssh-agent and store SSH_* variables ready to be sourced 
-eval $(ssh-agent | tee $HOME/.keychain/$HOST-sh)
+
+  SSH_ENV=$HOME/.keychain/$HOST-sh
+
+function start_agent {
+  echo "Initializing new SSH Agent..."
+  eval $(/usr/bin/ssh-agent | sed 's/^echo/#echo/'  | tee "${SSH_ENV}")
+  chmod 600 "${SSH_ENV}"
+  echo succeeded
+
+  # Load default private key
+  /usr/bin/ssh-add
+}
+
+if [ -f "${SSH_ENV}" ]; then  # Source: http://mah.everybody.org/docs/ssh
+  source "${SSH_ENV}" > /dev/null
+  ps -fp ${SSH_AGENT_PID} | grep 'ssh-agent$' > /dev/null || { start_agent }
+else
+  start_agent
+fi
