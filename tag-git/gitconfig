@@ -63,6 +63,7 @@
 # Quote / unquote a sh command, converting it to / from a git alias string
 	quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
 	unquote-string = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
+	root = rev-parse --show-toplevel
 [apply]
 	whitespace = nowarn
 [core]
