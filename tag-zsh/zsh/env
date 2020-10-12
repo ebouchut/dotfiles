@@ -1,4 +1,4 @@
-export PATH=$HOME/local/bin:$PATH:$HOME/bin
+export PATH=/usr/local/opt/python/libexec/bin:$HOME/local/bin:$PATH:$HOME/bin
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Regular 
