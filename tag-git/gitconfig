@@ -65,6 +65,7 @@
 	unquote-string = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
 	root = rev-parse --show-toplevel
 	count = rev-list --count
+	untracked = ls-files --others --exclude-standard
 [apply]
 	whitespace = nowarn
 [core]
