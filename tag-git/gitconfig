@@ -64,6 +64,7 @@
 	quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
 	unquote-string = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
 	root = rev-parse --show-toplevel
+	count = rev-list --count
 [apply]
 	whitespace = nowarn
 [core]
