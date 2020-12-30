@@ -63,8 +63,8 @@
 # Quote / unquote a sh command, converting it to / from a git alias string
 	quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
 	unquote-string = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
-	root = rev-parse --show-toplevel
-	count = rev-list --count
+	root-dir = rev-parse --show-toplevel
+	commit-count = rev-list --count
 	untracked = ls-files --others --exclude-standard
 	most-changed = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -20"
 [apply]
