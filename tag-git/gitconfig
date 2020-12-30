@@ -66,6 +66,7 @@
 	root = rev-parse --show-toplevel
 	count = rev-list --count
 	untracked = ls-files --others --exclude-standard
+	most-changed = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -20"
 [apply]
 	whitespace = nowarn
 [core]
