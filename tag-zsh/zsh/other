@@ -115,5 +115,9 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # travis
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[ -f /Users/eric/.travis/travis.sh ] && source /Users/eric/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
+#~~~~~~~~~~~~~~~~
+# ruby-build
+#~~~~~~~~~~~~~~~~
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
