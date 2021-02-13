@@ -127,3 +127,5 @@
 	missingCommitsCheck = warn
 [include]
 	path = ~/dev/dotfiles/tag-git/gitconfig-colors_dark
+[includeIf "gitdir:~/Work/"]
+    path = ~/.gitconfig-work
