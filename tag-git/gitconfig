@@ -81,6 +81,7 @@
 [commit]
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = master
 [gitsh]
 	noGreeting = true
 [pager]
