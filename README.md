@@ -4,8 +4,8 @@ Dotfiles
 The  dotfiles I use for bash, zsh, vim, git, tmux...
 I install using [rcm][] like so:
 
-    mkdir $HOME/dev
-    cd $HOME/dev
+    mkdir $HOME/dev/Perso
+    cd $HOME/dev/Perso
     git clone git://github.com/ebouchut/dotfiles.git
 
     cd dotfiles

@@ -17,7 +17,7 @@ fi
 #     git clone git@gihub.com:ebouchut/oh-my-zsh.git  &&  git checkout ebouchut
 #~~~~~~~~~~~~~~~~~~
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/dev/oh-my-zsh
+export ZSH=$HOME/dev/Perso/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

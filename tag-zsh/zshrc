@@ -6,3 +6,5 @@ source ~/.dotfiles/tag-zsh/zsh/other     # 3rd party programs settings (non zsh)
 # Source host local config file if any
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -126,6 +126,11 @@
 [rebase]
 	missingCommitsCheck = warn
 [include]
-	path = ~/dev/dotfiles/tag-git/gitconfig-colors_dark
+	path = ~/dev/Perso/dotfiles/tag-git/gitconfig-colors_dark
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [includeIf "gitdir:~/Work/"]
     path = ~/.gitconfig-work

@@ -6,3 +6,5 @@ source ~/.dotfiles/tag-bash/bash/other   # 3rd Party programs (non bash) specifi
 # Source host local config file if any
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

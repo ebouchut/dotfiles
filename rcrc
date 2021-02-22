@@ -26,7 +26,7 @@
 # You can override this using the -d option.
 # Export this variable so that hooks/pre-up can use it.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export DOTFILES_DIRS="$HOME/dev/dotfiles"
+export DOTFILES_DIRS="$HOME/dev/Perso/dotfiles"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not install those files

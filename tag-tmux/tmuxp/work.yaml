@@ -44,5 +44,5 @@ windows:
   - focus: 'true'
     shell_command: Python
   - vim
-  start_directory: ~/dev/dotfiles
+  start_directory: ~/dev/Perso/dotfiles
   window_name: dotfiles
