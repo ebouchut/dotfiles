@@ -134,3 +134,5 @@
 	smudge = git-lfs smudge -- %f
 [includeIf "gitdir:~/Work/"]
     path = ~/.gitconfig-work
+[pull]
+	rebase = false
