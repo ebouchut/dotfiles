@@ -67,6 +67,7 @@
 	commit-count = "!git rev-list --count ${1:-HEAD}"
 	untracked = ls-files --others --exclude-standard
 	most-changed = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -20"
+	files-in-commit = show --pretty=\"\" --name-only
 [apply]
 	whitespace = nowarn
 [core]
