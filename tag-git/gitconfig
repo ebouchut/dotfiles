@@ -69,6 +69,7 @@
 	most-changed = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -20"
 	files-in-commit = show --pretty=\"\" --name-only
 	commiters = shortlog --summary --numbered --email
+	ls-files-remote-branch = "!f() { git ls-tree --name-only -r ${1-$(git rev-parse --abbrev-ref HEAD)}; }; f"
 [apply]
 	whitespace = nowarn
 [core]
