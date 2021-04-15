@@ -68,6 +68,7 @@
 	untracked = ls-files --others --exclude-standard
 	most-changed = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -20"
 	files-in-commit = show --pretty=\"\" --name-only
+	commiters = shortlog --summary --numbered --email
 [apply]
 	whitespace = nowarn
 [core]
