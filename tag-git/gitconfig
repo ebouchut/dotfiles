@@ -70,6 +70,7 @@
 	files-in-commit = show --pretty=\"\" --name-only
 	commiters = shortlog --summary --numbered --email
 	ls-files-remote-branch = "!f() { git ls-tree --name-only -r ${1-$(git rev-parse --abbrev-ref HEAD)}; }; f"
+	gprp = !git pull --rebase && git push
 [apply]
 	whitespace = nowarn
 [core]
