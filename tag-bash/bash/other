@@ -54,6 +54,13 @@ if which rbenv 2>&- ; then  # "2>&-" <==> "2>/dev/null"
   source ~/.rbenv/completions/rbenv.bash
 fi
 
+#~~~~~~~~~
+# Frum: https://github.com/tako8ki/frum
+#~~~~~~~~~
+if which frum > /dev/null; then
+  eval "$(frum init)"
+fi
+
 #~~~~~~~~~~~~~
 # Open argument in Dash: 
 #   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/

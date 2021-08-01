@@ -61,6 +61,13 @@ if which rbenv > /dev/null; then
   # source $(rbenv root)/completions/rbenv.zsh 
 fi
 
+#~~~~~~~~~
+# Frum: https://github.com/tako8ki/frum
+#~~~~~~~~~
+if which frum > /dev/null; then
+  eval "$(frum init)"
+fi
+
 #~~~~~~~~~~~~~
 # Open argument in Dash
 #   http://zanshin.net/2014/12/26/integrating-dash-into-vim-and-the-command-line/
