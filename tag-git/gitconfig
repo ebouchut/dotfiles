@@ -58,7 +58,7 @@
 #	tags-notpushed = "!git show-ref --tags | cut -d ' ' -f 2 | grep -v -F \"$(git ls-remote --tags origin | grep -v '\\^{}' | cut -f 2)\""
 	 tags-notpushed = "!bash -c 'comm -23 <(git show-ref --tags | cut -d \" \" -f 2) <(git ls-remote --tags origin | grep -v \"\\^{}\" | cut -f 2)'"
 	previous-tag = "!git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)"
-	tags-remote = !git ls-remote --tags origin | grep -v \"\\^{}\"
+	tags-remote = !git ls-remote --tags --refs
 	debug  = "!set -x; GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git"
 # Quote / unquote a sh command, converting it to / from a git alias string
 	quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
