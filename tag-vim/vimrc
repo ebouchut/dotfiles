@@ -297,7 +297,7 @@ set ttymouse=sgr
 "  Colors, terminal
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
-set background=light " Use a dark background (the other option is light)
+set background=dark " Use a dark background (the other option is light)
 
 " <F5>: Toggle background dark/light
 call togglebg#map("<F5>")
