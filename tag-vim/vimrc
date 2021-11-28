@@ -284,7 +284,10 @@ set nofoldenable " No Code folding
 " Diff
 "~~~~~~~~~~~~~~~~~~~~~
 " Always use vertical diffs
-set diffopt+=vertical
+if &diff
+    set diffopt-=internal
+    set diffopt+=vertical
+endif
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Mouse
