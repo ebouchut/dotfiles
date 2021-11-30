@@ -83,6 +83,7 @@
 [push]
 	default = simple
 [commit]
+	template = ~/.git_message
 [init]
 	templatedir = ~/.git_template
 	defaultBranch = master
