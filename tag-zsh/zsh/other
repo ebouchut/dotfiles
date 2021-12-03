@@ -108,8 +108,8 @@ export TMUX_TMPDIR=$HOME/tmp/tmux
 # Hub
 # requires hub: http://defunkt.io/hub/
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-git() {hub "$@"} 
-unfunction hub 2>/dev/null  # Workaround for two many levels...
+#git() {hub "$@"} 
+#unfunction hub 2>/dev/null  # Workaround for two many levels...
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,3 +128,11 @@ fi
 # ruby-build
 #~~~~~~~~~~~~~~~~
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+#~~~~~~~~~~~~~~~~
+# MariaDB
+#~~~~~~~~~~~~~~~~
+MARIADB_FORMULA=$(brew list | grep mariadb | head -1)
+if [ ! -z "$MARIADB_FORMULA" ]; then
+  export PATH=$PATH:$(brew --prefix "${MARIADB_FORMULA}")/bin
+fi
