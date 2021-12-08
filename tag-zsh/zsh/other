@@ -127,12 +127,22 @@ fi
 #~~~~~~~~~~~~~~~~
 # ruby-build
 #~~~~~~~~~~~~~~~~
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(ibrew --prefix openssl@1.1)"
 
 #~~~~~~~~~~~~~~~~
 # MariaDB
 #~~~~~~~~~~~~~~~~
 MARIADB_FORMULA=$(ibrew list | grep mariadb | head -1)
 if [ ! -z "$MARIADB_FORMULA" ]; then
-  export PATH=$PATH:$(brew --prefix "${MARIADB_FORMULA}")/bin
+  export PATH=$PATH:$(ibrew --prefix "${MARIADB_FORMULA}")/bin
 fi
+#
+#~~~~~~~~~~~~~~~~
+# Python
+#~~~~~~~~~~~~~~~~
+export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
+
+#~~~~~~~~~~~~~~~~
+# Node
+#~~~~~~~~~~~~~~~~
+export PATH=/usr/local/opt/node@14/bin:$PATH
