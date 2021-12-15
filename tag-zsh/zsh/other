@@ -146,3 +146,33 @@ export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
 # Node
 #~~~~~~~~~~~~~~~~
 export PATH=/usr/local/opt/node@14/bin:$PATH
+
+#~~~~~~~~~~~~~~~~
+# Rails
+#~~~~~~~~~~~~~~~~
+# Launch a Rails Server with auto-reloading [S]CSS and JS files enabled
+alias railss='bin/webpack-dev-server &; bin/rails s'
+
+# Use kills to stop the rails server, spring, and webpack-dev-server
+function kills() {
+  local PROJECT_DIR=$(git rev-parse --show-toplevel)
+  if [ -f $PROJECT_DIR/tmp/pids/server.pid ]; then
+    pid=$(cat $PROJECT_DIR/tmp/pids/server.pid)
+    echo "Killing rails server with PID $pid"
+    kill -9 $pid
+  else
+    echo "No rails server running"
+  fi
+
+  spring stop
+
+  pid=$(ps -ef | grep webpack-dev-server | grep -v grep | awk '{ print $2 }' | head -1)
+  if [[ "$pid" != "" ]]; then
+    echo "Killing webpack-dev-server"
+    kill $pid
+  else
+    echo "No webpack-dev-server running"
+  fi
+
+  touch $PROJECT_DIR/tmp/restart.txt
+}
