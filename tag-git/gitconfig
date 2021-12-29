@@ -94,7 +94,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = kdiff3
+	tool = bc3
 	submodule = log
 [difftool]
 	prompt = false
