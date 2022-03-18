@@ -1,6 +1,6 @@
 export HOST=`hostname`
 export EDITOR=vim
-export PATH=/usr/local/opt/python/libexec/bin:$HOME/local/bin:$PATH:$HOME/bin
+export PATH=/usr/local/opt/python/libexec/bin:/usr/local/sbin:$HOME/local/bin:$PATH:$HOME/bin
 export SHELL=/bin/bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export PAGER='less -r'

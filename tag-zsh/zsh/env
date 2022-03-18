@@ -1,7 +1,5 @@
-
-
-export PATH=$HOME/local/bin:$PATH:$HOME/bin
-
+export PATH=$HOME/local/bin:/usr/local/sbin:$PATH:$HOME/bin
+#export PATH=/usr/local/opt/python/libexec/bin:/usr/local/sbin:$HOME/local/bin:$PATH:$HOME/bin
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Regular 
