@@ -169,8 +169,18 @@ function kills() {
 
   touch $PROJECT_DIR/tmp/restart.txt
 }
-#
+
 #~~~~~~~~~~~~~~~~
 # direnv 
 #~~~~~~~~~~~~~~~~
 eval "$(direnv hook zsh)"
+
+#~~~~~~~~~~~~~~~~
+# Homebrew
+#~~~~~~~~~~~~~~~~
+function brew-tap-list
+{
+	echo "Formulae for tap(s) $* are:"
+	echo "";
+	brew tap-info --json "$@" | jq -r '.[]|(.formula_names[],.cask_tokens[])' | sort -V;
+}

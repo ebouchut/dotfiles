@@ -130,3 +130,13 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # direnv 
 #~~~~~~~~~~~~~~~~
 eval "$(direnv hook bash)"
+
+#~~~~~~~~~~~~~~~~
+# Homebrew
+#~~~~~~~~~~~~~~~~
+function brew-tap-list
+{
+	echo "Formulae for tap(s) $* are:"
+	echo "";
+	brew tap-info --json "$@" | jq -r '.[]|(.formula_names[],.cask_tokens[])' | sort -V;
+}
