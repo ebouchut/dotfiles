@@ -123,19 +123,6 @@ brew 'zsh'
 brew 'zsh-syntax-highlighting'
 
 
-# ~~~~~~~~
-# Casks
-# ~~~~~~~~
-
-cask 'docker'
-cask 'keycastr'
-cask 'lepton'
-cask 'obsidian'
-cask 'postman'
-cask 'vlc'
-cask 'zoom'
-cask 'karabiner-elements'
-
 #~~~~~~~~~~~~~~~~~~~~
 # MacOS Applications
 #~~~~~~~~~~~~~~~~~~~~
@@ -147,3 +134,16 @@ mas "Skitch", id: 425955336
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "XChat Azure", id: 447521961
+
+
+# ~~~~~~~~
+# Casks
+# ~~~~~~~~
+cask 'docker'
+cask 'keycastr'
+cask 'lepton'
+cask 'obsidian'
+cask 'postman'
+cask 'vlc'
+cask 'zoom'
+cask 'karabiner-elements'
