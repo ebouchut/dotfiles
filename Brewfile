@@ -61,7 +61,6 @@ brew 'httrack'
 # Github CLI interface
 brew 'hub'
 
-brew 'iterm2'
 
 # sed for json: https://robots.thoughtbot.com/jq-is-sed-for-json
 brew 'jq'
@@ -76,7 +75,6 @@ brew 'ngrep'
 
 brew 'numpy'
 
-brew 'obsidian'
 # Procfile manage: a foreman++
 brew 'overmind'
 
@@ -141,6 +139,7 @@ mas "XChat Azure", id: 447521961
 # ~~~~~~~~
 cask 'docker'
 cask 'keycastr'
+cask 'iterm2'
 cask 'lepton'
 cask 'obsidian'
 cask 'postman'
