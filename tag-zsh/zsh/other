@@ -130,16 +130,6 @@ fi
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(ibrew --prefix openssl@1.1)"
 
 #~~~~~~~~~~~~~~~~
-# Python
-#~~~~~~~~~~~~~~~~
-export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
-
-#~~~~~~~~~~~~~~~~
-# Node
-#~~~~~~~~~~~~~~~~
-export PATH=/usr/local/opt/node@14/bin:$PATH
-
-#~~~~~~~~~~~~~~~~
 # direnv 
 #~~~~~~~~~~~~~~~~
 eval "$(direnv hook zsh)"
