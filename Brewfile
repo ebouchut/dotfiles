@@ -111,7 +111,6 @@ brew 'tree'
 brew 'urlview'
 
 brew 'vim'
-brew 'vlc'
 
 brew 'watch'
 
