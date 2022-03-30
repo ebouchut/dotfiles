@@ -122,11 +122,6 @@ source ~/.dotfiles/tag-bash/bash/completion/git-completion.bash
 source ~/.dotfiles/tag-bash/bash/completion/git-hub.completion.bash
 
 #~~~~~~~~~~~~~~~~
-# ruby-build
-#~~~~~~~~~~~~~~~~
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-#~~~~~~~~~~~~~~~~
 # direnv 
 #~~~~~~~~~~~~~~~~
 eval "$(direnv hook bash)"
