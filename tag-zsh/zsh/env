@@ -1,5 +1,17 @@
 export PATH=$HOME/local/bin:/usr/local/sbin:$PATH:$HOME/bin
 #export PATH=/usr/local/opt/python/libexec/bin:/usr/local/sbin:$HOME/local/bin:$PATH:$HOME/bin
+case "$(uname -m)" in
+  x86_64)
+    OS_ARCH=intel
+    ;;
+  arm64)
+    OS_ARCH=arm
+    ;;
+  *)
+    OS_ARCH=unknown
+    ;;
+esac
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Regular 

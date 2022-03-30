@@ -1,3 +1,15 @@
+case "$(uname -m)" in
+  x86_64)
+    OS_ARCH=intel
+    ;;
+  arm64)
+    OS_ARCH=arm
+    ;;
+  *)
+    OS_ARCH=unknown
+    ;;
+esac
+
 export HOST=`hostname`
 export EDITOR=vim
 export PATH=/usr/local/opt/python/libexec/bin:/usr/local/sbin:$HOME/local/bin:$PATH:$HOME/bin
