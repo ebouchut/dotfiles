@@ -123,14 +123,8 @@ brew 'zsh-syntax-highlighting'
 #~~~~~~~~~~~~~~~~~~~~
 # MacOS Applications
 #~~~~~~~~~~~~~~~~~~~~
-mas "Key Codes", id: 414568915
-mas "iZip", id: 478738838
-mas "CheatSheet", id: 529456740
-mas "Amphetamine", id: 937984
 mas "Skitch", id: 425955336
-mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "XChat Azure", id: 447521961
 
 
 # ~~~~~~~~
