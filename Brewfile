@@ -45,6 +45,7 @@ brew 'frum'
 brew 'fswatch'
 # Fuzzy File finder
 brew 'fzf'
+brew "fpp"
 
 # Github CLI
 brew 'gh'
