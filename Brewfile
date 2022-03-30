@@ -40,7 +40,7 @@ brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dos2unix'
 
-# Ruby Version Manager (written in Go)
+brew "extract_url"
 brew 'frum'
 brew 'fswatch'
 # Fuzzy File finder
