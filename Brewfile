@@ -132,11 +132,12 @@ mas "Things", id: 904280696
 # Casks
 # ~~~~~~~~
 cask 'docker'
-cask 'keycastr'
 cask 'iterm2'
+cask 'karabiner-elements'
+cask 'keycastr'
 cask 'lepton'
 cask 'obsidian'
 cask 'postman'
+cask 'spotify'
 cask 'vlc'
 cask 'zoom'
-cask 'karabiner-elements'
