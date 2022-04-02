@@ -9,6 +9,7 @@
 #~~~~~~~~~~~~~~~~~~~~
 # Brew Taps (Sources)
 #~~~~~~~~~~~~~~~~~~~~
+tap "1password/tap"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -52,7 +53,6 @@ brew 'gh'
 brew 'git'
 brew 'git-extras'
 brew 'git-flow-avh'
-brew 'git-standup'
 brew 'git-subrepo'
 brew 'gnupg'
 
@@ -131,6 +131,7 @@ mas "Things", id: 904280696
 # ~~~~~~~~
 # Casks
 # ~~~~~~~~
+cask '1password-cli'
 cask 'docker'
 cask 'iterm2'
 cask 'karabiner-elements'
@@ -139,5 +140,6 @@ cask 'lepton'
 cask 'obsidian'
 cask 'postman'
 cask 'spotify'
+cask 'sublime-text'
 cask 'vlc'
 cask 'zoom'
