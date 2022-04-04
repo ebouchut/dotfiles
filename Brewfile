@@ -25,6 +25,7 @@ tap "thoughtbot/formulae"
 #~~~~~~~~~~~~~~~~~~~~
 brew 'ansifilter'
 brew 'asciinema'
+brew 'awscli'
 
 brew 'autoconf'
 brew 'automake'
