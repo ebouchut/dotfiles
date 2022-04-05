@@ -3,16 +3,35 @@
 
 # Run ssh-agent and store SSH_* variables ready to be sourced 
 
-  SSH_ENV=$HOME/.keychain/$HOST-sh
 
+SSH_ENV=$HOME/.keychain/$HOST-sh
 function start_agent {
-  echo "Initializing new SSH Agent..."
-  eval $(/usr/bin/ssh-agent | sed 's/^echo/#echo/'  | tee "${SSH_ENV}")
-  chmod 600 "${SSH_ENV}"
-  echo succeeded
+  local OP_SSH_AGENT_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+  local OP_DIR=~/.1password
+  local OP_SSH_AGENT_SOCK_SYMLINK=$OP_DIR/agent.sock
 
-  # Load default private key
-  /usr/bin/ssh-add
+    # TODO: handle Linux
+  if [[ "$OSTYPE" == "darwin"*  && -S "$OP_SSH_AGENT_SOCK" ]] ; then
+    echo "Using 1Password SSH Agent"
+
+    # Create ~/.1password if it does not exist
+    if [[ ! -d "$OP_DIR" ]]; then
+      mkdir     "$OP_DIR"
+      chmod 700 "$OP_DIR"
+    fi
+
+    # Create a short symlink to the 1Password SSH-Agent with a complex path
+    if [[ ! -S "$OP_SSH_AGENT_SOCK_SYMLINK" ]]; then
+      ln -s "$OP_SSH_AGENT_SOCK" "$OP_SSH_AGENT_SOCK_SYMLINK"
+    fi
+    export SSH_AUTH_SOCK=$OP_SSH_AGENT_SOCK_SYMLINK
+  else
+    echo "Initializing new SSH Agent..."
+    eval $(/usr/bin/ssh-agent | sed 's/^echo/#echo/'  | tee "${SSH_ENV}")
+    chmod 600 "${SSH_ENV}"
+
+    /usr/bin/ssh-add  # Load default private key
+  fi
 }
 
 if [ -f "${SSH_ENV}" ]; then  # Source: http://mah.everybody.org/docs/ssh
