@@ -1,9 +1,11 @@
-case "$(uname -m)" in
-  x86_64)
-    eval "$(/usr/local/bin/brew shellenv)"
-    ;;
-  arm64)
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    ;;
-esac
+if [[ "$OSTYPE" == "darwin"* ]] ; then
+  case "$(uname -m)" in
+    x86_64)
+      eval "$(/usr/local/bin/brew shellenv)"
+      ;;
+    arm64)
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+      ;;
+  esac
+fi
 
