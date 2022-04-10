@@ -104,13 +104,6 @@ export TMUX_TMPDIR=$HOME/tmp/tmux
 # Disabled as it causes an issue with ssh-agent loading multiple times
 #[[ "$-" == *i* ]] && ensure_tmux_is_running
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Hub
-# requires hub: http://defunkt.io/hub/
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#git() {hub "$@"} 
-#unfunction hub 2>/dev/null  # Workaround for two many levels...
-
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # zsh-syntax-highlighting

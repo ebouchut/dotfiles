@@ -97,29 +97,9 @@ export TMUX_TMPDIR=$HOME/tmp/tmux
 [[ "$-" == *i* ]] && ensure_tmux_is_running
 
 #~~~~~~~~~~~~~
-# git
-#~~~~~~~~~~~~~
-# g as a shortcut for git
-# No arguments: `git status`
-# With arguments: acts like `git`
-#g() {
-#  if [[ $# > 0 ]]; then
-#    git $@
-#  else
-#    git status
-#  fi
-#}
-
-#~~~~~~~~~~~~~
 # travis
 #~~~~~~~~~~~~~
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-#~~~~~~~~~~~~~~~~
-#  git-hub Completion
-#~~~~~~~~~~~~~~~~
-source ~/.dotfiles/tag-bash/bash/completion/git-completion.bash
-source ~/.dotfiles/tag-bash/bash/completion/git-hub.completion.bash
 
 #~~~~~~~~~~~~~~~~
 # direnv 

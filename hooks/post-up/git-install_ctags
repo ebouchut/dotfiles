@@ -4,14 +4,11 @@
 # Install Excuberant Ctags
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-type hub >/dev/null 2>&1 && exit 0
-
-
 # Ctags is not installed, installing it.
 
 case $OSTYPE in
   darwin*)
-    brew install ctags
+    # brew install ctags  # installed via Brewfile: brew bundle
   ;;
   linux*)
     install_ctags
