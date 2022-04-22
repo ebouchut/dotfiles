@@ -6,11 +6,11 @@
 # check that pronto is installed
 #  Source: http://elliotthilaire.net/gem-pronto-and-git-hooks/
 #
-# hash pronto 2>/dev/null || { 
-#   echo >&2 "Pronto is not installed. Install with 'gem install pronto pronto-rubocop'";
-#   echo >&2 "Find other Pronto runners at https://github.com/mmozuras/pronto#runners";
-#   exit 0;
-# }
+hash pronto 2>/dev/null || { 
+  echo >&2 "Pronto is not installed. Install with 'gem install pronto pronto-rubocop'";
+  echo >&2 "Find other Pronto runners at https://github.com/mmozuras/pronto#runners";
+  exit 0;
+}
 
 # # Run pronto
-# pronto run --exit-code
+pronto run --exit-code
