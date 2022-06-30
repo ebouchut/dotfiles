@@ -71,6 +71,7 @@
 	commiters = shortlog --summary --numbered --email
 	ls-files-remote-branch = "!f() { git ls-tree --name-only -r ${1-$(git rev-parse --abbrev-ref HEAD)}; }; f"
 	gprp = !git pull --rebase && git push
+	diffp = difftool -t p4merge -y
 [apply]
 	whitespace = nowarn
 [core]
