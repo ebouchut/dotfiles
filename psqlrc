@@ -1,1 +1,3 @@
 \x auto
+\pset pager on
+\setenv PAGER 'less -FRSX'
