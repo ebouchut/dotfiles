@@ -130,7 +130,7 @@
 [color "branch"]
 	upstream = cyan
 [rebase]
-	missingCommitsCheck = warn
+	missingCommitsCheck = error
 [include]
 	path = ~/dev/Perso/dotfiles/tag-git/gitconfig-colors_dark
 [filter "lfs"]
