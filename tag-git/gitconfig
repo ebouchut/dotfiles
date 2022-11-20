@@ -77,7 +77,7 @@
 	whitespace = nowarn
 [core]
 	autocrlf = input
-	safecrlf = true
+	safecrlf = warn
 	excludesfile = ~/.gitignore_global
 	pager = less -FRSX
 [credential]
