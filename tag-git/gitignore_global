@@ -118,3 +118,8 @@ nb-configuration.xml
 
 # Ag (The Silver Searcher)
 .agignore
+
+#~~~~~~~~~~~~~~~~~~~~
+# RSpec
+#~~~~~~~~~~~~~~~~~~~~
+.rspec.local
