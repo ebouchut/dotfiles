@@ -123,3 +123,4 @@ nb-configuration.xml
 # RSpec
 #~~~~~~~~~~~~~~~~~~~~
 .rspec.local
+spec/examples.txt
