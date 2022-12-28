@@ -73,6 +73,7 @@
 	ls-files-remote-branch = "!f() { git ls-tree --name-only -r ${1-$(git rev-parse --abbrev-ref HEAD)}; }; f"
 	gprp = !git pull --rebase && git push
 	diffp = difftool -t p4merge -y
+	first-commit = log --max-parents=0
 [apply]
 	whitespace = nowarn
 [core]
