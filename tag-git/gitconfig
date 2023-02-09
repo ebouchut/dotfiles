@@ -97,7 +97,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = bc3
+	tool = bc4
 	submodule = log
 [difftool]
 	prompt = false
@@ -107,11 +107,11 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = bc3
+	tool = bc4
 [mergetool]
-	bc3 = trustExitCode
+	bc4 = trustExitCode
 	prompt = false
-[mergetool "bc3"]
+[mergetool "bc4"]
 	trustExitCode = true
 	keepBackup = false
 [mergetool  "deltawalker"]
@@ -144,3 +144,5 @@
     path = ~/.gitconfig-work
 [pull]
 	rebase = false
+[difftool "bc4"]
+	trustExitCode = true
