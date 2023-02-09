@@ -80,7 +80,10 @@ fi
 # fzf: Fuzzy Finder
 #  https://github.com/junegunn/fzf
 #~~~~~~~~~~~~~
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+fi
 
 #~~~~~~~~~~~~~
 # Tmux
