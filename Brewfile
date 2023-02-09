@@ -125,9 +125,7 @@ brew 'zsh-syntax-highlighting'
 #~~~~~~~~~~~~~~~~~~~~
 # MacOS Applications
 #~~~~~~~~~~~~~~~~~~~~
-mas "Skitch", id: 425955336
-mas "Things", id: 904280696
-
+mas 'Things', id: 904280696
 
 # ~~~~~~~~
 # Casks
