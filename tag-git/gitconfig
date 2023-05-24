@@ -89,7 +89,7 @@
 	template = ~/.git_message
 [init]
 	templatedir = ~/.git_template
-	defaultBranch = master
+	defaultBranch = main
 [gitsh]
 	noGreeting = true
 [pager]
