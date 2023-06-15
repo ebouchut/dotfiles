@@ -13,4 +13,4 @@ hash pronto 2>/dev/null || {
 }
 
 # # Run pronto
-pronto run --exit-code
+#pronto run --exit-code
