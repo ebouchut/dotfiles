@@ -1,9 +1,16 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# A file that lists Brew formulae and taps to install resp. add on Macos
+# A file that lists the:
+# - Brew taps to add
+# - Brew formulae to install
+# - MacOS apps to install
 #
-# https://openfolder.sh/macos-migrations-with-brewfile
-# https://github.com/Homebrew/homebrew-bundle
-# https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
+# To install what is listed in this file:
+#     brew bundle
+#
+# Sources:
+# - https://openfolder.sh/macos-migrations-with-brewfile
+# - https://github.com/Homebrew/homebrew-bundle
+# - https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 #~~~~~~~~~~~~~~~~~~~~
