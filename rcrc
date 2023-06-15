@@ -54,7 +54,7 @@ UNDOTTED="bin"
 # When installing a tag rcup does not create the tag-XXX directory.
 # It only installs the dotfiles it finds in this directory.
 #
-TAGS="git tmux bash ruby vim zsh"
+TAGS="git tmux bash ruby vim zsh espanso"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Install non default tags

@@ -10,6 +10,7 @@
 # Brew Taps (Sources)
 #~~~~~~~~~~~~~~~~~~~~
 tap "1password/tap"
+tap "espanso/espanso"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -42,6 +43,7 @@ brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dos2unix'
 
+brew "espanso"
 brew "extract_url"
 brew 'frum'
 brew 'fswatch'
