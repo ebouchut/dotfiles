@@ -1,11 +1,34 @@
 matches:
+  #~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Email Addresses
+  #~~~~~~~~~~~~~~~~~~~~~~
   - trigger: "xem "
     label: "Email - Address - ebouchut@gmail.com (xem )"
-    replace: "ebouchut@gmail.com (xem)"
+    replace: "ebouchut@gmail.com"
 
   - trigger: "xemm "
     label: "Email - Address - EricBouchut@gmail.com (xemm )"
     replace: "EricBouchut@gmail.com"
+  
+  - trigger: "xew "
+    label: "Email - Address - Work - EricBouchut@gmail.com (xew )"
+    replace: "EricBouchut@gmail.com"
+  #~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Email Signatures
+  #~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xesig "
+    label: "Email Signature - FR - Short (xesig )"
+    replace: |
+      Cordialement,
+      - Eric Bouchut
+  - trigger: "xeesig "
+    label: "Email Signature - EN - Short (xeesig )"
+    replace: |
+      Best,
+      - Eric Bouchut
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ General Email Templates
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - trigger: "xeet "
     label: "Email - Template - English (xeet )"
     form: |
@@ -24,3 +47,85 @@ matches:
 
       Cordialement,
       - Eric Bouchut
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Job Search Email Templates
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xejobno "
+    label: "Job - Template - Opportunity - Not Interested - FR (xejobno)"
+    form: |
+      Bonjour [[Name]],
+
+      Merci pour cette opportunité mais je ne suis pas intéressé.
+      Je suis à l'écoute du marché pour une opportunité de développeur mid-level back end Ruby on Rails en télétravail total pour une entreprise basée en France.  
+
+      Cordialement.
+
+      Bonne journée.
+      - Eric Bouchut
+  - trigger: "xeejobno "
+    label: "Email - Template - Job Opportunity - Not interested - EN (xeejobno )"
+    replace: |
+      Hi [[Name]],
+
+      Thank you for sharing this job opportunity with me.
+      However, I'm not interested.
+
+      I am searching for a permanent full-time, fully remote mid-level Ruby on Rails back-end developer position.
+
+      Have a great day and let's keep in touch.
+
+      Best,
+      Eric Bouchut
+  - trigger: "xejobnoo "
+    label: "Email - Template - Job Opportuntiy - Switched Jobs - FR (xejobnoo )"
+    replace: |
+      Bonjour [[Name]],
+
+      Je ne suis plus en recherche d'opportunité car je viens de changer récemment.
+
+      Bonne journée.
+      Eric Bouchut
+  - trigger: "xeejobnoo"
+    label: "Email - Template - Job Opportuntiy - Switched Jobs - EN (xeejobnoo)"
+    replace: |
+      Hello [[Name]],
+
+      I am no longer searching for a new job opportunity as I recently switched jobs.
+
+      Have a nice day
+      - Eric Bouchut
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Other Email Templates
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xeers "
+    label: "Job - Template - ERS - Facture (xeers )"
+    replace: |
+      Bonjour,
+
+      J'ai réglé ce jour ({{today}}) la facture ERS (numéro {{form.invoice}}) 
+      de {{form.payer}} pour le mois de {{month}},
+      par virement bancaire (référence n° {{form.bank_transfer_id}}),
+      pour un montant de {{form.amount}} €.
+
+      Code compta: {{form.accounting_code}}
+
+      Bonne réception.
+      - Eric Bouchut
+    vars:
+      - name: "today"
+        type: date
+        params:
+          format: "%d/%m/%Y"
+      - name: "month"
+        type: date
+        params:
+          format: "%B %Y"
+      - name: "form"
+        type: form
+        params:
+          layout: |
+            Facture:     [[invoice]]
+            Montant:     [[amount]]
+            Débiteur:    [[payer]]
+            Virement:    [[bank_transfer_id]]
+            Code Compta: [[accounting_code]]

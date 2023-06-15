@@ -1,4 +1,7 @@
 matches:
+  #~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Emojis
+  #~~~~~~~~~~~~~~~~~~~~
   - trigger: "xcinfo "
     label: "Character - Emoji - Info - ℹ️ (xcinfo )"
     replace: "ℹ️"
@@ -23,12 +26,24 @@ matches:
   - trigger: "xcclock "
     label: "Character - Emoji - Clock - 🕗 (xcclock )"
     replace: "🕗"
+  - trigger: "xccheckbox "
+    label: "Character - Emoji - Checkbox - 🔲 (xccheckbox )"
+    replace: "🔲"
   - trigger: "xccheckboxchecked "
     label: "Character - Emoji - Checkbox - checked - ☑️ (xccheckboxchecked )"
     replace: "☑️"
   - trigger: "xccheck "
     label: "Character - Emoji - Check - ✔️ (xccheck )"
     replace: "✔️"
+  - trigger: "xc+1 "
+    label: "Character - Emoji - Thumbs Up - 👍 (xc+1 )"
+    replace: "👍"
+  - trigger: "xc-1"
+    label: "Character - Emoji - Thumbs Down - 👎 (xc-1)"
+    replace: "👎"
+  #~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Keys
+  #~~~~~~~~~~~~~~~~~~~~
   - trigger: "xcshift "
     label: "Character - Key - Shift - ⇧ (xcshift )"
     replace: "⇧"
@@ -47,12 +62,32 @@ matches:
   - trigger: "xccontrol "
     label: "Character - Key - Control - ⌃ (xccontrol )"
     replace: "⌃"
-  - trigger: "xc+1 "
-    label: "Character - Emoji - Thumbs Up - 👍 (xc+1 )"
-    replace: "👍"
-
-
-
-
+  #~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Digits: ⓵ ② ③
+  #~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xcone "
+    label: "Character - Digit - One - ⓵ (xcone )"
+    replace: "⓵"
+  - trigger: "xctwo "
+    label: "Character - Digit - Two - ② (xctwo )"
+    replace: "②"
+  - trigger: "xcthree "
+    label: "Character - Digit - ③ -  (xcthree )"
+    replace: "③"
+  #~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Arrows
+  #~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xcuparrow "
+    label: "Character - Arrow - Up - ↑ (xcuparrow )"
+    replace: "↑"
+  - trigger: "xcdownarrow "
+    label: "Character - Arrow - Down - ↓ (xcdownarrow )"
+    replace: "↓"
+  - trigger: "xcleftarrow "
+    label: "Character - Arrow - Left - ← (xcleftarrow )"
+    replace: "←"
+  - trigger: "xcrighttarrow "
+    label: "Character - Arrow - Right - → (xcrightarrow )"
+    replace: "→"
 
 

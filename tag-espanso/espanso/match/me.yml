@@ -1,0 +1,10 @@
+matches:
+  - trigger: "xmen "
+    label: "Me - Full Name (xmen )"
+    replace: "Eric Bouchut"
+  - trigger: "xmeln "
+    label: "Me - Last Name (xmen)"
+    replace: "Bouchut"
+  - trigger: "xmefn "
+    label: "Me - First Name (xmefn )"
+    replace: "Eric"

@@ -1,0 +1,9 @@
+matches:
+  - trigger: "sqlpapertrail "
+    label: "SQL - PaperTrail - List changes made on an Object (sqlpapertrail )"
+    replace: |
+      SELECT * 
+      FROM versions 
+      WHERE item_type = '[[Model_Name]]' AND item_id = [[Id]]% 
+      ORDER BY created_at DESC
+      ;

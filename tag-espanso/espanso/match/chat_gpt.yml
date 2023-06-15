@@ -1,0 +1,21 @@
+matches:
+  - trigger: "xgdef "
+    label: "ChatGPT - Definition (xgdef )"
+    replace: |
+      Give me the definition of "{{form.name}}", its use cases (3), advantages, drawbacks, alternatives (if any), and sources. 
+
+      Format your response using Markdown with these requirements:
+      - headings start at level 2 (ie. `###`) 
+      - the technical terms should be italicized
+      - use inline code blocks with backticks (code) for inline code snippets
+      - use multiline code blocks with triple backticks for multiline code snippets
+
+      The heading (of level 2) should be "{{form.name}}".
+      The remaining level 3 headings are "Use Cases", "Advantages", "Drawbacks", "Alternatives", and "Sources".
+
+      Cite your references (with URLs when possible) in the "Sources" section.
+    vars:
+      - name: "form"
+        type: form
+        params:
+          layout: "Name: [[Name]]"

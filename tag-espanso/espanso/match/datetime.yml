@@ -1,0 +1,47 @@
+matches:
+  #~~~~~~~~~~~~~~~
+  #~~~~ Date
+  #~~~~~~~~~~~~~~~
+  - trigger: "xdd "
+    lebel: "Date - YYYYMMDD"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y%m%d"
+  - trigger: "xdd- "
+    lebel: "Date - YYYY-MM-DD-"
+    replace: "{{date}}-"
+    vars:
+      - name: date
+        type: match
+        params:
+          trigger: "xdd "
+  - trigger: "xdd/ "
+    lebel: "Date - MM/DD/YYYY"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%d/%m/%Y"
+  - trigger: "xddm- "
+    lebel: "Date - YYYY-MM"
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m"
+  #~~~~~~~~~~~~~~~
+  #~~~~ Time
+  #~~~~~~~~~~~~~~~
+  - trigger: "xtt "
+    lebel: "Time - Current"
+    replace: "{{time}}"
+    vars:
+      - name: time
+        type: time
+        params:
+          format: "%Y-%m"
