@@ -1,0 +1,8 @@
+matches:
+  - trigger: "xxtrigger "
+    label: "Espanso - Trigger (xxtrigger )"
+    form: |
+        - trigger: "[[Trigger]]"
+          label: "[[Label]] ([[Trigger]])"
+        replace: "[[Replace]]"
+        $|$

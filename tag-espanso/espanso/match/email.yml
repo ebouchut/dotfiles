@@ -1,0 +1,26 @@
+matches:
+  - trigger: "xem "
+    label: "Email - Address - ebouchut@gmail.com (xem )"
+    replace: "ebouchut@gmail.com (xem)"
+
+  - trigger: "xemm "
+    label: "Email - Address - EricBouchut@gmail.com (xemm )"
+    replace: "EricBouchut@gmail.com"
+  - trigger: "xeet "
+    label: "Email - Template - English (xeet )"
+    form: |
+      Hi [[Name]],
+
+      $|$
+
+      Best,
+      - Eric Bouchut
+  - trigger: "xet "
+    label: "Email - Template - French (xeet )"
+    form: |
+      Bonjour [[Name]],
+
+      $|$
+
+      Cordialement,
+      - Eric Bouchut

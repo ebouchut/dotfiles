@@ -1,0 +1,3 @@
+title: 'Keychain Access'
+filter_class: 'com.apple.keychainaccess'
+enable: false
