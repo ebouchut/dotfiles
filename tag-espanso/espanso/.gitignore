@@ -1,1 +1,4 @@
 /match/packages/
+/match/**/*.private.yml
+/match/**/*.private.yaml
+/match/**/private.yml
