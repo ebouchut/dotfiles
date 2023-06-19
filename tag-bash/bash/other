@@ -118,3 +118,11 @@ function brew-tap-list
 	echo "";
 	brew tap-info --json "$@" | jq -r '.[]|(.formula_names[],.cask_tokens[])' | sort -V;
 }
+
+#~~~~~~~~~~~~~~~~
+# ngrok
+#~~~~~~~~~~~~~~~~
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
