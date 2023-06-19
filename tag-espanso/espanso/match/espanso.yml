@@ -1,8 +1,9 @@
 matches:
   - trigger: "xxtrigger "
     label: "Espanso - Trigger (xxtrigger )"
+    force_clipboard: true
     form: |
         - trigger: "[[Trigger]]"
-          label: "[[Label]] ([[Trigger]])"
-        replace: "[[Replace]]"
-        $|$
+            label: "[[Label]] ([[Trigger]])"
+            replace: "[[Replace]]"
+            $|$
