@@ -1,0 +1,17 @@
+matches:
+  #~~~~~~~~~~~~~~~~~~~~~~~
+  # Loop
+  #~~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xlbuild "
+    label: "Loop - Build - Mac (xlbuild )"
+    replace: "https://loopkit.github.io/loopdocs/build/overview/"
+  - trigger: "xlghbuild "
+    label: "Loop - Build - GitHub (xlghbuild)"
+    replace: "https://loopkit.github.io/loopdocs/gh-actions/gh-overview/"
+  - trigger: "xlghupdate "
+    label: "Loop - Update - GitHub (xlghupdate )"
+    replace: "https://loopkit.github.io/loopdocs/gh-actions/gh-update/"
+  - trigger: "xlupdate "
+    label: "Loop - Update - Mac (xlupdate )"
+    replace: "https://loopkit.github.io/loopdocs/build/updating/"
+    
