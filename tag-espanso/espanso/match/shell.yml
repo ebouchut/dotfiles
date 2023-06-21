@@ -1,8 +1,8 @@
 matches:
   - trigger: "xsrailsnew "
     label: "Shell - Rails - New App (Jumpstart template) (xsrailsnew )"
-    replace: |
+    form: |
       rails new [[ApplicationName]] --skip-test -d postgresql -m https://raw.githubusercontent.com/ebouchut/jumpstart/master/template.rb
   - trigger: "xsllvd "
     label: "Shell - LinkedIn Learning Download Video Course (xsllvd )"
-    replace: "llvd  -ca -e -c '[[Couse_Slug]]' -t 10,30 --cookies "
+    form: "llvd  -ca -e -c '[[CouseSlug]]' -t 10,30 --cookies "
