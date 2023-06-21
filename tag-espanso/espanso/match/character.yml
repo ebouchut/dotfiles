@@ -41,6 +41,9 @@ matches:
   - trigger: "xc-1"
     label: "Character - Emoji - Thumbs Down - 👎 (xc-1)"
     replace: "👎"
+  - trigger: "xcthink "
+    label: "Character - Emoji - Thinking Head (xcthink )"
+    replace: "🤔"
   #~~~~~~~~~~~~~~~~~~~~
   #~~~~ Keys
   #~~~~~~~~~~~~~~~~~~~~
