@@ -32,4 +32,11 @@ matches:
   - trigger: "xutwit "
     label: "URL - Twitter (xutwit )"
     replace: "https://twitter.com/ebouchut"
+  #~~~~~~~~~~~~~~~~~~~~~~~
+  # Other
+  #~~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xunvdh "
+    label: "URL - Nicole Van Der Hoeven - Learning in Public (xunvdh )"
+    replace: "https://notes.nicolevanderhoeven.com"
+    
     
