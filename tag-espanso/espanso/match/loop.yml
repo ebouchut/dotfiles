@@ -14,4 +14,12 @@ matches:
   - trigger: "xlupdate "
     label: "Loop - Update - Mac (xlupdate )"
     replace: "https://loopkit.github.io/loopdocs/build/updating/"
+  - trigger: "xlreleases "
+    label: "Loop - Releases (xlreleases )"
+    replace: "https://loopkit.github.io/loopdocs/version/releases/"
+  - trigger: "xlversions "
+    label: "Loop - Versions (xlversions )"
+    replace: "https://www.loopandlearn.org/version-updates/"
+    
+    
     
