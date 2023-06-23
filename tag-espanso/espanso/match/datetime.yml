@@ -11,13 +11,13 @@ matches:
         params:
           format: "%Y%m%d"
   - trigger: "xdd- "
-    lebel: "Date - YYYY-MM-DD-"
-    replace: "{{date}}-"
+    lebel: "Date - YYYY-MM-DD"
+    replace: "{{date}}"
     vars:
       - name: date
-        type: match
+        type: date
         params:
-          trigger: "xdd "
+          format: "%Y-%m-%d"
   - trigger: "xdd/ "
     lebel: "Date - MM/DD/YYYY"
     replace: "{{date}}"

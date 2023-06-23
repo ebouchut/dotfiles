@@ -1,4 +1,7 @@
 matches:
+  #~~~~~~~~~~~~~~~~~~~~~~~
+  # My URLs
+  #~~~~~~~~~~~~~~~~~~~~~~~
   - trigger: "xucal "
     label: "URL - Calendly - EricBouchut@gmail.com (xucal )"
     replace: "https://calendly.com/ericbouchut"
