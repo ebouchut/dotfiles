@@ -18,4 +18,4 @@ matches:
       - name: "form"
         type: form
         params:
-          layout: "Name: [[Name]]"
+          layout: "Name: [[name]]"
