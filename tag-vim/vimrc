@@ -332,14 +332,6 @@ endfunction
 " Automatically switch color scheme on Vim startup and when a file is opened
 autocmd VimEnter,FileReadPost * call ToggleColorScheme()
 
-"~~~~~~~~~~~~~~~~~~~~~
-" colorscheme molokai
-"~~~~~~~~~~~~~~~~~~~~~
-"" let g:molokai_original = 1
-" let g:rehash256 = 1
-" colorscheme molokai
-
-
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
