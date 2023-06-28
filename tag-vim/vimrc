@@ -263,8 +263,8 @@ set number  " Display absolute line numbers by default
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Highlight the current line of the active buffer
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-autocmd VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * setlocal cursorline
-autocmd WinLeave,FocusLost,CmdwinLeave                        * setlocal nocursorline
+" autocmd VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * setlocal cursorline
+" autocmd WinLeave,FocusLost,CmdwinLeave                        * setlocal nocursorline
 
 "~~~~~~~~~~~~~~~~~~~~~
 " Help
