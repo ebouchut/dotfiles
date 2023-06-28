@@ -2,20 +2,26 @@ matches:
   - trigger: "xgdef "
     label: "ChatGPT - Definition (xgdef )"
     replace: |
-      Give me the definition of "{{form.name}}", its use cases (3), advantages, drawbacks, alternatives (if any), and sources. 
+      ❓Give me the definition of "{{form.name}}" ({{form.url}}), its use cases (3), advantages, drawbacks, alternatives (if any), commpanions (tools, plugins, software), and your sources. 
 
-      Format your response using Markdown with these requirements:
-      - headings start at level 2 (ie. `###`) 
-      - the technical terms should be italicized
-      - use inline code blocks with backticks (code) for inline code snippets
-      - use multiline code blocks with triple backticks for multiline code snippets
-
-      The heading (of level 2) should be "{{form.name}}".
-      The remaining level 3 headings are "Use Cases", "Advantages", "Drawbacks", "Alternatives", and "Sources".
-
-      Cite your references (with URLs when possible) in the "Sources" section.
+      Requirements:
+      - Format your response using Markdown.
+      - Make headings start at level 2 (ie. `##`).
+      - The only level-2 heading should be "{{form.name}}".
+      - "Presentation" should be a level-3 heading.
+      - The remaining level-4 headings are "Defintion", "Use Cases", "Advantages", "Drawbacks", "Alternatives", "Companions", and "Sources".
+      - The "Companions" section (when present) lists and gives a 2 sentences description of the most common software, platforms, plugins, patterns that often go hand in hand with "{{form.name}}", in that they are a requirement, or complement, or extend it.
+      - Cite your references (with URLs when possible) in the "Sources" section.
+      - Add a link to the alternatives in the "Alternatives" section if any.
+      - Italicize the technical terms.
+      - Use inline code blocks with backticks (code) for inline code snippets.
+      - Use multiline code blocks with triple backticks for multiline code snippets.
+      - Italicize (surround with `_`) all occurrences of "{{form.name}}" and any product/project name in your response, except when it is a link.
+      - Use inline-block notation (ie. surrounded with backticks) for identifier/variable names and error messages.
+      - Make sure not to add empty lines between the list items and after the list.
+      - When mentioning "{{form.name}}" for the first time in the "Definition" section make it a Markdown link to the "{{form.url}}" URL (if this URL is not empty).
     vars:
       - name: "form"
         type: form
         params:
-          layout: "Name: [[name]]"
+          layout: "Name: [[name]]\nURL: [[url]]"
