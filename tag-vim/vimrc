@@ -35,6 +35,7 @@ Plug           'sjl/gundo.vim'      " Undo browser
 Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
 Plug    'scrooloose/nerdtree'       " Tree explorer for vim
+Plug     'NLKNguyen/papercolor-theme' " Color schemes inspired by Google's Material Design
 Plug          'mtth/scratch.vim'    " Create scratch buffer with :Scratch or gs
 Plug           'sjl/splice.vim'     " Resolve conflicts during git 3-way merge
 Plug   'AndrewRadev/splitjoin.vim'  " Join and split ruby blocks
@@ -307,15 +308,15 @@ set background=dark " Use a dark background (the other option is light)
 call togglebg#map("<F5>")
 
 "~~~~~~~~~~~~~~~~~~~~~
-" colorscheme solarized, gruvbox
+" colorscheme solarized, gruvbox, PaperColor
 "~~~~~~~~~~~~~~~~~~~~~
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme gruvbox
+colorscheme PaperColor
 
 " Define the light and dark color schemes
-let g:light_colorscheme = 'gruvbox'
-let g:dark_colorscheme = 'gruvbox'
+let g:light_colorscheme = 'PaperColor'
+let g:dark_colorscheme  = 'PaperColor'
 
 " Function to switch color schemes based on the time of day
 function! ToggleColorScheme()
