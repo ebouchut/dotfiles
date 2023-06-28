@@ -30,6 +30,7 @@ Plug      'ctrlpvim/ctrlp.vim'
 Plug      'rizzatti/dash.vim'
 Plug      'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug      'junegunn/fzf.vim'
+Plug       'morhetz/gruvbox'        " retro-inspired color scheme
 Plug           'sjl/gundo.vim'      " Undo browser
 Plug       'itchyny/lightline.vim'
 Plug   'vim-scripts/loremipsum'
@@ -306,15 +307,15 @@ set background=dark " Use a dark background (the other option is light)
 call togglebg#map("<F5>")
 
 "~~~~~~~~~~~~~~~~~~~~~
-" colorscheme solarized
+" colorscheme solarized, gruvbox
 "~~~~~~~~~~~~~~~~~~~~~
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme gruvbox
 
 " Define the light and dark color schemes
-let g:light_colorscheme = 'solarized'
-let g:dark_colorscheme = 'solarized'
+let g:light_colorscheme = 'gruvbox'
+let g:dark_colorscheme = 'gruvbox'
 
 " Function to switch color schemes based on the time of day
 function! ToggleColorScheme()
