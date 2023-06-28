@@ -312,6 +312,24 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
+" Define the light and dark color schemes
+let g:light_colorscheme = 'solarized'
+let g:dark_colorscheme = 'solarized'
+
+" Function to switch color schemes based on the time of day
+function! ToggleColorScheme()
+  if strftime('%H:%M') >=# '07:00' && strftime('%H:%M') <=# '20:00'
+    execute 'colorscheme ' . g:light_colorscheme
+    execute "set background=light"
+  else
+    execute 'colorscheme ' . g:dark_colorscheme
+    execute "set background=dark"
+  endif
+endfunction
+
+" Automatically switch color scheme on Vim startup and when a file is opened
+autocmd VimEnter,FileReadPost * call ToggleColorScheme()
+
 "~~~~~~~~~~~~~~~~~~~~~
 " colorscheme molokai
 "~~~~~~~~~~~~~~~~~~~~~
