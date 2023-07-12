@@ -302,35 +302,15 @@ set ttymouse=sgr
 "  Colors, terminal
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set t_Co=256
-set background=dark " Use a dark background (the other option is light)
 
 " <F5>: Toggle background dark/light
 call togglebg#map("<F5>")
 
-"~~~~~~~~~~~~~~~~~~~~~
-" colorscheme solarized, gruvbox, PaperColor
-"~~~~~~~~~~~~~~~~~~~~~
+"~~~~~~~~~~~~~~~~~~~~~~~~~
+" solarized color scheme
+"~~~~~~~~~~~~~~~~~~~~~~~~~
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme PaperColor
-
-" Define the light and dark color schemes
-let g:light_colorscheme = 'PaperColor'
-let g:dark_colorscheme  = 'PaperColor'
-
-" Function to switch color schemes based on the time of day
-function! ToggleColorScheme()
-  if strftime('%H:%M') >=# '07:00' && strftime('%H:%M') <=# '20:00'
-    execute 'colorscheme ' . g:light_colorscheme
-    execute "set background=light"
-  else
-    execute 'colorscheme ' . g:dark_colorscheme
-    execute "set background=dark"
-  endif
-endfunction
-
-" Automatically switch color scheme on Vim startup and when a file is opened
-autocmd VimEnter,FileReadPost * call ToggleColorScheme()
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Window / Split size
@@ -843,7 +823,37 @@ let test#strategy = "vtr"
 " Plugin gruvbox 
 "~~~~~~~~~~~~~~~~~~~~~
 let g:gruvbox_italic=1
-autocmd vimenter * ++nested colorscheme gruvbox
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Set color scheme (theme)
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Default color scheme
+let g:colorscheme = "PaperColor"
+
+" Define the light and dark color schemes
+let g:light_colorscheme = g:colorscheme
+let g:dark_colorscheme  = g:colorscheme
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Switch color schemes based on MacOS system appearance (dark, light)
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function! SetColorSchemeBasedOnMacSystemAppearance()
+  if executable('osascript')
+    let system_appearance = system('osascript -e "tell application \"System Events\" to tell appearance preferences to return dark mode"')
+    if system_appearance =~ 'true'
+      execute 'colorscheme ' . g:dark_colorscheme
+      execute "set background=light"
+    else
+      execute 'colorscheme ' . g:light_colorscheme
+      execute "set background=light"
+    endif
+  endif
+endfunction
+
+" autocmd vimenter * ++nested colorscheme g:colorscheme
+
+" Automatically switch color scheme on Vim startup and when a file is opened
+autocmd VimEnter,FileReadPost * call SetColorSchemeBasedOnMacSystemAppearance()
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Enable true color support (24 bit)
