@@ -9,7 +9,7 @@ matches:
       - Make headings start at level 2 (ie. `##`).
       - The only level-2 heading should be "{{form.name}}".
       - "Presentation" should be a level-3 heading.
-      - The remaining level-4 headings are "Defintion", "Use Cases", "Advantages", "Drawbacks", "Alternatives", "Companions", and "Sources".
+      - The remaining level-4 headings are "Definition", "Use Cases", "Advantages", "Drawbacks", "Alternatives", "Companions", and "Sources".
       - The "Companions" section (when present) lists and gives a 2 sentences description of the most common software, platforms, plugins, patterns that often go hand in hand with "{{form.name}}", in that they are a requirement, or complement, or extend it.
       - Cite your references (with URLs when possible) in the "Sources" section.
       - Add a link to the alternatives in the "Alternatives" section if any.
