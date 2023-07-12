@@ -64,7 +64,7 @@ matches:
       - Eric Bouchut
   - trigger: "xeejobno "
     label: "Email - Template - Job Opportunity - Not interested - EN (xeejobno )"
-    replace: |
+    form: |
       Hi [[Name]],
 
       Thank you for sharing this job opportunity with me.
@@ -78,16 +78,16 @@ matches:
       Eric Bouchut
   - trigger: "xejobnoo "
     label: "Email - Template - Job Opportuntiy - Switched Jobs - FR (xejobnoo )"
-    replace: |
+    form: |
       Bonjour [[Name]],
 
       Je ne suis plus en recherche d'opportunité car je viens de changer récemment.
 
       Bonne journée.
       Eric Bouchut
-  - trigger: "xeejobnoo"
+  - trigger: "xeejobnoo "
     label: "Email - Template - Job Opportuntiy - Switched Jobs - EN (xeejobnoo)"
-    replace: |
+    form: |
       Hello [[Name]],
 
       I am no longer searching for a new job opportunity as I recently switched jobs.
