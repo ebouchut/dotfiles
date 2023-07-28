@@ -2,7 +2,7 @@ matches:
   - trigger: "xgdef "
     label: "ChatGPT - Definition (xgdef )"
     replace: |
-      ❓Give me the definition of "{{form.name}}" ({{form.url}}), its use cases (3), advantages, drawbacks, alternatives (if any), commpanions (tools, plugins, software), and your sources. 
+      ❓Give me the definition of "{{form.name}}" ({{form.url}}), its use cases (3), advantages, drawbacks, alternatives (if any), companions (tools, plugins, software), and your sources. 
 
       Requirements:
       - Format your response using Markdown.
