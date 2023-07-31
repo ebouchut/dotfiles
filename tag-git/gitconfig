@@ -97,7 +97,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = bc4
+	tool = diffmerge
 	submodule = log
 [difftool]
 	prompt = false
@@ -107,7 +107,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = bc4
+	tool = diffmerge
 [mergetool]
 	bc4 = trustExitCode
 	prompt = false
@@ -146,3 +146,8 @@
 	rebase = false
 [difftool "bc4"]
 	trustExitCode = true
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
