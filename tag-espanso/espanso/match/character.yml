@@ -89,7 +89,7 @@ matches:
   - trigger: "xcleftarrow "
     label: "Character - Arrow - Left - ← (xcleftarrow )"
     replace: "←"
-  - trigger: "xcrighttarrow "
+  - trigger: "xcrightarrow "
     label: "Character - Arrow - Right - → (xcrightarrow )"
     replace: "→"
 
