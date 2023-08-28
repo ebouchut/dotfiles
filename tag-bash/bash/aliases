@@ -33,7 +33,6 @@ esac
 
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
-alias git=hub  # Requires hub: http://defunkt.io/hub/
 alias g=git
 alias gs='git status -sb'
 alias ibrew='arch x86_64 /usr/local/bin/brew'
