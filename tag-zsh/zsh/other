@@ -40,7 +40,7 @@ export DISABLE_AUTO_TITLE="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(completion gem git github rails ruby ssh-agent)
-plugins=(brew brew-cask colorize colored-manpage completion gem git git-flow github rake rails ruby)
+plugins=(brew brew-cask colorize colored-manpage completion gem git git-flow rake rails ruby)
 
 source $ZSH/oh-my-zsh.sh
 
