@@ -1,6 +1,7 @@
 [user]
 	name = Eric Bouchut
 	email = ebouchut@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsDQwmyE5mhM08HE/8KatvGOTZnxR7NV7C2vKqobud6
 [color]
 	ui = auto
 [alias]
@@ -87,6 +88,7 @@
 	default = simple
 [commit]
 	template = ~/.git_message
+	gpgsign = true
 [init]
 	templatedir = ~/.git_template
 	defaultBranch = main
@@ -146,3 +148,10 @@
 	rebase = false
 [difftool "bc4"]
 	trustExitCode = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = ~/.git_allowed_signers
+[tag]
+	gpgsign = true
