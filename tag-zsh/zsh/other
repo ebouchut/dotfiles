@@ -11,6 +11,20 @@ if [ -x /usr/local/bin/keychain ]; then
   source $HOME/.keychain/$HOST-sh
 fi
 
+#~~~~~~~~~~~~~~~~
+# Homebrew
+#~~~~~~~~~~~~~~~~
+function brew-tap-list
+{
+	echo "Formulae for tap(s) $* are:"
+	echo "";
+	brew tap-info --json "$@" | jq -r '.[]|(.formula_names[],.cask_tokens[])' | sort -V;
+}
+
+# Configure brew completions for zsh (must be done before sourcing oh-my-zsh.sh)
+# See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 #~~~~~~~~~~~~~~~~~~
 # oh-my-zsh
 # Install my fork of oh-my-zsh and jump on the branch "ebouchut"
@@ -124,16 +138,6 @@ fi
 # direnv 
 #~~~~~~~~~~~~~~~~
 eval "$(direnv hook zsh)"
-
-#~~~~~~~~~~~~~~~~
-# Homebrew
-#~~~~~~~~~~~~~~~~
-function brew-tap-list
-{
-	echo "Formulae for tap(s) $* are:"
-	echo "";
-	brew tap-info --json "$@" | jq -r '.[]|(.formula_names[],.cask_tokens[])' | sort -V;
-}
 
 #~~~~~~~~~~~~~~~~
 # ngrok
