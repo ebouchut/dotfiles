@@ -126,3 +126,11 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
+#~~~~~~~~~~~~~~~~~
+# Python
+#~~~~~~~~~~~~~~~~~
+if command -v python3 &>/dev/null; then
+  # Add Pyton user bin dir to PATH
+  #   to launch package command(s) installed with: pip install --user
+  export PATH=$PATH:$(python3 -m site --user-base)/bin
+fi
