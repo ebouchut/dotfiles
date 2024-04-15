@@ -134,3 +134,11 @@ if command -v python3 &>/dev/null; then
   #   to launch package command(s) installed with: pip install --user
   export PATH=$PATH:$(python3 -m site --user-base)/bin
 fi
+
+#~~~~~~~~~~~~~~~~~
+# Java
+#~~~~~~~~~~~~~~~~~
+if /usr/libexec/java_home -F -v 21 >/dev/null 2>&1; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 21 2>/dev/null)
+  export PATH=$PATH:$JAVA_HOME/bin
+fi
