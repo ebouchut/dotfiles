@@ -40,3 +40,4 @@ alias lss='function _lss(){ls -l $(find "$@" -maxdepth 1 -type l)}; _lss'
 alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
 alias tt="truffle test"
 alias vi=vim
+alias docker=podman
