@@ -155,3 +155,7 @@
 	allowedSignersFile = ~/.git_allowed_signers
 [tag]
 	gpgsign = true
+[difftool "vscode"]
+	cmd = code --wait --diff --new-window
+[mergetool "vscode"]
+	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
