@@ -296,7 +296,9 @@ endif
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 set mouse=a
 " Workaround for this issue: http://stackoverflow.com/questions/7000960/vim-mouse-problem
-set ttymouse=sgr
+if !has('nvim')
+  set ttymouse=sgr
+endif
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "  Colors, terminal
