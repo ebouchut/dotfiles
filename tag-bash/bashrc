@@ -1,10 +1,10 @@
-source ~/.dotfiles/tag-bash/bash/env      # Environment variables
-source ~/.dotfiles/tag-bash/bash/aliases 
+source ~/.dotfiles/tag-bash/bash/env # Environment variables
+source ~/.dotfiles/tag-bash/bash/aliases
 source ~/.dotfiles/tag-bash/bash/settings # Bash specific settings
-source ~/.dotfiles/tag-bash/bash/other   # 3rd Party programs (non bash) specific settings
+source ~/.dotfiles/tag-bash/bash/other    # 3rd Party programs (non bash) specific settings
 
 # Source host local config file if any
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
