@@ -85,6 +85,7 @@ brew 'md5sha1sum'
 brew 'ngrep'
 
 brew 'numpy'
+brew 'neovim'
 
 # Procfile manage: a foreman++
 brew 'overmind'
