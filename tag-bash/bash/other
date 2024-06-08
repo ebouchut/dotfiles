@@ -152,3 +152,8 @@ if /usr/libexec/java_home -F -v 21 >/dev/null 2>&1; then
   export PATH=$PATH:$JAVA_HOME/bin
 fi
 
+#~~~~~~~~~~~~~~~~~
+# 1Password CLI
+# IMPORTANT: MUST be the last one in this file
+#~~~~~~~~~~~~~~~~~
+source ~/.config/op/plugins.sh
