@@ -90,6 +90,7 @@ brew 'neovim'
 # Procfile manage: a foreman++
 brew 'overmind'
 
+brew 'openssl'
 
 #egrep for processes
 brew 'pgrep'
@@ -112,7 +113,7 @@ brew 'ruby-build'
 # Dotfiles Installer
 brew 'thoughtbot/formulae/rcm'
 
-brew 'sqlite'
+brew 'sqlite3'
 brew 'theseal/ssh-askpass/ssh-askpass'
 
 # lightning fast search (ag)
@@ -128,6 +129,8 @@ brew 'watch'
 
 brew 'yarn'
 
+brew 'xz' 
+brew 'zlib'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
 
