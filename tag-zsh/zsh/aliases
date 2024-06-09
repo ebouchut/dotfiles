@@ -27,6 +27,10 @@ case $OSTYPE in
   ;;
 esac
 
+# Activate/deactivate Python virtual environment
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
+
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
 alias g='git status'

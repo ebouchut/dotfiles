@@ -30,6 +30,10 @@ case $OSTYPE in
     alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
   ;;
 esac
+#
+# Activate/deactivate Python virtual environment
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
 
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
