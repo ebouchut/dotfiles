@@ -78,6 +78,7 @@ brew 'jq'
 
 
 
+brew 'lazygit'
 brew 'mas' # Mac AppStore CLI
 brew 'md5sha1sum'
 
@@ -86,6 +87,7 @@ brew 'ngrep'
 
 brew 'numpy'
 brew 'neovim'
+brew 'node'
 
 # Procfile manage: a foreman++
 brew 'overmind'
@@ -107,14 +109,15 @@ brew 'redis', restart_service: true
 
 # For tmux to handle clipboard
 brew 'reattach-to-user-namespace'
+brew 'rg'
 
 brew 'ruby-build'
 
-# Dotfiles Installer
-brew 'thoughtbot/formulae/rcm'
-
 brew 'sqlite3'
 brew 'theseal/ssh-askpass/ssh-askpass'
+
+# Dotfiles Installer
+brew 'thoughtbot/formulae/rcm'
 
 # lightning fast search (ag)
 brew 'the_silver_searcher'
