@@ -37,11 +37,15 @@ alias de='deactivate'
 
 alias ddu='du --max-depth=1 -h'
 alias dul='du -sch .!(.) * | sort -h'
+alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
+alias docker=podman
 alias g=git
 alias gs='git status -sb'
 alias ibrew='arch x86_64 /usr/local/bin/brew'
 alias lss='function _lss(){ls -l $(find "$@" -maxdepth 1 -type l)}; _lss'
-alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
-alias tt="truffle test"
-alias vi=vim
-alias docker=podman
+if type nvim > /dev/null 2>&1; then
+  alias vim=nvim
+  alias vi=nvim
+elif type vim > /dev/null 2>&1; then
+  alias vi=vim
+fi
