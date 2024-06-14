@@ -36,7 +36,7 @@ EXCLUDES="Brewfile install.sh LICENSE README.md bash ssh zsh"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not copy these directories, but create a symbolic link instead
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SYMLINK_DIRS="bash dotfiles zsh git_template vim/colors"
+SYMLINK_DIRS="bash dotfiles zsh git_template vim/colors config/nvim"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Space separated list of files/directories not to prefix with a dot.
