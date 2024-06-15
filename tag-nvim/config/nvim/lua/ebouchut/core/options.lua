@@ -42,3 +42,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+
+-- Disable autoformating
+vim.g.autoformat = false
