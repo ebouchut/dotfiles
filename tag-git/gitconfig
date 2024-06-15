@@ -82,6 +82,7 @@
 	safecrlf = warn
 	excludesfile = ~/.gitignore_global
 	pager = less -FRSX
+	editor = nvim
 [credential]
 	helper = osxkeychain
 [push]
