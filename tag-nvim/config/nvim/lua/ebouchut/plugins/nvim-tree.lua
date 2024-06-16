@@ -26,7 +26,7 @@ return {
     nvimtree.setup({
       on_attach = my_on_attach,
       view = {
-        width = 35,
+        width = 40,
         relativenumber = true,
       },
       -- change folder arrow icons
