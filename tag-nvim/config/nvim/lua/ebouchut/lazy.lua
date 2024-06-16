@@ -20,13 +20,3 @@ require("lazy").setup({ { import = "ebouchut.plugins" }, { import = "ebouchut.pl
     notify = false,
   },
 })
-
-require("lazy").setup("ebouchut.plugins", {
-   checker = {
-    enabled = true,
-    notify = false,
-  },
-  change_detection = {
-    notify = false,
-  },
-})
