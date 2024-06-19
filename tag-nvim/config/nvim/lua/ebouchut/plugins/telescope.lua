@@ -41,6 +41,7 @@ return {
     -- Set keymaps
     local builtin = require("telescope.builtin")
 
+    -- Fuzzy Find Files, Buffer, Recent Files, String, Todos
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
     vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Fuzzy find buffers" })
     vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find recent files" })
