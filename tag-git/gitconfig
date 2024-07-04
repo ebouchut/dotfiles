@@ -102,6 +102,7 @@
 [diff]
 	tool = bc4
 	submodule = log
+	algorithm = histogram
 [difftool]
 	prompt = false
 [difftool  "deltawalker"]
