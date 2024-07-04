@@ -160,3 +160,5 @@
 	cmd = code --wait --diff --new-window
 [mergetool "vscode"]
 	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
+[help]
+	autocorrect = prompt
