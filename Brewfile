@@ -114,6 +114,7 @@ brew 'rg'
 brew 'ruby-build'
 
 brew 'sqlite3'
+brew 'starship'
 brew 'theseal/ssh-askpass/ssh-askpass'
 
 # Dotfiles Installer
