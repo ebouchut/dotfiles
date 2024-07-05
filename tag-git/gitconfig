@@ -112,6 +112,7 @@
 	path = 
 [merge]
 	tool = bc4
+	conflictStyle = zdiff3
 [mergetool]
 	bc4 = trustExitCode
 	prompt = false
