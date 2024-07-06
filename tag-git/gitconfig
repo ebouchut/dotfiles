@@ -165,3 +165,5 @@
 	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
 [help]
 	autocorrect = prompt
+[columns]
+	ui = auto
