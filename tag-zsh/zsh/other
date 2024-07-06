@@ -153,6 +153,7 @@ if command -v python3 &>/dev/null; then
   # Add Pyton user bin dir to PATH
   #   to launch package command(s) installed with: pip install --user
   export PATH=$PATH:$(python3 -m site --user-base)/bin
+  export PIP_REQUIRE_VIRTUALENV=1
 fi
 
 #~~~~~~~~~~~~~~~~~
