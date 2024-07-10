@@ -16,7 +16,7 @@ esac
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export PATH=$PATH:$HOME/bin
 export SHELL=`which zsh`
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER='less -r'
 export MANPATH=$MANPATH:$HOME/local/man
 export LC_ALL=en_US.UTF-8
