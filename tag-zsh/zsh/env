@@ -35,5 +35,5 @@ export GREP_OPTIONS="--color=auto"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # History
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SAVEHIST=10000 # Number of entries
-HISTSIZE=10000
+export SAVEHIST=10000 # Number of entries
+export HISTSIZE=10000
