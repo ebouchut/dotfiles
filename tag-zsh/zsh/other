@@ -96,7 +96,15 @@ fi
 #~~~~~~~~~~~~~
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
-  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+  export FZF_DEFAULT_OPTS="--height 40% \
+                           --border sharp \
+                           --layout=reverse \
+                           --pointer ▶"
+  export FZF_CTRL_T_OPTS="--height 60% \
+                          --border sharp \
+                          --layout reverse \
+                          --prompt '∷ ' \
+                          --pointer ▶"
 fi
 
 #~~~~~~~~~~~~~
