@@ -14,6 +14,17 @@ matches:
   - trigger: "xugh "
     label: "URL - Github (xugh )"
     replace: "https://github.com/ebouchut"
+  - trigger: "xughc "
+    label: "URL - Github Compare Branches (xughc )"
+    replace: "https://github.com/{{form.repository}}/compare/{{form.branch_1}}..{{form.branch_2}}"
+    vars:
+      - name: "form"
+        type: form
+        params:
+          layout: |
+            Repository: [[repository]]
+            Branch 1:   [[branch_1]]
+            Branch 2:   [[branch_2]]
   - trigger: "xuloopdocs "
     label: "URL - Loop - LoopDocs Repo (xuloopdocs )"
     replace: "https://github.com/LoopKit/loopdocs"
@@ -41,5 +52,3 @@ matches:
   - trigger: "xunvdh "
     label: "URL - Nicole Van Der Hoeven - Learning in Public (xunvdh )"
     replace: "https://notes.nicolevanderhoeven.com"
-    
-    
