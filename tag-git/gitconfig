@@ -168,3 +168,5 @@
 	autocorrect = prompt
 [columns]
 	ui = auto
+[status]
+	submoduleSummary = true
