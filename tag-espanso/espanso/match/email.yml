@@ -98,7 +98,7 @@ matches:
   #~~~~ Other Email Templates
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - trigger: "xeers "
-    label: "Job - Template - ERS - Facture (xeers )"
+    label: "Email - Template - ERS - Facture (xeers )"
     replace: |
       Bonjour,
 
@@ -129,3 +129,36 @@ matches:
             Débiteur:    [[payer]]
             Virement:    [[bank_transfer_id]]
             Code Compta: [[accounting_code]]
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #~~~~ Fradulent Website Report 
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - trigger: "xescam "
+    label: "Email - Template - SCAM  (Smishing) Report (xescam )"
+    replace: |
+      Hello,
+
+      Today ({{today}}), I received a text message (SMS) from {{form.phone}} with the following body:
+
+          {{form.body}}
+
+      This Smishing campaign sends text messages with a sense of urgency to trick targets into opening a link to a fraudulent website in order to obtain their personal information.
+
+      The domain name {{form.domain}} has been registered today.
+      Squarespace hosts the https://{{form.domain}} website which is used for fraudulent activities!
+
+      Please act quickly and effectively to stop this SCAM.
+
+      Best,
+      - Eric Bouchut
+    vars:
+      - name: "today"
+        type: date
+        params:
+          format: "%v"
+      - name: "form"
+        type: form
+        params:
+          layout: |
+            Phone Number:  [[phone]]
+            DNS Domain:    [[domain]]
+            SMS Body:      [[body]]
