@@ -52,6 +52,7 @@ brew 'dos2unix'
 
 brew "espanso"
 brew "extract_url"
+brew 'font-meslo-lg-nerd-font'
 brew 'frum'
 brew 'fswatch'
 # Fuzzy File finder
@@ -98,6 +99,9 @@ brew 'openssl'
 brew 'pgrep'
 brew 'pstree'
 
+# Shell Prompt Theme
+brew 'powerlevel10k'
+
 # brew 'rbenv'
 # brew 'rbenv-binstubs'
 # brew 'rbenv-bundler'
@@ -137,7 +141,7 @@ brew 'xz'
 brew 'zlib'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
-
+brew 'zsh-autosuggestions'
 
 #~~~~~~~~~~~~~~~~~~~~
 # MacOS Applications
