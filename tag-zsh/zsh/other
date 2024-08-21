@@ -104,7 +104,10 @@ if [ -f ~/.fzf.zsh ]; then
                           --border sharp \
                           --layout reverse \
                           --prompt '∷ ' \
-                          --pointer ▶"
+                          -pointer ▶"
+
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
 fi
 
 #~~~~~~~~~~~~~

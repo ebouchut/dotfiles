@@ -5,6 +5,3 @@ source ~/.dotfiles/tag-zsh/zsh/other     # 3rd party programs settings (non zsh)
 
 # Source host local config file if any
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
