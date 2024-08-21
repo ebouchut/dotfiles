@@ -177,6 +177,13 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #~~~~~~~~~~~~~~~~~
+# Starship (Shell Prompt)
+#~~~~~~~~~~~~~~~~~
+if command -v starship &>/dev/null; then
+  eval $(starship init bash)
+fi
+
+#~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
 #~~~~~~~~~~~~~~~~~
