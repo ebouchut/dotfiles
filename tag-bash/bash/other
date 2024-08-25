@@ -184,6 +184,12 @@ if command -v starship &>/dev/null; then
 fi
 
 #~~~~~~~~~~~~~~~~~
+# Zoxide (better cd command)
+#   brew install zoxide
+#~~~~~~~~~~~~~~~~~
+eval "$(zoxide init bash)"
+
+#~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
 #~~~~~~~~~~~~~~~~~

@@ -139,6 +139,7 @@ brew 'yarn'
 
 brew 'xz' 
 brew 'zlib'
+brew 'zoxide'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
 brew 'zsh-autosuggestions'
