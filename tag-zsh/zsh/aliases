@@ -7,19 +7,9 @@ case $OSTYPE in
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
     alias lf='ls -CF --color'
-    alias es_log='tail -f /var/log/elasticsearch/es-netadge.log /var/log/elasticsearch/es-netadge_index_*'
   ;;
   darwin*)
-    # Colored up cat!
-    # You must install Pygments first - "sudo easy_install Pygments"
-    # Source: https://github.com/barryclark/bashstrap 
-    alias c='pygmentize -O style=monokai -f console256 -g'
-    alias ls='ls -G'
-    alias ll='ls -lG'
     alias lf='ls -CFG'
-    #
-    # QuickLook in the CLI: https://vimeo.com/ondemand/60tipsv2/235210484
-    alias ql='qlmanage -p'
 
     # Show/hide hidden files in MacOS Finder
     alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -35,10 +25,6 @@ alias ddu='du --max-depth=1 -h'
 alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
 alias docker=podman
 alias dul='du -sch .!(.) * | sort -h'
-alias g='git status'
-alias gs='git status -sb'
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias lss='function _lss(){ls -l $(find "$@" -maxdepth 1 -type l)}; _lss'
 if type nvim > /dev/null 2>&1; then
   alias vim=nvim
   alias vi=nvim
