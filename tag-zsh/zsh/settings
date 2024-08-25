@@ -4,6 +4,9 @@
 
 set -k # Enable comments in command line
 
+# Use emacs key bindings to edit the command line
+set -o emacs
+
 # where to search for command line completions
 #fpath=('~/.dotfiles/tag-zsh/zsh/completion' $fpath)
 

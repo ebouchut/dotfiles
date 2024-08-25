@@ -2,6 +2,9 @@
 
 umask 0022
 
+# Use emacs key bindings to edit the command line
+set -o emacs
+
 #~~~~~~~~~~~~~~~~
 #  History
 #~~~~~~~~~~~~~~~~
