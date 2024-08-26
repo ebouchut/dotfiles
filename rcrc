@@ -63,4 +63,4 @@ TAGS="git tmux bash ruby vim nvim zsh espanso starship"
 # you can install the dotfiles contained in other tags,
 # using the -d option followed by the name of the tag without its prefix "tag-".
 # For instance to install the dotfiles for ssh (available in tag-ssh):
-#     RCRC=rcrc rcup -d ssh
+#     RCRC=rcrc rcup -t ssh -v
