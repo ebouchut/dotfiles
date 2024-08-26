@@ -80,24 +80,9 @@ fi
 #~~~~~~~~~~~~~
 # Tmux
 #~~~~~~~~~~~~~
-_not_inside_tmux() { 
-  [[ -z "$TMUX" ]] 
-}
-
-ensure_tmux_is_running() {
-  if _not_inside_tmux; then
-    tat
-  fi
-}
-
-# To prevent tmux sessions from hanging out when a cron tasks cleans up /tmp
+# Prevent tmux sessions from hanging out when a cron tasks cleans up /tmp
 export TMUX_TMPDIR=$HOME/tmp/tmux
 [ ! -d $TMUX_TMPDIR ] && mkdir -p $TMUX_TMPDIR
-
-# Automatically connect to a tmux session on startup, 
-# even creating the session as needed.
-# Disabled as it causes an issue with ssh-agent loading multiple times
-#[[ "$-" == *i* ]] && ensure_tmux_is_running
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
