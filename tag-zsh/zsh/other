@@ -73,7 +73,7 @@ export FZF_CTRL_T_OPTS="--height 60% \
                         --border sharp \
                         --layout reverse \
                         --prompt '∷ ' \
-                        -pointer ▶"
+                        --pointer ▶"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
