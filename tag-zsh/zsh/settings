@@ -11,8 +11,8 @@ set -o emacs
 autoload -U compinit
 compinit
 
-# where to search for command line completions
-#fpath=('~/.dotfiles/tag-zsh/zsh/completion' $fpath)
+# space separated list of folders where to search for (completion) functions
+#fpath=('$fpath ~/.dotfiles/tag-zsh/zsh/completion')
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
