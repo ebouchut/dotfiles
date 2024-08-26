@@ -15,7 +15,6 @@ esac
 # Regular
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export PATH=$PATH:$HOME/bin
-export SHELL=`which zsh`
 export EDITOR=nvim
 export PAGER='less -r'
 export MANPATH=$MANPATH:$HOME/local/man
