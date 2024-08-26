@@ -100,7 +100,6 @@ brew 'pgrep'
 brew 'pstree'
 
 # Shell Prompt Theme
-brew 'powerlevel10k'
 
 # brew 'rbenv'
 # brew 'rbenv-binstubs'
