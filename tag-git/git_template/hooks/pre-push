@@ -1,16 +1,2 @@
 #!/bin/sh
 
-# To reinstall this script in the same or another git repo run:
-# curl -sSL https://gist.githubusercontent.com/elliotthilaire/cef91754bb296d67e776/raw/pre-push > .git/hooks/pre-push; chmod +x .git/hooks/pre-push
-
-# check that pronto is installed
-#  Source: http://elliotthilaire.net/gem-pronto-and-git-hooks/
-#
-hash pronto 2>/dev/null || { 
-  echo >&2 "Pronto is not installed. Install with 'gem install pronto pronto-rubocop'";
-  echo >&2 "Find other Pronto runners at https://github.com/mmozuras/pronto#runners";
-  exit 0;
-}
-
-# # Run pronto
-#pronto run --exit-code
