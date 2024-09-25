@@ -5,6 +5,7 @@ vimcmd_symbol = "[<](bold green)"
 
 [git_commit]
 tag_symbol = " tag "
+only_detached = false # Always show commit SHA1
 
 [git_status]
 ahead = ">"
