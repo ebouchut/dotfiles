@@ -155,12 +155,6 @@ if command -v starship &>/dev/null; then
 fi
 
 #~~~~~~~~~~~~~~~~~
-# zsh-autosuggestions
-#   brew install zsh-autosuggestions
-#~~~~~~~~~~~~~~~~~
-# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-#~~~~~~~~~~~~~~~~~
 # Zoxide (better cd command)
 #   brew install zoxide
 #~~~~~~~~~~~~~~~~~
