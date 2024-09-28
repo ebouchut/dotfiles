@@ -9,7 +9,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "Batman"
 
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 16
+config.font_size = 14
 
 config.enable_tab_bar = false
 
