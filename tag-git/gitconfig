@@ -113,6 +113,8 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[difftool "vscode"]
+    cmd = code --wait --new-window --diff $LOCAL $REMOTE
 [merge]
 	tool = smerge
 	conflictStyle = zdiff3
@@ -133,6 +135,8 @@
 [mergetool "splice"]
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
+[mergetool "vscode"]
+    cmd = code --wait --new-window --merge $REMOTE $LOCAL $BASE $MERGED
 [interactive]
 	diffFilter = diff-highlight
 [hub]
