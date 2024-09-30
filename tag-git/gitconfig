@@ -103,7 +103,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = bc4
+	tool = smerge
 	submodule = log
 	algorithm = histogram
 [difftool]
@@ -114,7 +114,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = bc4
+	tool = smerge
 	conflictStyle = zdiff3
 [mergetool]
 	bc4 = trustExitCode
