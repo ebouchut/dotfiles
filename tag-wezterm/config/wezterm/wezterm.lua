@@ -5,8 +5,8 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-
-config.color_scheme = "Batman"
+-- To get a pipe character when pressing (left) ⌥l
+config.send_composed_key_when_left_alt_is_pressed = true
 
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 14
@@ -15,23 +15,41 @@ config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
 
+-- Use an opaque background
 config.window_background_opacity = 1
 config.macos_window_background_blur = 10
 
--- my coolnight colorscheme:
-config.colors = {
-	foreground = "#CBE0F0",
-	background = "#011423",
-	cursor_bg = "#47FF9C",
-	cursor_border = "#47FF9C",
-	cursor_fg = "#011423",
-	selection_bg = "#033259",
-	selection_fg = "#CBE0F0",
-	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-}
+-- local light_theme = "Tokyo Night Day"
+-- local light_theme = "Catppuccin Latte"
+local light_theme = "Solarized (light) (terminal.sexy)"
+-- local light_theme = "Alabaster"
+-- local light_theme = "Solarized Light (Gogh)"
 
-config.send_composed_key_when_left_alt_is_pressed = true
+-- local dark_theme = "Tokyo Night"
+-- local dark_theme = "Aura (Gogh)"
+-- local dark_theme = "Andromeda"
+-- local dark_theme = "Solarized Dark - Patched"
+-- local dark_theme = "Solarized Darcula"
+-- local dark_theme = "Solarized Dark Higher Contrast"
+-- local dark_theme = "Sundried"
+-- local dark_theme = "Solarized (dark) (terminal.sexy)"
+-- local dark_theme = "nightfox"
+local dark_theme = "NightOwl (Gogh)"
+
+-- Function to get the appearance
+local function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark" -- default to dark if gui isn't available
+end
+
+-- Switch theme using current system settings (dark/light)
+if get_appearance():find("Dark") then
+	config.color_scheme = dark_theme
+else
+	config.color_scheme = light_theme
+end
 
 --- and finally, return the configuration to wezterm
 return config
