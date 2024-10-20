@@ -25,6 +25,18 @@ opt.cursorline = true -- highlight the current cursor line
 -- cursor block
 -- opt.guicursor = "a:block"
 
+-- Show invisible characters
+opt.list = true
+
+-- Display extra whitespace
+opt.listchars = {
+  eol = "⏎",
+  nbsp = "·",
+  space = "·",
+  tab = "≫·",
+  trail = "·",
+}
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
