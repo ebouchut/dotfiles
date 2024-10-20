@@ -25,6 +25,17 @@ opt.cursorline = true -- highlight the current cursor line
 -- cursor block
 -- opt.guicursor = "a:block"
 
+-- Show invisible characters
+-- vim.opt.list = true
+
+-- Display extra whitespace
+-- vim.opt.listchars = {
+--   space = "·",
+--   tab = "»·",
+--   -- trail = "·",
+--   -- nbsp = "·",
+-- }
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
