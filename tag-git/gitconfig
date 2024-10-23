@@ -167,6 +167,8 @@
 	gpgsign = true
 [difftool "vscode"]
 	cmd = code --wait --diff --new-window
+[difftool "difftastic"]
+    cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 [mergetool "vscode"]
 	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
 [help]
