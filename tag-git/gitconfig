@@ -115,6 +115,10 @@
 	path = 
 [difftool "vscode"]
     cmd = code --wait --new-window --diff $LOCAL $REMOTE
+[difftool "bc4"]
+	trustExitCode = true
+[difftool "difftastic"]
+    cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 [merge]
 	tool = smerge
 	conflictStyle = zdiff3
@@ -136,7 +140,7 @@
 	cmd = vim -f \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c SpliceInit
 	trustExitCode = true
 [mergetool "vscode"]
-    cmd = code --wait --new-window --merge $REMOTE $LOCAL $BASE $MERGED
+	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
 [interactive]
 	diffFilter = diff-highlight
 [hub]
@@ -156,8 +160,6 @@
     path = ~/.gitconfig-work
 [pull]
 	rebase = false
-[difftool "bc4"]
-	trustExitCode = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
@@ -165,12 +167,6 @@
 	allowedSignersFile = ~/.git_allowed_signers
 [tag]
 	gpgsign = true
-[difftool "vscode"]
-	cmd = code --wait --diff --new-window
-[difftool "difftastic"]
-    cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
-[mergetool "vscode"]
-	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
 [help]
 	autocorrect = prompt
 [columns]
