@@ -37,6 +37,9 @@ opt.listchars = {
   trail = "·",
 }
 
+-- Substitution Live Preview (the :substitute command)
+opt.inccommand = "split"
+
 -- appearance
 
 -- turn on termguicolors for nightfly colorscheme to work
