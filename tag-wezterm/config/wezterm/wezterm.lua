@@ -4,6 +4,8 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+local act = wezterm.action
+
 -- This is where you actually apply your config choices
 -- To get a pipe character when pressing (left) ⌥l
 config.send_composed_key_when_left_alt_is_pressed = true
@@ -18,6 +20,22 @@ config.window_decorations = "RESIZE"
 -- Use an opaque background
 config.window_background_opacity = 1
 config.macos_window_background_blur = 10
+
+-- Ensure Control-Shift-LeftArrow and Control-Shift-RightArrow are passed through to tmux
+-- Add the key bindings configuration
+config.keys = {
+	-- Disable specific key combinations
+	{
+		key = "LeftArrow",
+		mods = "CTRL|SHIFT",
+		action = act.DisableDefaultAssignment,
+	},
+	{
+		key = "RightArrow",
+		mods = "CTRL|SHIFT",
+		action = act.DisableDefaultAssignment,
+	},
+}
 
 -- local light_theme = "Tokyo Night Day"
 -- local light_theme = "Catppuccin Latte"
