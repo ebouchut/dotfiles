@@ -81,7 +81,7 @@
 [core]
 	autocrlf = input
 	safecrlf = warn
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/gitignore_global
 	pager = less -FRSX
 	editor = nvim
 [credential]
@@ -91,10 +91,10 @@
 	autoSetupRemote = true
 	useForceIfIncludes = true
 [commit]
-	template = ~/.git_message
+	template = ~/.config/git/git_message
 	gpgsign = true
 [init]
-	templatedir = ~/.git_template
+	templatedir = ~/.config/git/git_template
 	defaultBranch = main
 [gitsh]
 	noGreeting = true
@@ -150,21 +150,21 @@
 [rebase]
 	missingCommitsCheck = error
 [include]
-	path = ~/dev/Perso/dotfiles/tag-git/gitconfig-colors_dark
+	path = ~/.config/git/gitconfig-colors_dark
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [includeIf "gitdir:~/Work/"]
-    path = ~/.gitconfig-work
+    path = ~/.config/git/gitconfig-work
 [pull]
 	rebase = false
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-	allowedSignersFile = ~/.git_allowed_signers
+	allowedSignersFile = ~/.config/git/git_allowed_signers
 [tag]
 	gpgsign = true
 [help]
