@@ -119,6 +119,11 @@ if command -v python3 &>/dev/null; then
   #   to launch package command(s) installed with: pip install --user
   export PATH=$PATH:$(python3 -m site --user-base)/bin
   export PIP_REQUIRE_VIRTUALENV=1
+
+  # To install a Python package globally
+  gpip() {
+    PIP_REQUIRE_VIRTUALENV=false pip "$@"
+  }
 fi
 
 #~~~~~~~~~~~~~~~~~
