@@ -24,6 +24,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "nikitabobko/tap/aerospace"
 tap "theseal/ssh-askpass"
 tap "thoughtbot/formulae"
 # tap "universal-ctags/universal-ctags"
@@ -31,6 +32,7 @@ tap "thoughtbot/formulae"
 #~~~~~~~~~~~~~~~~~~~~
 # Brew Formulae (Packages)
 #~~~~~~~~~~~~~~~~~~~~
+brew 'aerospace'
 brew 'ansifilter'
 brew 'asciinema'
 brew 'awscli'
