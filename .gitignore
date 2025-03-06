@@ -41,6 +41,9 @@ tag-sublime/sublime/Packages/User/Package\ Control.sublime-settings
 tag-sublime/sublime/Packages/User/project/
 tag-sublime/sublime/Packages/User/RubyTest.last-run
 
+# NeoVim
+tag-nvim/config/nvim/lazy-lock.json
+
 !bin/
 
 /tag-zsh/zshrc.local
