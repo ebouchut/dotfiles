@@ -166,6 +166,11 @@ fi
 eval "$(zoxide init bash)"
 
 #~~~~~~~~~~~~~~~~~
+# Git
+#~~~~~~~~~~~~~~~~~
+export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
+
+#~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
 #~~~~~~~~~~~~~~~~~
