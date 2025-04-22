@@ -180,3 +180,5 @@
 	ui = auto
 [status]
 	submoduleSummary = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
