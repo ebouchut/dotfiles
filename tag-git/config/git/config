@@ -103,7 +103,7 @@
 	show = diff-highlight | less -FRSX
 	diff = diff-highlight | less -FRSX
 [diff]
-	tool = smerge
+	tool = meld
 	submodule = log
 	algorithm = histogram
 [difftool]
@@ -120,10 +120,10 @@
 [difftool "difftastic"]
     cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 [difftool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
+	cmd = /Applications/Meld.app/Contents/MacOS/Meld \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = smerge
+	tool = meld
 	conflictStyle = zdiff3
 [mergetool]
 	bc4 = trustExitCode
@@ -145,8 +145,9 @@
 [mergetool "vscode"]
 	cmd = code --wait --merge --new-window "$REMOTE" "$LOCAL" "$BASE" "$MERGED"
 [mergetool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+	trustExitCode = true
+	keepBackup = false
+	cmd = /Applications/Meld.app/Contents/MacOS/Meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [interactive]
 	diffFilter = diff-highlight
 [hub]
