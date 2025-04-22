@@ -36,3 +36,6 @@ if type nvim > /dev/null 2>&1; then
 elif type vim > /dev/null 2>&1; then
   alias vi=vim
 fi
+#
+# Meld Compare/Diff Tool
+alias meld="open -W -a Meld $@"
