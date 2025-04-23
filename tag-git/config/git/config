@@ -126,7 +126,6 @@
 	tool = meld
 	conflictStyle = zdiff3
 [mergetool]
-	bc4 = trustExitCode
 	prompt = false
 [mergetool "bc4"]
 	trustExitCode = true
