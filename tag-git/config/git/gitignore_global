@@ -376,3 +376,9 @@ fabric.properties
 CLAUDE.md
 claude-personal/
 .claude-config
+
+
+#~~~~~~~~~~~~~~~~
+# 1Pasword CLI (op)
+#~~~~~~~~~~~~~~~~
+.op/
