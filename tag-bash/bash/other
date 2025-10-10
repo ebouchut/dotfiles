@@ -171,6 +171,13 @@ eval "$(zoxide init bash)"
 export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
 
 #~~~~~~~~~~~~~~~~~
+# Claude
+#~~~~~~~~~~~~~~~~~
+if [ -d $HOME/.local/bin ]; then
+  export PATH=$PATH:$HOME/.local/bin:
+fi
+
+#~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
 #~~~~~~~~~~~~~~~~~
