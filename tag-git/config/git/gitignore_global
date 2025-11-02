@@ -373,7 +373,6 @@ fabric.properties
 #~~~~~~~~~~~~~~~~
 # Claude Code
 #~~~~~~~~~~~~~~~~
-CLAUDE.md
 claude-personal/
 .claude-config
 
