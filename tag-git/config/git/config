@@ -81,7 +81,7 @@
 [core]
 	autocrlf = input
 	safecrlf = warn
-	excludesfile = ~/.config/git/gitignore_global
+#	excludesfile = ~/.config/git/ignore
 	pager = less -FRSX
 	editor = nvim
 [credential]
