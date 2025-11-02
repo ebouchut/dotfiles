@@ -375,7 +375,7 @@ fabric.properties
 #~~~~~~~~~~~~~~~~
 claude-personal/
 .claude-config
-
+**/.claude/settings.local.json
 
 #~~~~~~~~~~~~~~~~
 # 1Pasword CLI (op)
