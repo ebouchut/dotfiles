@@ -35,6 +35,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = act.DisableDefaultAssignment,
 	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action({ SendString = "\x1b\r" }),
+	},
 }
 
 -- local light_theme = "Tokyo Night Day"
