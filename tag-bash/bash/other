@@ -177,6 +177,11 @@ if [ -d $HOME/.local/bin ]; then
   export PATH=$PATH:$HOME/.local/bin:
 fi
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# fnm (Fast Node Version Manager)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell bash)"
+
 #~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
