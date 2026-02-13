@@ -178,7 +178,10 @@ fi
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # fnm (Fast Node Version Manager)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+if command -v fnm >/dev/null; then
+  eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+  eval "$(fnm completions --shell zsh)"
+fi
 
 #~~~~~~~~~~~~~~~~~
 # 1Password CLI
