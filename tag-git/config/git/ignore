@@ -382,3 +382,15 @@ claude-personal/
 # 1Pasword CLI (op)
 #~~~~~~~~~~~~~~~~
 .op/
+
+
+#~~~~~~~~~~~~~~~~
+# ZenCoder Editor
+#~~~~~~~~~~~~~~~~
+.zencoder/
+
+#~~~~~~~~~~~~~~~~
+# Agents
+#~~~~~~~~~~~~~~~~
+.agents/
+
