@@ -82,7 +82,7 @@
 	autocrlf = input
 	safecrlf = warn
 #	excludesfile = ~/.config/git/ignore
-	pager = less -FRSX
+	pager = diff-so-fancy | less --tabs=4 -FRSX
 	editor = nvim
 [credential]
 	helper = osxkeychain
@@ -148,7 +148,7 @@
 	keepBackup = false
 	cmd = /Applications/Meld.app/Contents/MacOS/Meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = diff-so-fancy --patch
 [hub]
 	protocol = ssh
 [color "branch"]
