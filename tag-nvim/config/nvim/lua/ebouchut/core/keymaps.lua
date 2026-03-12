@@ -34,3 +34,16 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- Switch between the last two files <=> :e #<CR>
 keymap.set("n", "<leader><leader>", "<c-^>", { desc = "Open previous file" })
+
+-- Toggle dark/light mode manually (disables auto-dark-mode sync for the session)
+keymap.set("n", "<leader>tm", function()
+  local adm = require("auto-dark-mode")
+  adm.disable()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+    vim.cmd("colorscheme solarized-high")
+  else
+    vim.o.background = "dark"
+    vim.cmd("colorscheme solarized")
+  end
+end, { desc = "Toggle dark/light mode" })
