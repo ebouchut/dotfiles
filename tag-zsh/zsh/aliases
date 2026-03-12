@@ -39,3 +39,6 @@ fi
 #
 # Meld Compare/Diff Tool
 alias meld="open -W -a Meld $@"
+
+# Claude reads environment variables from ~/.claude/.claude-env 
+alias claude='op run --env-file=$HOME/.claude/.claude-env -- claude'
