@@ -185,6 +185,13 @@ if command -v fnm 2>/dev/null; then
   eval "$(fnm completions --shell bash)"
 fi
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# but (GitButler CLI)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if command -v but >/dev/null; then
+  eval "$(but completions bash)"
+fi
+
 #~~~~~~~~~~~~~~~~~
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
