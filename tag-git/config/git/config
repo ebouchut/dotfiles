@@ -181,3 +181,8 @@
 	submoduleSummary = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[gitbutler]
+	signcommits = true
+	aiAnthropicKeyOption = bringYourOwn
+	aiAnthropicModelName = claude-haiku-4-5
+	aiModelProvider = openai
