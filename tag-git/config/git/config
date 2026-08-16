@@ -85,7 +85,6 @@
 	safecrlf = warn
 #	excludesfile = ~/.config/git/ignore
 	pager = diff-so-fancy | less --tabs=4 -FRSX
-	editor = nvim
 [credential]
 	helper = osxkeychain
 [push]
