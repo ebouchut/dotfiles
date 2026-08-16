@@ -76,6 +76,8 @@
 	gprp = !git pull --rebase && git push
 	diffp = difftool -t p4merge -y
 	first-commit = log --max-parents=0
+	hdiff = -c core.pager=\"hunk pager\" diff
+	hshow = -c core.pager=\"hunk pager\" show
 [apply]
 	whitespace = nowarn
 [core]
@@ -101,9 +103,10 @@
 [pager]
 	log = diff-highlight | less -FRSX
 	show = diff-highlight | less -FRSX
-	diff = diff-highlight | less -FRSX
+#	diff = diff-highlight | less -FRSX
+	diff = hunk diff
 [diff]
-	tool = meld
+	tool = hunk
 	submodule = log
 	algorithm = histogram
 [difftool]
@@ -122,6 +125,8 @@
 [difftool "meld"]
 	trustExitCode = true
 	cmd = /Applications/Meld.app/Contents/MacOS/Meld \"$LOCAL\" \"$REMOTE\"
+[difftool "hunk"]
+	cmd = hunk difftool "$LOCAL" "$REMOTE" "$MERGED"
 [merge]
 	tool = meld
 	conflictStyle = zdiff3
