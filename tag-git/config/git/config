@@ -99,11 +99,6 @@
 	defaultBranch = main
 [gitsh]
 	noGreeting = true
-[pager]
-	log = diff-highlight | less -FRSX
-	show = diff-highlight | less -FRSX
-#	diff = diff-highlight | less -FRSX
-	diff = hunk diff
 [diff]
 	tool = hunk
 	submodule = log
