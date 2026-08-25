@@ -40,6 +40,7 @@ brew 'ctags'
 brew 'curl'
 
 
+brew "delta"
 brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dos2unix'
