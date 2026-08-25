@@ -84,7 +84,8 @@
 	autocrlf = input
 	safecrlf = warn
 #	excludesfile = ~/.config/git/ignore
-	pager = diff-so-fancy | less --tabs=4 -FRSX
+#	pager = diff-so-fancy | less --tabs=4 -FRSX
+	pager = delta
 [credential]
 	helper = osxkeychain
 [push]
@@ -103,6 +104,7 @@
 	tool = hunk
 	submodule = log
 	algorithm = histogram
+	colorMoved = default
 [difftool]
 	prompt = false
 [difftool  "deltawalker"]
@@ -147,7 +149,8 @@
 	keepBackup = false
 	cmd = /Applications/Meld.app/Contents/MacOS/Meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [interactive]
-	diffFilter = diff-so-fancy --patch
+#	diffFilter = diff-so-fancy --patch
+	diffFilter = delta --color-only
 [hub]
 	protocol = ssh
 [color "branch"]
@@ -185,3 +188,6 @@
 	aiAnthropicKeyOption = bringYourOwn
 	aiAnthropicModelName = claude-haiku-4-5
 	aiModelProvider = openai
+[delta]
+	navigate = true
+	features = side-by-side line-numbers decorations
