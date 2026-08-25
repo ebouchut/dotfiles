@@ -17,22 +17,14 @@
 # Brew Taps (Sources)
 #~~~~~~~~~~~~~~~~~~~~
 tap "1password/tap"
-tap "espanso/espanso"
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "nikitabobko/tap/aerospace"
-tap "theseal/ssh-askpass"
 tap "thoughtbot/formulae"
+# tap "heroku/brew"
+# tap "theseal/ssh-askpass"
 # tap "universal-ctags/universal-ctags"
 
 #~~~~~~~~~~~~~~~~~~~~
 # Brew Formulae (Packages)
 #~~~~~~~~~~~~~~~~~~~~
-brew 'aerospace'
 brew 'ansifilter'
 brew 'asciinema'
 brew 'awscli'
@@ -52,9 +44,7 @@ brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dos2unix'
 
-brew "espanso"
 brew "extract_url"
-brew 'font-meslo-lg-nerd-font'
 brew 'frum'
 brew 'fswatch'
 # Fuzzy File finder
@@ -65,21 +55,12 @@ brew "fpp"
 brew 'gh'
 brew 'git'
 brew 'git-extras'
-brew 'git-flow-avh'
-brew 'git-subrepo'
 brew 'gnupg'
 
-brew 'heroku/brew/heroku'
 brew 'htop'
 brew 'httrack'
-# Github CLI interface
-brew 'hub'
 
-
-# sed for json: https://robots.thoughtbot.com/jq-is-sed-for-json
 brew 'jq'
-
-
 
 brew 'lazygit'
 brew 'mas' # Mac AppStore CLI
@@ -101,7 +82,8 @@ brew 'openssl'
 brew 'pgrep'
 brew 'pstree'
 
-# Shell Prompt Theme
+
+# Ruby Version Manager
 
 # brew 'rbenv'
 # brew 'rbenv-binstubs'
@@ -113,17 +95,17 @@ brew 'readline'
 brew 'redis', restart_service: true
 
 # For tmux to handle clipboard
-brew 'reattach-to-user-namespace'
+#brew 'reattach-to-user-namespace'
 brew 'rg'
 
-brew 'ruby-build'
+# brew 'ruby-build'
 
 brew 'sqlite3'
 brew 'starship'
-brew 'theseal/ssh-askpass/ssh-askpass'
+# brew 'theseal/ssh-askpass/ssh-askpass'
 
 # Dotfiles Installer
-brew 'thoughtbot/formulae/rcm'
+brew 'rcm'
 
 # lightning fast search (ag)
 brew 'the_silver_searcher'
@@ -148,22 +130,18 @@ brew 'zsh-autosuggestions'
 #~~~~~~~~~~~~~~~~~~~~
 # MacOS Applications
 #~~~~~~~~~~~~~~~~~~~~
-mas 'Things', id: 904280696
+# mas 'Things', id: 904280696
 
 # ~~~~~~~~
 # Casks
 # ~~~~~~~~
 cask '1password-cli'
-cask 'docker'
 cask 'iterm2'
+cask "espanso"
 cask 'karabiner-elements'
 cask 'keycastr'
-cask 'lepton'
-cask 'notunes'
-cask 'obsidian'
 cask 'postman'
 cask 'spotify'
 cask 'sublime-text'
 cask 'vlc'
-cask 'wezterm"'
-cask 'zoom'
+cask "wezterm"
