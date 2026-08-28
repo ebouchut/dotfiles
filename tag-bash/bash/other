@@ -207,5 +207,7 @@ fi
 # 1Password CLI
 # IMPORTANT: MUST be the last one in this file
 #~~~~~~~~~~~~~~~~~
-source ~/.config/op/plugins.sh
+if [ -f "$HOME/.config/op/plugins.sh" ]; then
+  source ~/.config/op/plugins.sh
+fi
 
