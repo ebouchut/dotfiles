@@ -56,7 +56,9 @@ brew "fpp"
 brew 'gh'
 brew 'git'
 brew 'git-extras'
+brew 'git-delta'
 brew 'gnupg'
+brew 'go'
 
 brew 'htop'
 brew 'httrack'
@@ -66,6 +68,7 @@ brew 'jq'
 brew 'lazygit'
 brew 'mas' # Mac AppStore CLI
 brew 'md5sha1sum'
+brew "mysql@9.7"
 
 # Sniff network trafic
 brew 'ngrep'
@@ -80,8 +83,10 @@ brew 'overmind'
 brew 'openssl'
 
 #egrep for processes
+brew "php"
 brew 'pgrep'
 brew 'pstree'
+brew "postgresql@18"
 
 
 # Ruby Version Manager
@@ -97,7 +102,7 @@ brew 'redis', restart_service: true
 
 # For tmux to handle clipboard
 #brew 'reattach-to-user-namespace'
-brew 'rg'
+brew 'ripgrep'
 
 # brew 'ruby-build'
 
@@ -114,6 +119,7 @@ brew 'the_silver_searcher'
 brew 'tmux'
 brew 'tree'
 brew 'urlview'
+brew "uv"
 
 brew 'vim'
 
@@ -144,5 +150,6 @@ cask 'keycastr'
 cask 'postman'
 cask 'spotify'
 cask 'sublime-text'
+cask 'sublime-merge'
 cask 'vlc'
 cask "wezterm"
