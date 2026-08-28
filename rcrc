@@ -31,7 +31,7 @@ export DOTFILES_DIRS="$HOME/dev/Perso/dotfiles"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not install those files
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-EXCLUDES="Brewfile install.sh LICENSE README.md bash ssh zsh"
+EXCLUDES="Brewfile Brewfile.lock.json CLAUDE.md install.sh LICENSE README.md bash ssh zsh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Do not copy these directories, but create a symbolic link instead
