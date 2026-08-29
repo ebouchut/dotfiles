@@ -4,8 +4,16 @@
 # Create some of the vim folders
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-mkdir -p ~/.vim/ 
+VIM_FOLDERS=(~/.vim/backup ~/.vim/swap ~/.vim/undo)
 
-mkdir     ~/.vim/backup ~/.vim/swap ~/.vim/undo
-chmod go= ~/.vim/backup ~/.vim/swap ~/.vim/undo
+
+mkdir -p ~/.vim
+
+for folder in "${VIM_FOLDERS[@]}"; do
+  if [[ ! -d "$folder" ]]; then
+    mkdir "$folder"
+    chmod go= "$folder"
+  fi
+done
+
 
