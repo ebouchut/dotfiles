@@ -2,18 +2,23 @@
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # This hook is run everytime rcup is run
+# to create ~/.dotfiles as a symlink to $DOTFILES_DIRS
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Create ~/.dotfiles
-if [ -e ~/.dotfiles ] ; then
-	echo "WARNING: ~/.dotfiles already exists" >&2
-	ls -l ~/.dotfiles
-	exit 1
+if [[ -e ~/.dotfiles ]]; then
+  if [[ -L ~/.dotfiles && "$(readlink -f ~/.dotfiles)" == "$(readlink -f "$DOTFILES_DIRS")" ]]; then
+    # Symlink already exists
+    exit 0
+  else
+    echo "WARNING: ~/.dotfiles already exists" >&2
+    ls -ld ~/.dotfiles
+    exit 1
+  fi
 fi
 
 if ! ln -s "$DOTFILES_DIRS" ~/.dotfiles ; then
-	echo "WARNING: Cannot create ~/.dotfiles" >&2 
-	exit 2
+  echo "WARNING: Cannot create ~/.dotfiles" >&2 
+  exit 2
 fi
 
 echo "Created ~/.dotfiles => ($DOTFILES_DIRS)"
