@@ -170,13 +170,6 @@ eval "$(zoxide init bash)"
 #~~~~~~~~~~~~~~~~~
 export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
 
-#~~~~~~~~~~~~~~~~~
-# Claude
-#~~~~~~~~~~~~~~~~~
-if [ -d $HOME/.local/bin ]; then
-  export PATH=$PATH:$HOME/.local/bin:
-fi
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # fnm (Fast Node Version Manager)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
