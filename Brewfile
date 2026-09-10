@@ -63,6 +63,7 @@ brew 'go'
 brew 'htop'
 brew 'httrack'
 
+brew 'imageoptim-cli'
 brew 'jq'
 
 brew 'lazygit'
@@ -145,6 +146,7 @@ brew 'zsh-autosuggestions'
 cask '1password-cli'
 cask 'iterm2'
 cask "espanso"
+cask 'imageoptim'
 cask 'karabiner-elements'
 cask 'keycastr'
 cask 'postman'
